@@ -1,48 +1,71 @@
 # pr74_scrum_app
 
-2. Règles de développement
+# 2. Règles de développement
 
-2.1. Type des issues
+## 2.1. Type des issues
 
 Il existe 5 types d'issues :
 
-User story : Demande de fonctionnalité formulée tel que : « En tant que x, je souhaite y, afin de z »
-Documentation : Demande de documentation
-Conception : Demande de conception
-Bug : Demande de résolution de bug
-Technical story : Tâche technique autre
-NB : Ticket = Issue
+* **User story** : Demande de fonctionnalité formulée tel que : « En tant que x, je souhaite y, afin de z »
+* **Documentation** : Demande de documentation
+* **Conception** : Demande de conception
+* **Bug** : Demande de résolution de bug
+* **Technical story** : Tâche technique autre
 
-2.2. Procédure d'implémentation d'une issue
+> NB : Ticket = Issue
 
-Créer un fichier .env en racine de l'espace de travail et le compléter avec les valeurs de développement local :
+## 2.2. Principaux scripts
 
-Se rendre sur la liste des issues du projet :
+* `npm install` : installer les dépendances de la solution
+* `npm start` : démarrer la solution en mode de développement
 
-Créer une nouvelle branche de développement depuis la branche master selon la nomenclature suivante : issue/<numéro de l'issue>-<quelques mots décrivant l'issue>
+## 2.3. Procédure d'implémentation d'une issue
 
-Pour se placer dans la branche master : git checkout master
+1. Se rendre sur la liste des issues du projet :
 
-Pour créer une nouvelle branche : git checkout -b issue/123-lorem-ipsum
-Traiter l'issue
+   * https://github.com/MaloLM/pr74-scrum-app/issues
+  
+2. Prendre une issue non déjà marquée comme « ouvert »
 
-Ne pas hésiter à traiter l'issue en binôme si cela semble nécessaire.
-Ajouter les fichiers au versionnement, les commiter et pousser la branche finalisée vers le dépôt de code
+3. Créer une nouvelle branche de développement depuis la branche `master` selon la nomenclature suivante : `issue/<numéro de l'issue>-<quelques mots décrivant l'issue>`
 
-Pour ajouter les fichiers au versionnement : git add <nom du fichier>
+   > Pour se placer dans la branche `master` : `git checkout master`
+   >
+   > Pour créer une nouvelle branche : `git checkout -b issue/123-lorem-ipsum`
 
-Pour commiter les fichiers : git commit -m "<en anglais : verbe d'action à l'infinitif + description>"
+4. Traiter l'issue
 
-Pour pousser la branche : git push origin issue/123-lorem-ipsum
-Créer une demande de fusion de la branche de développement depuis l'onglet « Pull Requests » du dépôt de code GitHub
+   > Ne pas hésiter à traiter l'issue en binôme si cela semble nécessaire.
 
-À la création d'une demande de branche, la qualité du code est analysé.
+5. Ajouter les fichiers au versionnement, les commiter et pousser la branche finalisée vers le dépôt de code
 
-Lien vers l'onglet « Pull Requests » : https://github.com/utbm-ta70-presentation-alexa/open-days-with-alexa/pulls
-Faire relire son code par un autre membre de l'équipe
+   > Pour ajouter les fichiers au versionnement : `git add <nom du fichier>`
+   >
+   > Pour commiter les fichiers : `git commit -m "<en anglais : verbe d'action à l'infinitif + description>"`
+   >
+   > Pour pousser la branche : `git push origin issue/123-lorem-ipsum `
 
-Procéder à la fusion de la branche de développement vers la branche master en cliquant sur le bouton « Merge pull request » de la « Pull request » précédemment créée
+6. Créer une demande de fusion de la branche de développement depuis l'onglet « Pull Requests » du dépôt de code GitHub 
 
-Clôturer l'issue
+   > À la création d'une demande de branche, la qualité du code est analysé.
+   >
+   > Lien vers l'onglet « Pull Requests » : https://github.com/utbm-ta70-presentation-alexa/open-days-with-alexa/pulls
 
-Pour cloturer une issue, il faut cliquer sur son titre pour l'ouvrir, puis cliquer sur le bouton « Close issue »
+7. Faire relire son code par un autre membre de l'équipe
+
+8.  Procéder à la fusion de la branche de développement vers la branche `master` en cliquant sur le bouton « Merge pull request » de la « Pull request » précédemment créée
+
+9. Clôturer l'issue
+
+    > Pour cloturer une issue, il faut cliquer sur son titre pour l'ouvrir, puis cliquer sur le bouton « Close issue »
+
+## 2.3. Conventions de nommage
+
+### 2.3.1 lANGAGE DE PROGRAMMATION A DEFINIR
+
+| Élément            | Casse      |
+| ------------------ | ---------- |
+| Classe d'objet     |            |
+| Classe d'interface |            |
+| Fichier            |            |
+| Variable           |            |
