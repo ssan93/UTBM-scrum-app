@@ -61,7 +61,7 @@ Il existe 5 types d'issues :
 
 ## 2.3. Conventions de nommage
 
-### 2.3.1 lANGAGE DE PROGRAMMATION A DEFINIR
+### 2.3.1 LANGAGE DE PROGRAMMATION A DEFINIR
 
 | Élément            | Casse      |
 | ------------------ | ---------- |
