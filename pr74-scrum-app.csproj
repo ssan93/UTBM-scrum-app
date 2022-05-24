@@ -14,8 +14,8 @@
     <None Remove="Views\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="Model\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\" />
   </ItemGroup>
 </Project>
