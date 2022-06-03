@@ -5,10 +5,15 @@
 /tmp
 /out-tsc
 obj/
+bin/
 
 # dependencies
 /node_modules
+<<<<<<< HEAD
 .vs/
+=======
+.vs
+>>>>>>> 88ece76ba57e883016e60c3e114fbe02bfeb932b
 # IDEs and editors
 /.idea
 .project
