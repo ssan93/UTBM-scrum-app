@@ -8,7 +8,7 @@ obj/
 
 # dependencies
 /node_modules
-
+.vs
 # IDEs and editors
 /.idea
 .project
