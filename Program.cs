@@ -19,7 +19,7 @@ namespace pr74_scrum_app
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            Application.Run(new SignUpForm());
         }
     }
 }
