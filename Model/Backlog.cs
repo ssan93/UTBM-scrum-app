@@ -19,28 +19,13 @@ namespace pr74_scrum_app.Model
         {
             userStories.Add(userStory);
         }
-        // TODO: code dupliquer à revoir 
-        public void RemoveUserStory(int commentId)
+        public void RemoveUserStory(UserStory userStory)
         {
-            int userStoryIndexToDelete = 0;
-            bool found = false;
-
-            for (int i = 0; i < userStories.Count; i++)
-            {
-                if (commentId == userStories[i].Id)
-                {
-                    found = true;
-                    userStoryIndexToDelete = i;
-                }
-            }
-            if (found)
-            {
-                userStories.RemoveAt(userStoryIndexToDelete);
-            }
-            else
-            {
-                // TODO: add err
-            }
+            userStories.Remove(userStory);
+        }
+        public void RemoveUserStoryById(int id)
+        {
+            userStories.Remove(new UserStory(id, "", ""));
         }
     }
 }

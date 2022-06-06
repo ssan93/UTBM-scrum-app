@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pr74_scrum_app.Model
 {
-    public class Member
+    public class Member : IEquatable<Member>
     {
         private int id;
         private string name;
@@ -25,5 +25,10 @@ namespace pr74_scrum_app.Model
         public string Name { get { return name; } set { name = value; }}  
         public User User { get { return user; } set { user = value; }}
         public string Role { get { return role; } set { role = value; } }
+
+        public bool Equals(Member other)
+        {
+            return id == other.id;
+        }
     }
 }

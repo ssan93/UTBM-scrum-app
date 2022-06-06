@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pr74_scrum_app.Model
 {
-    public class UserStory
+    public class UserStory : IEquatable<UserStory>
     {
         private int id;
         private string name;
@@ -32,27 +32,18 @@ namespace pr74_scrum_app.Model
         {
             comments.Add(comment);
         }
-        // TODO: code dupliquer à revoir 
-        public void RemoveComment(int commentId)
+        public bool Equals(UserStory other)
         {
-            int commentIndexToDelete = 0;
-            bool found = false;
-            for (int i = 0; i < comments.Count; i++)
-            {
-                if (commentId == comments[i].Id)
-                {
-                    found = true;
-                    commentIndexToDelete = i;
-                }
-            }
-            if (found)
-            {
-                comments.RemoveAt(commentIndexToDelete);
-            }
-            else
-            {
-                // TODO: add err
-            }
+            return id == other.id;
+        }
+
+        public void RemoveComment(Comment comment)
+        {
+            comments.Remove(comment);
+        }
+        public void RemoveCommentById(int id)
+        {
+            comments.Remove(new Comment(id, "", null));
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pr74_scrum_app.Model
 {
-    public class Sprint
+    public class Sprint : IEquatable<Sprint>
     {
         private int id;
         private string name;
@@ -27,5 +27,10 @@ namespace pr74_scrum_app.Model
         public DateTime StartingDate { get { return startingDate; } set { startingDate = value; } }
         public DateTime EndingDate { get { return endingDate; } set { endingDate = value; } } 
         public Project Project { get { return project; } }
+
+        public bool Equals(Sprint other)
+        {
+            return id == other.id;
+        }
     }
 }

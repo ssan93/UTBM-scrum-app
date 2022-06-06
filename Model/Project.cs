@@ -34,54 +34,27 @@ namespace pr74_scrum_app.Model
         {
             members.Add(member);
         }
-        // TODO: code dupliquer à revoir 
-        public void RemoveMember(int memberId)
+
+        public void RemoveMember(Member member)
         {
-            int memberIndexToDelete = 0;
-            bool found = false;
-            for (int i = 0; i < members.Count; i++)
-            {
-                if(memberId == members[i].Id)
-                {
-                    found = true;
-                    memberIndexToDelete = i;
-                }
-            }
-            if (found)
-            {
-                members.RemoveAt(memberIndexToDelete);
-            }
-            else
-            {
-                // TODO: add err
-            }
+            members.Remove(member);
+        }
+        public void RemoveMemberById(int id)
+        {
+            members.Remove(new Member(id, "","", null));
         }
 
         public void AddSprint(Sprint sprint)
         {
             sprints.Add(sprint);
         }
-        // TODO: code dupliquer à revoir 
-        public void RemoveSprint(int Id)
+        public void RemoveSprint(Sprint sprint)
         {
-            int indexToDelete = 0;
-            bool found = false;
-            for (int i = 0; i < sprints.Count; i++)
-            {
-                if (Id == sprints[i].Id)
-                {
-                    found = true;
-                    indexToDelete = i;
-                }
-            }
-            if (found)
-            {
-                sprints.RemoveAt(indexToDelete);
-            }
-            else
-            {
-                // TODO: add err
-            }
+            sprints.Remove(sprint);
+        }
+        public void RemoveSprintById(int id)
+        {
+            sprints.Remove(new Sprint(id, "", DateTime.Now, DateTime.Now, null));
         }
     }
 }
