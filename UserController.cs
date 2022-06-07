@@ -28,11 +28,15 @@ namespace pr74_scrum_app
         {
             if (pass != string.Empty || email != string.Empty)//check if field are not empty
             {
-                MySqlDataReader dr = db.ExecutQuery($"select * from users where email='{email}' and password='{EncryptPass(pass)}'"); //if match 
-                if (dr.Read())
+                string sql = $"select * from users where email='{email}' and password='{EncryptPass(pass)}'";
+                MySqlDataReader dr = db.ExecutQuery(sql); //if match 
+                if (dr != null && dr.HasRows)
                 {
-                    this.email = (string)dr["email"];
-                    this.id = (int)dr["id"];
+                    while (dr.Read())
+                    {
+                        this.email = (string)dr["email"];
+                        this.id = (int)dr["id"];
+                    }
                     dr.Close();
                     return true;
                 }
@@ -58,7 +62,7 @@ namespace pr74_scrum_app
                 if (pass == confirmpass)//check confimation pass
                 {
                     MySqlDataReader data = db.ExecutQuery("select * from users where email='" + email + "'");
-                    if (data.Read())//check if email exist
+                    if (data!=null && data.HasRows)//check if email exist
                     {
                         data.Close();
                         MessageBox.Show("Email Already exist please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
