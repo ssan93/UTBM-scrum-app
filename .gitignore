@@ -6,6 +6,7 @@
 /out-tsc
 obj/
 bin/
+packages/
 
 # dependencies
 /node_modules
