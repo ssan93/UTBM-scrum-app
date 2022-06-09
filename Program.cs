@@ -14,9 +14,12 @@ namespace pr74_scrum_app
         [STAThread]
         static void Main()
         {
+            Database db = new Database();
+            db.Connect();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new HomeForm());
         }
     }
 }

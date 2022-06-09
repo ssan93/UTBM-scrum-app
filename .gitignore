@@ -6,9 +6,12 @@
 /out-tsc
 obj/
 bin/
+packages/
+App.config
 
 # dependencies
 /node_modules
+.vs/
 .vs
 # IDEs and editors
 /.idea
