@@ -16,25 +16,25 @@ namespace pr74_scrum_app
         {
             InitializeComponent();
         }
-        //when cick open form signUp
+        //when cick open form signUp and hide the actual form
         private void SignUpHomeButton_Click(object sender, EventArgs e)
         {
-            this.Hide(); //hide the actual form
+            this.Hide(); 
             SignUpForm signUp = new SignUpForm();
             signUp.ShowDialog();
         }
 
-        //when cick open form signin
+        //when cick open form signin and hide the actual form
         private void SigninHomebutton_Click(object sender, EventArgs e)
         {
-            this.Hide(); //hide the actual form
+            this.Hide(); 
             SignInForm signIn = new SignInForm();
             signIn.ShowDialog();
         }
-
+        //when cick open form signUp and hide the actual form
         private void CommencerButton_Click(object sender, EventArgs e)
         {
-            this.Hide(); //hide the actual form
+            this.Hide();
             SignUpForm signUp = new SignUpForm();
             signUp.ShowDialog();
         }

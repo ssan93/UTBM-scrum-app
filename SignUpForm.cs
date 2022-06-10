@@ -33,10 +33,10 @@ namespace pr74_scrum_app
             }
         }
 
-        //On click on link text sign in ths open the form signin
+        //On click on link text sign in ths open the form signin and hide the actuel form
         private void SigninLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();//hide the actuel form
+            this.Hide();
             SignInForm signin = new SignInForm();
             signin.ShowDialog();
         }
