@@ -34,6 +34,18 @@ namespace pr74_scrum_app
             SignUpForm sup = new SignUpForm();
             sup.ShowDialog();
         }
+        //this allow to back to the home page
+        private void SignInForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            foreach (Form oForm in Application.OpenForms)
+            {
+                if (oForm is HomeForm)
+                {
+                    oForm.Show();
+                    break;
+                }
+            }
+        }
     }
 }
   
