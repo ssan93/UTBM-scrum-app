@@ -19,7 +19,7 @@ namespace pr74_scrum_app
         //when cick open form signUp
         private void SignUpHomeButton_Click(object sender, EventArgs e)
         {
-            this.Hide(); //close this form
+            this.Hide(); //hide the actual form
             SignUpForm signUp = new SignUpForm();
             signUp.ShowDialog();
         }
@@ -27,14 +27,14 @@ namespace pr74_scrum_app
         //when cick open form signin
         private void SigninHomebutton_Click(object sender, EventArgs e)
         {
-            this.Hide(); //close this form
+            this.Hide(); //hide the actual form
             SignInForm signIn = new SignInForm();
             signIn.ShowDialog();
         }
 
         private void CommencerButton_Click(object sender, EventArgs e)
         {
-            this.Hide(); //close this form
+            this.Hide(); //hide the actual form
             SignUpForm signUp = new SignUpForm();
             signUp.ShowDialog();
         }

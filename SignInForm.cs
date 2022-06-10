@@ -22,7 +22,7 @@ namespace pr74_scrum_app
             UserController login = new UserController();
             if (login.UserLogin(signinpasswordText.Text.Trim(), signiemailText.Text.Trim()))
             {
-                this.Hide();//hide the form
+                this.Hide();//hide the actual form
                 MainForm mp = new MainForm(login.GetUserEmail(),login.GetUserId());
                 mp.ShowDialog();
             }
@@ -30,7 +30,7 @@ namespace pr74_scrum_app
 
         private void SigninLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();//hide the form
+            this.Hide();//hide the actual form
             SignUpForm sup = new SignUpForm();
             sup.ShowDialog();
         }
