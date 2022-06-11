@@ -22,6 +22,11 @@ namespace pr74_scrum_app.Model
             this.name = name;
             this.state = state;
         }
+        public UserStory(int id, string name, string state, List<Comment> comments )
+        {
+            this.UserStory(id, name, state);
+            this.comments = comments;
+        }
         public int Id { get { return id; } set { id = value; } }
         public string Name { get { return name; } set { name = value; } }
         public int Complexity { get { return complexity; } set { complexity = value; } }

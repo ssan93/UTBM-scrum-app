@@ -20,8 +20,19 @@ namespace pr74_scrum_app.Model
         public Project(int id, string name)
         {
             members = new List<Member>();
+            sprints = new List<Sprint>();
+            backlog = new ProductBacklog();
             this.id = id;
             this.name = name;
+        }
+        public Project(int id, string name, string description)
+        {
+            this.Project(id, name);
+            this.name = name;
+        }
+        public Project(int id, string name, string description, )
+        {
+            this.Project(id, name, description);
         }
         public int Id { get { return id; } set { id = value; } }
         public string Name { get { return name; } set { name = value; } }   
