@@ -16,23 +16,35 @@ namespace pr74_scrum_app
         {
             InitializeComponent();
         }
-        //login to the app
+        //login to the app and hide the actual form
         private void SignInButton_Click(object sender, EventArgs e)
         {
             UserController login = new UserController();
             if (login.UserLogin(signinpasswordText.Text.Trim(), signiemailText.Text.Trim()))
             {
-                this.Hide();//hide the form
+                this.Hide();
                 MainForm mp = new MainForm(login.GetUserEmail(),login.GetUserId());
                 mp.ShowDialog();
             }
         }
-
+        //when click open signup form and hide the actual form
         private void SigninLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();//hide the form
+            this.Hide();
             SignUpForm sup = new SignUpForm();
             sup.ShowDialog();
+        }
+        //this allow to back to the home page
+        private void SignInForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            foreach (Form oForm in Application.OpenForms)
+            {
+                if (oForm is HomeForm)
+                {
+                    oForm.Show();
+                    break;
+                }
+            }
         }
     }
 }

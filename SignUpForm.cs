@@ -21,20 +21,36 @@ namespace pr74_scrum_app
         private void SignupButton_Click(object sender, EventArgs e)
         {
             UserController reg = new UserController();
-            if(reg.UserRegistration(firstnameText.Text,lastnameText.Text,emailText.Text,passwordText.Text,confirmpasswordText.Text))//if true go to sign in form 
+            if(reg.UserRegistration(
+                firstnameText.Text,
+                lastnameText.Text,
+                emailText.Text,passwordText.Text,
+                confirmpasswordText.Text))//if true go to sign in form 
             {
-                this.Hide();//close the actuel form
+                this.Hide();//hide the actuel form
                 SignInForm signin = new SignInForm();
                 signin.ShowDialog();
             }
         }
 
-        //On click on link text sign in ths open the form signin
+        //On click on link text sign in ths open the form signin and hide the actuel form
         private void SigninLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();//hide the actuel form
+            this.Hide();
             SignInForm signin = new SignInForm();
             signin.ShowDialog();
+        }
+        //this allow to back to the home page 
+        private void SignUpForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            foreach (Form oForm in Application.OpenForms)
+            {
+                if (oForm is HomeForm)
+                {
+                    oForm.Show();
+                    break;
+                }
+            }
         }
     }
 }
