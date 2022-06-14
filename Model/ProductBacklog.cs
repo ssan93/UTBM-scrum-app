@@ -2,11 +2,8 @@
 {
     public class ProductBacklog : Backlog
     {
-        private Project project;
-        public ProductBacklog(int id, Project project) : base(id)
+        public ProductBacklog(int id) : base(id)
         {
-            this.project = project;
         }
-        public Project Project { get { return project; } }
     }
 }

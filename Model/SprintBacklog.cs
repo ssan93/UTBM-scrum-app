@@ -8,11 +8,8 @@ namespace pr74_scrum_app.Model
 {
     public class SprintBacklog : Backlog
     {
-        private Sprint sprint;
-        public SprintBacklog(int id, Sprint sprint) : base(id)
+        public SprintBacklog(int id) : base(id)
         {
-            this.sprint = sprint;
         }
-        public Sprint Sprint { get { return sprint; } }
     }
 }
