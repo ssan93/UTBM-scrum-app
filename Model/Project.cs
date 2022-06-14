@@ -21,18 +21,14 @@ namespace pr74_scrum_app.Model
         {
             members = new List<Member>();
             sprints = new List<Sprint>();
-            backlog = new ProductBacklog();
             this.id = id;
             this.name = name;
         }
         public Project(int id, string name, string description)
         {
-            this.Project(id, name);
+            this.id=id; 
             this.name = name;
-        }
-        public Project(int id, string name, string description, )
-        {
-            this.Project(id, name, description);
+            this.description = description; 
         }
         public int Id { get { return id; } set { id = value; } }
         public string Name { get { return name; } set { name = value; } }   
@@ -52,7 +48,7 @@ namespace pr74_scrum_app.Model
         }
         public void RemoveMemberById(int id)
         {
-            members.Remove(new Member(id, "","", null));
+            members.Remove(new Member(id, "", null));
         }
 
         public void AddSprint(Sprint sprint)
@@ -65,7 +61,7 @@ namespace pr74_scrum_app.Model
         }
         public void RemoveSprintById(int id)
         {
-            sprints.Remove(new Sprint(id, "", DateTime.Now, DateTime.Now, null));
+            sprints.Remove(new Sprint(id, "", DateTime.Now, DateTime.Now));
         }
     }
 }
