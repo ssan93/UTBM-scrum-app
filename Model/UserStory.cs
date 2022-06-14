@@ -12,26 +12,23 @@ namespace pr74_scrum_app.Model
         private string name;
         private string description;
         private int complexity;
+        private int priority;
         private string state;
         private List<Comment> comments;
 
-        public UserStory(int id, string name, string state) 
+        public UserStory(int id, string name, string state)
         {
             comments = new List<Comment>();
             this.id = id;
             this.name = name;
             this.state = state;
         }
-        public UserStory(int id, string name, string state, List<Comment> comments )
-        {
-            this.UserStory(id, name, state);
-            this.comments = comments;
-        }
         public int Id { get { return id; } set { id = value; } }
         public string Name { get { return name; } set { name = value; } }
         public int Complexity { get { return complexity; } set { complexity = value; } }
         public string State { get { return state; } set { state = value; } }    
         public string Description { get { return description; } set { description = value; } }
+        public int Priority { get { return priority; } set { priority = value; } }  
         public List<Comment> Comments { get { return comments; } set { comments = value; } }
         public void AddComment(Comment comment)
         {
