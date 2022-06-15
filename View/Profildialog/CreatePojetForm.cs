@@ -31,7 +31,7 @@ namespace pr74_scrum_app
                     user.GetUserLastName(),
                     user.GetUserPassword(),
                     user.GetUserEmail());
-                u.CreateProjet();
+                u.CreateProjet(NameProjetText.Text);
                 ErrorLabel.Visible = false;
                 this.Close();
             }

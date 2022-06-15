@@ -41,9 +41,21 @@ namespace pr74_scrum_app
                 Console.WriteLine(e);
             }
         }
-        public void CreateProjet()
+        public void CreateProjet(string name)
         {
-
+            MySqlDataReader na;
+            try
+            {
+                string insertProjet = $"insert into table project(id,name,archived,create_at) values({id},'{name}',{0},{DateTime.Now})";
+                string insertMernber = $"insert into table menber(role,user_id) values('srummaster',{id})";
+                na = db.ExecutQuery(insertProjet);
+                na = db.ExecutQuery(insertMernber);
+                na.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
     }
