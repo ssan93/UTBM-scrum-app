@@ -41,6 +41,10 @@ namespace pr74_scrum_app
                 Console.WriteLine(e);
             }
         }
+        public void CreateProjet()
+        {
+
+        }
 
     }
 }

@@ -57,6 +57,7 @@ namespace pr74_scrum_app
             this.CreateProjetButton.TabIndex = 19;
             this.CreateProjetButton.Text = "Créer un projet";
             this.CreateProjetButton.UseVisualStyleBackColor = true;
+            this.CreateProjetButton.Click += new System.EventHandler(this.CreateProjetButton_Click);
             // 
             // PictureProfilBox
             // 

@@ -81,5 +81,11 @@ namespace pr74_scrum_app
                 }
             }
         }
+
+        private void CreateProjetButton_Click(object sender, EventArgs e)
+        {
+            CreatePojetForm create = new CreatePojetForm();
+            create.Show();
+        }
     }
 }
