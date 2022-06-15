@@ -1,4 +1,5 @@
 ﻿
+using MySql.Data.MySqlClient;
 using System;
 
 namespace pr74_scrum_app
@@ -28,9 +29,17 @@ namespace pr74_scrum_app
         //methode to udpdate user informations
         public void Update()
         {
-            string stringupdate = $"Update users set firstname='{firstName}' , lastname='{lastName}' where id={id} and email='{email}'";
-            db.ExecutQuery(stringupdate);
-            db.Close();
+            MySqlDataReader na;
+            try
+            {
+                string stringupdate = $"Update users set firstname='{firstName}' , lastname='{lastName}' where id={id} and email='{email}'";
+                na = db.ExecutQuery(stringupdate);
+                na.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
     }

@@ -30,7 +30,6 @@ namespace pr74_scrum_app
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateInfos));
-            this.SauvegarderButton = new System.Windows.Forms.Button();
             this.lastnameText = new System.Windows.Forms.TextBox();
             this.emailText = new System.Windows.Forms.TextBox();
             this.passwordText = new System.Windows.Forms.TextBox();
@@ -42,23 +41,8 @@ namespace pr74_scrum_app
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ErrorLabel = new System.Windows.Forms.Label();
+            this.Savebutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // SauvegarderButton
-            // 
-            this.SauvegarderButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.SauvegarderButton.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.SauvegarderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
-            this.SauvegarderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SauvegarderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SauvegarderButton.Location = new System.Drawing.Point(177, 278);
-            this.SauvegarderButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SauvegarderButton.Name = "SauvegarderButton";
-            this.SauvegarderButton.Size = new System.Drawing.Size(193, 32);
-            this.SauvegarderButton.TabIndex = 22;
-            this.SauvegarderButton.Text = "Sauvegarder";
-            this.SauvegarderButton.UseVisualStyleBackColor = true;
-            this.SauvegarderButton.Click += new System.EventHandler(this.SauvegarderButton_Click);
             // 
             // lastnameText
             // 
@@ -165,15 +149,29 @@ namespace pr74_scrum_app
             this.ErrorLabel.Text = "Une ou plusieurs valeurs manquantes !";
             this.ErrorLabel.Visible = false;
             // 
+            // Savebutton
+            // 
+            this.Savebutton.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.Savebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.Savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Savebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Savebutton.Location = new System.Drawing.Point(186, 279);
+            this.Savebutton.Name = "Savebutton";
+            this.Savebutton.Size = new System.Drawing.Size(195, 33);
+            this.Savebutton.TabIndex = 25;
+            this.Savebutton.Text = "Sauvegarder";
+            this.Savebutton.UseVisualStyleBackColor = true;
+            this.Savebutton.Click += new System.EventHandler(this.Savebutton_Click);
+            // 
             // UpdateInfos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(504, 339);
+            this.Controls.Add(this.Savebutton);
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.SauvegarderButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -194,8 +192,6 @@ namespace pr74_scrum_app
         }
 
         #endregion
-
-        private System.Windows.Forms.Button SauvegarderButton;
         private System.Windows.Forms.TextBox lastnameText;
         private System.Windows.Forms.TextBox emailText;
         private System.Windows.Forms.TextBox passwordText;
@@ -207,5 +203,6 @@ namespace pr74_scrum_app
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.Button Savebutton;
     }
 }

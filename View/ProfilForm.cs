@@ -23,7 +23,7 @@ namespace pr74_scrum_app
             ID = id;
             EMAIL = email;
             InitializeComponent();
-            EmailLabel.Text = EMAIL;
+            EmailtextBox.Text = EMAIL;
         }
 
         private void PictureProfilBox_Click(object sender, EventArgs e)
