@@ -60,6 +60,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -89,17 +90,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\ProfilDialog\UpdateInfos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfilDialog\UpdateInfos.Designer.cs">
+      <DependentUpon>UpdateInfos.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MainForm.cs">
+    <Compile Include="View\ProfilForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="View\ProfilForm.Designer.cs">
+      <DependentUpon>ProfilForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Backlog.cs" />
     <Compile Include="Model\Comment.cs" />
@@ -129,9 +136,6 @@
     <EmbeddedResource Include="View\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -141,6 +145,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ProfilDialog\UpdateInfos.resx">
+      <DependentUpon>UpdateInfos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfilForm.resx">
+      <DependentUpon>ProfilForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </EmbeddedResource>

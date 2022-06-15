@@ -13,15 +13,38 @@ namespace pr74_scrum_app
     class UserController
     {
         private readonly Database db = new Database();
-        string email;
-        int id;
-        public string GetUserEmail()//when user is login this methode return email
+        static string EMAIL;
+        static string FIRSTNAME;
+        static string LASTNAME;
+        static string PASSWORD;
+        static int ID;
+        public string GetUserEmail()//when user is login this methode return emailand value stays the same until i sign again
         {
-            return email;
+            return EMAIL;
         }
-        public int GetUserId()//when user is login this methode return id
+        public int GetUserId()//idem
         {  
-            return id; 
+            return ID; 
+        }
+        public string GetUserFirstName()//idem
+        {
+            return FIRSTNAME;
+        }
+        public void SetUserFirstName(string fname)//set this value when it change in the code
+        {
+            FIRSTNAME=fname;
+        }
+        public string GetUserLastName()//idem
+        {
+            return LASTNAME;
+        }
+        public void SetUserLastName(string lname)//set this value when it change in the code
+        {
+            LASTNAME = lname;
+        }
+        public string GetUserPassword()//idem
+        {
+            return DecryptPass(PASSWORD);
         }
         //methode to sign in into the application
         public bool UserLogin(string pass, string email)
@@ -34,8 +57,11 @@ namespace pr74_scrum_app
                 {
                     while (dr.Read())
                     {
-                        this.email = (string)dr["email"];
-                        this.id = (int)dr["id"];
+                        EMAIL = (string)dr["email"];
+                        ID = (int)dr["id"];
+                        FIRSTNAME= (string)dr["firstname"]; ;
+                        LASTNAME=(string)dr["lastname"]; ;
+                        PASSWORD= (string)dr["password"]; ;
                     }
                     dr.Close();
                     return true;
