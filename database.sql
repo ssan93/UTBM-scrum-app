@@ -2,8 +2,8 @@ create database scrum;
 
 CREATE TABLE `users` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `name` varchar(255),
-  `prenom` varchar(255),
+  `lastname` varchar(255),
+  `fistname` varchar(255),
   `email` varchar(255),
   `password` varchar(255)
 );
