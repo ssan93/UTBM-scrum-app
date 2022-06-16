@@ -30,7 +30,7 @@ namespace pr74_scrum_app
                     lastnameText.Text,
                     passwordText.Text,
                     emailText.Text);
-                u.Update();
+                u.UpdateInfos();
                 ErrorLabel.Visible = false;
                 this.Close();
             }

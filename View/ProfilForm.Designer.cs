@@ -50,7 +50,7 @@ namespace pr74_scrum_app
             this.CreateProjetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.CreateProjetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateProjetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateProjetButton.Location = new System.Drawing.Point(1034, 125);
+            this.CreateProjetButton.Location = new System.Drawing.Point(1034, 109);
             this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjetButton.Name = "CreateProjetButton";
             this.CreateProjetButton.Size = new System.Drawing.Size(215, 35);
@@ -102,7 +102,7 @@ namespace pr74_scrum_app
             this.ProfilListBox.Items.AddRange(new object[] {
             "Mon profil",
             "Déconnexion"});
-            this.ProfilListBox.Location = new System.Drawing.Point(1122, 60);
+            this.ProfilListBox.Location = new System.Drawing.Point(1128, 49);
             this.ProfilListBox.Name = "ProfilListBox";
             this.ProfilListBox.Size = new System.Drawing.Size(129, 60);
             this.ProfilListBox.TabIndex = 24;
@@ -114,7 +114,7 @@ namespace pr74_scrum_app
             // RechercheTextBox
             // 
             this.RechercheTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RechercheTextBox.Location = new System.Drawing.Point(783, 131);
+            this.RechercheTextBox.Location = new System.Drawing.Point(783, 115);
             this.RechercheTextBox.Name = "RechercheTextBox";
             this.RechercheTextBox.Size = new System.Drawing.Size(240, 27);
             this.RechercheTextBox.TabIndex = 26;
@@ -123,7 +123,7 @@ namespace pr74_scrum_app
             // 
             this.RechercheLabel.AutoSize = true;
             this.RechercheLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RechercheLabel.Location = new System.Drawing.Point(852, 109);
+            this.RechercheLabel.Location = new System.Drawing.Point(852, 93);
             this.RechercheLabel.Name = "RechercheLabel";
             this.RechercheLabel.Size = new System.Drawing.Size(99, 20);
             this.RechercheLabel.TabIndex = 27;
@@ -166,6 +166,7 @@ namespace pr74_scrum_app
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ScrumApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfilViewForm_FormClosed);
+            this.Load += new System.EventHandler(this.ProfilForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureProfilBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Navbarpanel.ResumeLayout(false);

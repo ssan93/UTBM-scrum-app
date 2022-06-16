@@ -1,6 +1,7 @@
 ﻿
 using MySql.Data.MySqlClient;
 using System;
+using System.Windows.Forms;
 
 namespace pr74_scrum_app
 {
@@ -27,7 +28,7 @@ namespace pr74_scrum_app
         public string Email { get { return email; } set { email = value; } }
 
         //methode to udpdate user informations
-        public void Update()
+        public void UpdateInfos()
         {
             MySqlDataReader na;
             try
@@ -41,22 +42,37 @@ namespace pr74_scrum_app
                 Console.WriteLine(e);
             }
         }
+        /* This methide reate a projet, fiell table project and table member
+         * the person whom create the projet is automatically the owner and the project stage archived is 0 for no
+        */
         public void CreateProjet(string name)
         {
-            MySqlDataReader na;
+            MySqlDataReader na,data;
+            int idpro=0;
             try
             {
-                string insertProjet = $"insert into table project(id,name,archived,create_at) values({id},'{name}',{0},{DateTime.Now})";
-                string insertMernber = $"insert into table menber(role,user_id) values('srummaster',{id})";
-                na = db.ExecutQuery(insertProjet);
-                na = db.ExecutQuery(insertMernber);
-                na.Close();
+                string insertProjet = $"insert into project(name,archived,created_dt) values('{name}',{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
+                data=db.ExecutQuery(insertProjet);
+                if (data.Read())
+                {
+                    idpro = data.GetInt32(0); // get projet id
+                    data.Close();
+                }
+                if (idpro != 0)
+                {
+                    string insertMernber = $"insert into member(role,project_id,user_id) values('srummaster',{idpro},{id})";
+                    na = db.ExecutQuery(insertMernber);
+                    na.Close();
+                }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show("Votre projet na pas été crée correctement : " + e.Message);
             }
         }
+        public void UpdateProjetName(string name)
+        {
 
+        }
     }
 }

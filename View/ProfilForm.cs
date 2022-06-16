@@ -87,5 +87,10 @@ namespace pr74_scrum_app
             CreatePojetForm create = new CreatePojetForm();
             create.Show();
         }
+
+        private void ProfilForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
