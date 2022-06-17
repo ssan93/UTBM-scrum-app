@@ -18,6 +18,7 @@ CREATE TABLE `Member` (
 CREATE TABLE `Project` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
+  `description` varchar(255),
   `archived` boolean,
   `created_dt` date
 );
