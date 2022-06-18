@@ -30,7 +30,7 @@ namespace pr74_scrum_app
             {
                 string sql = $"select * from users where email='{email}' and password='{EncryptPass(pass)}'";
                 MySqlDataReader dr = db.ExecutQuery(sql); //if match 
-                if (dr != null)
+                if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
@@ -42,6 +42,7 @@ namespace pr74_scrum_app
                 }
                 else
                 {
+                    dr.Close();
                     MessageBox.Show("No Account avilable with this username and password ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
