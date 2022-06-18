@@ -23,7 +23,5 @@ namespace pr74_scrum_app
             ID = email;
             EMAIL = id;
         }
-
-       
     }
 }
