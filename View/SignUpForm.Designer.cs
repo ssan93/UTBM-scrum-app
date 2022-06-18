@@ -64,7 +64,7 @@ namespace pr74_scrum_app
             // firstnameText
             // 
             this.firstnameText.Location = new System.Drawing.Point(208, 161);
-            this.firstnameText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstnameText.Margin = new System.Windows.Forms.Padding(2);
             this.firstnameText.Name = "firstnameText";
             this.firstnameText.Size = new System.Drawing.Size(200, 20);
             this.firstnameText.TabIndex = 0;
@@ -72,7 +72,7 @@ namespace pr74_scrum_app
             // lastnameText
             // 
             this.lastnameText.Location = new System.Drawing.Point(208, 194);
-            this.lastnameText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastnameText.Margin = new System.Windows.Forms.Padding(2);
             this.lastnameText.Name = "lastnameText";
             this.lastnameText.Size = new System.Drawing.Size(200, 20);
             this.lastnameText.TabIndex = 1;
@@ -80,7 +80,7 @@ namespace pr74_scrum_app
             // emailText
             // 
             this.emailText.Location = new System.Drawing.Point(208, 230);
-            this.emailText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailText.Margin = new System.Windows.Forms.Padding(2);
             this.emailText.Name = "emailText";
             this.emailText.Size = new System.Drawing.Size(200, 20);
             this.emailText.TabIndex = 2;
@@ -88,7 +88,7 @@ namespace pr74_scrum_app
             // passwordText
             // 
             this.passwordText.Location = new System.Drawing.Point(208, 267);
-            this.passwordText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordText.Margin = new System.Windows.Forms.Padding(2);
             this.passwordText.Name = "passwordText";
             this.passwordText.Size = new System.Drawing.Size(200, 20);
             this.passwordText.TabIndex = 3;
@@ -97,7 +97,7 @@ namespace pr74_scrum_app
             // confirmpasswordText
             // 
             this.confirmpasswordText.Location = new System.Drawing.Point(208, 302);
-            this.confirmpasswordText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confirmpasswordText.Margin = new System.Windows.Forms.Padding(2);
             this.confirmpasswordText.Name = "confirmpasswordText";
             this.confirmpasswordText.Size = new System.Drawing.Size(200, 20);
             this.confirmpasswordText.TabIndex = 4;
@@ -197,7 +197,7 @@ namespace pr74_scrum_app
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(93)))), ((int)(((byte)(128)))));
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Location = new System.Drawing.Point(-6, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1022, 73);
             this.panel1.TabIndex = 14;
@@ -265,7 +265,7 @@ namespace pr74_scrum_app
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(528, 71);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(485, 522);
             this.panel2.TabIndex = 15;
@@ -277,11 +277,11 @@ namespace pr74_scrum_app
             this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButton1.ForeColor = System.Drawing.Color.White;
             this.roundButton1.Location = new System.Drawing.Point(248, 346);
-            this.roundButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roundButton1.Margin = new System.Windows.Forms.Padding(2);
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(112, 32);
             this.roundButton1.TabIndex = 14;
-            this.roundButton1.Text = "Se connecter";
+            this.roundButton1.Text = "Créer un compte";
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.SignupButton_Click);
             // 
@@ -344,7 +344,7 @@ namespace pr74_scrum_app
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "SignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
