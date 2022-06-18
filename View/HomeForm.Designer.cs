@@ -95,7 +95,7 @@ namespace pr74_scrum_app
             this.CommencerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CommencerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CommencerButton.Location = new System.Drawing.Point(466, 275);
-            this.CommencerButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CommencerButton.Margin = new System.Windows.Forms.Padding(2);
             this.CommencerButton.Name = "CommencerButton";
             this.CommencerButton.Size = new System.Drawing.Size(121, 41);
             this.CommencerButton.TabIndex = 7;
@@ -121,7 +121,7 @@ namespace pr74_scrum_app
             this.panel1.Controls.Add(this.roundButton1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Location = new System.Drawing.Point(-6, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1022, 73);
             this.panel1.TabIndex = 9;
@@ -132,12 +132,12 @@ namespace pr74_scrum_app
             this.roundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundButton2.ForeColor = System.Drawing.Color.Black;
-            this.roundButton2.Location = new System.Drawing.Point(907, 12);
-            this.roundButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roundButton2.Location = new System.Drawing.Point(904, 12);
+            this.roundButton2.Margin = new System.Windows.Forms.Padding(2);
             this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(98, 46);
+            this.roundButton2.Size = new System.Drawing.Size(103, 46);
             this.roundButton2.TabIndex = 11;
-            this.roundButton2.Text = "Sign Up";
+            this.roundButton2.Text = "S\'inscrire";
             this.roundButton2.UseVisualStyleBackColor = false;
             this.roundButton2.Click += new System.EventHandler(this.SignUpHomeButton_Click);
             // 
@@ -147,12 +147,12 @@ namespace pr74_scrum_app
             this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundButton1.ForeColor = System.Drawing.Color.Black;
-            this.roundButton1.Location = new System.Drawing.Point(790, 12);
-            this.roundButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roundButton1.Location = new System.Drawing.Point(785, 12);
+            this.roundButton1.Margin = new System.Windows.Forms.Padding(2);
             this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(98, 46);
+            this.roundButton1.Size = new System.Drawing.Size(103, 46);
             this.roundButton1.TabIndex = 10;
-            this.roundButton1.Text = "Sign In";
+            this.roundButton1.Text = "Se connecter";
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.SigninHomebutton_Click);
             // 
@@ -169,7 +169,7 @@ namespace pr74_scrum_app
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
