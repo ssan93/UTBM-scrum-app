@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using pr74_scrum_app.Model;
 
 namespace pr74_scrum_app
 {
@@ -173,9 +174,23 @@ namespace pr74_scrum_app
                 MessageBox.Show("Votre projet na pas été crée correctement : " + e.Message);
             }
         }
-        public void UpdateProjetName(string name)
+        public List<Project> ReloadProjet(int userid)
         {
-
+            MySqlDataReader data;
+            var project = new List<Project>();
+            string sqlprojet = $"select project.id,name from project inner join member on member.Project_id=project.id " +
+                $"where member.user_id ={userid} order by project.created_dt DESC LIMIT 4";            
+            data = db.ExecutQuery(sqlprojet);
+            if(data !=null && data.HasRows)
+            {
+                while (data.Read()) 
+                {
+                    Project pro = new Project(data.GetInt32(0),data["name"].ToString());
+                    project.Add(pro); //retrun project nme and id 
+                }
+                data.Close();
+            }
+            return project;
         }
     }
 }
