@@ -13,16 +13,7 @@ namespace pr74_scrum_app
     class UserController
     {
         private readonly Database db = new Database();
-        string email;
-        int id;
-        public string GetUserEmail()//when user is login this methode return email
-        {
-            return email;
-        }
-        public int GetUserId()//when user is login this methode return id
-        {  
-            return id; 
-        }
+        private User user;
         //methode to sign in into the application
         public bool UserLogin(string pass, string email)
         {
@@ -34,8 +25,7 @@ namespace pr74_scrum_app
                 {
                     while (dr.Read())
                     {
-                        this.email = (string)dr["email"];
-                        this.id = (int)dr["id"];
+                        this.user = new User((int)dr["id"], (string)dr["firstname"], (string)dr["lastname"], (string)dr["password"], (string)dr["email"]);
                     }
                     dr.Close();
                     return true;
@@ -136,6 +126,56 @@ namespace pr74_scrum_app
                 }
 
             }
+        }
+        public User User{ get { return user; } set { user = value; } }
+
+        //methode to udpdate user informations
+        public void UpdateInfos(string firstname, string lastname, string email,int id)
+        {
+            MySqlDataReader na;
+            try
+            {
+                string stringupdate = $"Update users set firstname='{firstname}' , lastname='{lastname}' where id={id} and email='{email}'";
+                na = db.ExecutQuery(stringupdate);
+                na.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        /* This methide reate a projet, fiell table project and table member
+         * the person whom create the projet is automatically the owner and the project stage archived is 0 for no
+        */
+        public void CreateProjet(string name, string description, int id)
+        {
+            MySqlDataReader na, data;
+            int idpro = 0;
+            try
+            {
+                string insertProjet = $"insert into project(name,description,archived,created_dt) values('{name}','{description}',{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
+                data = db.ExecutQuery(insertProjet);
+                if (data.Read())
+                {
+                    idpro = data.GetInt32(0); // get projet id
+                    data.Close();
+                }
+                if (idpro != 0)
+                {
+                    string insertMernber = $"insert into member(role,project_id,user_id) values('srummaster',{idpro},{id})";
+                    na = db.ExecutQuery(insertMernber);
+                    na.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Votre projet na pas été crée correctement : " + e.Message);
+            }
+        }
+        public void UpdateProjetName(string name)
+        {
+
         }
     }
 }
