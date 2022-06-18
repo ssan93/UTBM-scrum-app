@@ -15,10 +15,12 @@ namespace pr74_scrum_app.Model
         private int priority;
         private string state;
         private List<Comment> comments;
+        private List<Member> assignees;
 
         public UserStory(int id, string name, string state)
         {
             comments = new List<Comment>();
+            assignees = new List<Member>();
             this.id = id;
             this.name = name;
             this.state = state;
@@ -30,6 +32,7 @@ namespace pr74_scrum_app.Model
         public string Description { get { return description; } set { description = value; } }
         public int Priority { get { return priority; } set { priority = value; } }  
         public List<Comment> Comments { get { return comments; } set { comments = value; } }
+        public List<Member> Assignees { get { return assignees; } set { assignees = value; } }
         public void AddComment(Comment comment)
         {
             comments.Add(comment);
@@ -46,6 +49,16 @@ namespace pr74_scrum_app.Model
         public void RemoveCommentById(int id)
         {
             comments.Remove(new Comment(id, "", null));
+        }
+
+        public void AddAssignee(Member member)
+        {
+            assignees.Add(member);
+        }
+
+        public void RemoveAssignee(Member member)
+        {
+            assignees.Remove(member);
         }
     }
 }
