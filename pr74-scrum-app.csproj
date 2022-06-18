@@ -114,6 +114,9 @@
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
