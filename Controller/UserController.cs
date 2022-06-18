@@ -30,7 +30,7 @@ namespace pr74_scrum_app
             {
                 string sql = $"select * from users where email='{email}' and password='{EncryptPass(pass)}'";
                 MySqlDataReader dr = db.ExecutQuery(sql); //if match 
-                if (dr != null && dr.HasRows)
+                if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
@@ -42,8 +42,8 @@ namespace pr74_scrum_app
                 }
                 else
                 {
-                    MessageBox.Show("No Account avilable with this username and password ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     dr.Close();
+                    MessageBox.Show("No Account avilable with this username and password ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -77,8 +77,10 @@ namespace pr74_scrum_app
                     {
                         data.Close();
                         string sql = $"insert into users(lastname,firstname,email,password) values('{lastname}','{firstname}','{email}','{EncryptPass(pass)}')";
-                        db.ExecutQuery(sql);
+                        MySqlDataReader resp = db.ExecutQuery(sql);
+                        resp.Close();
                         MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return true;
                     }
                 }

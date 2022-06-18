@@ -11,20 +11,31 @@ namespace pr74_scrum_app.Model
         private int id;
         private string role;
         private User user;
+        private List<UserStory> assignements;
 
         public Member(int id, string role, User user)
         {
             this.id = id;   
             this.role = role;
             this.user = user;
+           assignements = new List<UserStory>();
         }
         public int Id { get { return id; }  set { id = value; }}
         public User User { get { return user; } set { user = value; }}
         public string Role { get { return role; } set { role = value; } }
+        public List<UserStory> Assignements { get { return assignements; } set {assignements = value;} }
 
         public bool Equals(Member other)
         {
             return id == other.id;
+        }
+        public void AddAssignement(UserStory userStory)
+        {
+            assignements.Add(userStory);
+        }
+        public void RemoveAssignement(UserStory userStory)
+        {
+            assignements.Remove(userStory);
         }
     }
 }
