@@ -42,9 +42,9 @@ namespace pr74_scrum_app
             this.panel2 = new System.Windows.Forms.Panel();
             this.roundButton1 = new pr74_scrum_app.View.RoundButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.signiemailText = new System.Windows.Forms.TextBox();
+            this.signinemailText = new System.Windows.Forms.TextBox();
             this.signinLabel = new System.Windows.Forms.LinkLabel();
-            this.signipasswordText = new System.Windows.Forms.TextBox();
+            this.signinpasswordText = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@ namespace pr74_scrum_app
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(93)))), ((int)(((byte)(128)))));
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Location = new System.Drawing.Point(-6, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1022, 73);
             this.panel1.TabIndex = 23;
@@ -158,9 +158,9 @@ namespace pr74_scrum_app
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(243)))));
             this.panel2.Controls.Add(this.roundButton1);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.signiemailText);
+            this.panel2.Controls.Add(this.signinemailText);
             this.panel2.Controls.Add(this.signinLabel);
-            this.panel2.Controls.Add(this.signipasswordText);
+            this.panel2.Controls.Add(this.signinpasswordText);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
@@ -196,13 +196,13 @@ namespace pr74_scrum_app
             this.label6.TabIndex = 10;
             this.label6.Text = "Connexion";
             // 
-            // signiemailText
+            // signinemailText
             // 
-            this.signiemailText.Location = new System.Drawing.Point(181, 184);
-            this.signiemailText.Margin = new System.Windows.Forms.Padding(2);
-            this.signiemailText.Name = "signiemailText";
-            this.signiemailText.Size = new System.Drawing.Size(200, 20);
-            this.signiemailText.TabIndex = 2;
+            this.signinemailText.Location = new System.Drawing.Point(181, 184);
+            this.signinemailText.Margin = new System.Windows.Forms.Padding(2);
+            this.signinemailText.Name = "signinemailText";
+            this.signinemailText.Size = new System.Drawing.Size(200, 20);
+            this.signinemailText.TabIndex = 2;
             // 
             // signinLabel
             // 
@@ -217,14 +217,14 @@ namespace pr74_scrum_app
             this.signinLabel.Text = "Créer un compte";
             this.signinLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SigninLabel_LinkClicked);
             // 
-            // signipasswordText
+            // signinpasswordText
             // 
-            this.signipasswordText.Location = new System.Drawing.Point(181, 221);
-            this.signipasswordText.Margin = new System.Windows.Forms.Padding(2);
-            this.signipasswordText.Name = "signipasswordText";
-            this.signipasswordText.Size = new System.Drawing.Size(200, 20);
-            this.signipasswordText.TabIndex = 3;
-            this.signipasswordText.UseSystemPasswordChar = true;
+            this.signinpasswordText.Location = new System.Drawing.Point(181, 221);
+            this.signinpasswordText.Margin = new System.Windows.Forms.Padding(2);
+            this.signinpasswordText.Name = "signinpasswordText";
+            this.signinpasswordText.Size = new System.Drawing.Size(200, 20);
+            this.signinpasswordText.TabIndex = 3;
+            this.signinpasswordText.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -274,7 +274,7 @@ namespace pr74_scrum_app
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "SignInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -304,9 +304,9 @@ namespace pr74_scrum_app
         private System.Windows.Forms.Panel panel2;
         private View.RoundButton roundButton1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox signiemailText;
+        private System.Windows.Forms.TextBox signinemailText;
         private System.Windows.Forms.LinkLabel signinLabel;
-        private System.Windows.Forms.TextBox signipasswordText;
+        private System.Windows.Forms.TextBox signinpasswordText;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
