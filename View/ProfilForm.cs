@@ -12,18 +12,12 @@ namespace pr74_scrum_app
 {
     public partial class ProfilForm : Form
     {
-        public ProfilForm()
+        private User user;
+        public ProfilForm(User User)
         {
             InitializeComponent();
-        }
-        public int ID { get; } //id of the user connected
-        public string EMAIL { get; } //eamil of the user connected
-        public ProfilForm(string email, int id)
-        {
-            ID = id;
-            EMAIL = email;
-            InitializeComponent();
-            EmailtextBox.Text = EMAIL;
+            EmailtextBox.Text = User.Email;
+            this.user = User;
         }
 
         private void PictureProfilBox_Click(object sender, EventArgs e)
@@ -59,7 +53,7 @@ namespace pr74_scrum_app
             {
                 if(ProfilListBox.SelectedItem.ToString()=="Mon profil")
                 {
-                    UpdateInfos update = new UpdateInfos();
+                    UpdateInfos update = new UpdateInfos(user);
                     update.ShowDialog();
                 }
                 if(ProfilListBox.SelectedItem.ToString() == "Déconnexion")
@@ -84,13 +78,8 @@ namespace pr74_scrum_app
 
         private void CreateProjetButton_Click(object sender, EventArgs e)
         {
-            CreatePojetForm create = new CreatePojetForm();
+            CreatePojetForm create = new CreatePojetForm(user);
             create.Show();
-        }
-
-        private void ProfilForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -50,7 +50,7 @@ namespace pr74_scrum_app
             this.CreateProjetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.CreateProjetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateProjetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateProjetButton.Location = new System.Drawing.Point(1034, 109);
+            this.CreateProjetButton.Location = new System.Drawing.Point(1121, 109);
             this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjetButton.Name = "CreateProjetButton";
             this.CreateProjetButton.Size = new System.Drawing.Size(215, 35);
@@ -63,7 +63,7 @@ namespace pr74_scrum_app
             // 
             this.PictureProfilBox.BackColor = System.Drawing.Color.SteelBlue;
             this.PictureProfilBox.Image = ((System.Drawing.Image)(resources.GetObject("PictureProfilBox.Image")));
-            this.PictureProfilBox.Location = new System.Drawing.Point(1228, 3);
+            this.PictureProfilBox.Location = new System.Drawing.Point(1303, 3);
             this.PictureProfilBox.Name = "PictureProfilBox";
             this.PictureProfilBox.Size = new System.Drawing.Size(29, 35);
             this.PictureProfilBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +102,7 @@ namespace pr74_scrum_app
             this.ProfilListBox.Items.AddRange(new object[] {
             "Mon profil",
             "Déconnexion"});
-            this.ProfilListBox.Location = new System.Drawing.Point(1128, 49);
+            this.ProfilListBox.Location = new System.Drawing.Point(1215, 49);
             this.ProfilListBox.Name = "ProfilListBox";
             this.ProfilListBox.Size = new System.Drawing.Size(129, 60);
             this.ProfilListBox.TabIndex = 24;
@@ -114,7 +114,7 @@ namespace pr74_scrum_app
             // RechercheTextBox
             // 
             this.RechercheTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RechercheTextBox.Location = new System.Drawing.Point(783, 115);
+            this.RechercheTextBox.Location = new System.Drawing.Point(870, 115);
             this.RechercheTextBox.Name = "RechercheTextBox";
             this.RechercheTextBox.Size = new System.Drawing.Size(240, 27);
             this.RechercheTextBox.TabIndex = 26;
@@ -123,7 +123,7 @@ namespace pr74_scrum_app
             // 
             this.RechercheLabel.AutoSize = true;
             this.RechercheLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RechercheLabel.Location = new System.Drawing.Point(852, 93);
+            this.RechercheLabel.Location = new System.Drawing.Point(939, 93);
             this.RechercheLabel.Name = "RechercheLabel";
             this.RechercheLabel.Size = new System.Drawing.Size(99, 20);
             this.RechercheLabel.TabIndex = 27;
@@ -134,15 +134,15 @@ namespace pr74_scrum_app
             this.Navbarpanel.BackColor = System.Drawing.Color.SteelBlue;
             this.Navbarpanel.Controls.Add(this.PictureProfilBox);
             this.Navbarpanel.Controls.Add(this.EmailtextBox);
-            this.Navbarpanel.Location = new System.Drawing.Point(-6, 0);
+            this.Navbarpanel.Location = new System.Drawing.Point(-2, 0);
             this.Navbarpanel.Name = "Navbarpanel";
-            this.Navbarpanel.Size = new System.Drawing.Size(1272, 41);
+            this.Navbarpanel.Size = new System.Drawing.Size(1355, 41);
             this.Navbarpanel.TabIndex = 28;
             // 
             // EmailtextBox
             // 
             this.EmailtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailtextBox.Location = new System.Drawing.Point(953, 7);
+            this.EmailtextBox.Location = new System.Drawing.Point(1020, 7);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(272, 27);
             this.EmailtextBox.TabIndex = 29;
@@ -152,7 +152,7 @@ namespace pr74_scrum_app
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1261, 727);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.Navbarpanel);
             this.Controls.Add(this.RechercheLabel);
             this.Controls.Add(this.RechercheTextBox);
@@ -166,7 +166,6 @@ namespace pr74_scrum_app
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ScrumApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfilViewForm_FormClosed);
-            this.Load += new System.EventHandler(this.ProfilForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureProfilBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Navbarpanel.ResumeLayout(false);

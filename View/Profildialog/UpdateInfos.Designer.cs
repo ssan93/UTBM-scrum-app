@@ -46,28 +46,31 @@ namespace pr74_scrum_app
             // 
             // lastnameText
             // 
-            this.lastnameText.Location = new System.Drawing.Point(157, 125);
+            this.lastnameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastnameText.Location = new System.Drawing.Point(119, 141);
             this.lastnameText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lastnameText.Name = "lastnameText";
-            this.lastnameText.Size = new System.Drawing.Size(265, 22);
+            this.lastnameText.Size = new System.Drawing.Size(265, 24);
             this.lastnameText.TabIndex = 13;
             // 
             // emailText
             // 
-            this.emailText.Location = new System.Drawing.Point(157, 169);
+            this.emailText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailText.Location = new System.Drawing.Point(119, 192);
             this.emailText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailText.Name = "emailText";
             this.emailText.ReadOnly = true;
-            this.emailText.Size = new System.Drawing.Size(265, 22);
+            this.emailText.Size = new System.Drawing.Size(265, 24);
             this.emailText.TabIndex = 14;
             // 
             // passwordText
             // 
-            this.passwordText.Location = new System.Drawing.Point(157, 214);
+            this.passwordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordText.Location = new System.Drawing.Point(119, 246);
             this.passwordText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordText.Name = "passwordText";
             this.passwordText.ReadOnly = true;
-            this.passwordText.Size = new System.Drawing.Size(265, 22);
+            this.passwordText.Size = new System.Drawing.Size(265, 24);
             this.passwordText.TabIndex = 15;
             this.passwordText.UseSystemPasswordChar = true;
             // 
@@ -75,7 +78,7 @@ namespace pr74_scrum_app
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 84);
+            this.label1.Location = new System.Drawing.Point(115, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 17;
@@ -85,7 +88,7 @@ namespace pr74_scrum_app
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(85, 125);
+            this.label2.Location = new System.Drawing.Point(115, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 18;
@@ -95,7 +98,7 @@ namespace pr74_scrum_app
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(76, 169);
+            this.label3.Location = new System.Drawing.Point(113, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 19;
@@ -105,7 +108,7 @@ namespace pr74_scrum_app
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 214);
+            this.label4.Location = new System.Drawing.Point(114, 224);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 20);
             this.label4.TabIndex = 20;
@@ -113,10 +116,11 @@ namespace pr74_scrum_app
             // 
             // firstnameText
             // 
-            this.firstnameText.Location = new System.Drawing.Point(157, 84);
+            this.firstnameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstnameText.Location = new System.Drawing.Point(119, 89);
             this.firstnameText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.firstnameText.Name = "firstnameText";
-            this.firstnameText.Size = new System.Drawing.Size(265, 22);
+            this.firstnameText.Size = new System.Drawing.Size(265, 24);
             this.firstnameText.TabIndex = 12;
             // 
             // label5
@@ -132,7 +136,7 @@ namespace pr74_scrum_app
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(167, 18);
+            this.label6.Location = new System.Drawing.Point(142, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(203, 29);
             this.label6.TabIndex = 23;
@@ -142,7 +146,7 @@ namespace pr74_scrum_app
             // 
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.ErrorLabel.Location = new System.Drawing.Point(163, 249);
+            this.ErrorLabel.Location = new System.Drawing.Point(125, 278);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(254, 17);
             this.ErrorLabel.TabIndex = 24;
@@ -155,7 +159,7 @@ namespace pr74_scrum_app
             this.Savebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.Savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Savebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Savebutton.Location = new System.Drawing.Point(186, 279);
+            this.Savebutton.Location = new System.Drawing.Point(148, 308);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(195, 33);
             this.Savebutton.TabIndex = 25;
@@ -168,7 +172,7 @@ namespace pr74_scrum_app
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(504, 339);
+            this.ClientSize = new System.Drawing.Size(482, 365);
             this.Controls.Add(this.Savebutton);
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.label6);
@@ -184,7 +188,7 @@ namespace pr74_scrum_app
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateInfos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ScrumApp";
             this.ResumeLayout(false);
             this.PerformLayout();

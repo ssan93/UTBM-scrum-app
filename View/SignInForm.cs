@@ -24,7 +24,7 @@ namespace pr74_scrum_app
             if (login.UserLogin(signinpasswordText.Text.Trim(), signiemailText.Text.Trim()))
             {
                 this.Hide();
-                ProfilForm mp = new ProfilForm(login.GetUserEmail(),login.GetUserId());
+                ProfilForm mp = new ProfilForm(login.User);
                 mp.ShowDialog();
             }
         }

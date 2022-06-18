@@ -13,39 +13,7 @@ namespace pr74_scrum_app
     class UserController
     {
         private readonly Database db = new Database();
-        static string EMAIL;
-        static string FIRSTNAME;
-        static string LASTNAME;
-        static string PASSWORD;
-        static int ID;
-        public string GetUserEmail()//when user is login this methode return emailand value stays the same until i sign again
-        {
-            return EMAIL;
-        }
-        public int GetUserId()//idem
-        {  
-            return ID; 
-        }
-        public string GetUserFirstName()//idem
-        {
-            return FIRSTNAME;
-        }
-        public void SetUserFirstName(string fname)//set this value when it change in the code
-        {
-            FIRSTNAME=fname;
-        }
-        public string GetUserLastName()//idem
-        {
-            return LASTNAME;
-        }
-        public void SetUserLastName(string lname)//set this value when it change in the code
-        {
-            LASTNAME = lname;
-        }
-        public string GetUserPassword()//idem
-        {
-            return DecryptPass(PASSWORD);
-        }
+        private User user;
         //methode to sign in into the application
         public bool UserLogin(string pass, string email)
         {
@@ -57,11 +25,7 @@ namespace pr74_scrum_app
                 {
                     while (dr.Read())
                     {
-                        EMAIL = (string)dr["email"];
-                        ID = (int)dr["id"];
-                        FIRSTNAME= (string)dr["firstname"]; ;
-                        LASTNAME=(string)dr["lastname"]; ;
-                        PASSWORD= (string)dr["password"]; ;
+                        this.user = new User((int)dr["id"], (string)dr["firstname"], (string)dr["lastname"], (string)dr["password"], (string)dr["email"]);
                     }
                     dr.Close();
                     return true;
@@ -160,6 +124,56 @@ namespace pr74_scrum_app
                 }
 
             }
+        }
+        public User User{ get { return user; } set { user = value; } }
+
+        //methode to udpdate user informations
+        public void UpdateInfos(string firstname, string lastname, string email,int id)
+        {
+            MySqlDataReader na;
+            try
+            {
+                string stringupdate = $"Update users set firstname='{firstname}' , lastname='{lastname}' where id={id} and email='{email}'";
+                na = db.ExecutQuery(stringupdate);
+                na.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        /* This methide reate a projet, fiell table project and table member
+         * the person whom create the projet is automatically the owner and the project stage archived is 0 for no
+        */
+        public void CreateProjet(string name, string description, int id)
+        {
+            MySqlDataReader na, data;
+            int idpro = 0;
+            try
+            {
+                string insertProjet = $"insert into project(name,description,archived,created_dt) values('{name}','{description}',{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
+                data = db.ExecutQuery(insertProjet);
+                if (data.Read())
+                {
+                    idpro = data.GetInt32(0); // get projet id
+                    data.Close();
+                }
+                if (idpro != 0)
+                {
+                    string insertMernber = $"insert into member(role,project_id,user_id) values('srummaster',{idpro},{id})";
+                    na = db.ExecutQuery(insertMernber);
+                    na.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Votre projet na pas été crée correctement : " + e.Message);
+            }
+        }
+        public void UpdateProjetName(string name)
+        {
+
         }
     }
 }

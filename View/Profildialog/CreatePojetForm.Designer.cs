@@ -35,6 +35,9 @@ namespace pr74_scrum_app
             this.NameProjetText = new System.Windows.Forms.TextBox();
             this.CreateValidedButton = new System.Windows.Forms.Button();
             this.ErrorLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.TailleDescriptionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CreationProjetLabel
@@ -51,15 +54,15 @@ namespace pr74_scrum_app
             // 
             this.NomduProjetLabel.AutoSize = true;
             this.NomduProjetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomduProjetLabel.Location = new System.Drawing.Point(12, 87);
+            this.NomduProjetLabel.Location = new System.Drawing.Point(138, 83);
             this.NomduProjetLabel.Name = "NomduProjetLabel";
-            this.NomduProjetLabel.Size = new System.Drawing.Size(127, 20);
+            this.NomduProjetLabel.Size = new System.Drawing.Size(53, 20);
             this.NomduProjetLabel.TabIndex = 25;
-            this.NomduProjetLabel.Text = "Nom du projet";
+            this.NomduProjetLabel.Text = "Nom ";
             // 
             // NameProjetText
             // 
-            this.NameProjetText.Location = new System.Drawing.Point(191, 87);
+            this.NameProjetText.Location = new System.Drawing.Point(135, 105);
             this.NameProjetText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameProjetText.Name = "NameProjetText";
             this.NameProjetText.Size = new System.Drawing.Size(265, 22);
@@ -71,7 +74,7 @@ namespace pr74_scrum_app
             this.CreateValidedButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.CreateValidedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateValidedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateValidedButton.Location = new System.Drawing.Point(189, 145);
+            this.CreateValidedButton.Location = new System.Drawing.Point(183, 263);
             this.CreateValidedButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateValidedButton.Name = "CreateValidedButton";
             this.CreateValidedButton.Size = new System.Drawing.Size(140, 29);
@@ -84,19 +87,52 @@ namespace pr74_scrum_app
             // 
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.ErrorLabel.Location = new System.Drawing.Point(189, 116);
+            this.ErrorLabel.Location = new System.Drawing.Point(159, 238);
             this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(275, 17);
+            this.ErrorLabel.Size = new System.Drawing.Size(199, 17);
             this.ErrorLabel.TabIndex = 28;
-            this.ErrorLabel.Text = "La valeur du champs ne peut pas est null !";
+            this.ErrorLabel.Text = "Veillez remplir tout les champs";
             this.ErrorLabel.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(137, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Description";
+            // 
+            // DescriptionTextBox
+            // 
+            this.DescriptionTextBox.Location = new System.Drawing.Point(135, 161);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DescriptionTextBox.Multiline = true;
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(265, 58);
+            this.DescriptionTextBox.TabIndex = 29;
+            // 
+            // TailleDescriptionLabel
+            // 
+            this.TailleDescriptionLabel.AutoSize = true;
+            this.TailleDescriptionLabel.ForeColor = System.Drawing.Color.Red;
+            this.TailleDescriptionLabel.Location = new System.Drawing.Point(88, 221);
+            this.TailleDescriptionLabel.Name = "TailleDescriptionLabel";
+            this.TailleDescriptionLabel.Size = new System.Drawing.Size(333, 17);
+            this.TailleDescriptionLabel.TabIndex = 31;
+            this.TailleDescriptionLabel.Text = "La description ne doit pas depasser 250 caractères";
+            this.TailleDescriptionLabel.Visible = false;
             // 
             // CreatePojetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(509, 208);
+            this.ClientSize = new System.Drawing.Size(509, 307);
+            this.Controls.Add(this.TailleDescriptionLabel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DescriptionTextBox);
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.CreateValidedButton);
             this.Controls.Add(this.CreationProjetLabel);
@@ -119,5 +155,8 @@ namespace pr74_scrum_app
         private System.Windows.Forms.TextBox NameProjetText;
         private System.Windows.Forms.Button CreateValidedButton;
         private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox DescriptionTextBox;
+        private System.Windows.Forms.Label TailleDescriptionLabel;
     }
 }
