@@ -3,7 +3,7 @@ create database scrum;
 CREATE TABLE `users` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `lastname` varchar(255),
-  `fistname` varchar(255),
+  `firstname` varchar(255),
   `email` varchar(255),
   `password` varchar(255)
 );
@@ -38,21 +38,22 @@ CREATE TABLE `UserStory` (
   `complexity` int,
   `priority` int,
   `state` boolean,
-  `Project_id` int
+  `sprint_id` int,
+  `Project_id` int NOT NULL
 );
 
 CREATE TABLE `UserStoryComment` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `description` varchar(255),
   `date` datetime,
-  `memberId` int,
+  `member_id` int,
   `userstory_id` int
 );
 
 CREATE TABLE `UserStoryMember` (
   `id` int,
   `member_id` int,
-  `user_id` int
+  `userstory_id` int
 );
 
 ALTER TABLE `users` ADD FOREIGN KEY (`id`) REFERENCES `Member` (`user_id`);
@@ -65,4 +66,8 @@ ALTER TABLE `UserStory` ADD FOREIGN KEY (`Project_id`) REFERENCES `Project` (`id
 
 ALTER TABLE `UserStoryComment` ADD FOREIGN KEY (`userstory_id`) REFERENCES `UserStory` (`id`);
 
-ALTER TABLE `UserStoryComment` ADD FOREIGN KEY (`memberId`) REFERENCES `Member` (`id`);
+ALTER TABLE `UserStoryComment` ADD FOREIGN KEY (`member_id`) REFERENCES `Member` (`id`);
+
+ALTER TABLE `UserStoryMember` ADD FOREIGN KEY (`member_id`) REFERENCES `Member` (`id`);
+
+ALTER TABLE `UserStoryMember` ADD FOREIGN KEY (`userstory_id`) REFERENCES `UserStory` (`id`);
