@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace pr74_scrum_app
 {
     internal static class Program
@@ -19,7 +18,7 @@ namespace pr74_scrum_app
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm());
+            Application.Run(new View.SprintForm());
         }
     }
 }
