@@ -11,5 +11,8 @@ namespace pr74_scrum_app.Model
         public SprintBacklog(int id) : base(id)
         {
         }
+        public SprintBacklog() : base()
+        {
+        }
     }
 }

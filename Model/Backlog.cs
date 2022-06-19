@@ -12,6 +12,10 @@ namespace pr74_scrum_app.Model
             userStories = new List<UserStory>();
             this.id = id;
         }
+        public Backlog() 
+        {
+            userStories = new List<UserStory>();
+        }
 
         public int Id { get { return id; } set { id = value; } }
         public List<UserStory> UserStories { get { return userStories; } set { userStories = value; } }
