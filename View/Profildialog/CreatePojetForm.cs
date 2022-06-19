@@ -14,6 +14,7 @@ namespace pr74_scrum_app
     {
         readonly UserController usercontroller = new UserController();
         private User user;
+ 
         public CreatePojetForm(User user)
         {
             InitializeComponent();
@@ -31,8 +32,22 @@ namespace pr74_scrum_app
                 }
                 else
                 {
-                    usercontroller.CreateProjet(NameProjetText.Text, DescriptionTextBox.Text,this.user.Id);
+                    usercontroller.CreateProjet(NameProjetText.Text,DescriptionTextBox.Text,this.user.Id);
                     ErrorLabel.Visible = false;
+                    //refresh/reload profil form
+                    foreach (Form oForm in Application.OpenForms)
+                    {
+                        if (oForm is ProfilForm)
+                        {
+                            oForm.Hide();
+                            break;
+                        }
+                    }
+                    ProfilForm pro= new ProfilForm(user)
+                    {
+                        StartPosition = FormStartPosition.CenterScreen
+                    };
+                    pro.Show();
                     this.Close();
                 }
             }

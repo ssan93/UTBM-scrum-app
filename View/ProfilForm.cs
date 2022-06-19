@@ -13,8 +13,8 @@ namespace pr74_scrum_app
 {
     public partial class ProfilForm : Form
     {
-        private User user;
-  
+        private readonly User user;
+
         public ProfilForm(User User)
         {
             InitializeComponent();
@@ -31,6 +31,11 @@ namespace pr74_scrum_app
             roudboutonProjet.Add(ProjectRoundButton2);
             roudboutonProjet.Add(ProjectRoundButton3);
             roudboutonProjet.Add(ProjectRoundButton4);
+            ProjectPictureBoxs= new List<System.Windows.Forms.PictureBox>();
+            ProjectPictureBoxs.Add(ProjectPictureBox1);
+            ProjectPictureBoxs.Add(ProjectPictureBox2);
+            ProjectPictureBoxs.Add(ProjectPictureBox3);
+            ProjectPictureBoxs.Add(ProjectPictureBox4);
             Loaddata();
         }
 
@@ -102,15 +107,12 @@ namespace pr74_scrum_app
             var projects =usercontroller.ReloadProjet(this.user.Id);
             if(!projects.Any()) //hide all projet composent and show no projet
             {
-                ProjectRoundButton1.Visible = false;
-                ProjectRoundButton2.Visible = false;
-                ProjectRoundButton3.Visible = false;
-                ProjectRoundButton4.Visible = false;
-                ProjectLabel1.Visible = false;
-                ProjectLabel2.Visible = false;
-                ProjectLabel3.Visible = false;
-                ProjectLabel4.Visible = false;
-
+                for(int i = 1; i < 4; i++)
+                {
+                    roudboutonProjet[i].Visible = false;
+                    ProjectPictureBoxs[i].Visible = false;
+                    labels[i].Visible = false;
+                }
                 Console.WriteLine("              no item              ");
             }
             else 
@@ -120,8 +122,10 @@ namespace pr74_scrum_app
                 {
                     Label label = labels[i];
                     View.RoundButton button = roudboutonProjet[i];
+                    PictureBox picture = ProjectPictureBoxs[i];
                     label.Visible = true;
                     button.Visible = true;
+                    picture.Visible = true;
                     label.Text = item.Name;
                     i++;
                 }

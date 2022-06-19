@@ -56,8 +56,16 @@ namespace pr74_scrum_app
             this.ProjectRoundButton1 = new pr74_scrum_app.View.RoundButton();
             this.ProjectLabel3 = new System.Windows.Forms.Label();
             this.ProjectLabel4 = new System.Windows.Forms.Label();
+            this.ProjectPictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ProjectPictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ProjectPictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ProjectPictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureProfilBox)).BeginInit();
             this.Navbarpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // CreateProjetButton
@@ -183,9 +191,11 @@ namespace pr74_scrum_app
             // ProjectLabel1
             // 
             this.ProjectLabel1.AutoSize = true;
-            this.ProjectLabel1.Location = new System.Drawing.Point(273, 225);
+            this.ProjectLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.ProjectLabel1.Location = new System.Drawing.Point(262, 225);
             this.ProjectLabel1.Name = "ProjectLabel1";
-            this.ProjectLabel1.Size = new System.Drawing.Size(72, 13);
+            this.ProjectLabel1.Size = new System.Drawing.Size(96, 15);
             this.ProjectLabel1.TabIndex = 47;
             this.ProjectLabel1.Text = "ProjectLabel1";
             this.ProjectLabel1.Visible = false;
@@ -193,9 +203,11 @@ namespace pr74_scrum_app
             // ProjectLabel2
             // 
             this.ProjectLabel2.AutoSize = true;
-            this.ProjectLabel2.Location = new System.Drawing.Point(476, 225);
+            this.ProjectLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.ProjectLabel2.Location = new System.Drawing.Point(464, 225);
             this.ProjectLabel2.Name = "ProjectLabel2";
-            this.ProjectLabel2.Size = new System.Drawing.Size(72, 13);
+            this.ProjectLabel2.Size = new System.Drawing.Size(96, 15);
             this.ProjectLabel2.TabIndex = 48;
             this.ProjectLabel2.Text = "ProjectLabel2";
             this.ProjectLabel2.Visible = false;
@@ -314,7 +326,7 @@ namespace pr74_scrum_app
             // 
             // ProjectRoundButton4
             // 
-            this.ProjectRoundButton4.BackColor = System.Drawing.Color.Gainsboro;
+            this.ProjectRoundButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton4.FlatAppearance.BorderSize = 0;
             this.ProjectRoundButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton4.ForeColor = System.Drawing.Color.Black;
@@ -328,7 +340,7 @@ namespace pr74_scrum_app
             // 
             // ProjectRoundButton3
             // 
-            this.ProjectRoundButton3.BackColor = System.Drawing.Color.Gainsboro;
+            this.ProjectRoundButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton3.FlatAppearance.BorderSize = 0;
             this.ProjectRoundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton3.ForeColor = System.Drawing.Color.White;
@@ -342,10 +354,10 @@ namespace pr74_scrum_app
             // 
             // ProjectRoundButton2
             // 
-            this.ProjectRoundButton2.BackColor = System.Drawing.Color.Gainsboro;
+            this.ProjectRoundButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton2.FlatAppearance.BorderSize = 0;
             this.ProjectRoundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProjectRoundButton2.ForeColor = System.Drawing.Color.White;
+            this.ProjectRoundButton2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.ProjectRoundButton2.Location = new System.Drawing.Point(444, 169);
             this.ProjectRoundButton2.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRoundButton2.Name = "ProjectRoundButton2";
@@ -356,7 +368,7 @@ namespace pr74_scrum_app
             // 
             // ProjectRoundButton1
             // 
-            this.ProjectRoundButton1.BackColor = System.Drawing.Color.Gainsboro;
+            this.ProjectRoundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton1.FlatAppearance.BorderSize = 0;
             this.ProjectRoundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton1.ForeColor = System.Drawing.Color.White;
@@ -371,9 +383,11 @@ namespace pr74_scrum_app
             // ProjectLabel3
             // 
             this.ProjectLabel3.AutoSize = true;
-            this.ProjectLabel3.Location = new System.Drawing.Point(682, 225);
+            this.ProjectLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.ProjectLabel3.Location = new System.Drawing.Point(671, 225);
             this.ProjectLabel3.Name = "ProjectLabel3";
-            this.ProjectLabel3.Size = new System.Drawing.Size(72, 13);
+            this.ProjectLabel3.Size = new System.Drawing.Size(96, 15);
             this.ProjectLabel3.TabIndex = 49;
             this.ProjectLabel3.Text = "ProjectLabel3";
             this.ProjectLabel3.Visible = false;
@@ -381,12 +395,58 @@ namespace pr74_scrum_app
             // ProjectLabel4
             // 
             this.ProjectLabel4.AutoSize = true;
-            this.ProjectLabel4.Location = new System.Drawing.Point(878, 225);
+            this.ProjectLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.ProjectLabel4.Location = new System.Drawing.Point(863, 224);
             this.ProjectLabel4.Name = "ProjectLabel4";
-            this.ProjectLabel4.Size = new System.Drawing.Size(72, 13);
+            this.ProjectLabel4.Size = new System.Drawing.Size(96, 15);
             this.ProjectLabel4.TabIndex = 50;
             this.ProjectLabel4.Text = "ProjectLabel4";
             this.ProjectLabel4.Visible = false;
+            // 
+            // ProjectPictureBox1
+            // 
+            this.ProjectPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox1.Image")));
+            this.ProjectPictureBox1.Location = new System.Drawing.Point(280, 172);
+            this.ProjectPictureBox1.Name = "ProjectPictureBox1";
+            this.ProjectPictureBox1.Size = new System.Drawing.Size(62, 50);
+            this.ProjectPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProjectPictureBox1.TabIndex = 51;
+            this.ProjectPictureBox1.TabStop = false;
+            this.ProjectPictureBox1.Visible = false;
+            // 
+            // ProjectPictureBox2
+            // 
+            this.ProjectPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox2.Image")));
+            this.ProjectPictureBox2.Location = new System.Drawing.Point(481, 172);
+            this.ProjectPictureBox2.Name = "ProjectPictureBox2";
+            this.ProjectPictureBox2.Size = new System.Drawing.Size(62, 50);
+            this.ProjectPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProjectPictureBox2.TabIndex = 52;
+            this.ProjectPictureBox2.TabStop = false;
+            this.ProjectPictureBox2.Visible = false;
+            // 
+            // ProjectPictureBox3
+            // 
+            this.ProjectPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox3.Image")));
+            this.ProjectPictureBox3.Location = new System.Drawing.Point(685, 172);
+            this.ProjectPictureBox3.Name = "ProjectPictureBox3";
+            this.ProjectPictureBox3.Size = new System.Drawing.Size(62, 50);
+            this.ProjectPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProjectPictureBox3.TabIndex = 53;
+            this.ProjectPictureBox3.TabStop = false;
+            this.ProjectPictureBox3.UseWaitCursor = true;
+            // 
+            // ProjectPictureBox4
+            // 
+            this.ProjectPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox4.Image")));
+            this.ProjectPictureBox4.Location = new System.Drawing.Point(876, 170);
+            this.ProjectPictureBox4.Name = "ProjectPictureBox4";
+            this.ProjectPictureBox4.Size = new System.Drawing.Size(62, 50);
+            this.ProjectPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProjectPictureBox4.TabIndex = 54;
+            this.ProjectPictureBox4.TabStop = false;
+            this.ProjectPictureBox4.Visible = false;
             // 
             // ProfilForm
             // 
@@ -394,6 +454,10 @@ namespace pr74_scrum_app
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1011, 586);
+            this.Controls.Add(this.ProjectPictureBox4);
+            this.Controls.Add(this.ProjectPictureBox3);
+            this.Controls.Add(this.ProjectPictureBox2);
+            this.Controls.Add(this.ProjectPictureBox1);
             this.Controls.Add(this.ProjectLabel4);
             this.Controls.Add(this.ProjectLabel3);
             this.Controls.Add(this.ProjectLabel2);
@@ -428,6 +492,10 @@ namespace pr74_scrum_app
             ((System.ComponentModel.ISupportInitialize)(this.PictureProfilBox)).EndInit();
             this.Navbarpanel.ResumeLayout(false);
             this.Navbarpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,5 +531,10 @@ namespace pr74_scrum_app
         private System.Windows.Forms.Label ProjectLabel4;
         private List<System.Windows.Forms.Label> labels;
         private List<View.RoundButton> roudboutonProjet;
+        private System.Windows.Forms.PictureBox ProjectPictureBox1;
+        private System.Windows.Forms.PictureBox ProjectPictureBox2;
+        private System.Windows.Forms.PictureBox ProjectPictureBox3;
+        private System.Windows.Forms.PictureBox ProjectPictureBox4;
+        private List<System.Windows.Forms.PictureBox> ProjectPictureBoxs;
     }
 }

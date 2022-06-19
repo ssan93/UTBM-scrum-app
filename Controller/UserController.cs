@@ -179,7 +179,7 @@ namespace pr74_scrum_app
             MySqlDataReader data;
             var project = new List<Project>();
             string sqlprojet = $"select project.id,name from project inner join member on member.Project_id=project.id " +
-                $"where member.user_id ={userid} order by project.created_dt DESC LIMIT 4";            
+                $"where member.user_id ={userid} order by project.created_dt DESC,project.id DESC LIMIT 4";            
             data = db.ExecutQuery(sqlprojet);
             if(data !=null && data.HasRows)
             {
