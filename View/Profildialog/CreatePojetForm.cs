@@ -41,23 +41,13 @@ namespace pr74_scrum_app
                     usercontroller.CreateProjet(NameProjetText.Text,DescriptionTextBox.Text,this.user.Id);
                     ErrorLabel.Visible = false;
 
+                    this.profilForm.SetVarShow_Form(false);
                     this.profilForm.Close();
-                    this.profilForm.Show();
-
-                    //refresh/reload profil form
-                    //foreach (Form oForm in Application.OpenForms)
-                    //{
-                    //    if (oForm is ProfilForm)
-                    //    {
-                    //        oForm.Hide();
-                    //        break;
-                    //    }
-                    //}
-                    //ProfilForm pro = new ProfilForm(user)
-                    //{
-                    //    StartPosition = FormStartPosition.CenterScreen
-                    //};
-                    //pro.Show();
+                    ProfilForm pro = new ProfilForm(user)
+                    {
+                        StartPosition = FormStartPosition.CenterScreen
+                    };
+                    pro.Show();
                     this.Close();
                 }
             }

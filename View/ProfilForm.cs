@@ -14,6 +14,7 @@ namespace pr74_scrum_app
     public partial class ProfilForm : Form
     {
         private readonly User user;
+        private Boolean show=true;
         public ProfilForm(User User)
         {
             InitializeComponent();
@@ -79,14 +80,28 @@ namespace pr74_scrum_app
             ProfilListBox.Visible = true;
         }
 
+        private Boolean ShowHome_Form()
+        {
+            return show;
+        }
+        //st the close form condiition
+        public void SetVarShow_Form(Boolean show)
+        {
+            this.show = show;
+        }
+
+        //when bouton close form is click this show the home form
         private void ProfilViewForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            foreach (Form oForm in Application.OpenForms)
+            if (ShowHome_Form())
             {
-                if (oForm is HomeForm)
+                foreach (Form oForm in Application.OpenForms)
                 {
-                    oForm.Show();
-                    break;
+                    if (oForm is HomeForm)
+                    {
+                        oForm.Show();
+                        break;
+                    }
                 }
             }
         }
