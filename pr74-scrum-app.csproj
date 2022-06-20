@@ -113,7 +113,7 @@
     <Compile Include="View\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ListPanel.cs">
+    <Compile Include="View\Components\ListPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\SprintForm.cs">
@@ -145,8 +145,14 @@
     <Compile Include="View\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserStoryPanel.cs">
+    <Compile Include="View\Components\UserStoryPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\UserStoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserStoryForm.Designer.cs">
+      <DependentUpon>UserStoryForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
