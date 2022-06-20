@@ -15,29 +15,38 @@ namespace pr74_scrum_app.View
 {
     public partial class SprintForm : Form
     {
-        int index = 0;
         Sprint sprint;
-        ListBox source;
+        Control control;
+        ListPanel source;
         public SprintForm(int id)
         {
+            initPanels();
             InitializeComponent();
             SprintController sprintController = new SprintController();
             sprint = sprintController.FetchSprintById(id);
             if(sprint == null)
                 // TODO: redirection vers menu project
                 MessageBox.Show("404 : Sprint not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            panel1.MouseDown += new MouseEventHandler(this.List_MouseDown);
+            todoList.Add(panel1);
         }
 
-        private void ListBox_MouseDown(object sender, MouseEventArgs e)
+        private void Panel1_Click(object sender, EventArgs e)
         {
-            source = sender as ListBox;
-            index = source.IndexFromPoint(e.X, e.Y);
-            if (index >= 0)
-            {
-                source.DoDragDrop(source.Items[index].ToString(), DragDropEffects.Move);
-            }
+            Panel test = sender as Panel;
+            test.BackColor = Color.Aqua;
         }
-        private void ListBox_DragDrop(object sender, DragEventArgs e)
+
+        private void List_MouseDown(object sender, MouseEventArgs e)
+        {
+            control= sender as Control;
+            source = control.Parent as ListPanel;
+
+            source.DoDragDrop(control.Text, DragDropEffects.Move);
+
+        }
+        private void List_DragDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
             {
@@ -48,16 +57,18 @@ namespace pr74_scrum_app.View
                 e.Effect = DragDropEffects.None;
             }
         }
-        private void ListBox_DragEnter(object sender, DragEventArgs e)
+        private void List_DragEnter(object sender, DragEventArgs e)
         {
-            ListBox actuel = sender as ListBox;
-            if(actuel != source)
+            ListPanel actuel = sender as ListPanel;
+            if (actuel != source)
             {
-                actuel.Items.Add(source.Items[index]);
-                source.Items.RemoveAt(index);
+                actuel.Add(control);
+                actuel.RefreshControls();
+                source.Remove(control);
+                source.RefreshControls();
                 source = actuel;
-                index = source.Items.Count-1;
             }
         }
+
     }
 }
