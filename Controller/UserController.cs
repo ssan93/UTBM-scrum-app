@@ -107,7 +107,7 @@ namespace pr74_scrum_app
                 }
             }
         }
-        private string DecryptPass(string pass)
+        public string DecryptPass(string pass)
         {
             using (var md5 = new MD5CryptoServiceProvider())
             {
@@ -178,7 +178,7 @@ namespace pr74_scrum_app
         {
             MySqlDataReader data;
             var project = new List<Project>();
-            string sqlprojet = $"select project.id,name from project inner join member on member.Project_id=project.id " +
+            string sqlprojet = "select project.id,name from project inner join member on member.Project_id=project.id " +
                 $"where member.user_id ={userid} order by project.created_dt DESC,project.id DESC LIMIT 4";            
             data = db.ExecutQuery(sqlprojet);
             if(data !=null && data.HasRows)
@@ -191,6 +191,44 @@ namespace pr74_scrum_app
                 data.Close();
             }
             return project;
+        }
+        public List<Sprint> ReloadSprint(int userid)
+        {
+            MySqlDataReader data;
+            var sprint = new List<Sprint>();
+            string sqlstack = "select sprint.id,sprint.name,sprint.startDate,sprint.endDate from sprint inner join project on project.id=sprint.Project_id inner join member on member.project_id=project.id " +
+                $"where member.user_id ={userid} order by project.created_dt DESC,project.id DESC LIMIT 4 ";
+            data = db.ExecutQuery(sqlstack);
+            if (data != null && data.HasRows)
+            {
+                while (data.Read())
+                {
+                    Sprint sp = new Sprint(data.GetInt32(0), data["name"].ToString(),data.GetDateTime(2),data.GetDateTime(3));
+                    sprint.Add(sp); //retrun sprint inforamtion
+                }
+                data.Close();
+            }
+            return sprint;
+        }
+
+        public List<UserStory> ReloadTask(int userid)
+        {
+            MySqlDataReader data;
+            var task = new List<UserStory>();
+            string sqltask = "select userStory.id,userStory.name,userStory.state from userStory inner join project on project.id=userStory.Project_id " +
+                " inner join member on member.project_id=project.id " +
+                $"where member.user_id ={userid} order by project.created_dt DESC,project.id DESC LIMIT 4";
+            data = db.ExecutQuery(sqltask);
+            if (data != null && data.HasRows)
+            {
+                while (data.Read())
+                {
+                    UserStory us = new UserStory(data.GetInt32(0), data["name"].ToString(), data.GetString(2));
+                    task.Add(us); //retrun stack inforamtion
+                }
+                data.Close();
+            }
+            return task;
         }
     }
 }
