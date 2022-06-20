@@ -184,5 +184,11 @@ namespace pr74_scrum_app.Controller
             return true;
         }
 
+        public bool UpdateState(UserStory userStory)
+        {
+            MySqlDataReader dr = db.ExecutQuery($"UPDATE {USER_STORIES_TABLE} SET state={userStory.State} WHERE id={userStory.Id};");
+            dr.Close();
+            return (dr.RecordsAffected > 0);
+        }
     }
 }
