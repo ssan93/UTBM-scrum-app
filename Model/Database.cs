@@ -18,9 +18,12 @@ namespace pr74_scrum_app
         //connection to database
         public void Connect()
         {
-            con = new MySqlConnection(connectionString);
-            con.Open();
-            Console.WriteLine($"MySQL version : {con.ServerVersion}");
+            if(con == null)
+            {
+                con = new MySqlConnection(connectionString);
+                con.Open();
+                Console.WriteLine($"MySQL version : {con.ServerVersion}");
+            }
         }
 
         //run a request

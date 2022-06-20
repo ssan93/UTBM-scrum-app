@@ -12,13 +12,19 @@ namespace pr74_scrum_app
 {
     public partial class CreatePojetForm : Form
     {
-        readonly UserController usercontroller = new UserController();
         private User user;
- 
+        UserController usercontroller = new UserController();
+        private ProfilForm profilForm;
+
         public CreatePojetForm(User user)
         {
             InitializeComponent();
             this.user = user;
+        }
+
+        public CreatePojetForm(User user, ProfilForm profilForm) : this(user)
+        {
+            this.profilForm = profilForm;
         }
 
         private void CreateValidedButton_Click(object sender, EventArgs e)
@@ -34,20 +40,24 @@ namespace pr74_scrum_app
                 {
                     usercontroller.CreateProjet(NameProjetText.Text,DescriptionTextBox.Text,this.user.Id);
                     ErrorLabel.Visible = false;
+
+                    this.profilForm.Close();
+                    this.profilForm.Show();
+
                     //refresh/reload profil form
-                    foreach (Form oForm in Application.OpenForms)
-                    {
-                        if (oForm is ProfilForm)
-                        {
-                            oForm.Hide();
-                            break;
-                        }
-                    }
-                    ProfilForm pro= new ProfilForm(user)
-                    {
-                        StartPosition = FormStartPosition.CenterScreen
-                    };
-                    pro.Show();
+                    //foreach (Form oForm in Application.OpenForms)
+                    //{
+                    //    if (oForm is ProfilForm)
+                    //    {
+                    //        oForm.Hide();
+                    //        break;
+                    //    }
+                    //}
+                    //ProfilForm pro = new ProfilForm(user)
+                    //{
+                    //    StartPosition = FormStartPosition.CenterScreen
+                    //};
+                    //pro.Show();
                     this.Close();
                 }
             }

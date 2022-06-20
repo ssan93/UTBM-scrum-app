@@ -13,8 +13,15 @@ namespace pr74_scrum_app
 {
     class UserController
     {
-        private readonly Database db = new Database();
+        private static Database db;
         private User user;
+ 
+        public UserController()
+        {
+            if (db == null){
+                db = new Database();
+            }
+        }
         //methode to sign in into the application
         public bool UserLogin(string pass, string email)
         {
@@ -146,32 +153,39 @@ namespace pr74_scrum_app
             }
         }
 
-        /* This methide reate a projet, fiell table project and table member
+        /* This methide create a projet, fiell table project and table member
          * the person whom create the projet is automatically the owner and the project stage archived is 0 for no
         */
         public void CreateProjet(string name, string description, int id)
         {
-            MySqlDataReader na, data;
+            MySqlDataReader md, data;
             int idpro = 0;
             try
             {
                 string insertProjet = $"insert into project(name,description,archived,created_dt) values('{name}','{description}',{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
                 data = db.ExecutQuery(insertProjet);
-                if (data.Read())
+                if(data!=null && data.HasRows)
                 {
-                    idpro = data.GetInt32(0); // get projet id
-                    data.Close();
+                    if (data.Read())
+                    {
+                        idpro = data.GetInt32(0); // get project id
+                        data.Close();
+                    }
+                    if (idpro != 0)
+                    {
+                        string insertMernber = $"insert into member(role,project_id,user_id) values('srummaster',{idpro},{id})";
+                        md = db.ExecutQuery(insertMernber);
+                        md.Close();
+                    }
                 }
-                if (idpro != 0)
+                else
                 {
-                    string insertMernber = $"insert into member(role,project_id,user_id) values('srummaster',{idpro},{id})";
-                    na = db.ExecutQuery(insertMernber);
-                    na.Close();
+                    MessageBox.Show("Votre projet n'a pas été crée correctement !");
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("Votre projet na pas été crée correctement : " + e.Message);
+                MessageBox.Show("Votre projet n'a pas été crée correctement : " + e.Message);
             }
         }
         public List<Project> ReloadProjet(int userid)
@@ -188,8 +202,8 @@ namespace pr74_scrum_app
                     Project pro = new Project(data.GetInt32(0),data["name"].ToString());
                     project.Add(pro); //retrun project nme and id 
                 }
-                data.Close();
             }
+            data.Close();
             return project;
         }
         public List<Sprint> ReloadSprint(int userid)
@@ -206,9 +220,10 @@ namespace pr74_scrum_app
                     Sprint sp = new Sprint(data.GetInt32(0), data["name"].ToString(),data.GetDateTime(2),data.GetDateTime(3));
                     sprint.Add(sp); //retrun sprint inforamtion
                 }
-                data.Close();
             }
+            data.Close();
             return sprint;
+
         }
 
         public List<UserStory> ReloadTask(int userid)
@@ -226,8 +241,8 @@ namespace pr74_scrum_app
                     UserStory us = new UserStory(data.GetInt32(0), data["name"].ToString(), data.GetString(2));
                     task.Add(us); //retrun stack inforamtion
                 }
-                data.Close();
             }
+            data.Close();
             return task;
         }
     }

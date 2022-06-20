@@ -14,7 +14,6 @@ namespace pr74_scrum_app
     public partial class ProfilForm : Form
     {
         private readonly User user;
-
         public ProfilForm(User User)
         {
             InitializeComponent();
@@ -72,7 +71,7 @@ namespace pr74_scrum_app
             TaskPictureBoxs.Add(TaskpictureBox3);
             TaskPictureBoxs.Add(TaskpictureBox4);
 
-            Loaddata();
+            LoadData();
         }
 
         private void PictureProfilBox_Click(object sender, EventArgs e)
@@ -134,16 +133,16 @@ namespace pr74_scrum_app
 
         private void CreateProjetButton_Click(object sender, EventArgs e)
         {
-            CreatePojetForm create = new CreatePojetForm(user);
+            CreatePojetForm create = new CreatePojetForm(user,this);
             create.Show();
         }
 
-        public void Loaddata()
+        public void LoadData()
         {
-            UserController usercontroller = new UserController();
-            var projects =usercontroller.ReloadProjet(this.user.Id);
-            var sprints = usercontroller.ReloadSprint(this.user.Id);
-            var tasks = usercontroller.ReloadTask(this.user.Id);
+            UserController userController=new UserController();
+            var projects =userController.ReloadProjet(this.user.Id);
+            var sprints = userController.ReloadSprint(this.user.Id);
+            var tasks = userController.ReloadTask(this.user.Id);
             if(!projects.Any()) //hide all projet composent and show no projet
             {
                 for(int i = 1; i < 4; i++)
@@ -169,7 +168,7 @@ namespace pr74_scrum_app
                     i++;
                 }
             }
-            if(!sprints.Any())
+            if (!sprints.Any())
             {
                 for (int i = 1; i < 4; i++)
                 {
@@ -194,7 +193,7 @@ namespace pr74_scrum_app
                     j++;
                 }
             }
-            if(!tasks.Any())
+            if (!tasks.Any())
             {
                 for (int i = 1; i < 4; i++)
                 {
@@ -204,7 +203,7 @@ namespace pr74_scrum_app
                 }
                 NoTaskLabel.Visible = true; ;
             }
-            else 
+            else
             {
                 int k = 0;
                 foreach (var item in sprints)
@@ -219,7 +218,6 @@ namespace pr74_scrum_app
                     k++;
                 }
             }
-            
         }
     }
 }
