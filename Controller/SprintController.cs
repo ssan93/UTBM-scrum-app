@@ -10,7 +10,7 @@ namespace pr74_scrum_app.Controller
         public Sprint FetchSprintById(int id)
         {
             Sprint sprint = null;
-            MySqlDataReader dr = db.ExecutQuery($"select * from sprint where id={id}");
+            MySqlDataReader dr = db.ExecutQuery($"select * from {SPRINTS_TABLE} where id={id}");
             if (dr.HasRows){
                 while (dr.Read())
                 {
@@ -41,7 +41,7 @@ namespace pr74_scrum_app.Controller
 
             // persister les informations de base du sprint 
             string sql = $"" +
-                $"INSERT INTO userstory " +
+                $"INSERT INTO {USER_STORIES_TABLE} " +
                 $"VALUES ({sprint.Id}, '{sprint.Name}', '{sprint.StartingDate}',{sprint.EndingDate},{projectId}) " +
                 $"ON DUPLICATE KEY " +
                 $"UPDATE name = '{sprint.Name}', startDate = '{sprint.StartingDate}', endDate = {sprint.EndingDate} ; ";

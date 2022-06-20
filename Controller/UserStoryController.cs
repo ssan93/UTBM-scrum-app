@@ -86,7 +86,7 @@ namespace pr74_scrum_app.Controller
             List<Member> assignees = new List<Member>();
             MySqlDataReader dr = db.ExecutQuery($"" +
                 $"SELECT member_id, role, user_id, lastname,firstname " +
-                $"FROM userstorymember usm, member m, users " +
+                $"FROM {ASSIGNEES_TABLE} usm, {MEMBERS_TABLE} m, users " +
                 $"WHERE usm.userstory_id={userStoryId} and usm.member_id =m.id and m.user_id= users.id;");
             if (dr.HasRows)
             {
@@ -119,7 +119,7 @@ namespace pr74_scrum_app.Controller
 
             // basics
             string sql = $"" +
-                $"INSERT INTO userstory " +
+                $"INSERT INTO {USER_STORIES_TABLE} " +
                 $"VALUES ({userStory.Id}, '{userStory.Name}', '{userStory.Description}',{userStory.Complexity},{userStory.Priority}, {sprintId}, {projectId}) " +
                 $"ON DUPLICATE KEY " +
                 $"UPDATE description = '{userStory.Description}', name = '{userStory.Name}', complexity = {userStory.Complexity}, priority = {userStory.Priority}, sprint_id={sprintId}, project_id={projectId} ; ";

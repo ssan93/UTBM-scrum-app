@@ -12,7 +12,8 @@ namespace pr74_scrum_app.Controller
         static protected Database db;
         protected readonly string COMMENTS_TABLE = "userstorycomment";
         protected readonly string ASSIGNEES_TABLE = "userstorymember";
-        protected readonly string SPRINTS_TABLE = "sprint";
+        protected readonly string SPRINTS_TABLE = "sprint"; 
+        protected readonly string MEMBERS_TABLE = "member"; 
         protected readonly string USER_STORIES_TABLE = "userstory";
 
         public Controller()
