@@ -38,7 +38,7 @@ CREATE TABLE `UserStory` (
   `description` varchar(255),
   `complexity` int,
   `priority` int,
-  `state` boolean,
+  `state` varchar(100),
   `sprint_id` int,
   `Project_id` int NOT NULL
 );
