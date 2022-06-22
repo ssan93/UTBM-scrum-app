@@ -102,7 +102,7 @@ namespace pr74_scrum_app
             this.CreateProjetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateProjetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateProjetButton.Location = new System.Drawing.Point(841, 89);
-            this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(2);
             this.CreateProjetButton.Name = "CreateProjetButton";
             this.CreateProjetButton.Size = new System.Drawing.Size(161, 28);
             this.CreateProjetButton.TabIndex = 19;
@@ -120,7 +120,7 @@ namespace pr74_scrum_app
             "Mon profil",
             "Déconnexion"});
             this.ProfilListBox.Location = new System.Drawing.Point(911, 38);
-            this.ProfilListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProfilListBox.Margin = new System.Windows.Forms.Padding(2);
             this.ProfilListBox.Name = "ProfilListBox";
             this.ProfilListBox.Size = new System.Drawing.Size(97, 51);
             this.ProfilListBox.TabIndex = 24;
@@ -133,7 +133,7 @@ namespace pr74_scrum_app
             // 
             this.RechercheTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RechercheTextBox.Location = new System.Drawing.Point(652, 93);
-            this.RechercheTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RechercheTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.RechercheTextBox.Name = "RechercheTextBox";
             this.RechercheTextBox.Size = new System.Drawing.Size(181, 23);
             this.RechercheTextBox.TabIndex = 26;
@@ -153,7 +153,7 @@ namespace pr74_scrum_app
             // 
             this.EmailtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailtextBox.Location = new System.Drawing.Point(765, 6);
-            this.EmailtextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmailtextBox.Margin = new System.Windows.Forms.Padding(2);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(205, 23);
             this.EmailtextBox.TabIndex = 29;
@@ -163,7 +163,7 @@ namespace pr74_scrum_app
             this.PictureProfilBox.BackColor = System.Drawing.Color.SteelBlue;
             this.PictureProfilBox.Image = ((System.Drawing.Image)(resources.GetObject("PictureProfilBox.Image")));
             this.PictureProfilBox.Location = new System.Drawing.Point(977, 2);
-            this.PictureProfilBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PictureProfilBox.Margin = new System.Windows.Forms.Padding(2);
             this.PictureProfilBox.Name = "PictureProfilBox";
             this.PictureProfilBox.Size = new System.Drawing.Size(22, 28);
             this.PictureProfilBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -177,7 +177,7 @@ namespace pr74_scrum_app
             this.Navbarpanel.Controls.Add(this.PictureProfilBox);
             this.Navbarpanel.Controls.Add(this.EmailtextBox);
             this.Navbarpanel.Location = new System.Drawing.Point(-2, 0);
-            this.Navbarpanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Navbarpanel.Margin = new System.Windows.Forms.Padding(2);
             this.Navbarpanel.Name = "Navbarpanel";
             this.Navbarpanel.Size = new System.Drawing.Size(1016, 33);
             this.Navbarpanel.TabIndex = 28;
@@ -217,48 +217,44 @@ namespace pr74_scrum_app
             // 
             // ProjectLabel1
             // 
-            this.ProjectLabel1.AutoSize = true;
             this.ProjectLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.ProjectLabel1.Location = new System.Drawing.Point(262, 225);
+            this.ProjectLabel1.Location = new System.Drawing.Point(254, 225);
             this.ProjectLabel1.Name = "ProjectLabel1";
-            this.ProjectLabel1.Size = new System.Drawing.Size(96, 15);
+            this.ProjectLabel1.Size = new System.Drawing.Size(116, 15);
             this.ProjectLabel1.TabIndex = 47;
             this.ProjectLabel1.Text = "ProjectLabel1";
             this.ProjectLabel1.Visible = false;
             // 
             // ProjectLabel2
             // 
-            this.ProjectLabel2.AutoSize = true;
             this.ProjectLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.ProjectLabel2.Location = new System.Drawing.Point(464, 225);
+            this.ProjectLabel2.Location = new System.Drawing.Point(450, 225);
             this.ProjectLabel2.Name = "ProjectLabel2";
-            this.ProjectLabel2.Size = new System.Drawing.Size(96, 15);
+            this.ProjectLabel2.Size = new System.Drawing.Size(122, 15);
             this.ProjectLabel2.TabIndex = 48;
             this.ProjectLabel2.Text = "ProjectLabel2";
             this.ProjectLabel2.Visible = false;
             // 
             // ProjectLabel3
             // 
-            this.ProjectLabel3.AutoSize = true;
             this.ProjectLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.ProjectLabel3.Location = new System.Drawing.Point(670, 225);
+            this.ProjectLabel3.Location = new System.Drawing.Point(655, 225);
             this.ProjectLabel3.Name = "ProjectLabel3";
-            this.ProjectLabel3.Size = new System.Drawing.Size(96, 15);
+            this.ProjectLabel3.Size = new System.Drawing.Size(121, 19);
             this.ProjectLabel3.TabIndex = 49;
             this.ProjectLabel3.Text = "ProjectLabel3";
             this.ProjectLabel3.Visible = false;
             // 
             // ProjectLabel4
             // 
-            this.ProjectLabel4.AutoSize = true;
             this.ProjectLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.ProjectLabel4.Location = new System.Drawing.Point(863, 224);
+            this.ProjectLabel4.Location = new System.Drawing.Point(849, 223);
             this.ProjectLabel4.Name = "ProjectLabel4";
-            this.ProjectLabel4.Size = new System.Drawing.Size(96, 15);
+            this.ProjectLabel4.Size = new System.Drawing.Size(121, 19);
             this.ProjectLabel4.TabIndex = 50;
             this.ProjectLabel4.Text = "ProjectLabel4";
             this.ProjectLabel4.Visible = false;
@@ -314,48 +310,44 @@ namespace pr74_scrum_app
             // 
             // SprintLabel1
             // 
-            this.SprintLabel1.AutoSize = true;
             this.SprintLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.SprintLabel1.Location = new System.Drawing.Point(262, 368);
+            this.SprintLabel1.Location = new System.Drawing.Point(250, 369);
             this.SprintLabel1.Name = "SprintLabel1";
-            this.SprintLabel1.Size = new System.Drawing.Size(89, 15);
+            this.SprintLabel1.Size = new System.Drawing.Size(121, 19);
             this.SprintLabel1.TabIndex = 55;
             this.SprintLabel1.Text = "SprintLabel1";
             this.SprintLabel1.Visible = false;
             // 
             // SprintLabel2
             // 
-            this.SprintLabel2.AutoSize = true;
             this.SprintLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.SprintLabel2.Location = new System.Drawing.Point(464, 369);
+            this.SprintLabel2.Location = new System.Drawing.Point(450, 369);
             this.SprintLabel2.Name = "SprintLabel2";
-            this.SprintLabel2.Size = new System.Drawing.Size(89, 15);
+            this.SprintLabel2.Size = new System.Drawing.Size(121, 19);
             this.SprintLabel2.TabIndex = 56;
             this.SprintLabel2.Text = "SprintLabel2";
             this.SprintLabel2.Visible = false;
             // 
             // SprintLabel3
             // 
-            this.SprintLabel3.AutoSize = true;
             this.SprintLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.SprintLabel3.Location = new System.Drawing.Point(668, 370);
+            this.SprintLabel3.Location = new System.Drawing.Point(657, 370);
             this.SprintLabel3.Name = "SprintLabel3";
-            this.SprintLabel3.Size = new System.Drawing.Size(89, 15);
+            this.SprintLabel3.Size = new System.Drawing.Size(121, 19);
             this.SprintLabel3.TabIndex = 57;
             this.SprintLabel3.Text = "SprintLabel3";
             this.SprintLabel3.Visible = false;
             // 
             // SprintLabel4
             // 
-            this.SprintLabel4.AutoSize = true;
             this.SprintLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.SprintLabel4.Location = new System.Drawing.Point(863, 370);
+            this.SprintLabel4.Location = new System.Drawing.Point(849, 370);
             this.SprintLabel4.Name = "SprintLabel4";
-            this.SprintLabel4.Size = new System.Drawing.Size(89, 15);
+            this.SprintLabel4.Size = new System.Drawing.Size(121, 19);
             this.SprintLabel4.TabIndex = 58;
             this.SprintLabel4.Text = "SprintLabel4";
             this.SprintLabel4.Visible = false;
@@ -365,7 +357,7 @@ namespace pr74_scrum_app
             this.SprintpictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox1.Image")));
             this.SprintpictureBox1.Location = new System.Drawing.Point(275, 318);
-            this.SprintpictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SprintpictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.SprintpictureBox1.Name = "SprintpictureBox1";
             this.SprintpictureBox1.Size = new System.Drawing.Size(62, 51);
             this.SprintpictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -378,7 +370,7 @@ namespace pr74_scrum_app
             this.SprintpictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox2.Image")));
             this.SprintpictureBox2.Location = new System.Drawing.Point(480, 319);
-            this.SprintpictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SprintpictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.SprintpictureBox2.Name = "SprintpictureBox2";
             this.SprintpictureBox2.Size = new System.Drawing.Size(62, 51);
             this.SprintpictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -391,7 +383,7 @@ namespace pr74_scrum_app
             this.SprintpictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox3.Image")));
             this.SprintpictureBox3.Location = new System.Drawing.Point(685, 318);
-            this.SprintpictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SprintpictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.SprintpictureBox3.Name = "SprintpictureBox3";
             this.SprintpictureBox3.Size = new System.Drawing.Size(62, 51);
             this.SprintpictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -404,7 +396,7 @@ namespace pr74_scrum_app
             this.SprintpictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox4.Image")));
             this.SprintpictureBox4.Location = new System.Drawing.Point(877, 317);
-            this.SprintpictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SprintpictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.SprintpictureBox4.Name = "SprintpictureBox4";
             this.SprintpictureBox4.Size = new System.Drawing.Size(62, 51);
             this.SprintpictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -414,48 +406,44 @@ namespace pr74_scrum_app
             // 
             // Tasklabel1
             // 
-            this.Tasklabel1.AutoSize = true;
             this.Tasklabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.Tasklabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Tasklabel1.Location = new System.Drawing.Point(262, 527);
+            this.Tasklabel1.Location = new System.Drawing.Point(248, 527);
             this.Tasklabel1.Name = "Tasklabel1";
-            this.Tasklabel1.Size = new System.Drawing.Size(77, 15);
+            this.Tasklabel1.Size = new System.Drawing.Size(121, 19);
             this.Tasklabel1.TabIndex = 63;
             this.Tasklabel1.Text = "Tasklabel1";
             this.Tasklabel1.Visible = false;
             // 
             // Tasklabel2
             // 
-            this.Tasklabel2.AutoSize = true;
             this.Tasklabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.Tasklabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Tasklabel2.Location = new System.Drawing.Point(464, 527);
+            this.Tasklabel2.Location = new System.Drawing.Point(452, 527);
             this.Tasklabel2.Name = "Tasklabel2";
-            this.Tasklabel2.Size = new System.Drawing.Size(77, 15);
+            this.Tasklabel2.Size = new System.Drawing.Size(121, 19);
             this.Tasklabel2.TabIndex = 64;
             this.Tasklabel2.Text = "Tasklabel2";
             this.Tasklabel2.Visible = false;
             // 
             // Tasklabel3
             // 
-            this.Tasklabel3.AutoSize = true;
             this.Tasklabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.Tasklabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Tasklabel3.Location = new System.Drawing.Point(670, 527);
+            this.Tasklabel3.Location = new System.Drawing.Point(658, 528);
             this.Tasklabel3.Name = "Tasklabel3";
-            this.Tasklabel3.Size = new System.Drawing.Size(77, 15);
+            this.Tasklabel3.Size = new System.Drawing.Size(121, 19);
             this.Tasklabel3.TabIndex = 65;
             this.Tasklabel3.Text = "Tasklabel3";
             this.Tasklabel3.Visible = false;
             // 
             // Tasklabel4
             // 
-            this.Tasklabel4.AutoSize = true;
             this.Tasklabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.Tasklabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Tasklabel4.Location = new System.Drawing.Point(863, 527);
+            this.Tasklabel4.Location = new System.Drawing.Point(850, 527);
             this.Tasklabel4.Name = "Tasklabel4";
-            this.Tasklabel4.Size = new System.Drawing.Size(77, 15);
+            this.Tasklabel4.Size = new System.Drawing.Size(121, 19);
             this.Tasklabel4.TabIndex = 66;
             this.Tasklabel4.Text = "Tasklabel4";
             this.Tasklabel4.Visible = false;
@@ -465,7 +453,7 @@ namespace pr74_scrum_app
             this.TaskpictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox1.Image")));
             this.TaskpictureBox1.Location = new System.Drawing.Point(278, 476);
-            this.TaskpictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskpictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.TaskpictureBox1.Name = "TaskpictureBox1";
             this.TaskpictureBox1.Size = new System.Drawing.Size(64, 51);
             this.TaskpictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -478,7 +466,7 @@ namespace pr74_scrum_app
             this.TaskpictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox2.Image")));
             this.TaskpictureBox2.Location = new System.Drawing.Point(480, 476);
-            this.TaskpictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskpictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.TaskpictureBox2.Name = "TaskpictureBox2";
             this.TaskpictureBox2.Size = new System.Drawing.Size(64, 51);
             this.TaskpictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -491,7 +479,7 @@ namespace pr74_scrum_app
             this.TaskpictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox3.Image")));
             this.TaskpictureBox3.Location = new System.Drawing.Point(685, 477);
-            this.TaskpictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskpictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.TaskpictureBox3.Name = "TaskpictureBox3";
             this.TaskpictureBox3.Size = new System.Drawing.Size(64, 51);
             this.TaskpictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -504,7 +492,7 @@ namespace pr74_scrum_app
             this.TaskpictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox4.Image")));
             this.TaskpictureBox4.Location = new System.Drawing.Point(878, 475);
-            this.TaskpictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskpictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.TaskpictureBox4.Name = "TaskpictureBox4";
             this.TaskpictureBox4.Size = new System.Drawing.Size(64, 51);
             this.TaskpictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -551,7 +539,10 @@ namespace pr74_scrum_app
             // TaskroundButton4
             // 
             this.TaskroundButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.TaskroundButton4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton4.FlatAppearance.BorderSize = 0;
+            this.TaskroundButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.TaskroundButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton4.ForeColor = System.Drawing.Color.White;
             this.TaskroundButton4.Location = new System.Drawing.Point(841, 471);
@@ -565,7 +556,10 @@ namespace pr74_scrum_app
             // TaskroundButton3
             // 
             this.TaskroundButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.TaskroundButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton3.FlatAppearance.BorderSize = 0;
+            this.TaskroundButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.TaskroundButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton3.ForeColor = System.Drawing.Color.White;
             this.TaskroundButton3.Location = new System.Drawing.Point(649, 472);
@@ -579,7 +573,10 @@ namespace pr74_scrum_app
             // TaskroundButton2
             // 
             this.TaskroundButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.TaskroundButton2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton2.FlatAppearance.BorderSize = 0;
+            this.TaskroundButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.TaskroundButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton2.ForeColor = System.Drawing.Color.White;
             this.TaskroundButton2.Location = new System.Drawing.Point(444, 472);
@@ -593,7 +590,10 @@ namespace pr74_scrum_app
             // TaskroundButton1
             // 
             this.TaskroundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.TaskroundButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton1.FlatAppearance.BorderSize = 0;
+            this.TaskroundButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.TaskroundButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton1.ForeColor = System.Drawing.Color.White;
             this.TaskroundButton1.Location = new System.Drawing.Point(242, 471);
@@ -607,8 +607,10 @@ namespace pr74_scrum_app
             // roundButtonSprint4
             // 
             this.roundButtonSprint4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.roundButtonSprint4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint4.FlatAppearance.BorderSize = 0;
             this.roundButtonSprint4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.roundButtonSprint4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint4.ForeColor = System.Drawing.Color.White;
             this.roundButtonSprint4.Location = new System.Drawing.Point(841, 314);
@@ -622,8 +624,10 @@ namespace pr74_scrum_app
             // roundButtonSprint3
             // 
             this.roundButtonSprint3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.roundButtonSprint3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint3.FlatAppearance.BorderSize = 0;
             this.roundButtonSprint3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.roundButtonSprint3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint3.ForeColor = System.Drawing.Color.White;
             this.roundButtonSprint3.Location = new System.Drawing.Point(649, 315);
@@ -637,8 +641,10 @@ namespace pr74_scrum_app
             // roundButtonSprint2
             // 
             this.roundButtonSprint2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.roundButtonSprint2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint2.FlatAppearance.BorderSize = 0;
             this.roundButtonSprint2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.roundButtonSprint2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint2.ForeColor = System.Drawing.Color.White;
             this.roundButtonSprint2.Location = new System.Drawing.Point(444, 315);
@@ -652,7 +658,9 @@ namespace pr74_scrum_app
             // roundButtonSprint1
             // 
             this.roundButtonSprint1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.roundButtonSprint1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint1.FlatAppearance.BorderSize = 0;
+            this.roundButtonSprint1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint1.ForeColor = System.Drawing.Color.White;
@@ -667,8 +675,10 @@ namespace pr74_scrum_app
             // ProjectRoundButton4
             // 
             this.ProjectRoundButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectRoundButton4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton4.FlatAppearance.BorderSize = 0;
             this.ProjectRoundButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectRoundButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton4.ForeColor = System.Drawing.Color.Black;
             this.ProjectRoundButton4.Location = new System.Drawing.Point(841, 168);
@@ -682,8 +692,10 @@ namespace pr74_scrum_app
             // ProjectRoundButton3
             // 
             this.ProjectRoundButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectRoundButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton3.FlatAppearance.BorderSize = 0;
             this.ProjectRoundButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectRoundButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton3.ForeColor = System.Drawing.Color.White;
             this.ProjectRoundButton3.Location = new System.Drawing.Point(649, 169);
@@ -697,8 +709,10 @@ namespace pr74_scrum_app
             // ProjectRoundButton2
             // 
             this.ProjectRoundButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectRoundButton2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton2.FlatAppearance.BorderSize = 0;
             this.ProjectRoundButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectRoundButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.ProjectRoundButton2.Location = new System.Drawing.Point(444, 169);
@@ -712,8 +726,10 @@ namespace pr74_scrum_app
             // ProjectRoundButton1
             // 
             this.ProjectRoundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectRoundButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton1.FlatAppearance.BorderSize = 0;
             this.ProjectRoundButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.ProjectRoundButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton1.ForeColor = System.Drawing.Color.White;
             this.ProjectRoundButton1.Location = new System.Drawing.Point(242, 168);
@@ -778,7 +794,7 @@ namespace pr74_scrum_app
             this.Controls.Add(this.ProfilListBox);
             this.Controls.Add(this.CreateProjetButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "ProfilForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

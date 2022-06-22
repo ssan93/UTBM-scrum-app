@@ -232,7 +232,7 @@ namespace pr74_scrum_app
             var task = new List<UserStory>();
             string sqltask = "select userStory.id,userStory.name,userStory.state from userStory inner join project on project.id=userStory.Project_id " +
                 " inner join member on member.project_id=project.id " +
-                $"where member.user_id ={userid} order by project.created_dt DESC,project.id DESC LIMIT 4";
+                $" where member.user_id ={userid} and userStory.state <> 'done' order by project.created_dt DESC,project.id DESC LIMIT 4";
             data = db.ExecutQuery(sqltask);
             if (data != null && data.HasRows)
             {

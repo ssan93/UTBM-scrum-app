@@ -221,7 +221,7 @@ namespace pr74_scrum_app
             else
             {
                 int k = 0;
-                foreach (var item in sprints)
+                foreach (var item in tasks)
                 {
                     Label label = tacklabels[k];
                     View.RoundButton button = Tasksroudboutons[k];
@@ -234,5 +234,6 @@ namespace pr74_scrum_app
                 }
             }
         }
+
     }
 }
