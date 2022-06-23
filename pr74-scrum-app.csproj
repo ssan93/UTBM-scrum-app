@@ -89,6 +89,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ProjectController.cs" />
+    <Compile Include="View\ProjectViewSubForms\ArchiveProjectConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\ArchiveProjectConfirmationForm.Designer.cs">
+      <DependentUpon>ArchiveProjectConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\RemoveMemberFromProjectConfirmationPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\RemoveMemberFromProjectConfirmationPopUp.Designer.cs">
+      <DependentUpon>RemoveMemberFromProjectConfirmationPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddFeatureToBacklogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddFeatureToBacklogForm.Designer.cs">
+      <DependentUpon>AddFeatureToBacklogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddNewSprintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddNewSprintForm.Designer.cs">
+      <DependentUpon>AddNewSprintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddNewMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddNewMemberForm.Designer.cs">
+      <DependentUpon>AddNewMemberForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Model\Backlog.cs" />
     <Compile Include="Model\Comment.cs" />
@@ -100,6 +131,12 @@
     <Compile Include="Model\SprintBacklog.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserStory.cs" />
+    <Compile Include="View\ProjectViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewForm.Designer.cs">
+      <DependentUpon>ProjectViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +163,21 @@
     <Compile Include="View\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ProjectViewSubForms\ArchiveProjectConfirmationForm.resx">
+      <DependentUpon>ArchiveProjectConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\RemoveMemberFromProjectConfirmationPopUp.resx">
+      <DependentUpon>RemoveMemberFromProjectConfirmationPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\AddFeatureToBacklogForm.resx">
+      <DependentUpon>AddFeatureToBacklogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\AddNewMemberForm.resx">
+      <DependentUpon>AddNewMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewForm.resx">
+      <DependentUpon>ProjectViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +192,9 @@
     </Compile>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\AddNewSprintForm.resx">
+      <DependentUpon>AddNewSprintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
