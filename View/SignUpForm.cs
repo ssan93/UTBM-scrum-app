@@ -52,5 +52,17 @@ namespace pr74_scrum_app
                 }
             }
         }
+
+        private void SignUpForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HomeButton(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeForm home = new HomeForm();
+            home.ShowDialog();
+        }
     }
 }

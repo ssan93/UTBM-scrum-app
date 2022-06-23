@@ -20,7 +20,7 @@ namespace pr74_scrum_app
         private void SignInButton_Click(object sender, EventArgs e)
         {
             UserController login = new UserController();
-            if (login.UserLogin(signinpasswordText.Text.Trim(), signiemailText.Text.Trim()))
+            if (login.UserLogin(signinpasswordText.Text.Trim(), signinemailText.Text.Trim()))
             {
                 this.Hide();
                 MainForm mp = new MainForm(login.GetUserEmail(),login.GetUserId());
@@ -45,6 +45,13 @@ namespace pr74_scrum_app
                     break;
                 }
             }
+        }
+
+        private void HomeButton(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeForm home = new HomeForm();
+            home.ShowDialog();
         }
     }
 }
