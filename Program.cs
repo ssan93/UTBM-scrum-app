@@ -18,7 +18,7 @@ namespace pr74_scrum_app
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View.SprintForm(1));
+            Application.Run(new HomeForm());
         }
     }
 }
