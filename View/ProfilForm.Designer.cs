@@ -101,10 +101,10 @@ namespace pr74_scrum_app
             this.CreateProjetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.CreateProjetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateProjetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateProjetButton.Location = new System.Drawing.Point(841, 89);
-            this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateProjetButton.Location = new System.Drawing.Point(1121, 110);
+            this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjetButton.Name = "CreateProjetButton";
-            this.CreateProjetButton.Size = new System.Drawing.Size(161, 28);
+            this.CreateProjetButton.Size = new System.Drawing.Size(215, 34);
             this.CreateProjetButton.TabIndex = 19;
             this.CreateProjetButton.Text = "Créer un projet";
             this.CreateProjetButton.UseVisualStyleBackColor = true;
@@ -115,14 +115,14 @@ namespace pr74_scrum_app
             this.ProfilListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProfilListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfilListBox.FormattingEnabled = true;
-            this.ProfilListBox.ItemHeight = 17;
+            this.ProfilListBox.ItemHeight = 20;
             this.ProfilListBox.Items.AddRange(new object[] {
             "Mon profil",
             "Déconnexion"});
-            this.ProfilListBox.Location = new System.Drawing.Point(911, 38);
-            this.ProfilListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ProfilListBox.Location = new System.Drawing.Point(1215, 47);
+            this.ProfilListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProfilListBox.Name = "ProfilListBox";
-            this.ProfilListBox.Size = new System.Drawing.Size(97, 51);
+            this.ProfilListBox.Size = new System.Drawing.Size(129, 60);
             this.ProfilListBox.TabIndex = 24;
             this.ProfilListBox.Visible = false;
             this.ProfilListBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ProfilListBox_MouseClick);
@@ -132,40 +132,39 @@ namespace pr74_scrum_app
             // RechercheTextBox
             // 
             this.RechercheTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RechercheTextBox.Location = new System.Drawing.Point(652, 93);
-            this.RechercheTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RechercheTextBox.Location = new System.Drawing.Point(869, 114);
+            this.RechercheTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RechercheTextBox.Name = "RechercheTextBox";
-            this.RechercheTextBox.Size = new System.Drawing.Size(181, 23);
+            this.RechercheTextBox.Size = new System.Drawing.Size(240, 27);
             this.RechercheTextBox.TabIndex = 26;
             // 
             // RechercheLabel
             // 
             this.RechercheLabel.AutoSize = true;
             this.RechercheLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RechercheLabel.Location = new System.Drawing.Point(704, 76);
-            this.RechercheLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RechercheLabel.Location = new System.Drawing.Point(939, 94);
             this.RechercheLabel.Name = "RechercheLabel";
-            this.RechercheLabel.Size = new System.Drawing.Size(86, 17);
+            this.RechercheLabel.Size = new System.Drawing.Size(99, 20);
             this.RechercheLabel.TabIndex = 27;
             this.RechercheLabel.Text = "Recherche";
             // 
             // EmailtextBox
             // 
             this.EmailtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailtextBox.Location = new System.Drawing.Point(765, 6);
-            this.EmailtextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.EmailtextBox.Location = new System.Drawing.Point(1020, 7);
+            this.EmailtextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(205, 23);
+            this.EmailtextBox.Size = new System.Drawing.Size(272, 27);
             this.EmailtextBox.TabIndex = 29;
             // 
             // PictureProfilBox
             // 
             this.PictureProfilBox.BackColor = System.Drawing.Color.SteelBlue;
             this.PictureProfilBox.Image = ((System.Drawing.Image)(resources.GetObject("PictureProfilBox.Image")));
-            this.PictureProfilBox.Location = new System.Drawing.Point(977, 2);
-            this.PictureProfilBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PictureProfilBox.Location = new System.Drawing.Point(1303, 2);
+            this.PictureProfilBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PictureProfilBox.Name = "PictureProfilBox";
-            this.PictureProfilBox.Size = new System.Drawing.Size(22, 28);
+            this.PictureProfilBox.Size = new System.Drawing.Size(29, 34);
             this.PictureProfilBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureProfilBox.TabIndex = 21;
             this.PictureProfilBox.TabStop = false;
@@ -176,20 +175,19 @@ namespace pr74_scrum_app
             this.Navbarpanel.BackColor = System.Drawing.Color.SteelBlue;
             this.Navbarpanel.Controls.Add(this.PictureProfilBox);
             this.Navbarpanel.Controls.Add(this.EmailtextBox);
-            this.Navbarpanel.Location = new System.Drawing.Point(-2, 0);
-            this.Navbarpanel.Margin = new System.Windows.Forms.Padding(2);
+            this.Navbarpanel.Location = new System.Drawing.Point(-3, 0);
+            this.Navbarpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Navbarpanel.Name = "Navbarpanel";
-            this.Navbarpanel.Size = new System.Drawing.Size(1016, 33);
+            this.Navbarpanel.Size = new System.Drawing.Size(1355, 41);
             this.Navbarpanel.TabIndex = 28;
             // 
             // RecentProjetLabel
             // 
             this.RecentProjetLabel.AutoSize = true;
             this.RecentProjetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RecentProjetLabel.Location = new System.Drawing.Point(248, 119);
-            this.RecentProjetLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RecentProjetLabel.Location = new System.Drawing.Point(331, 146);
             this.RecentProjetLabel.Name = "RecentProjetLabel";
-            this.RecentProjetLabel.Size = new System.Drawing.Size(149, 24);
+            this.RecentProjetLabel.Size = new System.Drawing.Size(189, 29);
             this.RecentProjetLabel.TabIndex = 33;
             this.RecentProjetLabel.Text = "Projets récents";
             // 
@@ -197,10 +195,9 @@ namespace pr74_scrum_app
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(248, 268);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(331, 330);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 24);
+            this.label1.Size = new System.Drawing.Size(175, 29);
             this.label1.TabIndex = 38;
             this.label1.Text = "Sprint récents";
             // 
@@ -208,10 +205,9 @@ namespace pr74_scrum_app
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(248, 422);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(331, 519);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(274, 24);
+            this.label2.Size = new System.Drawing.Size(344, 29);
             this.label2.TabIndex = 43;
             this.label2.Text = "Dernières tâches assignées ";
             // 
@@ -219,295 +215,334 @@ namespace pr74_scrum_app
             // 
             this.ProjectLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.ProjectLabel1.Location = new System.Drawing.Point(254, 225);
+            this.ProjectLabel1.Location = new System.Drawing.Point(339, 277);
+            this.ProjectLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProjectLabel1.Name = "ProjectLabel1";
-            this.ProjectLabel1.Size = new System.Drawing.Size(116, 15);
+            this.ProjectLabel1.Size = new System.Drawing.Size(155, 18);
             this.ProjectLabel1.TabIndex = 47;
             this.ProjectLabel1.Text = "ProjectLabel1";
             this.ProjectLabel1.Visible = false;
+            this.ProjectLabel1.Click += new System.EventHandler(this.ProjectLabel1_Click);
             // 
             // ProjectLabel2
             // 
             this.ProjectLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.ProjectLabel2.Location = new System.Drawing.Point(450, 225);
+            this.ProjectLabel2.Location = new System.Drawing.Point(600, 277);
+            this.ProjectLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProjectLabel2.Name = "ProjectLabel2";
-            this.ProjectLabel2.Size = new System.Drawing.Size(122, 15);
+            this.ProjectLabel2.Size = new System.Drawing.Size(163, 18);
             this.ProjectLabel2.TabIndex = 48;
             this.ProjectLabel2.Text = "ProjectLabel2";
             this.ProjectLabel2.Visible = false;
+            this.ProjectLabel2.Click += new System.EventHandler(this.ProjectLabel2_Click);
             // 
             // ProjectLabel3
             // 
             this.ProjectLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.ProjectLabel3.Location = new System.Drawing.Point(655, 225);
+            this.ProjectLabel3.Location = new System.Drawing.Point(873, 277);
+            this.ProjectLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProjectLabel3.Name = "ProjectLabel3";
-            this.ProjectLabel3.Size = new System.Drawing.Size(121, 19);
+            this.ProjectLabel3.Size = new System.Drawing.Size(161, 23);
             this.ProjectLabel3.TabIndex = 49;
             this.ProjectLabel3.Text = "ProjectLabel3";
             this.ProjectLabel3.Visible = false;
+            this.ProjectLabel3.Click += new System.EventHandler(this.ProjectLabel3_Click);
             // 
             // ProjectLabel4
             // 
             this.ProjectLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.ProjectLabel4.Location = new System.Drawing.Point(849, 223);
+            this.ProjectLabel4.Location = new System.Drawing.Point(1132, 274);
+            this.ProjectLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProjectLabel4.Name = "ProjectLabel4";
-            this.ProjectLabel4.Size = new System.Drawing.Size(121, 19);
+            this.ProjectLabel4.Size = new System.Drawing.Size(161, 23);
             this.ProjectLabel4.TabIndex = 50;
             this.ProjectLabel4.Text = "ProjectLabel4";
             this.ProjectLabel4.Visible = false;
+            this.ProjectLabel4.Click += new System.EventHandler(this.ProjectLabel4_Click);
             // 
             // ProjectPictureBox1
             // 
             this.ProjectPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox1.Image")));
-            this.ProjectPictureBox1.Location = new System.Drawing.Point(280, 172);
+            this.ProjectPictureBox1.Location = new System.Drawing.Point(373, 212);
+            this.ProjectPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectPictureBox1.Name = "ProjectPictureBox1";
-            this.ProjectPictureBox1.Size = new System.Drawing.Size(62, 50);
+            this.ProjectPictureBox1.Size = new System.Drawing.Size(83, 62);
             this.ProjectPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProjectPictureBox1.TabIndex = 51;
             this.ProjectPictureBox1.TabStop = false;
             this.ProjectPictureBox1.Visible = false;
+            this.ProjectPictureBox1.Click += new System.EventHandler(this.ProjectPictureBox1_Click);
             // 
             // ProjectPictureBox2
             // 
             this.ProjectPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox2.Image")));
-            this.ProjectPictureBox2.Location = new System.Drawing.Point(481, 172);
+            this.ProjectPictureBox2.Location = new System.Drawing.Point(641, 212);
+            this.ProjectPictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectPictureBox2.Name = "ProjectPictureBox2";
-            this.ProjectPictureBox2.Size = new System.Drawing.Size(62, 50);
+            this.ProjectPictureBox2.Size = new System.Drawing.Size(83, 62);
             this.ProjectPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProjectPictureBox2.TabIndex = 52;
             this.ProjectPictureBox2.TabStop = false;
             this.ProjectPictureBox2.Visible = false;
+            this.ProjectPictureBox2.Click += new System.EventHandler(this.ProjectPictureBox2_Click);
             // 
             // ProjectPictureBox3
             // 
             this.ProjectPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox3.Image")));
-            this.ProjectPictureBox3.Location = new System.Drawing.Point(685, 172);
+            this.ProjectPictureBox3.Location = new System.Drawing.Point(913, 212);
+            this.ProjectPictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectPictureBox3.Name = "ProjectPictureBox3";
-            this.ProjectPictureBox3.Size = new System.Drawing.Size(62, 50);
+            this.ProjectPictureBox3.Size = new System.Drawing.Size(83, 62);
             this.ProjectPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProjectPictureBox3.TabIndex = 53;
             this.ProjectPictureBox3.TabStop = false;
             this.ProjectPictureBox3.UseWaitCursor = true;
             this.ProjectPictureBox3.Visible = false;
+            this.ProjectPictureBox3.Click += new System.EventHandler(this.ProjectPictureBox3_Click);
             // 
             // ProjectPictureBox4
             // 
             this.ProjectPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox4.Image")));
-            this.ProjectPictureBox4.Location = new System.Drawing.Point(876, 170);
+            this.ProjectPictureBox4.Location = new System.Drawing.Point(1168, 209);
+            this.ProjectPictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectPictureBox4.Name = "ProjectPictureBox4";
-            this.ProjectPictureBox4.Size = new System.Drawing.Size(62, 50);
+            this.ProjectPictureBox4.Size = new System.Drawing.Size(83, 62);
             this.ProjectPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProjectPictureBox4.TabIndex = 54;
             this.ProjectPictureBox4.TabStop = false;
             this.ProjectPictureBox4.Visible = false;
+            this.ProjectPictureBox4.Click += new System.EventHandler(this.ProjectPictureBox4_Click);
             // 
             // SprintLabel1
             // 
             this.SprintLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.SprintLabel1.Location = new System.Drawing.Point(250, 369);
+            this.SprintLabel1.Location = new System.Drawing.Point(333, 454);
+            this.SprintLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SprintLabel1.Name = "SprintLabel1";
-            this.SprintLabel1.Size = new System.Drawing.Size(121, 19);
+            this.SprintLabel1.Size = new System.Drawing.Size(161, 23);
             this.SprintLabel1.TabIndex = 55;
             this.SprintLabel1.Text = "SprintLabel1";
             this.SprintLabel1.Visible = false;
+            this.SprintLabel1.Click += new System.EventHandler(this.SprintLabel1_Click);
             // 
             // SprintLabel2
             // 
             this.SprintLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.SprintLabel2.Location = new System.Drawing.Point(450, 369);
+            this.SprintLabel2.Location = new System.Drawing.Point(600, 454);
+            this.SprintLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SprintLabel2.Name = "SprintLabel2";
-            this.SprintLabel2.Size = new System.Drawing.Size(121, 19);
+            this.SprintLabel2.Size = new System.Drawing.Size(161, 23);
             this.SprintLabel2.TabIndex = 56;
             this.SprintLabel2.Text = "SprintLabel2";
             this.SprintLabel2.Visible = false;
+            this.SprintLabel2.Click += new System.EventHandler(this.SprintLabel2_Click);
             // 
             // SprintLabel3
             // 
             this.SprintLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.SprintLabel3.Location = new System.Drawing.Point(657, 370);
+            this.SprintLabel3.Location = new System.Drawing.Point(876, 455);
+            this.SprintLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SprintLabel3.Name = "SprintLabel3";
-            this.SprintLabel3.Size = new System.Drawing.Size(121, 19);
+            this.SprintLabel3.Size = new System.Drawing.Size(161, 23);
             this.SprintLabel3.TabIndex = 57;
             this.SprintLabel3.Text = "SprintLabel3";
             this.SprintLabel3.Visible = false;
+            this.SprintLabel3.Click += new System.EventHandler(this.SprintLabel3_Click);
             // 
             // SprintLabel4
             // 
             this.SprintLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.SprintLabel4.Location = new System.Drawing.Point(849, 370);
+            this.SprintLabel4.Location = new System.Drawing.Point(1132, 455);
+            this.SprintLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SprintLabel4.Name = "SprintLabel4";
-            this.SprintLabel4.Size = new System.Drawing.Size(121, 19);
+            this.SprintLabel4.Size = new System.Drawing.Size(161, 23);
             this.SprintLabel4.TabIndex = 58;
             this.SprintLabel4.Text = "SprintLabel4";
             this.SprintLabel4.Visible = false;
+            this.SprintLabel4.Click += new System.EventHandler(this.SprintLabel4_Click);
             // 
             // SprintpictureBox1
             // 
             this.SprintpictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox1.Image")));
-            this.SprintpictureBox1.Location = new System.Drawing.Point(275, 318);
-            this.SprintpictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.SprintpictureBox1.Location = new System.Drawing.Point(367, 391);
+            this.SprintpictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SprintpictureBox1.Name = "SprintpictureBox1";
-            this.SprintpictureBox1.Size = new System.Drawing.Size(62, 51);
+            this.SprintpictureBox1.Size = new System.Drawing.Size(83, 63);
             this.SprintpictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SprintpictureBox1.TabIndex = 59;
             this.SprintpictureBox1.TabStop = false;
             this.SprintpictureBox1.Visible = false;
+            this.SprintpictureBox1.Click += new System.EventHandler(this.SprintpictureBox1_Click);
             // 
             // SprintpictureBox2
             // 
             this.SprintpictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox2.Image")));
-            this.SprintpictureBox2.Location = new System.Drawing.Point(480, 319);
-            this.SprintpictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.SprintpictureBox2.Location = new System.Drawing.Point(640, 393);
+            this.SprintpictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SprintpictureBox2.Name = "SprintpictureBox2";
-            this.SprintpictureBox2.Size = new System.Drawing.Size(62, 51);
+            this.SprintpictureBox2.Size = new System.Drawing.Size(83, 63);
             this.SprintpictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SprintpictureBox2.TabIndex = 60;
             this.SprintpictureBox2.TabStop = false;
             this.SprintpictureBox2.Visible = false;
+            this.SprintpictureBox2.Click += new System.EventHandler(this.SprintpictureBox2_Click);
             // 
             // SprintpictureBox3
             // 
             this.SprintpictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox3.Image")));
-            this.SprintpictureBox3.Location = new System.Drawing.Point(685, 318);
-            this.SprintpictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.SprintpictureBox3.Location = new System.Drawing.Point(913, 391);
+            this.SprintpictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SprintpictureBox3.Name = "SprintpictureBox3";
-            this.SprintpictureBox3.Size = new System.Drawing.Size(62, 51);
+            this.SprintpictureBox3.Size = new System.Drawing.Size(83, 63);
             this.SprintpictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SprintpictureBox3.TabIndex = 61;
             this.SprintpictureBox3.TabStop = false;
             this.SprintpictureBox3.Visible = false;
+            this.SprintpictureBox3.Click += new System.EventHandler(this.SprintpictureBox3_Click);
             // 
             // SprintpictureBox4
             // 
             this.SprintpictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox4.Image")));
-            this.SprintpictureBox4.Location = new System.Drawing.Point(877, 317);
-            this.SprintpictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.SprintpictureBox4.Location = new System.Drawing.Point(1169, 390);
+            this.SprintpictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SprintpictureBox4.Name = "SprintpictureBox4";
-            this.SprintpictureBox4.Size = new System.Drawing.Size(62, 51);
+            this.SprintpictureBox4.Size = new System.Drawing.Size(83, 63);
             this.SprintpictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SprintpictureBox4.TabIndex = 62;
             this.SprintpictureBox4.TabStop = false;
             this.SprintpictureBox4.Visible = false;
+            this.SprintpictureBox4.Click += new System.EventHandler(this.SprintpictureBox4_Click);
             // 
             // Tasklabel1
             // 
             this.Tasklabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.Tasklabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Tasklabel1.Location = new System.Drawing.Point(248, 527);
+            this.Tasklabel1.Location = new System.Drawing.Point(331, 649);
+            this.Tasklabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Tasklabel1.Name = "Tasklabel1";
-            this.Tasklabel1.Size = new System.Drawing.Size(121, 19);
+            this.Tasklabel1.Size = new System.Drawing.Size(161, 23);
             this.Tasklabel1.TabIndex = 63;
             this.Tasklabel1.Text = "Tasklabel1";
             this.Tasklabel1.Visible = false;
+            this.Tasklabel1.Click += new System.EventHandler(this.Tasklabel1_Click);
             // 
             // Tasklabel2
             // 
             this.Tasklabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.Tasklabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Tasklabel2.Location = new System.Drawing.Point(452, 527);
+            this.Tasklabel2.Location = new System.Drawing.Point(603, 649);
+            this.Tasklabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Tasklabel2.Name = "Tasklabel2";
-            this.Tasklabel2.Size = new System.Drawing.Size(121, 19);
+            this.Tasklabel2.Size = new System.Drawing.Size(161, 23);
             this.Tasklabel2.TabIndex = 64;
             this.Tasklabel2.Text = "Tasklabel2";
             this.Tasklabel2.Visible = false;
+            this.Tasklabel2.Click += new System.EventHandler(this.Tasklabel2_Click);
             // 
             // Tasklabel3
             // 
             this.Tasklabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.Tasklabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Tasklabel3.Location = new System.Drawing.Point(658, 528);
+            this.Tasklabel3.Location = new System.Drawing.Point(877, 650);
+            this.Tasklabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Tasklabel3.Name = "Tasklabel3";
-            this.Tasklabel3.Size = new System.Drawing.Size(121, 19);
+            this.Tasklabel3.Size = new System.Drawing.Size(161, 23);
             this.Tasklabel3.TabIndex = 65;
             this.Tasklabel3.Text = "Tasklabel3";
             this.Tasklabel3.Visible = false;
+            this.Tasklabel3.Click += new System.EventHandler(this.Tasklabel3_Click);
             // 
             // Tasklabel4
             // 
             this.Tasklabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.Tasklabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Tasklabel4.Location = new System.Drawing.Point(850, 527);
+            this.Tasklabel4.Location = new System.Drawing.Point(1133, 649);
+            this.Tasklabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Tasklabel4.Name = "Tasklabel4";
-            this.Tasklabel4.Size = new System.Drawing.Size(121, 19);
+            this.Tasklabel4.Size = new System.Drawing.Size(161, 23);
             this.Tasklabel4.TabIndex = 66;
             this.Tasklabel4.Text = "Tasklabel4";
             this.Tasklabel4.Visible = false;
+            this.Tasklabel4.Click += new System.EventHandler(this.Tasklabel4_Click);
             // 
             // TaskpictureBox1
             // 
             this.TaskpictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox1.Image")));
-            this.TaskpictureBox1.Location = new System.Drawing.Point(278, 476);
-            this.TaskpictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskpictureBox1.Location = new System.Drawing.Point(371, 586);
+            this.TaskpictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskpictureBox1.Name = "TaskpictureBox1";
-            this.TaskpictureBox1.Size = new System.Drawing.Size(64, 51);
+            this.TaskpictureBox1.Size = new System.Drawing.Size(85, 63);
             this.TaskpictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.TaskpictureBox1.TabIndex = 67;
             this.TaskpictureBox1.TabStop = false;
             this.TaskpictureBox1.Visible = false;
+            this.TaskpictureBox1.Click += new System.EventHandler(this.TaskpictureBox1_Click);
             // 
             // TaskpictureBox2
             // 
             this.TaskpictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox2.Image")));
-            this.TaskpictureBox2.Location = new System.Drawing.Point(480, 476);
-            this.TaskpictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskpictureBox2.Location = new System.Drawing.Point(640, 586);
+            this.TaskpictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskpictureBox2.Name = "TaskpictureBox2";
-            this.TaskpictureBox2.Size = new System.Drawing.Size(64, 51);
+            this.TaskpictureBox2.Size = new System.Drawing.Size(85, 63);
             this.TaskpictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.TaskpictureBox2.TabIndex = 68;
             this.TaskpictureBox2.TabStop = false;
             this.TaskpictureBox2.Visible = false;
+            this.TaskpictureBox2.Click += new System.EventHandler(this.TaskpictureBox2_Click);
             // 
             // TaskpictureBox3
             // 
             this.TaskpictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox3.Image")));
-            this.TaskpictureBox3.Location = new System.Drawing.Point(685, 477);
-            this.TaskpictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskpictureBox3.Location = new System.Drawing.Point(913, 587);
+            this.TaskpictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskpictureBox3.Name = "TaskpictureBox3";
-            this.TaskpictureBox3.Size = new System.Drawing.Size(64, 51);
+            this.TaskpictureBox3.Size = new System.Drawing.Size(85, 63);
             this.TaskpictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.TaskpictureBox3.TabIndex = 69;
             this.TaskpictureBox3.TabStop = false;
             this.TaskpictureBox3.Visible = false;
+            this.TaskpictureBox3.Click += new System.EventHandler(this.TaskpictureBox3_Click);
             // 
             // TaskpictureBox4
             // 
             this.TaskpictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox4.Image")));
-            this.TaskpictureBox4.Location = new System.Drawing.Point(878, 475);
-            this.TaskpictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskpictureBox4.Location = new System.Drawing.Point(1171, 585);
+            this.TaskpictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskpictureBox4.Name = "TaskpictureBox4";
-            this.TaskpictureBox4.Size = new System.Drawing.Size(64, 51);
+            this.TaskpictureBox4.Size = new System.Drawing.Size(85, 63);
             this.TaskpictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.TaskpictureBox4.TabIndex = 70;
             this.TaskpictureBox4.TabStop = false;
             this.TaskpictureBox4.Visible = false;
+            this.TaskpictureBox4.Click += new System.EventHandler(this.TaskpictureBox4_Click);
             // 
             // NoProjectLabel
             // 
             this.NoProjectLabel.AutoSize = true;
             this.NoProjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoProjectLabel.Location = new System.Drawing.Point(253, 195);
-            this.NoProjectLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NoProjectLabel.Location = new System.Drawing.Point(337, 240);
             this.NoProjectLabel.Name = "NoProjectLabel";
-            this.NoProjectLabel.Size = new System.Drawing.Size(166, 17);
+            this.NoProjectLabel.Size = new System.Drawing.Size(196, 20);
             this.NoProjectLabel.TabIndex = 71;
             this.NoProjectLabel.Text = "Aucun projet à votre actif";
             this.NoProjectLabel.Visible = false;
@@ -516,10 +551,9 @@ namespace pr74_scrum_app
             // 
             this.NoSprintLabel.AutoSize = true;
             this.NoSprintLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoSprintLabel.Location = new System.Drawing.Point(253, 344);
-            this.NoSprintLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NoSprintLabel.Location = new System.Drawing.Point(337, 423);
             this.NoSprintLabel.Name = "NoSprintLabel";
-            this.NoSprintLabel.Size = new System.Drawing.Size(167, 17);
+            this.NoSprintLabel.Size = new System.Drawing.Size(198, 20);
             this.NoSprintLabel.TabIndex = 72;
             this.NoSprintLabel.Text = "Aucun Sprint à votre actif";
             this.NoSprintLabel.Visible = false;
@@ -528,10 +562,9 @@ namespace pr74_scrum_app
             // 
             this.NoTaskLabel.AutoSize = true;
             this.NoTaskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoTaskLabel.Location = new System.Drawing.Point(252, 502);
-            this.NoTaskLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NoTaskLabel.Location = new System.Drawing.Point(336, 618);
             this.NoTaskLabel.Name = "NoTaskLabel";
-            this.NoTaskLabel.Size = new System.Drawing.Size(173, 17);
+            this.NoTaskLabel.Size = new System.Drawing.Size(204, 20);
             this.NoTaskLabel.TabIndex = 73;
             this.NoTaskLabel.Text = "Aucune tâche à votre actif";
             this.NoTaskLabel.Visible = false;
@@ -545,13 +578,14 @@ namespace pr74_scrum_app
             this.TaskroundButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton4.ForeColor = System.Drawing.Color.White;
-            this.TaskroundButton4.Location = new System.Drawing.Point(841, 471);
-            this.TaskroundButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskroundButton4.Location = new System.Drawing.Point(1121, 580);
+            this.TaskroundButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskroundButton4.Name = "TaskroundButton4";
-            this.TaskroundButton4.Size = new System.Drawing.Size(135, 79);
+            this.TaskroundButton4.Size = new System.Drawing.Size(180, 97);
             this.TaskroundButton4.TabIndex = 46;
             this.TaskroundButton4.UseVisualStyleBackColor = false;
             this.TaskroundButton4.Visible = false;
+            this.TaskroundButton4.Click += new System.EventHandler(this.TaskroundButton4_Click);
             // 
             // TaskroundButton3
             // 
@@ -562,13 +596,14 @@ namespace pr74_scrum_app
             this.TaskroundButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton3.ForeColor = System.Drawing.Color.White;
-            this.TaskroundButton3.Location = new System.Drawing.Point(649, 472);
-            this.TaskroundButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskroundButton3.Location = new System.Drawing.Point(865, 581);
+            this.TaskroundButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskroundButton3.Name = "TaskroundButton3";
-            this.TaskroundButton3.Size = new System.Drawing.Size(135, 79);
+            this.TaskroundButton3.Size = new System.Drawing.Size(180, 97);
             this.TaskroundButton3.TabIndex = 45;
             this.TaskroundButton3.UseVisualStyleBackColor = false;
             this.TaskroundButton3.Visible = false;
+            this.TaskroundButton3.Click += new System.EventHandler(this.TaskroundButton3_Click);
             // 
             // TaskroundButton2
             // 
@@ -579,13 +614,14 @@ namespace pr74_scrum_app
             this.TaskroundButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton2.ForeColor = System.Drawing.Color.White;
-            this.TaskroundButton2.Location = new System.Drawing.Point(444, 472);
-            this.TaskroundButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskroundButton2.Location = new System.Drawing.Point(592, 581);
+            this.TaskroundButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskroundButton2.Name = "TaskroundButton2";
-            this.TaskroundButton2.Size = new System.Drawing.Size(135, 79);
+            this.TaskroundButton2.Size = new System.Drawing.Size(180, 97);
             this.TaskroundButton2.TabIndex = 44;
             this.TaskroundButton2.UseVisualStyleBackColor = false;
             this.TaskroundButton2.Visible = false;
+            this.TaskroundButton2.Click += new System.EventHandler(this.TaskroundButton2_Click);
             // 
             // TaskroundButton1
             // 
@@ -596,13 +632,14 @@ namespace pr74_scrum_app
             this.TaskroundButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskroundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton1.ForeColor = System.Drawing.Color.White;
-            this.TaskroundButton1.Location = new System.Drawing.Point(242, 471);
-            this.TaskroundButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskroundButton1.Location = new System.Drawing.Point(323, 580);
+            this.TaskroundButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskroundButton1.Name = "TaskroundButton1";
-            this.TaskroundButton1.Size = new System.Drawing.Size(135, 79);
+            this.TaskroundButton1.Size = new System.Drawing.Size(180, 97);
             this.TaskroundButton1.TabIndex = 42;
             this.TaskroundButton1.UseVisualStyleBackColor = false;
             this.TaskroundButton1.Visible = false;
+            this.TaskroundButton1.Click += new System.EventHandler(this.TaskroundButton1_Click);
             // 
             // roundButtonSprint4
             // 
@@ -613,13 +650,14 @@ namespace pr74_scrum_app
             this.roundButtonSprint4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint4.ForeColor = System.Drawing.Color.White;
-            this.roundButtonSprint4.Location = new System.Drawing.Point(841, 314);
-            this.roundButtonSprint4.Margin = new System.Windows.Forms.Padding(2);
+            this.roundButtonSprint4.Location = new System.Drawing.Point(1121, 386);
+            this.roundButtonSprint4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roundButtonSprint4.Name = "roundButtonSprint4";
-            this.roundButtonSprint4.Size = new System.Drawing.Size(135, 79);
+            this.roundButtonSprint4.Size = new System.Drawing.Size(180, 97);
             this.roundButtonSprint4.TabIndex = 41;
             this.roundButtonSprint4.UseVisualStyleBackColor = false;
             this.roundButtonSprint4.Visible = false;
+            this.roundButtonSprint4.Click += new System.EventHandler(this.roundButtonSprint4_Click);
             // 
             // roundButtonSprint3
             // 
@@ -630,13 +668,14 @@ namespace pr74_scrum_app
             this.roundButtonSprint3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint3.ForeColor = System.Drawing.Color.White;
-            this.roundButtonSprint3.Location = new System.Drawing.Point(649, 315);
-            this.roundButtonSprint3.Margin = new System.Windows.Forms.Padding(2);
+            this.roundButtonSprint3.Location = new System.Drawing.Point(865, 388);
+            this.roundButtonSprint3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roundButtonSprint3.Name = "roundButtonSprint3";
-            this.roundButtonSprint3.Size = new System.Drawing.Size(135, 79);
+            this.roundButtonSprint3.Size = new System.Drawing.Size(180, 97);
             this.roundButtonSprint3.TabIndex = 40;
             this.roundButtonSprint3.UseVisualStyleBackColor = false;
             this.roundButtonSprint3.Visible = false;
+            this.roundButtonSprint3.Click += new System.EventHandler(this.roundButtonSprint3_Click);
             // 
             // roundButtonSprint2
             // 
@@ -647,13 +686,14 @@ namespace pr74_scrum_app
             this.roundButtonSprint2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint2.ForeColor = System.Drawing.Color.White;
-            this.roundButtonSprint2.Location = new System.Drawing.Point(444, 315);
-            this.roundButtonSprint2.Margin = new System.Windows.Forms.Padding(2);
+            this.roundButtonSprint2.Location = new System.Drawing.Point(592, 388);
+            this.roundButtonSprint2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roundButtonSprint2.Name = "roundButtonSprint2";
-            this.roundButtonSprint2.Size = new System.Drawing.Size(135, 79);
+            this.roundButtonSprint2.Size = new System.Drawing.Size(180, 97);
             this.roundButtonSprint2.TabIndex = 39;
             this.roundButtonSprint2.UseVisualStyleBackColor = false;
             this.roundButtonSprint2.Visible = false;
+            this.roundButtonSprint2.Click += new System.EventHandler(this.roundButtonSprint2_Click);
             // 
             // roundButtonSprint1
             // 
@@ -664,13 +704,14 @@ namespace pr74_scrum_app
             this.roundButtonSprint1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.roundButtonSprint1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint1.ForeColor = System.Drawing.Color.White;
-            this.roundButtonSprint1.Location = new System.Drawing.Point(242, 314);
-            this.roundButtonSprint1.Margin = new System.Windows.Forms.Padding(2);
+            this.roundButtonSprint1.Location = new System.Drawing.Point(323, 386);
+            this.roundButtonSprint1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roundButtonSprint1.Name = "roundButtonSprint1";
-            this.roundButtonSprint1.Size = new System.Drawing.Size(135, 79);
+            this.roundButtonSprint1.Size = new System.Drawing.Size(180, 97);
             this.roundButtonSprint1.TabIndex = 37;
             this.roundButtonSprint1.UseVisualStyleBackColor = false;
             this.roundButtonSprint1.Visible = false;
+            this.roundButtonSprint1.Click += new System.EventHandler(this.roundButtonSprint1_Click);
             // 
             // ProjectRoundButton4
             // 
@@ -681,13 +722,14 @@ namespace pr74_scrum_app
             this.ProjectRoundButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton4.ForeColor = System.Drawing.Color.Black;
-            this.ProjectRoundButton4.Location = new System.Drawing.Point(841, 168);
-            this.ProjectRoundButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRoundButton4.Location = new System.Drawing.Point(1121, 207);
+            this.ProjectRoundButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectRoundButton4.Name = "ProjectRoundButton4";
-            this.ProjectRoundButton4.Size = new System.Drawing.Size(135, 79);
+            this.ProjectRoundButton4.Size = new System.Drawing.Size(180, 97);
             this.ProjectRoundButton4.TabIndex = 36;
             this.ProjectRoundButton4.UseVisualStyleBackColor = false;
             this.ProjectRoundButton4.Visible = false;
+            this.ProjectRoundButton4.Click += new System.EventHandler(this.ProjectRoundButton4_Click);
             // 
             // ProjectRoundButton3
             // 
@@ -698,13 +740,14 @@ namespace pr74_scrum_app
             this.ProjectRoundButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton3.ForeColor = System.Drawing.Color.White;
-            this.ProjectRoundButton3.Location = new System.Drawing.Point(649, 169);
-            this.ProjectRoundButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRoundButton3.Location = new System.Drawing.Point(865, 208);
+            this.ProjectRoundButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectRoundButton3.Name = "ProjectRoundButton3";
-            this.ProjectRoundButton3.Size = new System.Drawing.Size(135, 79);
+            this.ProjectRoundButton3.Size = new System.Drawing.Size(180, 97);
             this.ProjectRoundButton3.TabIndex = 35;
             this.ProjectRoundButton3.UseVisualStyleBackColor = false;
             this.ProjectRoundButton3.Visible = false;
+            this.ProjectRoundButton3.Click += new System.EventHandler(this.ProjectRoundButton3_Click);
             // 
             // ProjectRoundButton2
             // 
@@ -715,13 +758,14 @@ namespace pr74_scrum_app
             this.ProjectRoundButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.ProjectRoundButton2.Location = new System.Drawing.Point(444, 169);
-            this.ProjectRoundButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRoundButton2.Location = new System.Drawing.Point(592, 208);
+            this.ProjectRoundButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectRoundButton2.Name = "ProjectRoundButton2";
-            this.ProjectRoundButton2.Size = new System.Drawing.Size(135, 79);
+            this.ProjectRoundButton2.Size = new System.Drawing.Size(180, 97);
             this.ProjectRoundButton2.TabIndex = 34;
             this.ProjectRoundButton2.UseVisualStyleBackColor = false;
             this.ProjectRoundButton2.Visible = false;
+            this.ProjectRoundButton2.Click += new System.EventHandler(this.ProjectRoundButton2_Click);
             // 
             // ProjectRoundButton1
             // 
@@ -732,20 +776,21 @@ namespace pr74_scrum_app
             this.ProjectRoundButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectRoundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton1.ForeColor = System.Drawing.Color.White;
-            this.ProjectRoundButton1.Location = new System.Drawing.Point(242, 168);
-            this.ProjectRoundButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRoundButton1.Location = new System.Drawing.Point(323, 207);
+            this.ProjectRoundButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectRoundButton1.Name = "ProjectRoundButton1";
-            this.ProjectRoundButton1.Size = new System.Drawing.Size(135, 79);
+            this.ProjectRoundButton1.Size = new System.Drawing.Size(180, 97);
             this.ProjectRoundButton1.TabIndex = 29;
             this.ProjectRoundButton1.UseVisualStyleBackColor = false;
             this.ProjectRoundButton1.Visible = false;
+            this.ProjectRoundButton1.Click += new System.EventHandler(this.ProjectRoundButton1_Click);
             // 
             // ProfilForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1011, 586);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.NoTaskLabel);
             this.Controls.Add(this.NoSprintLabel);
             this.Controls.Add(this.NoProjectLabel);
@@ -794,7 +839,7 @@ namespace pr74_scrum_app
             this.Controls.Add(this.ProfilListBox);
             this.Controls.Add(this.CreateProjetButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "ProfilForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -849,7 +894,7 @@ namespace pr74_scrum_app
         private System.Windows.Forms.Label ProjectLabel3;
         private System.Windows.Forms.Label ProjectLabel4;
         private List<System.Windows.Forms.Label> projectLabels;
-        private List<View.RoundButton> roudboutonProjet;
+        private List<View.RoundButton> roudboutonProjects;
         private System.Windows.Forms.PictureBox ProjectPictureBox1;
         private System.Windows.Forms.PictureBox ProjectPictureBox2;
         private System.Windows.Forms.PictureBox ProjectPictureBox3;
@@ -874,7 +919,7 @@ namespace pr74_scrum_app
         private System.Windows.Forms.PictureBox TaskpictureBox2;
         private System.Windows.Forms.PictureBox TaskpictureBox3;
         private System.Windows.Forms.PictureBox TaskpictureBox4;
-        private List<System.Windows.Forms.Label> tacklabels;
+        private List<System.Windows.Forms.Label> tasklabels;
         private List<View.RoundButton> Tasksroudboutons;
         private List<System.Windows.Forms.PictureBox> TaskPictureBoxs;
         private System.Windows.Forms.Label NoProjectLabel;

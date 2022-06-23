@@ -15,6 +15,10 @@ namespace pr74_scrum_app
     {
         private readonly User user;
         private Boolean show=true;
+        List<Project> projects;
+        List<Sprint> sprints;
+        List<UserStory> tasks;
+
         public ProfilForm(User User)
         {
             InitializeComponent();
@@ -27,11 +31,11 @@ namespace pr74_scrum_app
             projectLabels.Add(ProjectLabel2);
             projectLabels.Add(ProjectLabel3);
             projectLabels.Add(ProjectLabel4);
-            roudboutonProjet = new List<View.RoundButton>();
-            roudboutonProjet.Add(ProjectRoundButton1);
-            roudboutonProjet.Add(ProjectRoundButton2);
-            roudboutonProjet.Add(ProjectRoundButton3);
-            roudboutonProjet.Add(ProjectRoundButton4);
+            roudboutonProjects = new List<View.RoundButton>();
+            roudboutonProjects.Add(ProjectRoundButton1);
+            roudboutonProjects.Add(ProjectRoundButton2);
+            roudboutonProjects.Add(ProjectRoundButton3);
+            roudboutonProjects.Add(ProjectRoundButton4);
             ProjectPictureBoxs= new List<PictureBox>();
             ProjectPictureBoxs.Add(ProjectPictureBox1);
             ProjectPictureBoxs.Add(ProjectPictureBox2);
@@ -56,11 +60,11 @@ namespace pr74_scrum_app
             SprintPictureBoxs.Add(SprintpictureBox4);
 
             //stack
-            tacklabels = new List<Label>();
-            tacklabels.Add(Tasklabel1);
-            tacklabels.Add(Tasklabel2);
-            tacklabels.Add(Tasklabel3);
-            tacklabels.Add(Tasklabel4);
+            tasklabels = new List<Label>();
+            tasklabels.Add(Tasklabel1);
+            tasklabels.Add(Tasklabel2);
+            tasklabels.Add(Tasklabel3);
+            tasklabels.Add(Tasklabel4);
             Tasksroudboutons = new List<View.RoundButton>();
             Tasksroudboutons.Add(TaskroundButton1);
             Tasksroudboutons.Add(TaskroundButton2);
@@ -155,14 +159,14 @@ namespace pr74_scrum_app
         public void LoadData()
         {
             UserController userController=new UserController();
-            var projects =userController.ReloadProjet(this.user.Id);
-            var sprints = userController.ReloadSprint(this.user.Id);
-            var tasks = userController.ReloadTask(this.user.Id);
+            projects =userController.ReloadProjet(this.user.Id);
+            sprints = userController.ReloadSprint(this.user.Id);
+            tasks = userController.ReloadTask(this.user.Id);
             if(!projects.Any()) //hide all projet composent and show no projet
             {
                 for(int i = 1; i < 4; i++)
                 {
-                    roudboutonProjet[i].Visible = false;
+                    roudboutonProjects[i].Visible = false;
                     ProjectPictureBoxs[i].Visible = false;
                     projectLabels[i].Visible = false;
                 }
@@ -174,7 +178,7 @@ namespace pr74_scrum_app
                 foreach (var item in projects)
                 {
                     Label label = projectLabels[i];
-                    View.RoundButton button = roudboutonProjet[i];
+                    View.RoundButton button = roudboutonProjects[i];
                     PictureBox picture = ProjectPictureBoxs[i];
                     label.Visible = true;
                     button.Visible = true;
@@ -214,7 +218,7 @@ namespace pr74_scrum_app
                 {
                     Tasksroudboutons[i].Visible = false;
                     TaskPictureBoxs[i].Visible = false;
-                    tacklabels[i].Visible = false;
+                    tasklabels[i].Visible = false;
                 }
                 NoTaskLabel.Visible = true; ;
             }
@@ -223,7 +227,7 @@ namespace pr74_scrum_app
                 int k = 0;
                 foreach (var item in tasks)
                 {
-                    Label label = tacklabels[k];
+                    Label label = tasklabels[k];
                     View.RoundButton button = Tasksroudboutons[k];
                     PictureBox picture = TaskPictureBoxs[k];
                     label.Visible = true;
@@ -235,5 +239,101 @@ namespace pr74_scrum_app
             }
         }
 
+        //action when user click on one project 
+        private void OnItemProjectLabel_click(object sender)
+        {
+            Label controler = sender as Label;
+            int i = projectLabels.IndexOf(controler);
+            Console.WriteLine("label " + projects[i].Name + " " + projects[i].Id);
+        }
+        private void OnItemProjectBouton_click(object sender)
+        {
+            View.RoundButton controler = sender as View.RoundButton;
+            int i = roudboutonProjects.IndexOf(controler);
+            Console.WriteLine("roundBouton " + projects[i].Name + " " + projects[i].Id);
+        }
+        private void OnItemProjectPic_click(object sender)
+        {
+            PictureBox controler = sender as PictureBox;
+            int i = ProjectPictureBoxs.IndexOf(controler);
+            Console.WriteLine("pic " + projects[i].Name + " " + projects[i].Id);
+        }
+        private void ProjectLabel1_Click(object sender, EventArgs e){OnItemProjectLabel_click(sender);}
+        private void ProjectRoundButton1_Click(object sender, EventArgs e){OnItemProjectBouton_click(sender);}
+        private void ProjectPictureBox1_Click(object sender, EventArgs e){OnItemProjectPic_click(sender);}
+        private void ProjectPictureBox2_Click(object sender, EventArgs e){OnItemProjectPic_click(sender);}
+        private void ProjectRoundButton2_Click(object sender, EventArgs e){OnItemProjectBouton_click(sender);}
+        private void ProjectLabel2_Click(object sender, EventArgs e){ OnItemProjectLabel_click(sender);}
+        private void ProjectPictureBox3_Click(object sender, EventArgs e){ OnItemProjectPic_click(sender);}
+        private void ProjectRoundButton3_Click(object sender, EventArgs e){OnItemProjectBouton_click(sender);}
+        private void ProjectLabel3_Click(object sender, EventArgs e){OnItemProjectLabel_click(sender);}
+        private void ProjectRoundButton4_Click(object sender, EventArgs e){ OnItemProjectBouton_click(sender);}
+        private void ProjectPictureBox4_Click(object sender, EventArgs e){OnItemProjectPic_click(sender);}
+        private void ProjectLabel4_Click(object sender, EventArgs e){OnItemProjectLabel_click(sender);}
+
+        //action when user click on one sprint
+        private void OnItemSprintLabel_click(object sender)
+        {
+            Label controler = sender as Label;
+            int i = Sprintlabels.IndexOf(controler);
+            Console.WriteLine("label " + sprints[i].Name + " " + sprints[i].Id);
+        }
+        private void OnItemSprintBouton_click(object sender)
+        {
+            View.RoundButton controler = sender as View.RoundButton;
+            int i = roudboutonSprints.IndexOf(controler);
+            Console.WriteLine("roundBouton " + sprints[i].Name + " " + sprints[i].Id);
+        }
+        private void OnItemSprintPic_click(object sender)
+        {
+            PictureBox controler = sender as PictureBox;
+            int i = SprintPictureBoxs.IndexOf(controler);
+            Console.WriteLine("pic " + sprints[i].Name + " " + sprints[i].Id);
+        }
+        private void SprintpictureBox1_Click(object sender, EventArgs e) { OnItemSprintPic_click(sender); }
+        private void SprintpictureBox2_Click(object sender, EventArgs e) { OnItemSprintPic_click(sender); }
+        private void SprintpictureBox3_Click(object sender, EventArgs e) { OnItemSprintPic_click(sender); }
+        private void SprintpictureBox4_Click(object sender, EventArgs e) { OnItemSprintPic_click(sender); }
+        private void roundButtonSprint1_Click(object sender, EventArgs e) { OnItemSprintBouton_click(sender); }
+        private void roundButtonSprint2_Click(object sender, EventArgs e) { OnItemSprintBouton_click(sender); }
+        private void roundButtonSprint3_Click(object sender, EventArgs e) { OnItemSprintBouton_click(sender); }
+        private void roundButtonSprint4_Click(object sender, EventArgs e) { OnItemSprintBouton_click(sender); }
+        private void SprintLabel1_Click(object sender, EventArgs e) { OnItemSprintLabel_click(sender); }
+        private void SprintLabel2_Click(object sender, EventArgs e) { OnItemSprintLabel_click(sender); }
+        private void SprintLabel3_Click(object sender, EventArgs e) { OnItemSprintLabel_click(sender); }
+        private void SprintLabel4_Click(object sender, EventArgs e) { OnItemSprintLabel_click(sender); }
+
+        //action when user click on one Task
+        private void OnItemTaskLabel_click(object sender)
+        {
+            Label controler = sender as Label;
+            int i = tasklabels.IndexOf(controler);
+            Console.WriteLine("label " + tasks[i].Name + " " + tasks[i].Id);
+        }
+        private void OnItemTaskBouton_click(object sender)
+        {
+            View.RoundButton controler = sender as View.RoundButton;
+            int i = Tasksroudboutons.IndexOf(controler);
+            Console.WriteLine("roundBouton " + tasks[i].Name + " " + tasks[i].Id);
+        }
+        private void OnItemTaskPic_click(object sender)
+        {
+            PictureBox controler = sender as PictureBox;
+            int i = TaskPictureBoxs.IndexOf(controler);
+            Console.WriteLine("pic " + tasks[i].Name + " " + tasks[i].Id);
+        }
+        private void Tasklabel1_Click(object sender, EventArgs e) { OnItemTaskLabel_click(sender); }
+        private void Tasklabel2_Click(object sender, EventArgs e) { OnItemTaskLabel_click(sender); }
+        private void Tasklabel3_Click(object sender, EventArgs e) { OnItemTaskLabel_click(sender); }
+        private void Tasklabel4_Click(object sender, EventArgs e) { OnItemTaskLabel_click(sender); }
+        private void TaskpictureBox1_Click(object sender, EventArgs e) { OnItemTaskPic_click(sender); }
+        private void TaskpictureBox2_Click(object sender, EventArgs e) { OnItemTaskPic_click(sender); }
+        private void TaskpictureBox3_Click(object sender, EventArgs e) { OnItemTaskPic_click(sender); }
+        private void TaskpictureBox4_Click(object sender, EventArgs e) { OnItemTaskPic_click(sender); 
+    }
+        private void TaskroundButton1_Click(object sender, EventArgs e) { OnItemTaskBouton_click(sender); }
+        private void TaskroundButton2_Click(object sender, EventArgs e) { OnItemTaskBouton_click(sender); }
+        private void TaskroundButton3_Click(object sender, EventArgs e) { OnItemTaskBouton_click(sender); }
+        private void TaskroundButton4_Click(object sender, EventArgs e) { OnItemTaskBouton_click(sender); }
     }
 }
