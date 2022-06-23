@@ -29,9 +29,10 @@ namespace pr74_scrum_app
 
         private void CreateValidedButton_Click(object sender, EventArgs e)
         {
-            if (DescriptionTextBox.Text.Length<250 && NameProjetText.Text.Length < 20)
+            if (DescriptionTextBox.Text.Length<250 && NameProjetText.Text.Length < 30)
             {
                 TailleDescriptionLabel.Visible = false;
+                MaxnameLabel.Visible = false;
                 if (string.IsNullOrWhiteSpace(NameProjetText.Text) || string.IsNullOrWhiteSpace(DescriptionTextBox.Text))
                 {
                     ErrorLabel.Visible = true;
@@ -57,7 +58,7 @@ namespace pr74_scrum_app
                 {
                     TailleDescriptionLabel.Visible = true;
                 }
-                if (NameProjetText.Text.Length > 20)
+                if (NameProjetText.Text.Length > 30)
                 {
                     MaxnameLabel.Visible = true;
                 }

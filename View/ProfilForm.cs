@@ -18,6 +18,7 @@ namespace pr74_scrum_app
         List<Project> projects;
         List<Sprint> sprints;
         List<UserStory> tasks;
+        List<Project> searchproject;
 
         public ProfilForm(User User)
         {
@@ -77,6 +78,7 @@ namespace pr74_scrum_app
             TaskPictureBoxs.Add(TaskpictureBox4);
 
             LoadData();
+            AddDataIntocombox();
         }
 
         private void PictureProfilBox_Click(object sender, EventArgs e)
@@ -335,5 +337,23 @@ namespace pr74_scrum_app
         private void TaskroundButton2_Click(object sender, EventArgs e) { OnItemTaskBouton_click(sender); }
         private void TaskroundButton3_Click(object sender, EventArgs e) { OnItemTaskBouton_click(sender); }
         private void TaskroundButton4_Click(object sender, EventArgs e) { OnItemTaskBouton_click(sender); }
+
+        private void AddDataIntocombox()
+        {
+            UserController userController = new UserController();
+            searchproject = userController.SearchProject(this.user.Id);
+            foreach(var item in searchproject)
+            {
+                ResearchProjectcomboBox.Items.Add(item.Name);
+            }
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ResearchProjectcomboBox.SelectedIndex > -1)
+            {
+                //send this to neew form
+                Console.WriteLine("label " + searchproject[ResearchProjectcomboBox.SelectedIndex].Name + " " + searchproject[ResearchProjectcomboBox.SelectedIndex].Id);
+            }
+        }
     }
 }

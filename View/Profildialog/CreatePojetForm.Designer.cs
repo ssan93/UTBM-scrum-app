@@ -66,7 +66,7 @@ namespace pr74_scrum_app
             // NameProjetText
             // 
             this.NameProjetText.Location = new System.Drawing.Point(101, 80);
-            this.NameProjetText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NameProjetText.Margin = new System.Windows.Forms.Padding(2);
             this.NameProjetText.Name = "NameProjetText";
             this.NameProjetText.Size = new System.Drawing.Size(200, 20);
             this.NameProjetText.TabIndex = 24;
@@ -78,7 +78,7 @@ namespace pr74_scrum_app
             this.CreateValidedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateValidedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateValidedButton.Location = new System.Drawing.Point(137, 214);
-            this.CreateValidedButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CreateValidedButton.Margin = new System.Windows.Forms.Padding(2);
             this.CreateValidedButton.Name = "CreateValidedButton";
             this.CreateValidedButton.Size = new System.Drawing.Size(105, 24);
             this.CreateValidedButton.TabIndex = 27;
@@ -112,7 +112,7 @@ namespace pr74_scrum_app
             // DescriptionTextBox
             // 
             this.DescriptionTextBox.Location = new System.Drawing.Point(101, 131);
-            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(200, 48);
@@ -139,7 +139,7 @@ namespace pr74_scrum_app
             this.MaxnameLabel.Name = "MaxnameLabel";
             this.MaxnameLabel.Size = new System.Drawing.Size(145, 13);
             this.MaxnameLabel.TabIndex = 32;
-            this.MaxnameLabel.Text = "Taille Maximun 20 caractères";
+            this.MaxnameLabel.Text = "Taille Maximun 30 caractères";
             this.MaxnameLabel.Visible = false;
             // 
             // CreatePojetForm
@@ -159,7 +159,7 @@ namespace pr74_scrum_app
             this.Controls.Add(this.NameProjetText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreatePojetForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ScrumApp";

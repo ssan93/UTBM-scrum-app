@@ -193,7 +193,7 @@ namespace pr74_scrum_app
             MySqlDataReader data;
             var project = new List<Project>();
             string sqlprojet = "select project.id,name from project inner join member on member.Project_id=project.id " +
-                $"where member.user_id ={userid} order by project.created_dt DESC,project.id DESC LIMIT 4";            
+                $"where member.user_id={userid} order by project.created_dt DESC,project.id DESC LIMIT 4";            
             data = db.ExecutQuery(sqlprojet);
             if(data !=null && data.HasRows)
             {
@@ -244,6 +244,25 @@ namespace pr74_scrum_app
             }
             data.Close();
             return task;
+        }
+
+        public List<Project> SearchProject(int userid)
+        {
+            MySqlDataReader data;
+            var project = new List<Project>();
+            string sqlprojet = "select project.id,name from project inner join member on member.Project_id=project.id " +
+                $"where member.user_id={userid} order by project.created_dt DESC,project.id DESC";
+            data = db.ExecutQuery(sqlprojet);
+            if (data != null && data.HasRows)
+            {
+                while (data.Read())
+                {
+                    Project pro = new Project(data.GetInt32(0), data["name"].ToString());
+                    project.Add(pro); //retrun project nme and id 
+                }
+            }
+            data.Close();
+            return project;
         }
     }
 }
