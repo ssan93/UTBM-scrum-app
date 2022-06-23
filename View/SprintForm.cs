@@ -28,12 +28,11 @@ namespace pr74_scrum_app.View
             if(sprint == null)
                 // TODO: redirection vers menu project
                 MessageBox.Show("404 : Sprint not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            GenerateUserStoryPanels(sprint.Backlog.UserStories);
+            sprintController.test();
 
-            //panel1.MouseDown += new MouseEventHandler(this.List_MouseDown);
-            //inProgressList.Add(panel1);
-            generateUserStoryPanels(sprint.Backlog.UserStories);
         }
-        private void generateUserStoryPanels(List<UserStory> userStories)
+        private void GenerateUserStoryPanels(List<UserStory> userStories)
         {
             ClearLists();
             foreach (UserStory us in userStories)
@@ -51,10 +50,9 @@ namespace pr74_scrum_app.View
         private List<UserStory> Search(string query)
         {
             List<UserStory> selected = new List<UserStory> ();
-            bool selectable = false;
             foreach(UserStory us in sprint.Backlog.UserStories)
             {
-                selectable = false;
+                bool selectable = false;
                 if (us.Name.Contains(query)){
                     selectable = true;
                 }
@@ -136,19 +134,19 @@ namespace pr74_scrum_app.View
         }
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            generateUserStoryPanels(sprint.Backlog.UserStories);
+            GenerateUserStoryPanels(sprint.Backlog.UserStories);
             if (searchBar.Text.Length != 0)
             {
                 cancelSearchButton.Visible = true;
                 string query = searchBar.Text;
-                generateUserStoryPanels(Search(query));
+                GenerateUserStoryPanels(Search(query));
             }
         }
-        private void cancelSearchButton_Click(object sender, EventArgs e)
+        private void CancelSearchButton_Click(object sender, EventArgs e)
         {
             cancelSearchButton.Visible = false;
             searchBar.Text = "";
-            generateUserStoryPanels(sprint.Backlog.UserStories);
+            GenerateUserStoryPanels(sprint.Backlog.UserStories);
         }
     }
 }

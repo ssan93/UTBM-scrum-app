@@ -177,7 +177,7 @@
             this.cancelSearchButton.Text = "X";
             this.cancelSearchButton.UseVisualStyleBackColor = false;
             this.cancelSearchButton.Visible = false;
-            this.cancelSearchButton.Click += new System.EventHandler(this.cancelSearchButton_Click);
+            this.cancelSearchButton.Click += new System.EventHandler(this.CancelSearchButton_Click);
             // 
             // searchButton
             // 
