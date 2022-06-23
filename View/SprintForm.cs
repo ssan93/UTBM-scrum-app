@@ -29,7 +29,6 @@ namespace pr74_scrum_app.View
                 // TODO: redirection vers menu project
                 MessageBox.Show("404 : Sprint not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
-            sprintController.test();
 
         }
         private void GenerateUserStoryPanels(List<UserStory> userStories)

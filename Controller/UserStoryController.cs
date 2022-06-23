@@ -46,6 +46,35 @@ namespace pr74_scrum_app.Controller
 
             return userStories;
         }
+        public UserStory FetchUserStoriesById(int id)
+        {
+            UserStory userStory = null;
+            // Fetching the userStories basic infos
+            MySqlDataReader dr = Database.ExecutQuery($"select * from userstory where id={id}");
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    string name = (string)dr["name"];
+                    string description = (string)dr["description"];
+                    int complexity = (int)dr["complexity"];
+                    int priotity = (int)dr["priority"];
+                    string state = (string)dr["state"];
+                    userStory = new UserStory(id, name, state);
+                    userStory.Priority = priotity;
+                    userStory.Complexity = complexity;
+                    userStory.Description = description;
+                    // Fetching userStories comments
+                    userStory.Comments = FetchUserStoryComments(userStory.Id);
+
+                    // Fetching userStories assignees
+                    userStory.Assignees = FetchUserStoryAssignees(userStory.Id);
+                }
+            }
+            dr.Close();
+
+            return userStory;
+        }
         public List<Comment> FetchUserStoryComments(int userStoryId)
         {
             List<Comment> comments = new List<Comment>();
