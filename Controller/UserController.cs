@@ -8,13 +8,13 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-namespace pr74_scrum_app
+namespace pr74_scrum_app.Controller
 {
-    class UserController
+    class UserController : Controller
     {
-        private readonly Database db = new Database();
         string email;
         int id;
+        public UserController(): base() {}
         public string GetUserEmail()//when user is login this methode return email
         {
             return email;

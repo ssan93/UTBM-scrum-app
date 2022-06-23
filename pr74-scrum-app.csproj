@@ -60,6 +60,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -120,7 +121,10 @@
     <Compile Include="View\ProjectViewSubForms\AddNewMemberForm.Designer.cs">
       <DependentUpon>AddNewMemberForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Controller\SprintController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Controller\UserStoryController.cs" />
     <Compile Include="Model\Backlog.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\Database.cs" />
@@ -145,6 +149,15 @@
     </Compile>
     <Compile Include="View\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Components\ListPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\SprintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SprintForm.Designer.cs">
+      <DependentUpon>SprintForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -185,8 +198,20 @@
     <EmbeddedResource Include="View\ProjectViewForm.resx">
       <DependentUpon>ProjectViewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="View\Components\UserStoryPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\UserStoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserStoryForm.Designer.cs">
+      <DependentUpon>UserStoryForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SprintForm.resx">
+      <DependentUpon>SprintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
