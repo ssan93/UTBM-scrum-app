@@ -42,8 +42,6 @@
             this.SprintsDataGridView = new System.Windows.Forms.DataGridView();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.archiveProjectButton = new System.Windows.Forms.Button();
-            this.ProjectsListPanel = new System.Windows.Forms.Panel();
-            this.navBarPanel = new System.Windows.Forms.Panel();
             this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BacklogDataGridView)).BeginInit();
@@ -195,20 +193,6 @@
             this.archiveProjectButton.Text = "Archiver";
             this.archiveProjectButton.UseVisualStyleBackColor = true;
             // 
-            // ProjectsListPanel
-            // 
-            this.ProjectsListPanel.Location = new System.Drawing.Point(12, 92);
-            this.ProjectsListPanel.Name = "ProjectsListPanel";
-            this.ProjectsListPanel.Size = new System.Drawing.Size(222, 593);
-            this.ProjectsListPanel.TabIndex = 15;
-            // 
-            // navBarPanel
-            // 
-            this.navBarPanel.Location = new System.Drawing.Point(12, 12);
-            this.navBarPanel.Name = "navBarPanel";
-            this.navBarPanel.Size = new System.Drawing.Size(1316, 74);
-            this.navBarPanel.TabIndex = 14;
-            // 
             // mySqlDataAdapter1
             // 
             this.mySqlDataAdapter1.DeleteCommand = null;
@@ -222,8 +206,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 697);
             this.Controls.Add(this.ProjectPanel);
-            this.Controls.Add(this.ProjectsListPanel);
-            this.Controls.Add(this.navBarPanel);
             this.Name = "ProjectViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectViewForm";
@@ -246,8 +228,6 @@
         private System.Windows.Forms.DataGridView SprintsDataGridView;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button archiveProjectButton;
-        private System.Windows.Forms.Panel ProjectsListPanel;
-        private System.Windows.Forms.Panel navBarPanel;
         private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
         private System.Windows.Forms.ComboBox searchBarComboBox;
         private System.Windows.Forms.Label SprintsLabel;
