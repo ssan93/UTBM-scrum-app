@@ -9,16 +9,16 @@ namespace pr74_scrum_app.Controller
 {
     class Controller
     {
-        static protected Database db;
+        private Database db;
         protected readonly string COMMENTS_TABLE = "userstorycomment";
         protected readonly string ASSIGNEES_TABLE = "userstorymember";
-        protected readonly string SPRINTS_TABLE = "sprint"; 
-        protected readonly string MEMBERS_TABLE = "member"; 
+        protected readonly string SPRINTS_TABLE = "sprint";
+        protected readonly string MEMBERS_TABLE = "member";
         protected readonly string USER_STORIES_TABLE = "userstory";
 
         public Controller()
         {
-            if(db == null) db = new Database();
+            db = new Database();
         }
         public int GenerateNewId(string tableName)
         {
@@ -32,13 +32,12 @@ namespace pr74_scrum_app.Controller
                     id++;
                 }
             }
-            else
-            {
-                id = 1;
-            }
+            else id = 1;
+            
             dr.Close();
 
             return id;
         }
+        public Database Database { get { return db; } }
     }
 }

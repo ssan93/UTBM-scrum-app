@@ -15,7 +15,7 @@ namespace pr74_scrum_app.Controller
         {
             List<UserStory> userStories = new List<UserStory>();
             // Fetching the userStories basic infos
-            MySqlDataReader dr = db.ExecutQuery($"select * from userstory where sprint_id={sprintId}");
+            MySqlDataReader dr = Database.ExecutQuery($"select * from userstory where sprint_id={sprintId}");
             if (dr.HasRows)
             {
                 while (dr.Read())
@@ -53,7 +53,7 @@ namespace pr74_scrum_app.Controller
                 $"SELECT usm.id as comment_id, usm.description, date, m.id as member_id, m.role, users.id as user_id, users.lastname, users.firstname " +
                 $"FROM userstorycomment usm, member m, users " +
                 $"WHERE userstory_id={userStoryId} and member_id=m.id and users.id = m.user_id;";
-            MySqlDataReader dr = db.ExecutQuery(sql);
+            MySqlDataReader dr = Database.ExecutQuery(sql);
             if (dr.HasRows)
             {
                 while (dr.Read())
@@ -84,7 +84,7 @@ namespace pr74_scrum_app.Controller
         public List<Member> FetchUserStoryAssignees(int userStoryId)
         {
             List<Member> assignees = new List<Member>();
-            MySqlDataReader dr = db.ExecutQuery($"" +
+            MySqlDataReader dr = Database.ExecutQuery($"" +
                 $"SELECT member_id, role, user_id, lastname,firstname " +
                 $"FROM {ASSIGNEES_TABLE} usm, {MEMBERS_TABLE} m, users " +
                 $"WHERE usm.userstory_id={userStoryId} and usm.member_id =m.id and m.user_id= users.id;");
@@ -111,84 +111,109 @@ namespace pr74_scrum_app.Controller
         }
         public bool PersistUserStoryWithSprintId(UserStory userStory, int sprintId, int projectId)
         {
-            if (userStory.Id < 1)
-            {
-                userStory.Id = GenerateNewId(USER_STORIES_TABLE);
-                if (userStory.Id < 1) return false; // TODO RollBack
-            }
+            Database.Begin();
 
+            if (userStory.Id < 1) userStory.Id = GenerateNewId(USER_STORIES_TABLE);
+            
             // basics
             string sql = $"" +
-                $"INSERT INTO {USER_STORIES_TABLE} " +
-                $"VALUES ({userStory.Id}, '{userStory.Name}', '{userStory.Description}',{userStory.Complexity},{userStory.Priority}, {sprintId}, {projectId}) " +
-                $"ON DUPLICATE KEY " +
-                $"UPDATE description = '{userStory.Description}', name = '{userStory.Name}', complexity = {userStory.Complexity}, priority = {userStory.Priority}, sprint_id={sprintId}, project_id={projectId} ; ";
-            MySqlDataReader dr = db.ExecutQuery(sql);
+                $"INSERT INTO {USER_STORIES_TABLE} (id, name, description, complexity, priority, state, sprint_id, project_id) " +
+                $"VALUES ({userStory.Id}, '{userStory.Name}', '{userStory.Description}',{userStory.Complexity},{userStory.Priority}, '{userStory.State}', {sprintId}, {projectId}) " +
+                $"ON DUPLICATE KEY " + 
+                $"UPDATE description = '{userStory.Description}', name = '{userStory.Name}', complexity = {userStory.Complexity}, priority = {userStory.Priority}, state= '{userStory.State}', sprint_id={sprintId}, project_id={projectId} ; ";
+            MySqlDataReader dr = Database.ExecutQuery(sql);
             if (dr.RecordsAffected < 0)
             {
                 dr.Close();
-                return false; // TODO replace by rollback
+                Database.Rollback();
+                return false;
             }
 
             dr.Close();
 
             // assignements 
             bool ok = PersistAssignees(userStory.Assignees, userStory.Id);
-            if (!ok) return false;// TODO replace by rollback
+            if (!ok)
+            {
+                Database.Rollback();
+                return false;
+            }
 
             // comments
             foreach (Comment c in userStory.Comments)
             {
                 ok = PersistComment(c, userStory.Id);
-                if (!ok) return false;// TODO replace by rollback
+                if (!ok)
+                {
+                    Database.Rollback();
+                    return false;
+                }
             }
 
+            Database.Commit();
             return true;
         }
         public bool PersistComment(Comment comment, int userStoryId)
         {
-            if (comment.Id < 1)
-            {
-                comment.Id = GenerateNewId(COMMENTS_TABLE);
-                if (comment.Id < 1) return false; // TODO RollBack
-            }
+            Database.Begin();
+
+            if (comment.Id < 1) comment.Id = GenerateNewId(COMMENTS_TABLE);
 
             string sql = $"" +
-                $"INSERT INTO {COMMENTS_TABLE} " +
-                $"VALUES ({comment.Id}, '{comment.Content}', '{comment.Date}',{comment.ByMember.Id},{userStoryId}) " +
+                $"INSERT INTO {COMMENTS_TABLE} (id, description, date, member_id, userstory_id)" +
+                $"VALUES ({comment.Id}, '{comment.Content}', '{comment.Date.ToString("yyyy/MM/dd")}',{comment.ByMember.Id},{userStoryId}) " +
                 $"ON DUPLICATE KEY " +
-                $"UPDATE description = '{comment.Content}', date = '{comment.Date}';";
-            MySqlDataReader dr = db.ExecutQuery(sql);
-            if (dr.RecordsAffected < 0) return false; // TODO replace by rollback
+                $"UPDATE description = '{comment.Content}', date = '{comment.Date.ToString("yyyy/MM/dd")}';";
+            MySqlDataReader dr = Database.ExecutQuery(sql);
+            if (dr.RecordsAffected < 0) {
+                Database.Rollback();
+                dr.Close();
+                return false;
+            }
             dr.Close();
 
+            Database.Commit();
             return true;
         }
         public bool PersistAssignees(List<Member> members, int userstoryId)
         {
-            MySqlDataReader dr = db.ExecutQuery($"DELETE FROM {ASSIGNEES_TABLE} WHERE userstory_id={userstoryId};");
-            if (dr.RecordsAffected <= 0)
+            Database.Begin();
+
+            MySqlDataReader dr = Database.ExecutQuery($"DELETE FROM {ASSIGNEES_TABLE} WHERE userstory_id={userstoryId};");
+            if (dr.RecordsAffected < 0)
             {
                 dr.Close();
-                return false; // TODO replace by rollback
+                Database.Rollback();
+                return false;
             }
             dr.Close();
 
             foreach (Member member in members)
             {
-                dr = db.ExecutQuery($"INSERT INTO {ASSIGNEES_TABLE} (member_id,userstory_id) VALUES ({member.Id}, {userstoryId});");
-                if (dr.RecordsAffected <= 0) return false; // TODO replace by rollback
+                dr = Database.ExecutQuery($"INSERT INTO {ASSIGNEES_TABLE} (member_id,userstory_id) VALUES ({member.Id}, {userstoryId});");
+                if (dr.RecordsAffected < 0) {
+                    Database.Rollback();
+                    return false; 
+                }
                 dr.Close();
             }
 
+            Database.Commit();
+
             return true;
         }
-
         public bool UpdateState(UserStory userStory)
         {
-            MySqlDataReader dr = db.ExecutQuery($"UPDATE {USER_STORIES_TABLE} SET state={userStory.State} WHERE id={userStory.Id};");
+            Database.Begin();
+            MySqlDataReader dr = Database.ExecutQuery($"UPDATE {USER_STORIES_TABLE} SET state='{userStory.State}' WHERE id={userStory.Id};");
             dr.Close();
-            return (dr.RecordsAffected > 0);
+            if (dr.RecordsAffected < 0)
+            {
+                Database.Rollback();
+                return false;
+            }
+            Database.Commit();
+            return true;
         }
     }
 }

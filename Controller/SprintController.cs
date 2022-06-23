@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using pr74_scrum_app.Model;
 using System;
+using System.Collections.Generic;
 
 namespace pr74_scrum_app.Controller
 {
@@ -10,15 +11,13 @@ namespace pr74_scrum_app.Controller
         public Sprint FetchSprintById(int id)
         {
             Sprint sprint = null;
-            MySqlDataReader dr = db.ExecutQuery($"select * from {SPRINTS_TABLE} where id={id}");
-            if (dr.HasRows){
-                while (dr.Read())
-                {
-                    string name = (string)dr["name"];
-                    DateTime startDate = (DateTime)dr["startDate"];
-                    DateTime endDate = (DateTime)dr["endDate"];
-                    sprint = new Sprint(id, name, startDate, endDate);
-                }
+            MySqlDataReader dr = Database.ExecutQuery($"select * from {SPRINTS_TABLE} where id={id}");
+            while (dr.Read())
+            {
+                string name = (string)dr["name"];
+                DateTime startDate = (DateTime)dr["startDate"];
+                DateTime endDate = (DateTime)dr["endDate"];
+                sprint = new Sprint(id, name, startDate, endDate);
             }
             dr.Close();
 
@@ -37,33 +36,38 @@ namespace pr74_scrum_app.Controller
         }
         public bool PersistSprint(Sprint sprint, int projectId)
         {
-            // TODO initiat transaction [Begin, Commit, Rollback]
+            // start transaction
+            Database.Begin();
 
             // persister les informations de base du sprint 
             string sql = $"" +
-                $"INSERT INTO {USER_STORIES_TABLE} " +
-                $"VALUES ({sprint.Id}, '{sprint.Name}', '{sprint.StartingDate}',{sprint.EndingDate},{projectId}) " +
+                $"INSERT INTO {SPRINTS_TABLE} (id, name, startDate, endDate, Project_id)" +
+                $"VALUES ({sprint.Id}, '{sprint.Name}', '{sprint.StartingDate.ToString("yyyy/MM/dd")}','{sprint.EndingDate.ToString("yyyy/MM/dd")}',{projectId}) " +
                 $"ON DUPLICATE KEY " +
-                $"UPDATE name = '{sprint.Name}', startDate = '{sprint.StartingDate}', endDate = {sprint.EndingDate} ; ";
-            MySqlDataReader dr = db.ExecutQuery(sql);
+                $"UPDATE name = '{sprint.Name}', startDate='{sprint.StartingDate.ToString("yyyy/MM/dd")}', endDate='{sprint.EndingDate.ToString("yyyy/MM/dd")}' ; ";
+            MySqlDataReader dr = Database.ExecutQuery(sql);
             if (dr.RecordsAffected < 0)
             {
                 dr.Close();
-                return false; // TODO replace by rollback
+                Database.Rollback();
+                return false;
             }
 
             dr.Close();
 
             UserStoryController usc = new UserStoryController();
+
             // persister les userStories
             foreach (UserStory userStory in sprint.Backlog.UserStories)
             {
                 bool ok = usc.PersistUserStoryWithSprintId(userStory, sprint.Id, projectId);
-                if (!ok) return false;// TODO replace by rollback
+                if (!ok) {
+                    Database.Rollback();
+                    return false; 
+                }
             }
-                
+            Database.Commit();
             return true;
         }
-
     }
 }
