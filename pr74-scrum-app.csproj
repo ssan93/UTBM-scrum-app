@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\SidebarController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Model\Backlog.cs" />
     <Compile Include="Model\Comment.cs" />
@@ -100,6 +101,8 @@
     <Compile Include="Model\SprintBacklog.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserStory.cs" />
+    <Compile Include="View\Components\RoundButton.cs" />
+    <Compile Include="View\Components\Separator.cs" />
     <Compile Include="View\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,11 +111,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Profildialog\CreatePojetForm.cs">
+    <Compile Include="View\MainForm.cs" />
+    <Compile Include="View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Profildialog\CreateProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Profildialog\CreatePojetForm.Designer.cs">
-      <DependentUpon>CreatePojetForm.cs</DependentUpon>
+    <Compile Include="View\Profildialog\CreateProjectForm.Designer.cs">
+      <DependentUpon>CreateProjectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Profildialog\UpdateInfos.cs">
       <SubType>Form</SubType>
@@ -125,9 +132,6 @@
     </Compile>
     <Compile Include="View\ProfilForm.Designer.cs">
       <DependentUpon>ProfilForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\RoundButton.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\SignInForm.cs">
       <SubType>Form</SubType>
@@ -153,8 +157,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Profildialog\CreatePojetForm.resx">
-      <DependentUpon>CreatePojetForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\Profildialog\CreateProjectForm.resx">
+      <DependentUpon>CreateProjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Profildialog\UpdateInfos.resx">
       <DependentUpon>UpdateInfos.cs</DependentUpon>
