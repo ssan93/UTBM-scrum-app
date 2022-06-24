@@ -8,9 +8,6 @@ namespace pr74_scrum_app.Model
 {
     public class SprintBacklog : Backlog
     {
-        public SprintBacklog(int id) : base(id)
-        {
-        }
         public SprintBacklog() : base()
         {
         }
