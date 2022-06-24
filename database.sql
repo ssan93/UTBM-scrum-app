@@ -11,7 +11,7 @@ CREATE TABLE `users` (
 CREATE TABLE `Member` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `Project_id` int,
-  `pinned` boolean,
+  `pinned` boolean NULL DEFAULT FALSE,
   `role` varchar(255),
   `user_id` int
 );
