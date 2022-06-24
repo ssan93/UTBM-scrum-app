@@ -22,6 +22,10 @@ namespace pr74_scrum_app.View
             Controls.Add(priorityBadge);
 
         }
+        public void AddFuncForChilds(Action<object, MouseEventArgs> f)
+        {
+            foreach(Control c in Controls) c.MouseDown += new MouseEventHandler(f);
+        }
         public UserStory UserStory { get { return userStory; } }
         public void InitBackground()
         {
