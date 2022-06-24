@@ -23,7 +23,7 @@ namespace pr74_scrum_app
         public ProfilForm(User User)
         {
             InitializeComponent();
-            EmailtextBox.Text = User.Email;
+            UserEmailRoundButton.Text = User.Email;
             this.user = User;
 
             //projets
