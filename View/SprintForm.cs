@@ -2,12 +2,6 @@
 using pr74_scrum_app.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -16,20 +10,21 @@ namespace pr74_scrum_app.View
     public partial class SprintForm : Form
     {
         Sprint sprint;
-        Control control;
-        ListPanel source;
-        UserStoryController userStoryController = new UserStoryController();
-        SprintController sprintController = new SprintController();
-        public SprintForm(int id)
+        Control movingUserStory;
+        ListPanel listSource;
+        Member member;
+        
+        public SprintForm(int userId, int sprintId)
         {
             InitializeComponent();
-            
-            sprint = sprintController.FetchSprintById(id);
+            SprintController sprintController = new SprintController();
+            sprint = sprintController.FetchSprintById(sprintId);
             if(sprint == null)
-                // TODO: redirection vers menu project
+                // TODO: add a redirection
                 MessageBox.Show("404 : Sprint not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            projectNameLabel.Text = sprint.Name;
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
-
+            member = new Member(userId); // TODO : change with real function
         }
         private void GenerateUserStoryPanels(List<UserStory> userStories)
         {
@@ -37,7 +32,8 @@ namespace pr74_scrum_app.View
             foreach (UserStory us in userStories)
             {
                 UserStoryPanel usp = new UserStoryPanel(us);
-                usp.MouseDown += new MouseEventHandler(List_MouseDown);
+                usp.MouseDown += new MouseEventHandler(UserStory_MouseDown);
+                usp.AddFuncForChilds(ListPanelElement_MouseDown);
                 switch (us.State){
                     case "TODO" : todoList.Add(usp); break;
                     case "PROGRESS" : inProgressList.Add(usp); break;
@@ -45,30 +41,38 @@ namespace pr74_scrum_app.View
                     case "DONE" : doneList.Add(usp); break;
                 }
             }
+            RefreshBadges();
         }
         private List<UserStory> Search(string query)
         {
-            List<UserStory> selected = new List<UserStory> ();
-            foreach(UserStory us in sprint.Backlog.UserStories)
+            List<UserStory> selected = null;
+            if (query.Length > 0)
             {
-                bool selectable = false;
-                if (us.Name.Contains(query)){
-                    selectable = true;
-                }
-                foreach(Member assignee in us.Assignees)
-                {
-                    string fullname = assignee.User.FirstName+" "+assignee.User.LastName;
-                    if (fullname.Contains(query))
-                    {
-                        selectable = true;
-                    }
-                }
-                if (selectable)
-                {
-                    selected.Add(us);
-                }
+                List<UserStory> querySearch = sprint.Backlog.SearchBy(query);
+                if (selected == null) selected = querySearch;
+                selected = sprint.Backlog.Intersect(selected, querySearch);
             }
+            if (MyTaskCheckBox.Checked) 
+            {
+                List<UserStory> myTasksSearch = sprint.Backlog.SearchBy(member);
+                if (selected == null) selected = myTasksSearch;
+                selected = sprint.Backlog.Intersect(selected, myTasksSearch);
+            }
+            if (GetPriorityFromRadioButtons() != 0)
+            {
+                List<UserStory> prioritySearch = sprint.Backlog.SearchBy(GetPriorityFromRadioButtons());
+                if (selected == null) selected = prioritySearch;
+                selected = sprint.Backlog.Intersect(selected, prioritySearch);
+            }
+            if (selected == null) selected = sprint.Backlog.UserStories;
             return selected;
+        }
+        private int GetPriorityFromRadioButtons()
+        {
+            if (highPriorityRadioButton.Checked) return 1;
+            else if (mediumPriorityRadioButton.Checked) return 2;
+            else if (lowPriorityRadioButton.Checked) return 3;
+            else return 0;
         }
         private void ClearLists() {
             todoList.Clear();
@@ -76,41 +80,10 @@ namespace pr74_scrum_app.View
             inReviewList.Clear();
             doneList.Clear();
         }
-        private void List_MouseDown(object sender, MouseEventArgs e)
-        {
-            control= sender as Control;
-            source = control.Parent as ListPanel;
-
-            source.DoDragDrop(control.Text, DragDropEffects.Move);
-
-        }
-        private void List_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.Text))
-            {
-                e.Effect = DragDropEffects.Move;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
-            }
-        }
-        private void List_DragEnter(object sender, DragEventArgs e)
-        {
-            ListPanel actuel = sender as ListPanel;
-            if (actuel != source)
-            {
-                actuel.Add(control);
-                actuel.RefreshControls();
-                source.Remove(control);
-                source.RefreshControls();
-                source = actuel;
-                UpdateSprint();
-            }
-        }
         private void UpdateSprint()
         {
-            foreach(UserStoryPanel c in todoList.Controls)
+            UserStoryController userStoryController = new UserStoryController();
+            foreach (UserStoryPanel c in todoList.Controls)
             {
                 c.UserStory.State = "TODO";
                 userStoryController.UpdateState(c.UserStory);
@@ -125,16 +98,65 @@ namespace pr74_scrum_app.View
                 c.UserStory.State = "REVIEW";
                 userStoryController.UpdateState(c.UserStory);
             }
-            foreach (UserStoryPanel c in inReviewList.Controls)
+            foreach (UserStoryPanel c in doneList.Controls)
             {
                 c.UserStory.State = "DONE";
                 userStoryController.UpdateState(c.UserStory);
             }
         }
+        private void RefreshBadges()
+        {
+            todoBadge.Text = "" + todoList.Count();
+            inProgressBadge.Text = "" + inProgressList.Count();
+            inReviewBadge.Text = "" + inReviewList.Count();
+            doneBadge.Text = "" + doneList.Count();
+        }
+        private bool IsSearching()
+        {
+            return (searchBar.Text.Length > 0) || MyTaskCheckBox.Checked || !allPriorityRadioButton.Checked;
+        }
+        private void UserStory_MouseDown(object sender, MouseEventArgs e)
+        {
+            movingUserStory = sender as Control; 
+            listSource = movingUserStory.Parent as ListPanel;
+            listSource.DoDragDrop(movingUserStory.Text, DragDropEffects.Move);
+        }
+        private void ListPanelElement_MouseDown(object sender, MouseEventArgs e)
+        {
+            Control control = sender as Control;
+            movingUserStory = control.Parent;
+            listSource = movingUserStory.Parent as ListPanel;
+            listSource.DoDragDrop(control.Text, DragDropEffects.Move);
+        }
+        private void ListPanel_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+        private void ListPanel_DragEnter(object sender, DragEventArgs e)
+        {
+            ListPanel actuel = sender as ListPanel;
+            if (actuel != listSource)
+            {
+                actuel.Add(movingUserStory);
+                actuel.RefreshControls();
+                listSource.Remove(movingUserStory);
+                listSource.RefreshControls();
+                listSource = actuel;
+                RefreshBadges();
+                UpdateSprint();
+            }
+        }
         private void SearchButton_Click(object sender, EventArgs e)
         {
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
-            if (searchBar.Text.Length != 0)
+            if (IsSearching())
             {
                 cancelSearchButton.Visible = true;
                 string query = searchBar.Text;
@@ -145,7 +167,15 @@ namespace pr74_scrum_app.View
         {
             cancelSearchButton.Visible = false;
             searchBar.Text = "";
+            allPriorityRadioButton.Checked = true;
+            MyTaskCheckBox.Checked= false;
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
         }
+        private void UserStory_Click(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // TODO: Call UserStoryForm
+            // TODO: REFRESH
+        }
+
     }
 }
