@@ -133,6 +133,7 @@
     <Compile Include="View\Components\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controller\SidebarController.cs" />
     <Compile Include="View\SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +195,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ressources\logoScrum.ico" />
+    <Content Include="Ressources\pin.ico" />
+    <Content Include="Ressources\proj.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
