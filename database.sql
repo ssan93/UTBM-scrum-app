@@ -21,6 +21,7 @@ CREATE TABLE `Project` (
   `name` varchar(255),
   `description` varchar(255),
   `archived` boolean,
+  `pinned` boolean,
   `created_dt` date
 );
 
