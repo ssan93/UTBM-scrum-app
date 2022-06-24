@@ -20,8 +20,10 @@ namespace pr74_scrum_app.View
             SprintController sprintController = new SprintController();
             sprint = sprintController.FetchSprintById(sprintId);
             if(sprint == null)
-                // TODO: add a redirection
+            {
                 MessageBox.Show("404 : Sprint not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             projectNameLabel.Text = sprint.Name;
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
             member = new Member(userId); // TODO : change with real function
@@ -33,7 +35,8 @@ namespace pr74_scrum_app.View
             {
                 UserStoryPanel usp = new UserStoryPanel(us);
                 usp.MouseDown += new MouseEventHandler(UserStory_MouseDown);
-                usp.AddFuncForChilds(ListPanelElement_MouseDown);
+                usp.AddFuncToPriorityBadge(ListPanelElement_MouseDown);
+                usp.AddFuncToLink(UserStory_Click);
                 switch (us.State){
                     case "TODO" : todoList.Add(usp); break;
                     case "PROGRESS" : inProgressList.Add(usp); break;
@@ -42,6 +45,12 @@ namespace pr74_scrum_app.View
                 }
             }
             RefreshBadges();
+        }
+        private void ResetSprint()
+        {
+            SprintController sprintController = new SprintController();
+            sprint = sprintController.FetchSprintById(sprint.Id);
+            GenerateUserStoryPanels(sprint.Backlog.UserStories);
         }
         private List<UserStory> Search(string query)
         {
@@ -173,8 +182,11 @@ namespace pr74_scrum_app.View
         }
         private void UserStory_Click(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // TODO: Call UserStoryForm
-            // TODO: REFRESH
+            LinkLabel l = sender as LinkLabel;
+            UserStoryPanel usp = l.Parent as UserStoryPanel;
+            UserStoryForm usf = new UserStoryForm(usp.UserStory.Id, member.Id);
+            usf.ShowDialog();
+            ResetSprint();
         }
 
     }

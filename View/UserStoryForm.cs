@@ -29,7 +29,18 @@ namespace pr74_scrum_app.View
             InitializeComponent();
             UserStoryController controller = new UserStoryController();
             member = controller.fetchMemberByProjectIdAndMemberId(projectId,memberId);
+            if (member == null)
+            {
+                MessageBox.Show("404 : Le membre n'a pas été trouvé", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Hide();
+            }
             userStory = controller.FetchUserStoriesById(userStoryId);
+            if (userStory == null)
+            {
+                MessageBox.Show("404 :  La user story n'a pas été trouvé", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Hide();
+            }
+
             List<Member> projectMembers = controller.fetchMembersByProjectMock(projectId);
             Dictionary<Member, string> assigneesList = new Dictionary<Member, string>();
 
@@ -107,9 +118,7 @@ namespace pr74_scrum_app.View
         {
             UserStoryController controller = new UserStoryController();
             controller.PersistUserStoryWithSprintId(userStory, sprintId, projectId);
-            this.Hide();
-            HomeForm home = new HomeForm();
-            home.ShowDialog();
+            Hide();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -196,7 +205,7 @@ namespace pr74_scrum_app.View
         {
             UserStoryController controller = new UserStoryController();
             Comment newComment = new Comment(0, textBox1.Text, member);
-            controller.PersistComment(newComment, this.userStory.Id);
+            controller.PersistComment(newComment, userStory.Id);
             this.Hide();
             UserStoryForm mp = new UserStoryForm(1, 1);
             mp.ShowDialog();
