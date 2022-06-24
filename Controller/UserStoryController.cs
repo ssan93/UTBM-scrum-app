@@ -64,14 +64,15 @@ namespace pr74_scrum_app.Controller
                     userStory.Priority = priotity;
                     userStory.Complexity = complexity;
                     userStory.Description = description;
-                    // Fetching userStories comments
-                    userStory.Comments = FetchUserStoryComments(userStory.Id);
-
-                    // Fetching userStories assignees
-                    userStory.Assignees = FetchUserStoryAssignees(userStory.Id);
                 }
             }
             dr.Close();
+
+            // Fetching userStories comments
+            userStory.Comments = FetchUserStoryComments(userStory.Id);
+
+            // Fetching userStories assignees
+            userStory.Assignees = FetchUserStoryAssignees(userStory.Id);
 
             return userStory;
         }
@@ -243,6 +244,59 @@ namespace pr74_scrum_app.Controller
             }
             Database.Commit();
             return true;
+        }
+        public Member fetchMemberByProjectIdAndMemberId(int projectId, int memberId)
+        {
+            Member member = new Member();
+            MySqlDataReader dr = Database.ExecutQuery($"" +
+                $"SELECT m.id as member_id, role, user_id, lastname,firstname " +
+                $"FROM {MEMBERS_TABLE} m, users " +
+                $"WHERE m.Project_id={projectId} and m.id={memberId} and m.user_id= users.id;");
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    int userId = (int)dr["user_id"];
+                    string role = (string)dr["role"];
+                    string lastname = (string)dr["lastname"];
+                    string firstname = (string)dr["firstname"];
+
+                    User user = new User(userId);
+                    user.FirstName = firstname; user.LastName = lastname;
+
+                    member = new Member(memberId, role, user);
+                }
+            }
+            dr.Close();
+            return member;
+        }
+        public List<Member> fetchMembersByProjectMock(int projectId)
+        {
+            List<Member> members = new List<Member>();
+            MySqlDataReader dr = Database.ExecutQuery($"" +
+                $"SELECT m.id as member_id, role, user_id, lastname,firstname " +
+                $"FROM {MEMBERS_TABLE} m, users " +
+                $"WHERE m.Project_id={projectId} and m.user_id= users.id;");
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    int memberId = (int)dr["member_id"];
+                    int userId = (int)dr["user_id"];
+                    string role = (string)dr["role"];
+                    string lastname = (string)dr["lastname"];
+                    string firstname = (string)dr["firstname"];
+
+                    User user = new User(userId);
+                    user.FirstName = firstname; user.LastName = lastname;
+
+                    Member member = new Member(memberId, role, user);
+
+                    members.Add(member);
+                }
+            }
+            dr.Close();
+            return members;
         }
     }
 }

@@ -60,7 +60,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -104,7 +103,13 @@
     <Compile Include="Model\SprintBacklog.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserStory.cs" />
+    <Compile Include="View\Components\ListPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Components\Separator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Components\UserStoryPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\HomeForm.cs">
@@ -112,15 +117,6 @@
     </Compile>
     <Compile Include="View\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Components\ListPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="View\SprintForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SprintForm.Designer.cs">
-      <DependentUpon>SprintForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,8 +141,11 @@
     <Compile Include="View\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\UserStoryPanel.cs">
-      <SubType>Component</SubType>
+    <Compile Include="View\SprintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SprintForm.Designer.cs">
+      <DependentUpon>SprintForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserStoryForm.cs">
       <SubType>Form</SubType>
@@ -156,9 +155,6 @@
     </Compile>
     <EmbeddedResource Include="View\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SprintForm.resx">
-      <DependentUpon>SprintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,6 +174,12 @@
     <EmbeddedResource Include="View\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SprintForm.resx">
+      <DependentUpon>SprintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserStoryForm.resx">
+      <DependentUpon>UserStoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -193,7 +195,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ressources\high_priority.ico" />
     <Content Include="Ressources\logoScrum.ico" />
+    <Content Include="Ressources\low_priority.ico" />
+    <Content Include="Ressources\medium_priority.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,6 +13,7 @@ namespace pr74_scrum_app.Model
         private User user;
         private List<UserStory> assignements;
 
+        public Member(){}
         public Member(int id, string role, User user)
         {
             this.id = id;   
