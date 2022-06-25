@@ -359,6 +359,8 @@
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\useSharedDesignerContext.txt" />
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\version.txt" />
     <Content Include="Ressources\logoScrum.ico" />
+    <Content Include="Ressources\pin.ico" />
+    <Content Include="Ressources\proj.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

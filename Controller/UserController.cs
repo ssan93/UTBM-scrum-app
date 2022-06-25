@@ -63,7 +63,7 @@ namespace pr74_scrum_app
                     if (data!=null && data.HasRows)//check if email exist
                     {
                         data.Close();
-                        MessageBox.Show("Email Already exist please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Email existe déja, essayer un nouveau email ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     else if (!Regex.IsMatch(email.Trim(), @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))// check if email is in right format
@@ -77,20 +77,20 @@ namespace pr74_scrum_app
                         string sql = $"insert into users(lastname,firstname,email,password) values('{lastname}','{firstname}','{email}','{EncryptPass(pass)}')";
                         MySqlDataReader resp = db.ExecutQuery(sql);
                         resp.Close();
-                        MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Vontre compte est creer. Connectez-vous.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return true;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please enter both password same ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Entrer le même mot de passe ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-           }
+            }
             else
             {
-                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vous devez completer tous les chmaps", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -162,7 +162,7 @@ namespace pr74_scrum_app
             int idpro = 0;
             try
             {
-                string insertProjet = $"insert into project(name,description,archived,created_dt) values('{name}','{description}',{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
+                string insertProjet = $"insert into project(name,description,archived,archived,created_dt) values('{name}','{description}',{0},{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
                 data = db.ExecutQuery(insertProjet);
                 if(data!=null && data.HasRows)
                 {
@@ -193,7 +193,7 @@ namespace pr74_scrum_app
             MySqlDataReader data;
             var project = new List<Project>();
             string sqlprojet = "select project.id,name from project inner join member on member.Project_id=project.id " +
-                $"where member.user_id={userid} order by project.created_dt DESC,project.id DESC LIMIT 4";            
+                $"where member.user_id={userid} and project.archived={0} order by project.created_dt DESC,project.id DESC LIMIT 4";            
             data = db.ExecutQuery(sqlprojet);
             if(data !=null && data.HasRows)
             {
@@ -211,7 +211,7 @@ namespace pr74_scrum_app
             MySqlDataReader data;
             var sprint = new List<Sprint>();
             string sqlstack = "select sprint.id,sprint.name,sprint.startDate,sprint.endDate from sprint inner join project on project.id=sprint.Project_id inner join member on member.project_id=project.id " +
-                $"where member.user_id ={userid} order by project.created_dt DESC,project.id DESC LIMIT 4 ";
+                $"where member.user_id ={userid} and project.archived={0} order by project.created_dt DESC,project.id DESC LIMIT 4 ";
             data = db.ExecutQuery(sqlstack);
             if (data != null && data.HasRows)
             {
@@ -232,7 +232,7 @@ namespace pr74_scrum_app
             var task = new List<UserStory>();
             string sqltask = "select userStory.id,userStory.name,userStory.state from userStory inner join project on project.id=userStory.Project_id " +
                 " inner join member on member.project_id=project.id " +
-                $" where member.user_id ={userid} and userStory.state <> 'done' order by project.created_dt DESC,project.id DESC LIMIT 4";
+                $" where member.user_id ={userid} and userStory.state <> 'done' and project.archived={0} order by project.created_dt DESC,project.id DESC LIMIT 4";
             data = db.ExecutQuery(sqltask);
             if (data != null && data.HasRows)
             {
@@ -251,7 +251,7 @@ namespace pr74_scrum_app
             MySqlDataReader data;
             var project = new List<Project>();
             string sqlprojet = "select project.id,name from project inner join member on member.Project_id=project.id " +
-                $"where member.user_id={userid} order by project.created_dt DESC,project.id DESC";
+                $"where member.user_id={userid} and project.archived={0} order by project.created_dt DESC,project.id DESC";
             data = db.ExecutQuery(sqlprojet);
             if (data != null && data.HasRows)
             {
@@ -263,6 +263,31 @@ namespace pr74_scrum_app
             }
             data.Close();
             return project;
+        }
+        //methode to pin a project 
+        public bool PinAnproject(int idproject, int userid)
+        {
+            MySqlDataReader data , na;
+            bool addpin = false;
+            string sqlpin = "select count(*) from project inner join member on member.Project_id=project.id " +
+                $"where member.user_id={userid} and project.archived={0}  and project.pinned={1} group by project.name";
+            data = db.ExecutQuery(sqlpin);
+            if ( data!=null)
+            {
+                if (data.GetInt32(0)>5) //if the the number of pinned project in superior to 5 send false 
+                {
+                    addpin = false;
+                    data.Close();
+                }
+                else //update
+                {
+                    string stringupdate = $"Update project set pinned={1} where id={idproject}";
+                    na = db.ExecutQuery(stringupdate);
+                    na.Close();
+                }
+                data.Close();
+            }
+            return addpin;
         }
     }
 }

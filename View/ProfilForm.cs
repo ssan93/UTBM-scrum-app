@@ -77,8 +77,8 @@ namespace pr74_scrum_app
             TaskPictureBoxs.Add(TaskpictureBox3);
             TaskPictureBoxs.Add(TaskpictureBox4);
 
-            LoadData();
-            AddDataIntocombox();
+            LoadData(); //option d'affichage de projet
+            AddDataIntocombox(); //option de recherche 
         }
 
         private void PictureProfilBox_Click(object sender, EventArgs e)
@@ -355,5 +355,6 @@ namespace pr74_scrum_app
                 Console.WriteLine("label " + searchproject[ResearchProjectcomboBox.SelectedIndex].Name + " " + searchproject[ResearchProjectcomboBox.SelectedIndex].Id);
             }
         }
+
     }
 }
