@@ -29,7 +29,7 @@ namespace pr74_scrum_app.Controller
             if (pass != string.Empty || email != string.Empty)//check if field are not empty
             {
                 string sql = $"select * from users where email='{email}' and password='{EncryptPass(pass)}'";
-                MySqlDataReader dr = db.ExecutQuery(sql); //if match 
+                MySqlDataReader dr = Database.ExecutQuery(sql); //if match 
                 if (dr.HasRows)
                 {
                     while (dr.Read())
@@ -61,7 +61,7 @@ namespace pr74_scrum_app.Controller
             {
                 if (pass == confirmpass)//check confimation pass
                 {
-                    MySqlDataReader data = db.ExecutQuery("select * from users where email='" + email + "'");
+                    MySqlDataReader data = Database.ExecutQuery("select * from users where email='" + email + "'");
                     if (data!=null && data.HasRows)//check if email exist
                     {
                         data.Close();
@@ -77,7 +77,7 @@ namespace pr74_scrum_app.Controller
                     {
                         data.Close();
                         string sql = $"insert into users(lastname,firstname,email,password) values('{lastname}','{firstname}','{email}','{EncryptPass(pass)}')";
-                        MySqlDataReader resp = db.ExecutQuery(sql);
+                        MySqlDataReader resp = Database.ExecutQuery(sql);
                         resp.Close();
                         MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -22,19 +22,9 @@ namespace pr74_scrum_app
             Dictionary<int, string> projects = new Dictionary<int, string>();
             string sql = $"select * from Member m inner join Project p on m.Project_id = p.id where pinned = {pinned} and user_id='{userID}' order by p.id DESC LIMIT 5";
             MySqlDataReader dr = db.ExecutQuery(sql); //if match 
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    projects.Add((int)dr["Project_id"], (string)dr["name"]);
-                }
-                dr.Close();
-            }
-            else
-            {
-                dr.Close();
-                MessageBox.Show("No pinned projects", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            if (dr.HasRows)  while (dr.Read()) projects.Add((int)dr["Project_id"], (string)dr["name"]);
+            dr.Close();
+
             return projects;
         }
 

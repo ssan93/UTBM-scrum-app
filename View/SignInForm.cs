@@ -23,9 +23,11 @@ namespace pr74_scrum_app
             UserController login = new UserController();
             if (login.UserLogin(signinpasswordText.Text.Trim(), signinemailText.Text.Trim()))
             {
-                this.Hide();
-                MainForm mp = new MainForm(login.GetUserEmail(),login.GetUserId());
-                mp.ShowDialog();
+                //TODO: add profileForm here
+
+                //this.Hide();
+                //Form mp = new HomeForm(login.GetUserEmail(),login.GetUserId());
+                //mp.ShowDialog();
             }
         }
         //when click open signup form and hide the actual form

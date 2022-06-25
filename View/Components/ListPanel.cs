@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace pr74_scrum_app.View
@@ -51,7 +47,10 @@ namespace pr74_scrum_app.View
                 Controls.Add(c);
             }
         }
-
+        public int Count()
+        {
+            return listControls.Count;
+        }
         public void Clear()
         {
             Controls.Clear();
