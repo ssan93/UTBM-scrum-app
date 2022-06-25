@@ -125,10 +125,14 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="roleSelectionComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 270</value>
+    <value>64, 140</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="roleSelectionComboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="roleSelectionComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 33</value>
+    <value>136, 21</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="roleSelectionComboBox.TabIndex" type="System.Int32, mscorlib">
@@ -144,16 +148,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;roleSelectionComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="RoleLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="RoleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 242</value>
+    <value>67, 126</value>
+  </data>
+  <data name="RoleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="RoleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 25</value>
+    <value>29, 13</value>
   </data>
   <data name="RoleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -171,16 +178,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;RoleLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="emailAddressLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="emailAddressLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 131</value>
+    <value>67, 68</value>
+  </data>
+  <data name="emailAddressLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="emailAddressLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 25</value>
+    <value>75, 13</value>
   </data>
   <data name="emailAddressLabel.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -198,16 +208,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;emailAddressLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="formTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="formTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 54</value>
+    <value>108, 28</value>
+  </data>
+  <data name="formTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="formTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 25</value>
+    <value>91, 13</value>
   </data>
   <data name="formTitle.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -225,13 +238,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;formTitle.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="memberEmailAddressTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 168</value>
+    <value>64, 87</value>
+  </data>
+  <data name="memberEmailAddressTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="memberEmailAddressTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 31</value>
+    <value>192, 20</value>
   </data>
   <data name="memberEmailAddressTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -246,13 +262,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;memberEmailAddressTextBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cancelForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 342</value>
+    <value>196, 193</value>
+  </data>
+  <data name="cancelForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="cancelForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 55</value>
+    <value>58, 29</value>
   </data>
   <data name="cancelForm.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -270,13 +289,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelForm.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="ConfirmForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>555, 342</value>
+    <value>264, 193</value>
+  </data>
+  <data name="ConfirmForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="ConfirmForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 55</value>
+    <value>58, 29</value>
   </data>
   <data name="ConfirmForm.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -294,16 +316,55 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ConfirmForm.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="erreurLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="erreurLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 172</value>
+  </data>
+  <data name="erreurLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="erreurLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
+  <data name="erreurLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="erreurLabel.Text" xml:space="preserve">
+    <value>Message d'erreur</value>
+  </data>
+  <data name="erreurLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;erreurLabel.Name" xml:space="preserve">
+    <value>erreurLabel</value>
+  </data>
+  <data name="&gt;&gt;erreurLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;erreurLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;erreurLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>12, 25</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>400, 246</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ajouter un membre au projet</value>

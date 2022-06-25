@@ -5,39 +5,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using pr74_scrum_app.Model;
+using System.Text.RegularExpressions;
 
-namespace pr74_scrum_app
+namespace pr74_scrum_app.Controller
 {
-    internal class ProjectController
+    internal class ProjectController : Controller
     {
-        private readonly Database db = new Database();
+        public ProjectController() : base() { }
 
-        private void AddMember(int projectId, string userEmail, string role)
+
+        public void PersistMember(int projectId, string userEmail, string role)
         {
-            if (userEmail != string.Empty)
-            {
-                int userId = GetUserIdByEmail(userEmail);
-
-                string sql = $"select * from users where id='" + userId + "'";
+            /**
+             * this method do not have any data control since it has to be done before calling it (front-end)
+             **/
+            int userId = FetchUserIdByEmail(userEmail);
+                string sql = $"select * from users where id={userId}";
                 MySqlDataReader dataRequest = db.ExecutQuery(sql);
 
-                if (dataRequest != null && dataRequest.HasRows) 
+                if (dataRequest != null && dataRequest.HasRows)
                 {
                     dataRequest.Close();
 
-                    sql = $"insert into Member(Project_id, role, user_id) values ('{projectId}','{role}','{userId}')";
+                    sql = $"insert into Member (Project_id, role, user_id) values ('{projectId}','{role}','{userId}')";
 
                     dataRequest = db.ExecutQuery(sql);
                     dataRequest.Close();
+                            
                 }
-            }
+                dataRequest.Close();
         }
 
-        private bool emailExists(string email)
+
+        public int FetchUserIdByEmail(string email)
+        {
+            int userId = -1;
+
+            string sql = $"select id from users where email='{email}'";
+            Console.WriteLine(sql);
+            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            
+            while (dataRequest.Read())
+            {
+                userId = (int)dataRequest["id"];
+            }
+            dataRequest.Close();
+
+            return userId;
+        }
+
+
+        public bool emailExists(string email)
         {
             bool exists;
 
-            string sql = $"select * from users where email='" + email +"'"; 
+            string sql = $"select * from users where email={email}"; 
             MySqlDataReader dataRequest = db.ExecutQuery(sql);
 
             exists = dataRequest != null && dataRequest.HasRows;
@@ -46,26 +69,12 @@ namespace pr74_scrum_app
             return exists;
         }
 
-        private int GetUserIdByEmail(string email)
-        {
-            int userId = -1;
 
-            string sql = $"select id from users where email='" + email + "'"; 
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
-            while (dataRequest.Read())
-            {
-                userId = (int)dataRequest["id"];
-            }
-            dataRequest.Close();
-            
-            return userId;
-        }
-
-        private User GetUserById(int userId)
+        public User FetchUserById(int userId)
         {
             User user = null;
 
-            string sql = $"select * from users where id='"+ userId + "'";
+            string sql = $"select * from users where id={userId}";
             MySqlDataReader dataRequest = db.ExecutQuery(sql);
 
             if (dataRequest.HasRows)
@@ -73,20 +82,25 @@ namespace pr74_scrum_app
                 while (dataRequest.Read())
                 {
                     int id = (int)dataRequest["id"];
-                    string firstName = (string)dataRequest["id"];
-                    string lastName = (string)dataRequest["id"];
-                    string email = (string)dataRequest["id"];
+                    string firstName = (string)dataRequest["firstname"];
+                    string lastName = (string)dataRequest["lastname"];
+                    string email = (string)dataRequest["email"];
 
-                    user = new User(id, firstName, lastName, "", email);
+                    user = new User(id);
+                    user.FirstName = firstName;
+                    user.LastName = lastName;
+                    user.Email = email;
+
                 }
             }
             dataRequest.Close();
             return user;
         }
 
-        private void RemoveMember(Model.Project project, int memberId)
+
+        public void RemoveMember(Project project, int memberId)
         {
-            string sql = $"select id from Member where id='" + memberId + "'";
+            string sql = $"select id from Member where id={memberId}";
             MySqlDataReader dataRequest = db.ExecutQuery(sql);
 
             if (dataRequest.HasRows)
@@ -94,19 +108,20 @@ namespace pr74_scrum_app
                 project.RemoveMemberById(memberId);
                 dataRequest.Close();
 
-                sql = $"delete from member where id='" + memberId + "'";
+                sql = $"delete from member where id={memberId}";
                 dataRequest = db.ExecutQuery(sql);
                 dataRequest.Close();
             }
-            // TODO : commit db changes ?
+            dataRequest.Close();
         }
 
-        private Model.Project GetProjectById(int projectId)
+
+        public Project FetchProjectById(int projectId)
         {
-            string sql = $"select * from Project where id='" + projectId + "'";
+            string sql = $"select * from Project where id={projectId}";
             MySqlDataReader dataRequest = db.ExecutQuery(sql);
 
-            Model.Project project = null;
+            Project project = null;
             if (dataRequest.HasRows)
             {
                 while (dataRequest.Read())
@@ -116,52 +131,63 @@ namespace pr74_scrum_app
                     string description = (string)dataRequest["description"];
                     bool is_archived = (bool)dataRequest["archived"];
 
-                    project = new Model.Project(id, name, description);
+                    project = new Project(id, name, description);
                     project.IsArchived = is_archived;
                 }
                 dataRequest.Close();
 
-                List<Model.Member> members = GetMembers(projectId);
-                List<Model.Sprint> sprints = GetSprints(projectId);
-                Model.ProductBacklog productBacklog = GetProductBacklog(projectId);
+                List<Member> members = FetchMembers(projectId);
+                List<Sprint> sprints = FetchSprints(projectId);
+                ProductBacklog productBacklog = FetchProductBacklog(projectId);
 
                 project.Members = members;
                 project.Sprints = sprints;
                 project.Backlog = productBacklog;
             }
-
             dataRequest.Close();
             return project;
         }
 
-        private Model.ProductBacklog GetProductBacklog(int projectId)
+
+        public ProductBacklog FetchProductBacklog(int projectId)
         {
-            Model.ProductBacklog backlog = null;
-            // TODO copier coller getSprintBacklog de walid
-            string sql = $"select * from "; // TODO ???? where is backlog into database scheme ?
-            MySqlDataReader dr = db.ExecutQuery(sql);
+            ProductBacklog backlog = new ProductBacklog();
+            UserStoryController usc = new UserStoryController();
+            backlog.UserStories = usc.FetchUserStoriesByProjectID(projectId);
 
             return backlog;
         }
 
-        private List<Model.Sprint> GetSprints(int projectId)
+
+        public List<Sprint> FetchSprints(int projectId)
         {
-            List<Model.Sprint> list = new List<Model.Sprint>();
+            List<Sprint> list = new List<Sprint>();
 
-            string sql = $""; // TODO select des id des sprints du projetID
+            string sql = $"select id, name from Sprint where Project_id={projectId}"; // TODO select des id et les names des sprints du projetID
 
-            MySqlDataReader dr = db.ExecutQuery(sql);
-            // TODO se baser sur le sprint controller pour gagner du temps (walid)
-            // tant qu'il y a un id de sprint a traiter, sprintController.getSprintByID
-                // ajouter sprint dans liste
+            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+
+            SprintController sc = new SprintController(); // TODO
+
+            dataRequest.Close();
+
             return list;
         }
-        
-        private List<Model.Member> GetMembers(int projectId)           
+
+
+        public List<Member> FetchMembers(int projectId)
         {
-            List<Model.Member> list = new List<Model.Member>();
+            List<Member> list = new List<Member>();
             
-            string sql = $""; // TODO
+            string sql = $"select u.id as user_id," +
+                $" m.role as role," +
+                $" u.lastname as lastname," +
+                $" u.firstname as firstname," +
+                $" m.id as id," +
+                $" u.email as email" +
+                $" from Member m, users u" +
+                $" where Project_Id={projectId} and m.user_id=user_id";
+
             MySqlDataReader dataRequest = db.ExecutQuery(sql); // pour chaque membre, retourner le nom, le role, l'id du membre (pas du user)
             if (dataRequest.HasRows)
             {
@@ -170,18 +196,78 @@ namespace pr74_scrum_app
                     int id = (int)dataRequest["id"];
                     string role = (string)dataRequest["role"];
                     int userId = (int)dataRequest["user_id"];
-                    User user = GetUserById(userId);
 
-                    Model.Member currentMember = new Model.Member(id, role, user);
+                    string firstname = (string)dataRequest["firstname"];
+                    string lastname = (string)dataRequest["lastname"];
+                    string email = (string)dataRequest["email"];
+
+                    User user = new User(userId, firstname, lastname, email);
+                    Member currentMember = new Member(id, role, user);
 
                     list.Add(currentMember);
                 }
+                dataRequest.Close();
             }
             dataRequest.Close();
 
             return list;
         }
 
-    }  
 
+        public void PersistNewSprint(string name, DateTime startingDate, DateTime endingDate, int projectId)
+        {
+                string start = startingDate.ToString("yyyy/MM/dd");
+                string end = endingDate.ToString("yyyy/MM/dd");
+                string sql = $"insert into Sprint (name, startDate, endDate, Project_id) values ('{name}','{start}','{end}',{projectId})"; 
+                MySqlDataReader dataRequest = db.ExecutQuery(sql);
+                dataRequest.Close();
+        }
+
+
+        public void ArchiveProject(int projectId)
+        {
+            string sql = $"select * from Project where id={projectId}";
+            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+
+            if (dataRequest.HasRows) // project exists
+            {
+                dataRequest.Close();
+                sql = $"update Project SET archived = 1 where id={projectId}";
+                dataRequest = db.ExecutQuery(sql);
+                dataRequest.Close();
+            }
+        }
+
+        public void PersistProductBacklogUserStory(string name, int priority, int complexity, string description, int projectId)
+        {
+            string defaultState = "TODO";
+            string sql = $"insert into UserStory (name, description , complexity , priority, state, Project_id ) " +
+                $"values ('{name}','{description}','{complexity}',{priority},'{defaultState}',{projectId})";
+            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            dataRequest.Close();
+        }
+
+
+        public Member FetchMember(int projectId, int userId)
+        {
+            Member member = null;
+            User user = FetchUserById(userId);
+            string sql = $"select id, Project_id, role from Member where Project_id={projectId} and user_id={userId}";
+            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+
+            if (dataRequest.HasRows)
+            {
+                while (dataRequest.Read())
+                {
+                    int memberId = (int)dataRequest["id"];
+                    string role = (string)dataRequest["role"];
+                    member = new Member(memberId, role, user);
+                }
+            }
+            dataRequest.Close();
+
+            return member;
+        }
+
+    }
 }

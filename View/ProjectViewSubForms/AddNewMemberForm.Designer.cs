@@ -36,6 +36,7 @@
             this.memberEmailAddressTextBox = new System.Windows.Forms.TextBox();
             this.cancelForm = new System.Windows.Forms.Button();
             this.ConfirmForm = new System.Windows.Forms.Button();
+            this.erreurLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // roleSelectionComboBox
@@ -84,11 +85,19 @@
             this.ConfirmForm.UseVisualStyleBackColor = false;
             this.ConfirmForm.Click += new System.EventHandler(this.ConfirmForm_Click);
             // 
+            // erreurLabel
+            // 
+            resources.ApplyResources(this.erreurLabel, "erreurLabel");
+            this.erreurLabel.BackColor = System.Drawing.Color.White;
+            this.erreurLabel.ForeColor = System.Drawing.Color.Red;
+            this.erreurLabel.Name = "erreurLabel";
+            // 
             // AddNewMemberForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.erreurLabel);
             this.Controls.Add(this.roleSelectionComboBox);
             this.Controls.Add(this.RoleLabel);
             this.Controls.Add(this.emailAddressLabel);
@@ -112,5 +121,6 @@
         private System.Windows.Forms.TextBox memberEmailAddressTextBox;
         private System.Windows.Forms.Button cancelForm;
         private System.Windows.Forms.Button ConfirmForm;
+        private System.Windows.Forms.Label erreurLabel;
     }
 }

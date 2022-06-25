@@ -12,8 +12,11 @@ namespace pr74_scrum_app
 {
     public partial class AddFeatureToBacklogForm : Form
     {
-        public AddFeatureToBacklogForm()
+        Controller.ProjectController pc = new Controller.ProjectController();
+        private int projectId;
+        public AddFeatureToBacklogForm(int currentProjectId)
         {
+            this.projectId = currentProjectId; 
             InitializeComponent();
         }
 
@@ -30,25 +33,43 @@ namespace pr74_scrum_app
         private void ConfirmForm_Click(object sender, EventArgs e)
         {
             // get form data
-            string featureName = backlogFeatureTitleTextBox.Text;
-            string featureType = typeSelectionComboBox.Text;
-            string featurePriority = priorityComboBox.Text;
-            decimal complexity = complexityLevelNumericUpDown.Value;
-            int featureComplexity = ((int)complexity);
+            string name = backlogFeatureTitleTextBox.Text;
+            string priority = priorityComboBox.Text;
+            decimal decimalComplexity = complexityLevelNumericUpDown.Value;
+            int complexity = ((int)decimalComplexity);
             string description = featureDescription.Text;
 
-            Console.WriteLine("featureName : " + featureName );
-            Console.WriteLine("featureType : " + featureType);
-            Console.WriteLine("featurePriority : " + featurePriority);
-            Console.WriteLine("featureComplexity : " + featureComplexity);
-            Console.WriteLine("description : "+ description);
+            if (!string.IsNullOrWhiteSpace(name)
+                 && !string.IsNullOrWhiteSpace(priority)
+                  && !string.IsNullOrWhiteSpace(description))
+            {
+                erreurLabel.Visible = false;
 
-            // add data to DB
+                int priorityLevel = 3;
+                switch (priority)
+                {
+                    case "Haute":
+                        priorityLevel = 1;
+                        break;
+                    case "Moyenne":
+                        priorityLevel = 2;
+                        break;
+                    case "Basse":
+                        priorityLevel = 3;
+                        break;
+                    default:
+                        break;
+                }
 
-
-
-            // close form
-            this.Close();
+                // add data to DB and close
+                pc.PersistProductBacklogUserStory(name, priorityLevel, complexity, description, this.projectId);
+                this.Close();
+            }
+            else
+            {
+                erreurLabel.Text = "Certains champs sont vides.";
+                erreurLabel.Visible = true;
+            }
         }
     }
 }

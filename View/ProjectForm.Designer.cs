@@ -1,6 +1,6 @@
 ﻿namespace pr74_scrum_app
 {
-    partial class ProjectViewForm
+    partial class ProjectForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,8 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.archiveProjectButton = new System.Windows.Forms.Button();
             this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
+            this.porjectDescription = new System.Windows.Forms.TextBox();
+            this.descriptionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BacklogDataGridView)).BeginInit();
             this.ProjectPanel.SuspendLayout();
@@ -51,9 +53,10 @@
             // 
             // addToSprintsButton
             // 
-            this.addToSprintsButton.Location = new System.Drawing.Point(530, 93);
+            this.addToSprintsButton.Location = new System.Drawing.Point(288, 130);
+            this.addToSprintsButton.Margin = new System.Windows.Forms.Padding(2);
             this.addToSprintsButton.Name = "addToSprintsButton";
-            this.addToSprintsButton.Size = new System.Drawing.Size(115, 31);
+            this.addToSprintsButton.Size = new System.Drawing.Size(58, 22);
             this.addToSprintsButton.TabIndex = 15;
             this.addToSprintsButton.Text = "+ Ajouter";
             this.addToSprintsButton.UseVisualStyleBackColor = true;
@@ -61,9 +64,10 @@
             // 
             // addToBacklogButton
             // 
-            this.addToBacklogButton.Location = new System.Drawing.Point(198, 93);
+            this.addToBacklogButton.Location = new System.Drawing.Point(110, 130);
+            this.addToBacklogButton.Margin = new System.Windows.Forms.Padding(2);
             this.addToBacklogButton.Name = "addToBacklogButton";
-            this.addToBacklogButton.Size = new System.Drawing.Size(115, 31);
+            this.addToBacklogButton.Size = new System.Drawing.Size(58, 22);
             this.addToBacklogButton.TabIndex = 12;
             this.addToBacklogButton.Text = "+ Ajouter";
             this.addToBacklogButton.UseVisualStyleBackColor = true;
@@ -72,25 +76,31 @@
             // MembersDataGridView
             // 
             this.MembersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MembersDataGridView.Location = new System.Drawing.Point(703, 156);
+            this.MembersDataGridView.Location = new System.Drawing.Point(370, 155);
+            this.MembersDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.MembersDataGridView.Name = "MembersDataGridView";
             this.MembersDataGridView.RowHeadersWidth = 82;
             this.MembersDataGridView.RowTemplate.Height = 33;
-            this.MembersDataGridView.Size = new System.Drawing.Size(276, 412);
+            this.MembersDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.MembersDataGridView.Size = new System.Drawing.Size(150, 214);
             this.MembersDataGridView.TabIndex = 11;
             // 
             // BacklogDataGridView
             // 
             this.BacklogDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BacklogDataGridView.Location = new System.Drawing.Point(37, 156);
+            this.BacklogDataGridView.Location = new System.Drawing.Point(18, 155);
+            this.BacklogDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.BacklogDataGridView.Name = "BacklogDataGridView";
             this.BacklogDataGridView.RowHeadersWidth = 82;
             this.BacklogDataGridView.RowTemplate.Height = 33;
-            this.BacklogDataGridView.Size = new System.Drawing.Size(276, 412);
+            this.BacklogDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.BacklogDataGridView.Size = new System.Drawing.Size(150, 214);
             this.BacklogDataGridView.TabIndex = 9;
             // 
             // ProjectPanel
             // 
+            this.ProjectPanel.Controls.Add(this.descriptionLabel);
+            this.ProjectPanel.Controls.Add(this.porjectDescription);
             this.ProjectPanel.Controls.Add(this.projectNameLabel);
             this.ProjectPanel.Controls.Add(this.SprintsLabel);
             this.ProjectPanel.Controls.Add(this.MembersLabel);
@@ -104,44 +114,50 @@
             this.ProjectPanel.Controls.Add(this.BacklogDataGridView);
             this.ProjectPanel.Controls.Add(this.searchTextBox);
             this.ProjectPanel.Controls.Add(this.archiveProjectButton);
-            this.ProjectPanel.Location = new System.Drawing.Point(253, 92);
+            this.ProjectPanel.Location = new System.Drawing.Point(126, 48);
+            this.ProjectPanel.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectPanel.Name = "ProjectPanel";
-            this.ProjectPanel.Size = new System.Drawing.Size(1075, 593);
+            this.ProjectPanel.Size = new System.Drawing.Size(538, 349);
             this.ProjectPanel.TabIndex = 16;
             // 
             // projectNameLabel
             // 
             this.projectNameLabel.AutoSize = true;
-            this.projectNameLabel.Location = new System.Drawing.Point(41, 26);
+            this.projectNameLabel.Location = new System.Drawing.Point(20, 14);
+            this.projectNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.projectNameLabel.Name = "projectNameLabel";
-            this.projectNameLabel.Size = new System.Drawing.Size(146, 25);
+            this.projectNameLabel.Size = new System.Drawing.Size(73, 13);
             this.projectNameLabel.TabIndex = 24;
             this.projectNameLabel.Text = "Nom du projet";
+            this.projectNameLabel.Click += new System.EventHandler(this.projectNameLabel_Click);
             // 
             // SprintsLabel
             // 
             this.SprintsLabel.AutoSize = true;
-            this.SprintsLabel.Location = new System.Drawing.Point(374, 99);
+            this.SprintsLabel.Location = new System.Drawing.Point(198, 133);
+            this.SprintsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SprintsLabel.Name = "SprintsLabel";
-            this.SprintsLabel.Size = new System.Drawing.Size(79, 25);
+            this.SprintsLabel.Size = new System.Drawing.Size(39, 13);
             this.SprintsLabel.TabIndex = 23;
             this.SprintsLabel.Text = "Sprints";
             // 
             // MembersLabel
             // 
             this.MembersLabel.AutoSize = true;
-            this.MembersLabel.Location = new System.Drawing.Point(708, 99);
+            this.MembersLabel.Location = new System.Drawing.Point(372, 133);
+            this.MembersLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MembersLabel.Name = "MembersLabel";
-            this.MembersLabel.Size = new System.Drawing.Size(101, 25);
+            this.MembersLabel.Size = new System.Drawing.Size(50, 13);
             this.MembersLabel.TabIndex = 22;
             this.MembersLabel.Text = "Membres";
             // 
             // BacklogLabel
             // 
             this.BacklogLabel.AutoSize = true;
-            this.BacklogLabel.Location = new System.Drawing.Point(41, 99);
+            this.BacklogLabel.Location = new System.Drawing.Point(20, 133);
+            this.BacklogLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BacklogLabel.Name = "BacklogLabel";
-            this.BacklogLabel.Size = new System.Drawing.Size(89, 25);
+            this.BacklogLabel.Size = new System.Drawing.Size(46, 13);
             this.BacklogLabel.TabIndex = 21;
             this.BacklogLabel.Text = "Backlog";
             // 
@@ -152,16 +168,18 @@
             "Backlog",
             "Sprints",
             "Membres"});
-            this.searchBarComboBox.Location = new System.Drawing.Point(699, 20);
+            this.searchBarComboBox.Location = new System.Drawing.Point(350, 10);
+            this.searchBarComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchBarComboBox.Name = "searchBarComboBox";
-            this.searchBarComboBox.Size = new System.Drawing.Size(121, 33);
+            this.searchBarComboBox.Size = new System.Drawing.Size(62, 21);
             this.searchBarComboBox.TabIndex = 20;
             // 
             // addToMembersButton
             // 
-            this.addToMembersButton.Location = new System.Drawing.Point(864, 93);
+            this.addToMembersButton.Location = new System.Drawing.Point(462, 130);
+            this.addToMembersButton.Margin = new System.Windows.Forms.Padding(2);
             this.addToMembersButton.Name = "addToMembersButton";
-            this.addToMembersButton.Size = new System.Drawing.Size(115, 31);
+            this.addToMembersButton.Size = new System.Drawing.Size(58, 22);
             this.addToMembersButton.TabIndex = 16;
             this.addToMembersButton.Text = "+ Ajouter";
             this.addToMembersButton.UseVisualStyleBackColor = true;
@@ -170,28 +188,33 @@
             // SprintsDataGridView
             // 
             this.SprintsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SprintsDataGridView.Location = new System.Drawing.Point(369, 156);
+            this.SprintsDataGridView.Location = new System.Drawing.Point(196, 155);
+            this.SprintsDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.SprintsDataGridView.Name = "SprintsDataGridView";
             this.SprintsDataGridView.RowHeadersWidth = 82;
             this.SprintsDataGridView.RowTemplate.Height = 33;
-            this.SprintsDataGridView.Size = new System.Drawing.Size(276, 412);
+            this.SprintsDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SprintsDataGridView.Size = new System.Drawing.Size(150, 214);
             this.SprintsDataGridView.TabIndex = 10;
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(826, 20);
+            this.searchTextBox.Location = new System.Drawing.Point(413, 10);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(234, 31);
+            this.searchTextBox.Size = new System.Drawing.Size(119, 20);
             this.searchTextBox.TabIndex = 7;
             // 
             // archiveProjectButton
             // 
-            this.archiveProjectButton.Location = new System.Drawing.Point(198, 17);
+            this.archiveProjectButton.Location = new System.Drawing.Point(280, 9);
+            this.archiveProjectButton.Margin = new System.Windows.Forms.Padding(2);
             this.archiveProjectButton.Name = "archiveProjectButton";
-            this.archiveProjectButton.Size = new System.Drawing.Size(133, 37);
+            this.archiveProjectButton.Size = new System.Drawing.Size(66, 24);
             this.archiveProjectButton.TabIndex = 8;
             this.archiveProjectButton.Text = "Archiver";
             this.archiveProjectButton.UseVisualStyleBackColor = true;
+            this.archiveProjectButton.Click += new System.EventHandler(this.archiveProjectButton_Click);
             // 
             // mySqlDataAdapter1
             // 
@@ -200,13 +223,34 @@
             this.mySqlDataAdapter1.SelectCommand = null;
             this.mySqlDataAdapter1.UpdateCommand = null;
             // 
-            // ProjectViewForm
+            // porjectDescription
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.porjectDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.porjectDescription.Location = new System.Drawing.Point(23, 67);
+            this.porjectDescription.Multiline = true;
+            this.porjectDescription.Name = "porjectDescription";
+            this.porjectDescription.ReadOnly = true;
+            this.porjectDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.porjectDescription.Size = new System.Drawing.Size(509, 51);
+            this.porjectDescription.TabIndex = 25;
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Location = new System.Drawing.Point(27, 49);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(66, 13);
+            this.descriptionLabel.TabIndex = 26;
+            this.descriptionLabel.Text = "Description :";
+            // 
+            // ProjectForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1340, 697);
+            this.ClientSize = new System.Drawing.Size(670, 403);
             this.Controls.Add(this.ProjectPanel);
-            this.Name = "ProjectViewForm";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "ProjectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectViewForm";
             ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).EndInit();
@@ -234,5 +278,7 @@
         private System.Windows.Forms.Label MembersLabel;
         private System.Windows.Forms.Label BacklogLabel;
         private System.Windows.Forms.Label projectNameLabel;
+        private System.Windows.Forms.TextBox porjectDescription;
+        private System.Windows.Forms.Label descriptionLabel;
     }
 }

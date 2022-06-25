@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,11 @@ namespace pr74_scrum_app
 {
     public partial class AddNewSprintForm : Form
     {
-        public AddNewSprintForm()
+        Controller.ProjectController pc = new Controller.ProjectController();
+        private int projectId;
+        public AddNewSprintForm(int currentProjectId)
         {
+            this.projectId = currentProjectId;
             InitializeComponent();
         }
 
@@ -34,16 +38,28 @@ namespace pr74_scrum_app
             string startingDate = startingDateTimePicker.Text;
             string endingDate = endingDateTimePicker.Text;
 
-            Console.WriteLine("sprintName : " + sprintName);
-            Console.WriteLine("startingDate : " + startingDate);
-            Console.WriteLine("endingDate : " + endingDate);
+            if (!string.IsNullOrWhiteSpace(sprintName))
+            {
+                erreurLabel.Visible = false;
+                var cultureInfo = new CultureInfo("fr-FR");
+                var parsedStartingDate = DateTime.Parse(startingDate, cultureInfo);
+                var parsedEndingDate = DateTime.Parse(endingDate, cultureInfo);
 
-            // add data to DB
-
-
-
-            // close form
-            this.Close();
+                // compare the 2 dates
+                if (parsedStartingDate <= parsedEndingDate)
+                {
+                    erreurLabel.Visible = false;
+                    // add data to DB and close
+                    pc.PersistNewSprint(sprintName, parsedStartingDate, parsedEndingDate, this.projectId);
+                    this.Close();
+                } else {
+                    erreurLabel.Text = "La date de fin doit être supérieure ou égale à la date de début.";
+                    erreurLabel.Visible = true;
+                }
+            } else {
+                erreurLabel.Text = "Complétez le nom du sprint.";
+                erreurLabel.Visible = true;
+            }
         }
     }
 }

@@ -5,5 +5,9 @@
         public ProductBacklog(int id) : base(id)
         {
         }
+
+        public ProductBacklog() : base()
+        {
+        }
     }
 }
