@@ -1,5 +1,6 @@
 ﻿using pr74_scrum_app.Controller;
 using pr74_scrum_app.Model;
+using pr74_scrum_app.View.Components;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace pr74_scrum_app.View
         ListPanel listSource;
         Member member;
         
-        public SprintForm(int userId, int sprintId)
+        public SprintForm(int memberId, int sprintId)
         {
             InitializeComponent();
             SprintController sprintController = new SprintController();
@@ -23,10 +24,18 @@ namespace pr74_scrum_app.View
             {
                 MessageBox.Show("404 : Sprint not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
             projectNameLabel.Text = sprint.Name;
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
-            member = new Member(userId); // TODO : change with real function
+            member = new Member(memberId); // TODO : change with real function
+            member.User = new User(1);
+            member.User.Email = "mocks@exemple.com";
+
+
+            NavBar navBar = new NavBar(member.User);
+            SideBar sideBar = new SideBar(member.User);
+            Controls.Add(navBar);
+            Controls.Add(sideBar);
+
         }
         private void GenerateUserStoryPanels(List<UserStory> userStories)
         {
