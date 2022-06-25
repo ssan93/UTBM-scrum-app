@@ -6,8 +6,5 @@
         {
         }
 
-        public ProductBacklog() : base()
-        {
-        }
     }
 }

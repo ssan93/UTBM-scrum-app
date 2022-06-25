@@ -37,7 +37,7 @@ namespace pr74_scrum_app
             addToMembersButton.Visible = false;
             addToSprintsButton.Visible = false;
 
-            if (member.Role == "Product owner")
+            if (member.Role == "SM" || member.Role == "PO")
             {
                 archiveProjectButton.Visible = true;
                 addToBacklogButton.Visible = true;

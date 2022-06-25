@@ -22,7 +22,7 @@ namespace pr74_scrum_app.Controller
              **/
             int userId = FetchUserIdByEmail(userEmail);
                 string sql = $"select * from users where id={userId}";
-                MySqlDataReader dataRequest = db.ExecutQuery(sql);
+                MySqlDataReader dataRequest = Database.ExecutQuery(sql);
 
                 if (dataRequest != null && dataRequest.HasRows)
                 {
@@ -30,7 +30,7 @@ namespace pr74_scrum_app.Controller
 
                     sql = $"insert into Member (Project_id, role, user_id) values ('{projectId}','{role}','{userId}')";
 
-                    dataRequest = db.ExecutQuery(sql);
+                    dataRequest = Database.ExecutQuery(sql);
                     dataRequest.Close();
                             
                 }
@@ -44,7 +44,7 @@ namespace pr74_scrum_app.Controller
 
             string sql = $"select id from users where email='{email}'";
             Console.WriteLine(sql);
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql);
             
             while (dataRequest.Read())
             {
@@ -61,7 +61,7 @@ namespace pr74_scrum_app.Controller
             bool exists;
 
             string sql = $"select * from users where email={email}"; 
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql);
 
             exists = dataRequest != null && dataRequest.HasRows;
             dataRequest.Close();
@@ -75,7 +75,7 @@ namespace pr74_scrum_app.Controller
             User user = null;
 
             string sql = $"select * from users where id={userId}";
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql);
 
             if (dataRequest.HasRows)
             {
@@ -101,7 +101,7 @@ namespace pr74_scrum_app.Controller
         public void RemoveMember(Project project, int memberId)
         {
             string sql = $"select id from Member where id={memberId}";
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql);
 
             if (dataRequest.HasRows)
             {
@@ -109,7 +109,7 @@ namespace pr74_scrum_app.Controller
                 dataRequest.Close();
 
                 sql = $"delete from member where id={memberId}";
-                dataRequest = db.ExecutQuery(sql);
+                dataRequest = Database.ExecutQuery(sql);
                 dataRequest.Close();
             }
             dataRequest.Close();
@@ -119,7 +119,7 @@ namespace pr74_scrum_app.Controller
         public Project FetchProjectById(int projectId)
         {
             string sql = $"select * from Project where id={projectId}";
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql);
 
             Project project = null;
             if (dataRequest.HasRows)
@@ -165,7 +165,7 @@ namespace pr74_scrum_app.Controller
 
             string sql = $"select id, name from Sprint where Project_id={projectId}"; // TODO select des id et les names des sprints du projetID
 
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql);
 
             SprintController sc = new SprintController(); // TODO
 
@@ -188,7 +188,7 @@ namespace pr74_scrum_app.Controller
                 $" from Member m, users u" +
                 $" where Project_Id={projectId} and m.user_id=user_id";
 
-            MySqlDataReader dataRequest = db.ExecutQuery(sql); // pour chaque membre, retourner le nom, le role, l'id du membre (pas du user)
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql); // pour chaque membre, retourner le nom, le role, l'id du membre (pas du user)
             if (dataRequest.HasRows)
             {
                 while (dataRequest.Read())
@@ -219,7 +219,7 @@ namespace pr74_scrum_app.Controller
                 string start = startingDate.ToString("yyyy/MM/dd");
                 string end = endingDate.ToString("yyyy/MM/dd");
                 string sql = $"insert into Sprint (name, startDate, endDate, Project_id) values ('{name}','{start}','{end}',{projectId})"; 
-                MySqlDataReader dataRequest = db.ExecutQuery(sql);
+                MySqlDataReader dataRequest = Database.ExecutQuery(sql);
                 dataRequest.Close();
         }
 
@@ -227,13 +227,13 @@ namespace pr74_scrum_app.Controller
         public void ArchiveProject(int projectId)
         {
             string sql = $"select * from Project where id={projectId}";
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql);
 
             if (dataRequest.HasRows) // project exists
             {
                 dataRequest.Close();
                 sql = $"update Project SET archived = 1 where id={projectId}";
-                dataRequest = db.ExecutQuery(sql);
+                dataRequest = Database.ExecutQuery(sql);
                 dataRequest.Close();
             }
         }
@@ -243,7 +243,7 @@ namespace pr74_scrum_app.Controller
             string defaultState = "TODO";
             string sql = $"insert into UserStory (name, description , complexity , priority, state, Project_id ) " +
                 $"values ('{name}','{description}','{complexity}',{priority},'{defaultState}',{projectId})";
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql);
             dataRequest.Close();
         }
 
@@ -253,7 +253,7 @@ namespace pr74_scrum_app.Controller
             Member member = null;
             User user = FetchUserById(userId);
             string sql = $"select id, Project_id, role from Member where Project_id={projectId} and user_id={userId}";
-            MySqlDataReader dataRequest = db.ExecutQuery(sql);
+            MySqlDataReader dataRequest = Database.ExecutQuery(sql);
 
             if (dataRequest.HasRows)
             {

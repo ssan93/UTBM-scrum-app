@@ -83,7 +83,7 @@ namespace pr74_scrum_app.Controller
 
             string sql = $"select * from UserStory where Project_id={projectId}"; // get product backlock
 
-            MySqlDataReader dr = db.ExecutQuery(sql);
+            MySqlDataReader dr = Database.ExecutQuery(sql);
 
             if (dr.HasRows)
             {
