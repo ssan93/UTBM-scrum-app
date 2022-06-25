@@ -106,7 +106,13 @@
     <Compile Include="View\Components\ListPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\Components\NavBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Components\Separator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Components\SideBar.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Components\UserStoryPanel.cs">
@@ -120,16 +126,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Components\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controller\SidebarController.cs" />
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\RoundButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controller\SidebarController.cs" />
     <Compile Include="View\SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
