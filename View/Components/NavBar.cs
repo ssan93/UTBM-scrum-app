@@ -14,7 +14,7 @@ namespace pr74_scrum_app.View.Components
         }
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             NavBarPictureBox = new PictureBox();
             SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(NavBarPictureBox)).BeginInit();
