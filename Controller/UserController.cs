@@ -9,18 +9,18 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using pr74_scrum_app.Model;
 
-namespace pr74_scrum_app
+namespace pr74_scrum_app.Controller
 {
-    class UserController
+    class UserController : Controller
     {
-        private static Database db;
-        private User user;
- 
-        public UserController()
+        string email;
+        int id;
+        User user;
+        public UserController(): base() {
+        }
+        public string GetUserEmail()//when user is login this methode return email
         {
-            if (db == null){
-                db = new Database();
-            }
+            return email;
         }
         //methode to sign in into the application
         public bool UserLogin(string pass, string email)
@@ -28,7 +28,7 @@ namespace pr74_scrum_app
             if (pass != string.Empty || email != string.Empty)//check if field are not empty
             {
                 string sql = $"select * from users where email='{email}' and password='{EncryptPass(pass)}'";
-                MySqlDataReader dr = db.ExecutQuery(sql); //if match 
+                MySqlDataReader dr = Database.ExecutQuery(sql); //if match 
                 if (dr.HasRows)
                 {
                     while (dr.Read())
@@ -59,7 +59,7 @@ namespace pr74_scrum_app
             {
                 if (pass == confirmpass)//check confimation pass
                 {
-                    MySqlDataReader data = db.ExecutQuery("select * from users where email='" + email + "'");
+                    MySqlDataReader data = Database.ExecutQuery("select * from users where email='" + email + "'");
                     if (data!=null && data.HasRows)//check if email exist
                     {
                         data.Close();
@@ -75,7 +75,7 @@ namespace pr74_scrum_app
                     {
                         data.Close();
                         string sql = $"insert into users(lastname,firstname,email,password) values('{lastname}','{firstname}','{email}','{EncryptPass(pass)}')";
-                        MySqlDataReader resp = db.ExecutQuery(sql);
+                        MySqlDataReader resp = Database.ExecutQuery(sql);
                         resp.Close();
                         MessageBox.Show("Vontre compte est creer. Connectez-vous.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -144,7 +144,7 @@ namespace pr74_scrum_app
             try
             {
                 string stringupdate = $"Update users set firstname='{firstname}' , lastname='{lastname}' where id={id} and email='{email}'";
-                na = db.ExecutQuery(stringupdate);
+                na = Database.ExecutQuery(stringupdate);
                 na.Close();
             }
             catch (Exception e)
@@ -163,7 +163,7 @@ namespace pr74_scrum_app
             try
             {
                 string insertProjet = $"insert into project(name,description,archived,archived,created_dt) values('{name}','{description}',{0},{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
-                data = db.ExecutQuery(insertProjet);
+                data = Database.ExecutQuery(insertProjet);
                 if(data!=null && data.HasRows)
                 {
                     if (data.Read())
@@ -174,7 +174,7 @@ namespace pr74_scrum_app
                     if (idpro != 0)
                     {
                         string insertMernber = $"insert into member(role,project_id,user_id) values('srummaster',{idpro},{id})";
-                        md = db.ExecutQuery(insertMernber);
+                        md = Database.ExecutQuery(insertMernber);
                         md.Close();
                     }
                 }
@@ -194,7 +194,7 @@ namespace pr74_scrum_app
             var project = new List<Project>();
             string sqlprojet = "select project.id,name from project inner join member on member.Project_id=project.id " +
                 $"where member.user_id={userid} and project.archived={0} order by project.created_dt DESC,project.id DESC LIMIT 4";            
-            data = db.ExecutQuery(sqlprojet);
+            data = Database.ExecutQuery(sqlprojet);
             if(data !=null && data.HasRows)
             {
                 while (data.Read()) 
@@ -212,7 +212,7 @@ namespace pr74_scrum_app
             var sprint = new List<Sprint>();
             string sqlstack = "select sprint.id,sprint.name,sprint.startDate,sprint.endDate from sprint inner join project on project.id=sprint.Project_id inner join member on member.project_id=project.id " +
                 $"where member.user_id ={userid} and project.archived={0} order by project.created_dt DESC,project.id DESC LIMIT 4 ";
-            data = db.ExecutQuery(sqlstack);
+            data = Database.ExecutQuery(sqlstack);
             if (data != null && data.HasRows)
             {
                 while (data.Read())
@@ -233,7 +233,7 @@ namespace pr74_scrum_app
             string sqltask = "select userStory.id,userStory.name,userStory.state from userStory inner join project on project.id=userStory.Project_id " +
                 " inner join member on member.project_id=project.id " +
                 $" where member.user_id ={userid} and userStory.state <> 'done' and project.archived={0} order by project.created_dt DESC,project.id DESC LIMIT 4";
-            data = db.ExecutQuery(sqltask);
+            data = Database.ExecutQuery(sqltask);
             if (data != null && data.HasRows)
             {
                 while (data.Read())
@@ -252,7 +252,7 @@ namespace pr74_scrum_app
             var project = new List<Project>();
             string sqlprojet = "select project.id,name from project inner join member on member.Project_id=project.id " +
                 $"where member.user_id={userid} and project.archived={0} order by project.created_dt DESC,project.id DESC";
-            data = db.ExecutQuery(sqlprojet);
+            data = Database.ExecutQuery(sqlprojet);
             if (data != null && data.HasRows)
             {
                 while (data.Read())
@@ -271,7 +271,7 @@ namespace pr74_scrum_app
             bool addpin = false;
             string sqlpin = "select count(*) from project inner join member on member.Project_id=project.id " +
                 $"where member.user_id={userid} and project.archived={0}  and project.pinned={1} group by project.name";
-            data = db.ExecutQuery(sqlpin);
+            data = Database.ExecutQuery(sqlpin);
             if ( data!=null)
             {
                 if (data.GetInt32(0)>5) //if the the number of pinned project in superior to 5 send false 
@@ -282,7 +282,7 @@ namespace pr74_scrum_app
                 else //update
                 {
                     string stringupdate = $"Update project set pinned={1} where id={idproject}";
-                    na = db.ExecutQuery(stringupdate);
+                    na = Database.ExecutQuery(stringupdate);
                     na.Close();
                 }
                 data.Close();

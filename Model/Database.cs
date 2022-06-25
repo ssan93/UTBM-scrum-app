@@ -13,6 +13,8 @@ namespace pr74_scrum_app
     {
         readonly string connectionString = ConfigurationManager.AppSettings["connectionString"]; //get database infos from app.config
         static MySqlConnection con;
+        static MySqlTransaction transaction;
+        private bool transactionOwner;
         MySqlDataReader reader;
         MySqlCommand cmd;
         //connection to database
@@ -42,7 +44,35 @@ namespace pr74_scrum_app
                 return reader; //retrun null
             }
         }
-    
+
+        public void Begin()
+        {
+            if (transaction == null) { 
+                transaction = con.BeginTransaction();
+                transactionOwner = true;
+            }
+        }
+
+        public void Commit()
+        {
+            if(transaction != null && transactionOwner)
+            {
+                transaction.Commit();
+                transaction = null;
+            }
+            transactionOwner = false;
+        }
+
+        public void Rollback()
+        {
+            if(transaction != null)
+            {
+                transaction.Rollback();
+                transaction = null;
+            }
+            transactionOwner = false;
+        }
+
         //close databse connection
         public void Close()
         {
