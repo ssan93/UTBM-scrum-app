@@ -169,7 +169,7 @@ namespace pr74_scrum_app.Controller
                     }
                     if (idpro != 0)
                     {
-                        string insertMernber = $"insert into member(role,project_id,user_id) values('sm',{idpro},{id})";
+                        string insertMernber = $"insert into member(role,project_id,user_id) values('SM',{idpro},{id})";
                         na = Database.ExecutQuery(insertMernber);
                         na.Close();
                     }
