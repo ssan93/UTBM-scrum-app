@@ -35,7 +35,7 @@ namespace pr74_scrum_app.View
         public void Format(Control c)
         {
             int width = Size.Width;
-            c.Size = new System.Drawing.Size((width-14), elementHeight);
+            c.Size = new System.Drawing.Size((width-30), elementHeight);
             c.Location = new System.Drawing.Point(7, generateYPosition()+10);
         }
         public void RefreshControls()
