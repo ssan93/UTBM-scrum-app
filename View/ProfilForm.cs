@@ -1,5 +1,7 @@
 using pr74_scrum_app.Controller;
 using pr74_scrum_app.Model;
+using pr74_scrum_app.View;
+using pr74_scrum_app.View.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,8 +80,18 @@ namespace pr74_scrum_app
             TaskPictureBoxs.Add(TaskpictureBox3);
             TaskPictureBoxs.Add(TaskpictureBox4);
 
-            LoadData(); //option d'affichage de projet
+            LoadData(); //Option d'affichage de projet
             AddDataIntocombox(); //option de recherche 
+            SideBar sideBar = new SideBar(User);
+            Controls.Add(sideBar);
+        }
+
+        private void Refresh_content()
+        {
+            LoadData(); //Option d'affichage de projet
+            AddDataIntocombox(); //option de recherche 
+            SideBar sideBar = new SideBar(this.user);
+            Controls.Add(sideBar);
         }
 
         private void PictureProfilBox_Click(object sender, EventArgs e)
@@ -275,23 +287,32 @@ namespace pr74_scrum_app
         private void ProjectLabel4_Click(object sender, EventArgs e){OnItemProjectLabel_click(sender);}
 
         //action when user click on one sprint
+        private void Reload_showSprint(int i)
+        {
+            UserController userController = new UserController();
+            this.Hide();
+            SprintForm sprintform = new SprintForm(userController.GetMember(this.user).Id, sprints[i].Id, this.user.Id);
+            sprintform.ShowDialog();
+            this.Show();
+            this.Refresh_content();
+        }
         private void OnItemSprintLabel_click(object sender)
         {
             Label controler = sender as Label;
             int i = Sprintlabels.IndexOf(controler);
-            Console.WriteLine("label " + sprints[i].Name + " " + sprints[i].Id);
+            Reload_showSprint(i);
         }
         private void OnItemSprintBouton_click(object sender)
         {
             View.RoundButton controler = sender as View.RoundButton;
             int i = roudboutonSprints.IndexOf(controler);
-            Console.WriteLine("roundBouton " + sprints[i].Name + " " + sprints[i].Id);
+            Reload_showSprint(i);
         }
         private void OnItemSprintPic_click(object sender)
         {
             PictureBox controler = sender as PictureBox;
             int i = SprintPictureBoxs.IndexOf(controler);
-            Console.WriteLine("pic " + sprints[i].Name + " " + sprints[i].Id);
+            Reload_showSprint(i);
         }
         private void SprintpictureBox1_Click(object sender, EventArgs e) { OnItemSprintPic_click(sender); }
         private void SprintpictureBox2_Click(object sender, EventArgs e) { OnItemSprintPic_click(sender); }
@@ -307,23 +328,32 @@ namespace pr74_scrum_app
         private void SprintLabel4_Click(object sender, EventArgs e) { OnItemSprintLabel_click(sender); }
 
         //action when user click on one Task
+
+        private void Reload_showTask(int i)
+        {
+            UserController userController = new UserController();
+            UserStoryForm sprintform = new UserStoryForm(tasks[i], userController.GetMember(this.user));
+            sprintform.ShowDialog();
+            this.Show();
+            this.Refresh_content();
+        }
         private void OnItemTaskLabel_click(object sender)
         {
             Label controler = sender as Label;
             int i = tasklabels.IndexOf(controler);
-            Console.WriteLine("label " + tasks[i].Name + " " + tasks[i].Id);
+            Reload_showTask(i);
         }
         private void OnItemTaskBouton_click(object sender)
         {
             View.RoundButton controler = sender as View.RoundButton;
             int i = Tasksroudboutons.IndexOf(controler);
-            Console.WriteLine("roundBouton " + tasks[i].Name + " " + tasks[i].Id);
+            Reload_showTask(i);
         }
         private void OnItemTaskPic_click(object sender)
         {
             PictureBox controler = sender as PictureBox;
             int i = TaskPictureBoxs.IndexOf(controler);
-            Console.WriteLine("pic " + tasks[i].Name + " " + tasks[i].Id);
+            Reload_showTask(i);
         }
         private void Tasklabel1_Click(object sender, EventArgs e) { OnItemTaskLabel_click(sender); }
         private void Tasklabel2_Click(object sender, EventArgs e) { OnItemTaskLabel_click(sender); }

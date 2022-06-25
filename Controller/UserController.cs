@@ -13,15 +13,11 @@ namespace pr74_scrum_app.Controller
 {
     class UserController : Controller
     {
-        string email;
-        int id;
         User user;
-        public UserController(): base() {
-        }
-        public string GetUserEmail()//when user is login this methode return email
+        public UserController(): base() 
         {
-            return email;
         }
+   
         //methode to sign in into the application
         public bool UserLogin(string pass, string email)
         {
@@ -41,13 +37,13 @@ namespace pr74_scrum_app.Controller
                 else
                 {
                     dr.Close();
-                    MessageBox.Show("No Account avilable with this username and password ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Votre email ou mot de passe incorrect ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Veuillez Remplir tous les champs", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -63,12 +59,13 @@ namespace pr74_scrum_app.Controller
                     if (data!=null && data.HasRows)//check if email exist
                     {
                         data.Close();
-                        MessageBox.Show("Email existe déja, essayer un nouveau email ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("L'email existe déja, essayer un nouveau email ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     else if (!Regex.IsMatch(email.Trim(), @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))// check if email is in right format
                     {
-                        MessageBox.Show("Email address not valide ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("L'adresse email n'est pas valide ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        data.Close();
                         return false;
                     }
                     else
@@ -77,8 +74,7 @@ namespace pr74_scrum_app.Controller
                         string sql = $"insert into users(lastname,firstname,email,password) values('{lastname}','{firstname}','{email}','{EncryptPass(pass)}')";
                         MySqlDataReader resp = Database.ExecutQuery(sql);
                         resp.Close();
-                        MessageBox.Show("Vontre compte est creer. Connectez-vous.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Vontre compte est crée. Connectez-vous.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return true;
                     }
                 }
@@ -158,11 +154,11 @@ namespace pr74_scrum_app.Controller
         */
         public void CreateProjet(string name, string description, int id)
         {
-            MySqlDataReader md, data;
+            MySqlDataReader na, data;
             int idpro = 0;
             try
             {
-                string insertProjet = $"insert into project(name,description,archived,archived,created_dt) values('{name}','{description}',{0},{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
+                string insertProjet = $"insert into project(name,description,archived,pinned,created_dt) values('{name}','{description}',{0},{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
                 data = Database.ExecutQuery(insertProjet);
                 if(data!=null && data.HasRows)
                 {
@@ -173,9 +169,9 @@ namespace pr74_scrum_app.Controller
                     }
                     if (idpro != 0)
                     {
-                        string insertMernber = $"insert into member(role,project_id,user_id) values('srummaster',{idpro},{id})";
-                        md = Database.ExecutQuery(insertMernber);
-                        md.Close();
+                        string insertMernber = $"insert into member(role,project_id,user_id) values('sm',{idpro},{id})";
+                        na = Database.ExecutQuery(insertMernber);
+                        na.Close();
                     }
                 }
                 else
@@ -230,7 +226,7 @@ namespace pr74_scrum_app.Controller
         {
             MySqlDataReader data;
             var task = new List<UserStory>();
-            string sqltask = "select userStory.id,userStory.name,userStory.state from userStory inner join project on project.id=userStory.Project_id " +
+            string sqltask = "select userStory.id,userStory.name,userStory.state,userStory.priority from userStory inner join project on project.id=userStory.Project_id " +
                 " inner join member on member.project_id=project.id " +
                 $" where member.user_id ={userid} and userStory.state <> 'done' and project.archived={0} order by project.created_dt DESC,project.id DESC LIMIT 4";
             data = Database.ExecutQuery(sqltask);
@@ -239,6 +235,7 @@ namespace pr74_scrum_app.Controller
                 while (data.Read())
                 {
                     UserStory us = new UserStory(data.GetInt32(0), data["name"].ToString(), data.GetString(2));
+                    us.Priority = (int)data["priority"];
                     task.Add(us); //retrun stack inforamtion
                 }
             }
@@ -263,6 +260,22 @@ namespace pr74_scrum_app.Controller
             }
             data.Close();
             return project;
+        }
+        public Member GetMember(User user)
+        {
+            MySqlDataReader data;
+            Member member =null;
+            string sqlm = $"select * from  member where member.user_id={user.Id} ";
+            data = Database.ExecutQuery(sqlm);
+            if (data != null && data.HasRows)
+            {
+                while (data.Read())
+                {
+                    member = new Member((int)data["id"],(string)data["role"],user);
+                }
+            }
+            data.Close();
+            return member;
         }
         //methode to pin a project 
         public bool PinAnproject(int idproject, int userid)

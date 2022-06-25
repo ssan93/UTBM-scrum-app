@@ -15,7 +15,7 @@ namespace pr74_scrum_app.View
         ListPanel listSource;
         Member member;
         
-        public SprintForm(int memberId, int sprintId)
+        public SprintForm(int memberId, int sprintId, int userId)
         {
             InitializeComponent();
             SprintController sprintController = new SprintController();
@@ -26,10 +26,8 @@ namespace pr74_scrum_app.View
             }
             projectNameLabel.Text = sprint.Name;
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
-            member = new Member(memberId); // TODO : change with real function
-            member.User = new User(1);
-            member.User.Email = "mocks@exemple.com";
-
+            member = new Member(memberId); 
+            member.User = new User(userId);
 
             NavBar navBar = new NavBar(member.User);
             SideBar sideBar = new SideBar(member.User);
@@ -193,7 +191,7 @@ namespace pr74_scrum_app.View
         {
             LinkLabel l = sender as LinkLabel;
             UserStoryPanel usp = l.Parent as UserStoryPanel;
-            UserStoryForm usf = new UserStoryForm(usp.UserStory.Id, member.Id);
+            UserStoryForm usf = new UserStoryForm(usp.UserStory, member);
             usf.ShowDialog();
             ResetSprint();
         }

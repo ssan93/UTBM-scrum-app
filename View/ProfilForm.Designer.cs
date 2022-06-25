@@ -105,7 +105,7 @@ namespace pr74_scrum_app
             this.CreateProjetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateProjetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateProjetButton.Location = new System.Drawing.Point(711, 89);
-            this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(2);
             this.CreateProjetButton.Name = "CreateProjetButton";
             this.CreateProjetButton.Size = new System.Drawing.Size(161, 28);
             this.CreateProjetButton.TabIndex = 19;
@@ -123,7 +123,7 @@ namespace pr74_scrum_app
             "Mon profil",
             "Déconnexion"});
             this.ProfilListBox.Location = new System.Drawing.Point(911, 67);
-            this.ProfilListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProfilListBox.Margin = new System.Windows.Forms.Padding(2);
             this.ProfilListBox.Name = "ProfilListBox";
             this.ProfilListBox.Size = new System.Drawing.Size(97, 34);
             this.ProfilListBox.TabIndex = 24;
@@ -148,7 +148,7 @@ namespace pr74_scrum_app
             this.PictureProfilBox.BackColor = System.Drawing.Color.SteelBlue;
             this.PictureProfilBox.Image = ((System.Drawing.Image)(resources.GetObject("PictureProfilBox.Image")));
             this.PictureProfilBox.Location = new System.Drawing.Point(976, 24);
-            this.PictureProfilBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PictureProfilBox.Margin = new System.Windows.Forms.Padding(2);
             this.PictureProfilBox.Name = "PictureProfilBox";
             this.PictureProfilBox.Size = new System.Drawing.Size(22, 28);
             this.PictureProfilBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -343,7 +343,7 @@ namespace pr74_scrum_app
             this.SprintpictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox1.Image")));
             this.SprintpictureBox1.Location = new System.Drawing.Point(275, 310);
-            this.SprintpictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SprintpictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.SprintpictureBox1.Name = "SprintpictureBox1";
             this.SprintpictureBox1.Size = new System.Drawing.Size(62, 51);
             this.SprintpictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -357,7 +357,7 @@ namespace pr74_scrum_app
             this.SprintpictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox2.Image")));
             this.SprintpictureBox2.Location = new System.Drawing.Point(480, 312);
-            this.SprintpictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SprintpictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.SprintpictureBox2.Name = "SprintpictureBox2";
             this.SprintpictureBox2.Size = new System.Drawing.Size(62, 51);
             this.SprintpictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -371,7 +371,7 @@ namespace pr74_scrum_app
             this.SprintpictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox3.Image")));
             this.SprintpictureBox3.Location = new System.Drawing.Point(685, 310);
-            this.SprintpictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SprintpictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.SprintpictureBox3.Name = "SprintpictureBox3";
             this.SprintpictureBox3.Size = new System.Drawing.Size(62, 51);
             this.SprintpictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -385,7 +385,7 @@ namespace pr74_scrum_app
             this.SprintpictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.SprintpictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("SprintpictureBox4.Image")));
             this.SprintpictureBox4.Location = new System.Drawing.Point(877, 310);
-            this.SprintpictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SprintpictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.SprintpictureBox4.Name = "SprintpictureBox4";
             this.SprintpictureBox4.Size = new System.Drawing.Size(62, 51);
             this.SprintpictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -447,7 +447,7 @@ namespace pr74_scrum_app
             this.TaskpictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox1.Image")));
             this.TaskpictureBox1.Location = new System.Drawing.Point(278, 462);
-            this.TaskpictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskpictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.TaskpictureBox1.Name = "TaskpictureBox1";
             this.TaskpictureBox1.Size = new System.Drawing.Size(64, 51);
             this.TaskpictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -461,7 +461,7 @@ namespace pr74_scrum_app
             this.TaskpictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox2.Image")));
             this.TaskpictureBox2.Location = new System.Drawing.Point(480, 462);
-            this.TaskpictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskpictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.TaskpictureBox2.Name = "TaskpictureBox2";
             this.TaskpictureBox2.Size = new System.Drawing.Size(64, 51);
             this.TaskpictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -475,7 +475,7 @@ namespace pr74_scrum_app
             this.TaskpictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox3.Image")));
             this.TaskpictureBox3.Location = new System.Drawing.Point(685, 463);
-            this.TaskpictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskpictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.TaskpictureBox3.Name = "TaskpictureBox3";
             this.TaskpictureBox3.Size = new System.Drawing.Size(64, 51);
             this.TaskpictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -489,7 +489,7 @@ namespace pr74_scrum_app
             this.TaskpictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.TaskpictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("TaskpictureBox4.Image")));
             this.TaskpictureBox4.Location = new System.Drawing.Point(878, 462);
-            this.TaskpictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskpictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.TaskpictureBox4.Name = "TaskpictureBox4";
             this.TaskpictureBox4.Size = new System.Drawing.Size(64, 51);
             this.TaskpictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -526,7 +526,7 @@ namespace pr74_scrum_app
             // 
             this.NoTaskLabel.AutoSize = true;
             this.NoTaskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoTaskLabel.Location = new System.Drawing.Point(252, 488);
+            this.NoTaskLabel.Location = new System.Drawing.Point(256, 488);
             this.NoTaskLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NoTaskLabel.Name = "NoTaskLabel";
             this.NoTaskLabel.Size = new System.Drawing.Size(173, 17);
@@ -551,7 +551,7 @@ namespace pr74_scrum_app
             this.panel1.Controls.Add(this.PictureProfilBox);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Location = new System.Drawing.Point(-2, -4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1022, 73);
             this.panel1.TabIndex = 75;
@@ -566,7 +566,7 @@ namespace pr74_scrum_app
             this.UserEmailRoundButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserEmailRoundButton.ForeColor = System.Drawing.Color.Black;
             this.UserEmailRoundButton.Location = new System.Drawing.Point(768, 20);
-            this.UserEmailRoundButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserEmailRoundButton.Margin = new System.Windows.Forms.Padding(2);
             this.UserEmailRoundButton.Name = "UserEmailRoundButton";
             this.UserEmailRoundButton.Size = new System.Drawing.Size(204, 34);
             this.UserEmailRoundButton.TabIndex = 10;
@@ -594,7 +594,7 @@ namespace pr74_scrum_app
             this.TaskroundButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton4.ForeColor = System.Drawing.Color.White;
             this.TaskroundButton4.Location = new System.Drawing.Point(841, 457);
-            this.TaskroundButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskroundButton4.Margin = new System.Windows.Forms.Padding(2);
             this.TaskroundButton4.Name = "TaskroundButton4";
             this.TaskroundButton4.Size = new System.Drawing.Size(135, 79);
             this.TaskroundButton4.TabIndex = 46;
@@ -612,7 +612,7 @@ namespace pr74_scrum_app
             this.TaskroundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton3.ForeColor = System.Drawing.Color.White;
             this.TaskroundButton3.Location = new System.Drawing.Point(649, 458);
-            this.TaskroundButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskroundButton3.Margin = new System.Windows.Forms.Padding(2);
             this.TaskroundButton3.Name = "TaskroundButton3";
             this.TaskroundButton3.Size = new System.Drawing.Size(135, 79);
             this.TaskroundButton3.TabIndex = 45;
@@ -630,7 +630,7 @@ namespace pr74_scrum_app
             this.TaskroundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton2.ForeColor = System.Drawing.Color.White;
             this.TaskroundButton2.Location = new System.Drawing.Point(444, 458);
-            this.TaskroundButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskroundButton2.Margin = new System.Windows.Forms.Padding(2);
             this.TaskroundButton2.Name = "TaskroundButton2";
             this.TaskroundButton2.Size = new System.Drawing.Size(135, 79);
             this.TaskroundButton2.TabIndex = 44;
@@ -648,7 +648,7 @@ namespace pr74_scrum_app
             this.TaskroundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskroundButton1.ForeColor = System.Drawing.Color.White;
             this.TaskroundButton1.Location = new System.Drawing.Point(242, 457);
-            this.TaskroundButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TaskroundButton1.Margin = new System.Windows.Forms.Padding(2);
             this.TaskroundButton1.Name = "TaskroundButton1";
             this.TaskroundButton1.Size = new System.Drawing.Size(135, 79);
             this.TaskroundButton1.TabIndex = 42;
@@ -666,7 +666,7 @@ namespace pr74_scrum_app
             this.roundButtonSprint4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint4.ForeColor = System.Drawing.Color.White;
             this.roundButtonSprint4.Location = new System.Drawing.Point(841, 306);
-            this.roundButtonSprint4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roundButtonSprint4.Margin = new System.Windows.Forms.Padding(2);
             this.roundButtonSprint4.Name = "roundButtonSprint4";
             this.roundButtonSprint4.Size = new System.Drawing.Size(135, 79);
             this.roundButtonSprint4.TabIndex = 41;
@@ -684,7 +684,7 @@ namespace pr74_scrum_app
             this.roundButtonSprint3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint3.ForeColor = System.Drawing.Color.White;
             this.roundButtonSprint3.Location = new System.Drawing.Point(649, 308);
-            this.roundButtonSprint3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roundButtonSprint3.Margin = new System.Windows.Forms.Padding(2);
             this.roundButtonSprint3.Name = "roundButtonSprint3";
             this.roundButtonSprint3.Size = new System.Drawing.Size(135, 79);
             this.roundButtonSprint3.TabIndex = 40;
@@ -702,7 +702,7 @@ namespace pr74_scrum_app
             this.roundButtonSprint2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint2.ForeColor = System.Drawing.Color.White;
             this.roundButtonSprint2.Location = new System.Drawing.Point(444, 308);
-            this.roundButtonSprint2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roundButtonSprint2.Margin = new System.Windows.Forms.Padding(2);
             this.roundButtonSprint2.Name = "roundButtonSprint2";
             this.roundButtonSprint2.Size = new System.Drawing.Size(135, 79);
             this.roundButtonSprint2.TabIndex = 39;
@@ -720,7 +720,7 @@ namespace pr74_scrum_app
             this.roundButtonSprint1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundButtonSprint1.ForeColor = System.Drawing.Color.White;
             this.roundButtonSprint1.Location = new System.Drawing.Point(242, 306);
-            this.roundButtonSprint1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roundButtonSprint1.Margin = new System.Windows.Forms.Padding(2);
             this.roundButtonSprint1.Name = "roundButtonSprint1";
             this.roundButtonSprint1.Size = new System.Drawing.Size(135, 79);
             this.roundButtonSprint1.TabIndex = 37;
@@ -738,7 +738,7 @@ namespace pr74_scrum_app
             this.ProjectRoundButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton4.ForeColor = System.Drawing.Color.Black;
             this.ProjectRoundButton4.Location = new System.Drawing.Point(841, 163);
-            this.ProjectRoundButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProjectRoundButton4.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRoundButton4.Name = "ProjectRoundButton4";
             this.ProjectRoundButton4.Size = new System.Drawing.Size(135, 79);
             this.ProjectRoundButton4.TabIndex = 36;
@@ -756,7 +756,7 @@ namespace pr74_scrum_app
             this.ProjectRoundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton3.ForeColor = System.Drawing.Color.White;
             this.ProjectRoundButton3.Location = new System.Drawing.Point(649, 164);
-            this.ProjectRoundButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProjectRoundButton3.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRoundButton3.Name = "ProjectRoundButton3";
             this.ProjectRoundButton3.Size = new System.Drawing.Size(135, 79);
             this.ProjectRoundButton3.TabIndex = 35;
@@ -774,7 +774,7 @@ namespace pr74_scrum_app
             this.ProjectRoundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.ProjectRoundButton2.Location = new System.Drawing.Point(444, 164);
-            this.ProjectRoundButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProjectRoundButton2.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRoundButton2.Name = "ProjectRoundButton2";
             this.ProjectRoundButton2.Size = new System.Drawing.Size(135, 79);
             this.ProjectRoundButton2.TabIndex = 34;
@@ -792,7 +792,7 @@ namespace pr74_scrum_app
             this.ProjectRoundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectRoundButton1.ForeColor = System.Drawing.Color.White;
             this.ProjectRoundButton1.Location = new System.Drawing.Point(242, 163);
-            this.ProjectRoundButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProjectRoundButton1.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRoundButton1.Name = "ProjectRoundButton1";
             this.ProjectRoundButton1.Size = new System.Drawing.Size(135, 79);
             this.ProjectRoundButton1.TabIndex = 29;
@@ -854,7 +854,7 @@ namespace pr74_scrum_app
             this.Controls.Add(this.RechercheLabel);
             this.Controls.Add(this.CreateProjetButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "ProfilForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

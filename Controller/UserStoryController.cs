@@ -245,6 +245,7 @@ namespace pr74_scrum_app.Controller
             Database.Commit();
             return true;
         }
+        
         public Member fetchMemberByProjectIdAndMemberId(int projectId, int memberId)
         {
             Member member = null;
@@ -269,6 +270,25 @@ namespace pr74_scrum_app.Controller
             }
             dr.Close();
             return member;
+        }
+        public List<int> fetchSprintIdProjectIdByUserStoryId(int userStoryId)
+        {
+            List<int> sprintProjectIds = new List<int>();
+            string qsl = $"" +
+               $"SELECT Project_id, sprint_id " +
+               $"FROM {USER_STORIES_TABLE} u " +
+               $"WHERE u.id={userStoryId};";
+            MySqlDataReader dr = Database.ExecutQuery(qsl);
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    sprintProjectIds.Add((int)dr["sprint_id"]);
+                    sprintProjectIds.Add((int)dr["Project_id"]);
+                }
+            }
+            dr.Close();
+            return sprintProjectIds;
         }
         public List<Member> fetchMembersByProjectMock(int projectId)
         {
