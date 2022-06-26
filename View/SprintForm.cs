@@ -19,6 +19,7 @@ namespace pr74_scrum_app.View
         {
             InitializeComponent();
             SprintController sprintController = new SprintController();
+            UserController uc = new UserController();
             sprint = sprintController.FetchSprintById(sprintId);
             if(sprint == null)
             {
@@ -26,16 +27,12 @@ namespace pr74_scrum_app.View
             }
             projectNameLabel.Text = sprint.Name;
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
-            member = new Member(memberId); // TODO : change with real function
-            member.User = new User(1);
-            member.User.Email = "mocks@exemple.com";
-
+            member = uc.GetMemberById(memberId);
 
             NavBar navBar = new NavBar(member.User);
             SideBar sideBar = new SideBar(member.User);
             Controls.Add(navBar);
             Controls.Add(sideBar);
-
         }
         private void GenerateUserStoryPanels(List<UserStory> userStories)
         {
@@ -193,7 +190,7 @@ namespace pr74_scrum_app.View
         {
             LinkLabel l = sender as LinkLabel;
             UserStoryPanel usp = l.Parent as UserStoryPanel;
-            UserStoryForm usf = new UserStoryForm(usp.UserStory.Id, member.Id);
+            UserStoryForm usf = new UserStoryForm(usp.UserStory, member);
             usf.ShowDialog();
             ResetSprint();
         }
