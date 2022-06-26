@@ -35,15 +35,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SprintForm));
             this.todoLabel = new System.Windows.Forms.Label();
             this.todoTitlePanel = new System.Windows.Forms.Panel();
-            this.todoBadge = new pr74_scrum_app.View.RoundButton();
             this.inProgressTitlePanel = new System.Windows.Forms.Panel();
-            this.inProgressBadge = new pr74_scrum_app.View.RoundButton();
             this.InProgressLabel = new System.Windows.Forms.Label();
             this.inReviewTitlePanel = new System.Windows.Forms.Panel();
-            this.inReviewBadge = new pr74_scrum_app.View.RoundButton();
             this.InReviewLabel = new System.Windows.Forms.Label();
             this.doneTitlePanel = new System.Windows.Forms.Panel();
-            this.doneBadge = new pr74_scrum_app.View.RoundButton();
             this.doneLabel = new System.Windows.Forms.Label();
             this.searchBar = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
@@ -54,9 +50,15 @@
             this.mediumPriorityRadioButton = new System.Windows.Forms.RadioButton();
             this.lowPriorityRadioButton = new System.Windows.Forms.RadioButton();
             this.projectNameLabel = new System.Windows.Forms.Label();
+            this.returnButton = new System.Windows.Forms.Button();
+            this.archiveButton = new System.Windows.Forms.Button();
             this.cancelSearchButton = new pr74_scrum_app.View.RoundButton();
             this.searchBarBackground = new pr74_scrum_app.View.RoundButton();
             this.separator = new pr74_scrum_app.View.Components.Separator();
+            this.doneBadge = new pr74_scrum_app.View.RoundButton();
+            this.inReviewBadge = new pr74_scrum_app.View.RoundButton();
+            this.inProgressBadge = new pr74_scrum_app.View.RoundButton();
+            this.todoBadge = new pr74_scrum_app.View.RoundButton();
             this.todoList = new pr74_scrum_app.View.ListPanel();
             this.UserStoryExemple = new System.Windows.Forms.Panel();
             this.PriorityBadgeExemple = new pr74_scrum_app.View.RoundButton();
@@ -64,8 +66,6 @@
             this.doneList = new pr74_scrum_app.View.ListPanel();
             this.inReviewList = new pr74_scrum_app.View.ListPanel();
             this.inProgressList = new pr74_scrum_app.View.ListPanel();
-            this.returnButton = new System.Windows.Forms.Button();
-            this.archiveButton = new System.Windows.Forms.Button();
             this.todoTitlePanel.SuspendLayout();
             this.inProgressTitlePanel.SuspendLayout();
             this.inReviewTitlePanel.SuspendLayout();
@@ -95,22 +95,6 @@
             this.todoTitlePanel.Size = new System.Drawing.Size(251, 54);
             this.todoTitlePanel.TabIndex = 17;
             // 
-            // todoBadge
-            // 
-            this.todoBadge.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.todoBadge.Enabled = false;
-            this.todoBadge.FlatAppearance.BorderSize = 0;
-            this.todoBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.todoBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.todoBadge.ForeColor = System.Drawing.Color.White;
-            this.todoBadge.Location = new System.Drawing.Point(164, 12);
-            this.todoBadge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.todoBadge.Name = "todoBadge";
-            this.todoBadge.Size = new System.Drawing.Size(41, 31);
-            this.todoBadge.TabIndex = 2;
-            this.todoBadge.Text = "1";
-            this.todoBadge.UseVisualStyleBackColor = false;
-            // 
             // inProgressTitlePanel
             // 
             this.inProgressTitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
@@ -121,22 +105,6 @@
             this.inProgressTitlePanel.Name = "inProgressTitlePanel";
             this.inProgressTitlePanel.Size = new System.Drawing.Size(251, 54);
             this.inProgressTitlePanel.TabIndex = 18;
-            // 
-            // inProgressBadge
-            // 
-            this.inProgressBadge.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.inProgressBadge.Enabled = false;
-            this.inProgressBadge.FlatAppearance.BorderSize = 0;
-            this.inProgressBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inProgressBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inProgressBadge.ForeColor = System.Drawing.Color.White;
-            this.inProgressBadge.Location = new System.Drawing.Point(175, 10);
-            this.inProgressBadge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.inProgressBadge.Name = "inProgressBadge";
-            this.inProgressBadge.Size = new System.Drawing.Size(41, 31);
-            this.inProgressBadge.TabIndex = 18;
-            this.inProgressBadge.Text = "0";
-            this.inProgressBadge.UseVisualStyleBackColor = false;
             // 
             // InProgressLabel
             // 
@@ -159,22 +127,6 @@
             this.inReviewTitlePanel.Size = new System.Drawing.Size(251, 54);
             this.inReviewTitlePanel.TabIndex = 19;
             // 
-            // inReviewBadge
-            // 
-            this.inReviewBadge.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.inReviewBadge.Enabled = false;
-            this.inReviewBadge.FlatAppearance.BorderSize = 0;
-            this.inReviewBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inReviewBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inReviewBadge.ForeColor = System.Drawing.Color.White;
-            this.inReviewBadge.Location = new System.Drawing.Point(197, 10);
-            this.inReviewBadge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.inReviewBadge.Name = "inReviewBadge";
-            this.inReviewBadge.Size = new System.Drawing.Size(41, 31);
-            this.inReviewBadge.TabIndex = 19;
-            this.inReviewBadge.Text = "0";
-            this.inReviewBadge.UseVisualStyleBackColor = false;
-            // 
             // InReviewLabel
             // 
             this.InReviewLabel.AutoSize = true;
@@ -195,22 +147,6 @@
             this.doneTitlePanel.Name = "doneTitlePanel";
             this.doneTitlePanel.Size = new System.Drawing.Size(251, 54);
             this.doneTitlePanel.TabIndex = 19;
-            // 
-            // doneBadge
-            // 
-            this.doneBadge.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.doneBadge.Enabled = false;
-            this.doneBadge.FlatAppearance.BorderSize = 0;
-            this.doneBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.doneBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doneBadge.ForeColor = System.Drawing.Color.White;
-            this.doneBadge.Location = new System.Drawing.Point(172, 10);
-            this.doneBadge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.doneBadge.Name = "doneBadge";
-            this.doneBadge.Size = new System.Drawing.Size(41, 31);
-            this.doneBadge.TabIndex = 20;
-            this.doneBadge.Text = "0";
-            this.doneBadge.UseVisualStyleBackColor = false;
             // 
             // doneLabel
             // 
@@ -332,6 +268,28 @@
             this.projectNameLabel.TabIndex = 32;
             this.projectNameLabel.Text = "SprintName :";
             // 
+            // returnButton
+            // 
+            this.returnButton.Location = new System.Drawing.Point(299, 97);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(75, 23);
+            this.returnButton.TabIndex = 33;
+            this.returnButton.Text = "< Retour";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
+            // 
+            // archiveButton
+            // 
+            this.archiveButton.BackColor = System.Drawing.Color.Gray;
+            this.archiveButton.ForeColor = System.Drawing.Color.White;
+            this.archiveButton.Location = new System.Drawing.Point(380, 97);
+            this.archiveButton.Name = "archiveButton";
+            this.archiveButton.Size = new System.Drawing.Size(75, 35);
+            this.archiveButton.TabIndex = 34;
+            this.archiveButton.Text = "Archiver";
+            this.archiveButton.UseVisualStyleBackColor = false;
+            this.archiveButton.Click += new System.EventHandler(this.archiveButton_Click);
+            // 
             // cancelSearchButton
             // 
             this.cancelSearchButton.BackColor = System.Drawing.Color.Red;
@@ -374,6 +332,70 @@
             this.separator.Text = "separator1";
             this.separator.Thickness = 1;
             // 
+            // doneBadge
+            // 
+            this.doneBadge.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.doneBadge.Enabled = false;
+            this.doneBadge.FlatAppearance.BorderSize = 0;
+            this.doneBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doneBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doneBadge.ForeColor = System.Drawing.Color.White;
+            this.doneBadge.Location = new System.Drawing.Point(172, 10);
+            this.doneBadge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.doneBadge.Name = "doneBadge";
+            this.doneBadge.Size = new System.Drawing.Size(41, 31);
+            this.doneBadge.TabIndex = 20;
+            this.doneBadge.Text = "0";
+            this.doneBadge.UseVisualStyleBackColor = false;
+            // 
+            // inReviewBadge
+            // 
+            this.inReviewBadge.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.inReviewBadge.Enabled = false;
+            this.inReviewBadge.FlatAppearance.BorderSize = 0;
+            this.inReviewBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inReviewBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inReviewBadge.ForeColor = System.Drawing.Color.White;
+            this.inReviewBadge.Location = new System.Drawing.Point(197, 10);
+            this.inReviewBadge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inReviewBadge.Name = "inReviewBadge";
+            this.inReviewBadge.Size = new System.Drawing.Size(41, 31);
+            this.inReviewBadge.TabIndex = 19;
+            this.inReviewBadge.Text = "0";
+            this.inReviewBadge.UseVisualStyleBackColor = false;
+            // 
+            // inProgressBadge
+            // 
+            this.inProgressBadge.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.inProgressBadge.Enabled = false;
+            this.inProgressBadge.FlatAppearance.BorderSize = 0;
+            this.inProgressBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inProgressBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inProgressBadge.ForeColor = System.Drawing.Color.White;
+            this.inProgressBadge.Location = new System.Drawing.Point(175, 10);
+            this.inProgressBadge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inProgressBadge.Name = "inProgressBadge";
+            this.inProgressBadge.Size = new System.Drawing.Size(41, 31);
+            this.inProgressBadge.TabIndex = 18;
+            this.inProgressBadge.Text = "0";
+            this.inProgressBadge.UseVisualStyleBackColor = false;
+            // 
+            // todoBadge
+            // 
+            this.todoBadge.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.todoBadge.Enabled = false;
+            this.todoBadge.FlatAppearance.BorderSize = 0;
+            this.todoBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.todoBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.todoBadge.ForeColor = System.Drawing.Color.White;
+            this.todoBadge.Location = new System.Drawing.Point(164, 12);
+            this.todoBadge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.todoBadge.Name = "todoBadge";
+            this.todoBadge.Size = new System.Drawing.Size(41, 31);
+            this.todoBadge.TabIndex = 2;
+            this.todoBadge.Text = "1";
+            this.todoBadge.UseVisualStyleBackColor = false;
+            // 
             // todoList
             // 
             this.todoList.AllowDrop = true;
@@ -388,7 +410,7 @@
             this.todoList.Name = "todoList";
             this.todoList.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
             this.todoList.Size = new System.Drawing.Size(251, 453);
-            this.todoList.SpaceBetweenElements = 0;
+            this.todoList.SpaceBetweenElements = 10;
             this.todoList.TabIndex = 4;
             this.todoList.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragDrop);
             this.todoList.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragEnter);
@@ -425,10 +447,11 @@
             this.linkLabelExemple.LinkColor = System.Drawing.Color.Black;
             this.linkLabelExemple.Location = new System.Drawing.Point(31, 2);
             this.linkLabelExemple.Name = "linkLabelExemple";
-            this.linkLabelExemple.Size = new System.Drawing.Size(181, 46);
+            this.linkLabelExemple.Size = new System.Drawing.Size(166, 46);
             this.linkLabelExemple.TabIndex = 0;
             this.linkLabelExemple.TabStop = true;
             this.linkLabelExemple.Text = "voila commennt ça marche le multiline ooo";
+            this.linkLabelExemple.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelExemple.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UserStory_Click);
             // 
             // doneList
@@ -442,7 +465,7 @@
             this.doneList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.doneList.Name = "doneList";
             this.doneList.Size = new System.Drawing.Size(251, 453);
-            this.doneList.SpaceBetweenElements = 0;
+            this.doneList.SpaceBetweenElements = 10;
             this.doneList.TabIndex = 15;
             this.doneList.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragDrop);
             this.doneList.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragEnter);
@@ -458,7 +481,7 @@
             this.inReviewList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inReviewList.Name = "inReviewList";
             this.inReviewList.Size = new System.Drawing.Size(251, 453);
-            this.inReviewList.SpaceBetweenElements = 0;
+            this.inReviewList.SpaceBetweenElements = 10;
             this.inReviewList.TabIndex = 14;
             this.inReviewList.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragDrop);
             this.inReviewList.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragEnter);
@@ -474,32 +497,10 @@
             this.inProgressList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inProgressList.Name = "inProgressList";
             this.inProgressList.Size = new System.Drawing.Size(251, 453);
-            this.inProgressList.SpaceBetweenElements = 0;
+            this.inProgressList.SpaceBetweenElements = 10;
             this.inProgressList.TabIndex = 13;
             this.inProgressList.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragDrop);
             this.inProgressList.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragEnter);
-            // 
-            // returnButton
-            // 
-            this.returnButton.Location = new System.Drawing.Point(299, 97);
-            this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(75, 23);
-            this.returnButton.TabIndex = 33;
-            this.returnButton.Text = "< Retour";
-            this.returnButton.UseVisualStyleBackColor = true;
-            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
-            // 
-            // archiveButton
-            // 
-            this.archiveButton.BackColor = System.Drawing.Color.Gray;
-            this.archiveButton.ForeColor = System.Drawing.Color.White;
-            this.archiveButton.Location = new System.Drawing.Point(380, 97);
-            this.archiveButton.Name = "archiveButton";
-            this.archiveButton.Size = new System.Drawing.Size(75, 35);
-            this.archiveButton.TabIndex = 34;
-            this.archiveButton.Text = "Archiver";
-            this.archiveButton.UseVisualStyleBackColor = false;
-            this.archiveButton.Click += new System.EventHandler(this.archiveButton_Click);
             // 
             // SprintForm
             // 
