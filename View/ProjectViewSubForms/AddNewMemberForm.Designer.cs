@@ -45,7 +45,8 @@
             this.roleSelectionComboBox.FormattingEnabled = true;
             this.roleSelectionComboBox.Items.AddRange(new object[] {
             resources.GetString("roleSelectionComboBox.Items"),
-            resources.GetString("roleSelectionComboBox.Items1")});
+            resources.GetString("roleSelectionComboBox.Items1"),
+            resources.GetString("roleSelectionComboBox.Items2")});
             resources.ApplyResources(this.roleSelectionComboBox, "roleSelectionComboBox");
             this.roleSelectionComboBox.Name = "roleSelectionComboBox";
             // 

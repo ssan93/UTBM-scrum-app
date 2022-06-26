@@ -123,16 +123,19 @@
   <data name="roleSelectionComboBox.Items1" xml:space="preserve">
     <value>Product owner</value>
   </data>
+  <data name="roleSelectionComboBox.Items2" xml:space="preserve">
+    <value>Scrum master</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="roleSelectionComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 140</value>
+    <value>128, 269</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="roleSelectionComboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="roleSelectionComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 21</value>
+    <value>268, 33</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="roleSelectionComboBox.TabIndex" type="System.Int32, mscorlib">
@@ -154,13 +157,13 @@
     <value>True</value>
   </data>
   <data name="RoleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 126</value>
+    <value>134, 242</value>
   </data>
   <data name="RoleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="RoleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
+    <value>56, 25</value>
   </data>
   <data name="RoleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -184,13 +187,13 @@
     <value>True</value>
   </data>
   <data name="emailAddressLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 68</value>
+    <value>134, 131</value>
   </data>
   <data name="emailAddressLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="emailAddressLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
+    <value>155, 25</value>
   </data>
   <data name="emailAddressLabel.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -214,13 +217,13 @@
     <value>True</value>
   </data>
   <data name="formTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 28</value>
+    <value>216, 54</value>
   </data>
   <data name="formTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="formTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 13</value>
+    <value>181, 25</value>
   </data>
   <data name="formTitle.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -241,13 +244,13 @@
     <value>4</value>
   </data>
   <data name="memberEmailAddressTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 87</value>
+    <value>128, 167</value>
   </data>
   <data name="memberEmailAddressTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="memberEmailAddressTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 20</value>
+    <value>380, 31</value>
   </data>
   <data name="memberEmailAddressTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -265,13 +268,13 @@
     <value>5</value>
   </data>
   <data name="cancelForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 193</value>
+    <value>392, 371</value>
   </data>
   <data name="cancelForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="cancelForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 29</value>
+    <value>116, 56</value>
   </data>
   <data name="cancelForm.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -292,13 +295,13 @@
     <value>6</value>
   </data>
   <data name="ConfirmForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 193</value>
+    <value>528, 371</value>
   </data>
   <data name="ConfirmForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ConfirmForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 29</value>
+    <value>116, 56</value>
   </data>
   <data name="ConfirmForm.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -322,13 +325,13 @@
     <value>True</value>
   </data>
   <data name="erreurLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 172</value>
+    <value>116, 331</value>
   </data>
   <data name="erreurLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="erreurLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 13</value>
+    <value>179, 25</value>
   </data>
   <data name="erreurLabel.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -355,13 +358,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>12, 25</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 246</value>
+    <value>800, 473</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

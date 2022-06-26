@@ -97,6 +97,12 @@
     <Compile Include="View\ProjectViewSubForms\ArchiveProjectConfirmationForm.Designer.cs">
       <DependentUpon>ArchiveProjectConfirmationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ProjectViewSubForms\DisplayMemberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\DisplayMemberInfo.Designer.cs">
+      <DependentUpon>DisplayMemberInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ProjectViewSubForms\RemoveMemberFromProjectConfirmationPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </Compile>
     <EmbeddedResource Include="View\ProjectViewSubForms\ArchiveProjectConfirmationForm.resx">
       <DependentUpon>ArchiveProjectConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\DisplayMemberInfo.resx">
+      <DependentUpon>DisplayMemberInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProjectViewSubForms\RemoveMemberFromProjectConfirmationPopUp.resx">
       <DependentUpon>RemoveMemberFromProjectConfirmationPopUp.cs</DependentUpon>
