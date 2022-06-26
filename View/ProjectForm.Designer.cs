@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectForm));
             this.addToSprintsButton = new System.Windows.Forms.Button();
             this.addToBacklogButton = new System.Windows.Forms.Button();
             this.ProjectPanel = new System.Windows.Forms.Panel();
@@ -50,10 +51,23 @@
             this.sprintsNoneLabel = new System.Windows.Forms.Label();
             this.membersNoneLabel = new System.Windows.Forms.Label();
             this.archiveProjectButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.backlogIcon = new System.Windows.Forms.PictureBox();
+            this.sprintsIcon = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.membersIcon = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.returnButton = new System.Windows.Forms.Button();
             this.ProjectPanel.SuspendLayout();
             this.membersList.SuspendLayout();
             this.sprintsList.SuspendLayout();
             this.backlogList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backlogIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sprintsIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // addToSprintsButton
@@ -69,7 +83,7 @@
             // 
             // addToBacklogButton
             // 
-            this.addToBacklogButton.Location = new System.Drawing.Point(188, 146);
+            this.addToBacklogButton.Location = new System.Drawing.Point(218, 146);
             this.addToBacklogButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addToBacklogButton.Name = "addToBacklogButton";
             this.addToBacklogButton.Size = new System.Drawing.Size(77, 27);
@@ -81,6 +95,9 @@
             // ProjectPanel
             // 
             this.ProjectPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ProjectPanel.Controls.Add(this.membersIcon);
+            this.ProjectPanel.Controls.Add(this.sprintsIcon);
+            this.ProjectPanel.Controls.Add(this.backlogIcon);
             this.ProjectPanel.Controls.Add(this.separator);
             this.ProjectPanel.Controls.Add(this.membersList);
             this.ProjectPanel.Controls.Add(this.sprintsList);
@@ -119,9 +136,10 @@
             // membersList
             // 
             this.membersList.AutoScroll = true;
+            this.membersList.Controls.Add(this.pictureBox4);
             this.membersList.Controls.Add(this.exempleMembre);
             this.membersList.ElementsHigh = 40;
-            this.membersList.Location = new System.Drawing.Point(766, 180);
+            this.membersList.Location = new System.Drawing.Point(747, 180);
             this.membersList.Margin = new System.Windows.Forms.Padding(4);
             this.membersList.Name = "membersList";
             this.membersList.Size = new System.Drawing.Size(238, 360);
@@ -130,10 +148,10 @@
             // 
             // exempleMembre
             // 
-            this.exempleMembre.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.exempleMembre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.exempleMembre.FlatAppearance.BorderSize = 0;
             this.exempleMembre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exempleMembre.ForeColor = System.Drawing.Color.White;
+            this.exempleMembre.ForeColor = System.Drawing.Color.Black;
             this.exempleMembre.Location = new System.Drawing.Point(6, 20);
             this.exempleMembre.Name = "exempleMembre";
             this.exempleMembre.Size = new System.Drawing.Size(229, 40);
@@ -144,6 +162,7 @@
             // sprintsList
             // 
             this.sprintsList.AutoScroll = true;
+            this.sprintsList.Controls.Add(this.pictureBox2);
             this.sprintsList.Controls.Add(this.exempleSprint);
             this.sprintsList.ElementsHigh = 40;
             this.sprintsList.Location = new System.Drawing.Point(396, 180);
@@ -155,7 +174,7 @@
             // 
             // exempleSprint
             // 
-            this.exempleSprint.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.exempleSprint.BackColor = System.Drawing.Color.LightSlateGray;
             this.exempleSprint.FlatAppearance.BorderSize = 0;
             this.exempleSprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exempleSprint.ForeColor = System.Drawing.Color.White;
@@ -169,9 +188,10 @@
             // backlogList
             // 
             this.backlogList.AutoScroll = true;
+            this.backlogList.Controls.Add(this.pictureBox1);
             this.backlogList.Controls.Add(this.exempleUserStory);
             this.backlogList.ElementsHigh = 40;
-            this.backlogList.Location = new System.Drawing.Point(27, 180);
+            this.backlogList.Location = new System.Drawing.Point(57, 180);
             this.backlogList.Margin = new System.Windows.Forms.Padding(4);
             this.backlogList.Name = "backlogList";
             this.backlogList.Size = new System.Drawing.Size(238, 360);
@@ -180,10 +200,10 @@
             // 
             // exempleUserStory
             // 
-            this.exempleUserStory.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.exempleUserStory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.exempleUserStory.FlatAppearance.BorderSize = 0;
             this.exempleUserStory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exempleUserStory.ForeColor = System.Drawing.Color.White;
+            this.exempleUserStory.ForeColor = System.Drawing.Color.Black;
             this.exempleUserStory.Location = new System.Drawing.Point(6, 20);
             this.exempleUserStory.Name = "exempleUserStory";
             this.exempleUserStory.Size = new System.Drawing.Size(229, 40);
@@ -201,7 +221,6 @@
             this.projectDescription.Multiline = true;
             this.projectDescription.Name = "projectDescription";
             this.projectDescription.ReadOnly = true;
-            this.projectDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.projectDescription.Size = new System.Drawing.Size(625, 60);
             this.projectDescription.TabIndex = 25;
             // 
@@ -218,7 +237,7 @@
             // 
             this.sprintsLabel.AutoSize = true;
             this.sprintsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sprintsLabel.Location = new System.Drawing.Point(399, 153);
+            this.sprintsLabel.Location = new System.Drawing.Point(420, 153);
             this.sprintsLabel.Name = "sprintsLabel";
             this.sprintsLabel.Size = new System.Drawing.Size(80, 25);
             this.sprintsLabel.TabIndex = 23;
@@ -228,7 +247,7 @@
             // 
             this.membersLabel.AutoSize = true;
             this.membersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.membersLabel.Location = new System.Drawing.Point(768, 153);
+            this.membersLabel.Location = new System.Drawing.Point(766, 153);
             this.membersLabel.Name = "membersLabel";
             this.membersLabel.Size = new System.Drawing.Size(101, 25);
             this.membersLabel.TabIndex = 22;
@@ -238,7 +257,7 @@
             // 
             this.backlogLabel.AutoSize = true;
             this.backlogLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backlogLabel.Location = new System.Drawing.Point(28, 151);
+            this.backlogLabel.Location = new System.Drawing.Point(76, 151);
             this.backlogLabel.Name = "backlogLabel";
             this.backlogLabel.Size = new System.Drawing.Size(89, 25);
             this.backlogLabel.TabIndex = 21;
@@ -246,6 +265,7 @@
             // 
             // searchBarComboBox
             // 
+            this.searchBarComboBox.Enabled = false;
             this.searchBarComboBox.FormattingEnabled = true;
             this.searchBarComboBox.Items.AddRange(new object[] {
             "Backlog",
@@ -259,7 +279,7 @@
             // 
             // addToMembersButton
             // 
-            this.addToMembersButton.Location = new System.Drawing.Point(927, 146);
+            this.addToMembersButton.Location = new System.Drawing.Point(908, 146);
             this.addToMembersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addToMembersButton.Name = "addToMembersButton";
             this.addToMembersButton.Size = new System.Drawing.Size(77, 27);
@@ -270,6 +290,7 @@
             // 
             // searchTextBox
             // 
+            this.searchTextBox.Enabled = false;
             this.searchTextBox.Location = new System.Drawing.Point(847, 24);
             this.searchTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchTextBox.Name = "searchTextBox";
@@ -319,12 +340,75 @@
             this.archiveProjectButton.UseVisualStyleBackColor = false;
             this.archiveProjectButton.Click += new System.EventHandler(this.archiveProjectButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(23, 30);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // backlogIcon
+            // 
+            this.backlogIcon.Location = new System.Drawing.Point(57, 152);
+            this.backlogIcon.Name = "backlogIcon";
+            this.backlogIcon.Size = new System.Drawing.Size(20, 21);
+            this.backlogIcon.TabIndex = 2;
+            this.backlogIcon.TabStop = false;
+            // 
+            // sprintsIcon
+            // 
+            this.sprintsIcon.Location = new System.Drawing.Point(396, 155);
+            this.sprintsIcon.Name = "sprintsIcon";
+            this.sprintsIcon.Size = new System.Drawing.Size(20, 21);
+            this.sprintsIcon.TabIndex = 29;
+            this.sprintsIcon.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(18, 30);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(20, 21);
+            this.pictureBox4.TabIndex = 30;
+            this.pictureBox4.TabStop = false;
+            // 
+            // membersIcon
+            // 
+            this.membersIcon.Location = new System.Drawing.Point(749, 155);
+            this.membersIcon.Name = "membersIcon";
+            this.membersIcon.Size = new System.Drawing.Size(20, 21);
+            this.membersIcon.TabIndex = 31;
+            this.membersIcon.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(22, 30);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 21);
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
+            // returnButton
+            // 
+            this.returnButton.Location = new System.Drawing.Point(301, 124);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(75, 23);
+            this.returnButton.TabIndex = 32;
+            this.returnButton.Text = "< Retour";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
+            // 
             // ProjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.Controls.Add(this.returnButton);
             this.Controls.Add(this.ProjectPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ProjectForm";
@@ -335,6 +419,12 @@
             this.membersList.ResumeLayout(false);
             this.sprintsList.ResumeLayout(false);
             this.backlogList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backlogIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sprintsIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,5 +452,12 @@
         private View.RoundButton exempleSprint;
         private View.ListPanel backlogList;
         private View.RoundButton exempleUserStory;
+        private System.Windows.Forms.PictureBox membersIcon;
+        private System.Windows.Forms.PictureBox sprintsIcon;
+        private System.Windows.Forms.PictureBox backlogIcon;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button returnButton;
     }
 }

@@ -458,6 +458,7 @@
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\THIRD-PARTY-NOTICES.TXT" />
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\useSharedDesignerContext.txt" />
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\version.txt" />
+    <Content Include="Ressources\user.png" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>

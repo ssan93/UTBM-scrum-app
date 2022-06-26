@@ -68,6 +68,8 @@ namespace pr74_scrum_app
                 RoundButton rb = generateRoundButton();
                 rb.Text = us.Name;
                 rb.Name = "" + us.Id;
+                rb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+                rb.ForeColor = System.Drawing.Color.Black;
                 rb.Click += new EventHandler(this.UserStory_Click);
                 this.backlogList.Add(rb);
             }
@@ -77,6 +79,7 @@ namespace pr74_scrum_app
                 RoundButton rb = generateRoundButton();
                 rb.Text = sp.Name;
                 rb.Name = "" + sp.Id;
+                rb.BackColor = System.Drawing.Color.LightSlateGray;
                 rb.Click += new EventHandler(this.Sprint_Click);
                 this.sprintsList.Add(rb);
             }
@@ -88,6 +91,8 @@ namespace pr74_scrum_app
                     RoundButton rb = generateRoundButton();
                     rb.Text = m.User.FirstName + " "+ m.User.LastName;
                     rb.Name = ""+m.Id;
+                    rb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+                    rb.ForeColor = System.Drawing.Color.Black;
                     rb.Click += new EventHandler(this.Member_Click);
                     this.membersList.Add(rb);
                 }
@@ -195,6 +200,11 @@ namespace pr74_scrum_app
             mf.ShowDialog();
             refreshForm();
             this.Show();
+        }
+
+        private void returnButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

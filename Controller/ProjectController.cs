@@ -162,11 +162,23 @@ namespace pr74_scrum_app.Controller
         {
             List<Sprint> list = new List<Sprint>();
 
-            string sql = $"select id, name from Sprint where Project_id={projectId}"; // TODO select des id et les names des sprints du projetID
+            string sql = $"select id, name, startDate, endDate from Sprint where Project_id={projectId}";
 
             MySqlDataReader dataRequest = Database.ExecutQuery(sql);
+            if (dataRequest.HasRows)
+            {
+                while (dataRequest.Read())
+                {
+                    int id = (int)dataRequest["id"];
+                    string name = (string)dataRequest["name"];
+                    DateTime startDate = (DateTime)dataRequest["startDate"];
+                    DateTime endDate = (DateTime)dataRequest["endDate"];
 
-            SprintController sc = new SprintController(); // TODO
+                    Sprint sprint = new Sprint(id, name,startDate,endDate);
+
+                    list.Add(sprint);
+                }
+            }
 
             dataRequest.Close();
 
