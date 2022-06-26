@@ -129,7 +129,6 @@ namespace pr74_scrum_app.Controller
                     using (var transform = tdes.CreateDecryptor())
                     {
                         byte[] data = Convert.FromBase64String(pass);
-                        Console.WriteLine(data);
                         byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
                         return UTF8Encoding.UTF8.GetString(result);
                     }

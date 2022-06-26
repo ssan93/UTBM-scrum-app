@@ -48,6 +48,21 @@ namespace pr74_scrum_app
                         Member member = pc.FetchMember(this.projectId, userId);
                         if (member == null)
                         {
+                            switch (memberRole)
+                            {
+                                case "Scrum master":
+                                    memberRole = "SM";
+                                    break;
+                                case "Product owner":
+                                    memberRole = "PO";
+                                    break;
+                                case "Membre":
+                                    memberRole = "DEV";
+                                    break;
+                                default:
+                                    memberRole = "DEV";
+                                    break;
+                            }
                             // add data to DB
                             pc.PersistMember(this.projectId, memberEmail, memberRole); // TODO ??? insert real project ID
 

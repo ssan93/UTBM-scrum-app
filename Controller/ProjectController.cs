@@ -43,7 +43,6 @@ namespace pr74_scrum_app.Controller
             int userId = -1;
 
             string sql = $"select id from users where email='{email}'";
-            Console.WriteLine(sql);
             MySqlDataReader dataRequest = Database.ExecutQuery(sql);
             
             while (dataRequest.Read())
@@ -100,7 +99,7 @@ namespace pr74_scrum_app.Controller
 
         public void RemoveMember(Project project, int memberId)
         {
-            string sql = $"select id from Member where id={memberId}";
+            string sql = $"select id from Member where id={memberId} and Project_id={project.Id}";
             MySqlDataReader dataRequest = Database.ExecutQuery(sql);
 
             if (dataRequest.HasRows)
@@ -108,7 +107,7 @@ namespace pr74_scrum_app.Controller
                 project.RemoveMemberById(memberId);
                 dataRequest.Close();
 
-                sql = $"delete from member where id={memberId}";
+                sql = $"delete from member where id={memberId} and Project_id={project.Id}";
                 dataRequest = Database.ExecutQuery(sql);
                 dataRequest.Close();
             }
