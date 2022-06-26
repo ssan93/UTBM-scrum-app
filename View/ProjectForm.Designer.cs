@@ -31,29 +31,29 @@
             this.addToSprintsButton = new System.Windows.Forms.Button();
             this.addToBacklogButton = new System.Windows.Forms.Button();
             this.ProjectPanel = new System.Windows.Forms.Panel();
-            this.porjectDescription = new System.Windows.Forms.TextBox();
+            this.separator = new pr74_scrum_app.View.Components.Separator();
+            this.membersList = new pr74_scrum_app.View.ListPanel();
+            this.exempleMembre = new pr74_scrum_app.View.RoundButton();
+            this.sprintsList = new pr74_scrum_app.View.ListPanel();
+            this.exempleSprint = new pr74_scrum_app.View.RoundButton();
+            this.backlogList = new pr74_scrum_app.View.ListPanel();
+            this.exempleUserStory = new pr74_scrum_app.View.RoundButton();
+            this.projectDescription = new System.Windows.Forms.TextBox();
             this.projectNameLabel = new System.Windows.Forms.Label();
-            this.sprintsList = new System.Windows.Forms.Label();
-            this.MembersLabel = new System.Windows.Forms.Label();
-            this.BacklogLabel = new System.Windows.Forms.Label();
+            this.sprintsLabel = new System.Windows.Forms.Label();
+            this.membersLabel = new System.Windows.Forms.Label();
+            this.backlogLabel = new System.Windows.Forms.Label();
             this.searchBarComboBox = new System.Windows.Forms.ComboBox();
             this.addToMembersButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.archiveProjectButton = new System.Windows.Forms.Button();
-            this.separator1 = new pr74_scrum_app.View.Components.Separator();
-            this.membersList = new pr74_scrum_app.View.ListPanel();
-            this.membersNoneLabel = new System.Windows.Forms.Label();
-            this.listPanel2 = new pr74_scrum_app.View.ListPanel();
-            this.sprintsNoneLabel = new System.Windows.Forms.Label();
-            this.BacklogList = new pr74_scrum_app.View.ListPanel();
-            this.roundButton1 = new pr74_scrum_app.View.RoundButton();
             this.backlogNoneLabel = new System.Windows.Forms.Label();
-            this.roundButton2 = new pr74_scrum_app.View.RoundButton();
-            this.roundButton3 = new pr74_scrum_app.View.RoundButton();
+            this.sprintsNoneLabel = new System.Windows.Forms.Label();
+            this.membersNoneLabel = new System.Windows.Forms.Label();
+            this.archiveProjectButton = new System.Windows.Forms.Button();
             this.ProjectPanel.SuspendLayout();
             this.membersList.SuspendLayout();
-            this.listPanel2.SuspendLayout();
-            this.BacklogList.SuspendLayout();
+            this.sprintsList.SuspendLayout();
+            this.backlogList.SuspendLayout();
             this.SuspendLayout();
             // 
             // addToSprintsButton
@@ -81,20 +81,23 @@
             // ProjectPanel
             // 
             this.ProjectPanel.BackColor = System.Drawing.Color.Transparent;
-            this.ProjectPanel.Controls.Add(this.separator1);
+            this.ProjectPanel.Controls.Add(this.separator);
             this.ProjectPanel.Controls.Add(this.membersList);
-            this.ProjectPanel.Controls.Add(this.listPanel2);
-            this.ProjectPanel.Controls.Add(this.BacklogList);
-            this.ProjectPanel.Controls.Add(this.porjectDescription);
-            this.ProjectPanel.Controls.Add(this.projectNameLabel);
             this.ProjectPanel.Controls.Add(this.sprintsList);
-            this.ProjectPanel.Controls.Add(this.MembersLabel);
-            this.ProjectPanel.Controls.Add(this.BacklogLabel);
+            this.ProjectPanel.Controls.Add(this.backlogList);
+            this.ProjectPanel.Controls.Add(this.projectDescription);
+            this.ProjectPanel.Controls.Add(this.projectNameLabel);
+            this.ProjectPanel.Controls.Add(this.sprintsLabel);
+            this.ProjectPanel.Controls.Add(this.membersLabel);
+            this.ProjectPanel.Controls.Add(this.backlogLabel);
             this.ProjectPanel.Controls.Add(this.searchBarComboBox);
             this.ProjectPanel.Controls.Add(this.addToMembersButton);
             this.ProjectPanel.Controls.Add(this.addToSprintsButton);
             this.ProjectPanel.Controls.Add(this.addToBacklogButton);
             this.ProjectPanel.Controls.Add(this.searchTextBox);
+            this.ProjectPanel.Controls.Add(this.backlogNoneLabel);
+            this.ProjectPanel.Controls.Add(this.sprintsNoneLabel);
+            this.ProjectPanel.Controls.Add(this.membersNoneLabel);
             this.ProjectPanel.Controls.Add(this.archiveProjectButton);
             this.ProjectPanel.Location = new System.Drawing.Point(299, 152);
             this.ProjectPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -102,18 +105,105 @@
             this.ProjectPanel.Size = new System.Drawing.Size(1037, 558);
             this.ProjectPanel.TabIndex = 16;
             // 
-            // porjectDescription
+            // separator
             // 
-            this.porjectDescription.BackColor = System.Drawing.Color.White;
-            this.porjectDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.porjectDescription.Location = new System.Drawing.Point(29, 58);
-            this.porjectDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.porjectDescription.Multiline = true;
-            this.porjectDescription.Name = "porjectDescription";
-            this.porjectDescription.ReadOnly = true;
-            this.porjectDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.porjectDescription.Size = new System.Drawing.Size(625, 60);
-            this.porjectDescription.TabIndex = 25;
+            this.separator.BackColor = System.Drawing.Color.White;
+            this.separator.isVertical = false;
+            this.separator.Location = new System.Drawing.Point(27, 125);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(977, 23);
+            this.separator.TabIndex = 17;
+            this.separator.Text = "separator";
+            this.separator.Thickness = 1;
+            // 
+            // membersList
+            // 
+            this.membersList.AutoScroll = true;
+            this.membersList.Controls.Add(this.exempleMembre);
+            this.membersList.ElementsHigh = 40;
+            this.membersList.Location = new System.Drawing.Point(766, 180);
+            this.membersList.Margin = new System.Windows.Forms.Padding(4);
+            this.membersList.Name = "membersList";
+            this.membersList.Size = new System.Drawing.Size(238, 360);
+            this.membersList.SpaceBetweenElements = 20;
+            this.membersList.TabIndex = 28;
+            // 
+            // exempleMembre
+            // 
+            this.exempleMembre.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.exempleMembre.FlatAppearance.BorderSize = 0;
+            this.exempleMembre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exempleMembre.ForeColor = System.Drawing.Color.White;
+            this.exempleMembre.Location = new System.Drawing.Point(6, 20);
+            this.exempleMembre.Name = "exempleMembre";
+            this.exempleMembre.Size = new System.Drawing.Size(229, 40);
+            this.exempleMembre.TabIndex = 3;
+            this.exempleMembre.Text = "exemple membre";
+            this.exempleMembre.UseVisualStyleBackColor = false;
+            // 
+            // sprintsList
+            // 
+            this.sprintsList.AutoScroll = true;
+            this.sprintsList.Controls.Add(this.exempleSprint);
+            this.sprintsList.ElementsHigh = 40;
+            this.sprintsList.Location = new System.Drawing.Point(396, 180);
+            this.sprintsList.Margin = new System.Windows.Forms.Padding(4);
+            this.sprintsList.Name = "sprintsList";
+            this.sprintsList.Size = new System.Drawing.Size(238, 360);
+            this.sprintsList.SpaceBetweenElements = 20;
+            this.sprintsList.TabIndex = 28;
+            // 
+            // exempleSprint
+            // 
+            this.exempleSprint.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.exempleSprint.FlatAppearance.BorderSize = 0;
+            this.exempleSprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exempleSprint.ForeColor = System.Drawing.Color.White;
+            this.exempleSprint.Location = new System.Drawing.Point(6, 20);
+            this.exempleSprint.Name = "exempleSprint";
+            this.exempleSprint.Size = new System.Drawing.Size(229, 40);
+            this.exempleSprint.TabIndex = 2;
+            this.exempleSprint.Text = "exemple de sprint";
+            this.exempleSprint.UseVisualStyleBackColor = false;
+            // 
+            // backlogList
+            // 
+            this.backlogList.AutoScroll = true;
+            this.backlogList.Controls.Add(this.exempleUserStory);
+            this.backlogList.ElementsHigh = 40;
+            this.backlogList.Location = new System.Drawing.Point(27, 180);
+            this.backlogList.Margin = new System.Windows.Forms.Padding(4);
+            this.backlogList.Name = "backlogList";
+            this.backlogList.Size = new System.Drawing.Size(238, 360);
+            this.backlogList.SpaceBetweenElements = 20;
+            this.backlogList.TabIndex = 27;
+            // 
+            // exempleUserStory
+            // 
+            this.exempleUserStory.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.exempleUserStory.FlatAppearance.BorderSize = 0;
+            this.exempleUserStory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exempleUserStory.ForeColor = System.Drawing.Color.White;
+            this.exempleUserStory.Location = new System.Drawing.Point(6, 20);
+            this.exempleUserStory.Name = "exempleUserStory";
+            this.exempleUserStory.Size = new System.Drawing.Size(229, 40);
+            this.exempleUserStory.TabIndex = 0;
+            this.exempleUserStory.Text = "exemple de user story";
+            this.exempleUserStory.UseVisualStyleBackColor = false;
+            this.exempleUserStory.Click += new System.EventHandler(this.UserStory_Click);
+            // 
+            // projectDescription
+            // 
+            this.projectDescription.BackColor = System.Drawing.Color.White;
+            this.projectDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.projectDescription.Location = new System.Drawing.Point(29, 58);
+            this.projectDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.projectDescription.Multiline = true;
+            this.projectDescription.Name = "projectDescription";
+            this.projectDescription.ReadOnly = true;
+            this.projectDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.projectDescription.Size = new System.Drawing.Size(625, 60);
+            this.projectDescription.TabIndex = 25;
             // 
             // projectNameLabel
             // 
@@ -125,35 +215,35 @@
             this.projectNameLabel.Text = "Nom du projet";
             this.projectNameLabel.Click += new System.EventHandler(this.projectNameLabel_Click);
             // 
-            // sprintsList
+            // sprintsLabel
             // 
-            this.sprintsList.AutoSize = true;
-            this.sprintsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sprintsList.Location = new System.Drawing.Point(399, 153);
-            this.sprintsList.Name = "sprintsList";
-            this.sprintsList.Size = new System.Drawing.Size(80, 25);
-            this.sprintsList.TabIndex = 23;
-            this.sprintsList.Text = "Sprints";
+            this.sprintsLabel.AutoSize = true;
+            this.sprintsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sprintsLabel.Location = new System.Drawing.Point(399, 153);
+            this.sprintsLabel.Name = "sprintsLabel";
+            this.sprintsLabel.Size = new System.Drawing.Size(80, 25);
+            this.sprintsLabel.TabIndex = 23;
+            this.sprintsLabel.Text = "Sprints";
             // 
-            // MembersLabel
+            // membersLabel
             // 
-            this.MembersLabel.AutoSize = true;
-            this.MembersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MembersLabel.Location = new System.Drawing.Point(768, 153);
-            this.MembersLabel.Name = "MembersLabel";
-            this.MembersLabel.Size = new System.Drawing.Size(101, 25);
-            this.MembersLabel.TabIndex = 22;
-            this.MembersLabel.Text = "Membres";
+            this.membersLabel.AutoSize = true;
+            this.membersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membersLabel.Location = new System.Drawing.Point(768, 153);
+            this.membersLabel.Name = "membersLabel";
+            this.membersLabel.Size = new System.Drawing.Size(101, 25);
+            this.membersLabel.TabIndex = 22;
+            this.membersLabel.Text = "Membres";
             // 
-            // BacklogLabel
+            // backlogLabel
             // 
-            this.BacklogLabel.AutoSize = true;
-            this.BacklogLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BacklogLabel.Location = new System.Drawing.Point(28, 151);
-            this.BacklogLabel.Name = "BacklogLabel";
-            this.BacklogLabel.Size = new System.Drawing.Size(89, 25);
-            this.BacklogLabel.TabIndex = 21;
-            this.BacklogLabel.Text = "Backlog";
+            this.backlogLabel.AutoSize = true;
+            this.backlogLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backlogLabel.Location = new System.Drawing.Point(28, 151);
+            this.backlogLabel.Name = "backlogLabel";
+            this.backlogLabel.Size = new System.Drawing.Size(89, 25);
+            this.backlogLabel.TabIndex = 21;
+            this.backlogLabel.Text = "Backlog";
             // 
             // searchBarComboBox
             // 
@@ -187,6 +277,36 @@
             this.searchTextBox.Size = new System.Drawing.Size(157, 22);
             this.searchTextBox.TabIndex = 7;
             // 
+            // backlogNoneLabel
+            // 
+            this.backlogNoneLabel.AutoSize = true;
+            this.backlogNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backlogNoneLabel.Location = new System.Drawing.Point(65, 207);
+            this.backlogNoneLabel.Name = "backlogNoneLabel";
+            this.backlogNoneLabel.Size = new System.Drawing.Size(155, 22);
+            this.backlogNoneLabel.TabIndex = 1;
+            this.backlogNoneLabel.Text = "Aucune user story";
+            // 
+            // sprintsNoneLabel
+            // 
+            this.sprintsNoneLabel.AutoSize = true;
+            this.sprintsNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sprintsNoneLabel.Location = new System.Drawing.Point(461, 207);
+            this.sprintsNoneLabel.Name = "sprintsNoneLabel";
+            this.sprintsNoneLabel.Size = new System.Drawing.Size(110, 22);
+            this.sprintsNoneLabel.TabIndex = 2;
+            this.sprintsNoneLabel.Text = "Aucun sprint";
+            // 
+            // membersNoneLabel
+            // 
+            this.membersNoneLabel.AutoSize = true;
+            this.membersNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membersNoneLabel.Location = new System.Drawing.Point(829, 207);
+            this.membersNoneLabel.Name = "membersNoneLabel";
+            this.membersNoneLabel.Size = new System.Drawing.Size(130, 22);
+            this.membersNoneLabel.TabIndex = 3;
+            this.membersNoneLabel.Text = "Aucun membre";
+            // 
             // archiveProjectButton
             // 
             this.archiveProjectButton.BackColor = System.Drawing.Color.Gray;
@@ -199,116 +319,6 @@
             this.archiveProjectButton.Text = "Archiver";
             this.archiveProjectButton.UseVisualStyleBackColor = false;
             this.archiveProjectButton.Click += new System.EventHandler(this.archiveProjectButton_Click);
-            // 
-            // separator1
-            // 
-            this.separator1.BackColor = System.Drawing.Color.White;
-            this.separator1.isVertical = false;
-            this.separator1.Location = new System.Drawing.Point(27, 125);
-            this.separator1.Name = "separator1";
-            this.separator1.Size = new System.Drawing.Size(977, 23);
-            this.separator1.TabIndex = 17;
-            this.separator1.Text = "separator1";
-            this.separator1.Thickness = 1;
-            // 
-            // membersList
-            // 
-            this.membersList.Controls.Add(this.roundButton3);
-            this.membersList.Controls.Add(this.membersNoneLabel);
-            this.membersList.Location = new System.Drawing.Point(766, 180);
-            this.membersList.Margin = new System.Windows.Forms.Padding(4);
-            this.membersList.Name = "membersList";
-            this.membersList.Size = new System.Drawing.Size(238, 360);
-            this.membersList.TabIndex = 28;
-            // 
-            // membersNoneLabel
-            // 
-            this.membersNoneLabel.AutoSize = true;
-            this.membersNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.membersNoneLabel.Location = new System.Drawing.Point(49, 15);
-            this.membersNoneLabel.Name = "membersNoneLabel";
-            this.membersNoneLabel.Size = new System.Drawing.Size(130, 22);
-            this.membersNoneLabel.TabIndex = 3;
-            this.membersNoneLabel.Text = "Aucun membre";
-            // 
-            // listPanel2
-            // 
-            this.listPanel2.Controls.Add(this.roundButton2);
-            this.listPanel2.Controls.Add(this.sprintsNoneLabel);
-            this.listPanel2.Location = new System.Drawing.Point(396, 180);
-            this.listPanel2.Margin = new System.Windows.Forms.Padding(4);
-            this.listPanel2.Name = "listPanel2";
-            this.listPanel2.Size = new System.Drawing.Size(238, 360);
-            this.listPanel2.TabIndex = 28;
-            // 
-            // sprintsNoneLabel
-            // 
-            this.sprintsNoneLabel.AutoSize = true;
-            this.sprintsNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sprintsNoneLabel.Location = new System.Drawing.Point(65, 15);
-            this.sprintsNoneLabel.Name = "sprintsNoneLabel";
-            this.sprintsNoneLabel.Size = new System.Drawing.Size(110, 22);
-            this.sprintsNoneLabel.TabIndex = 2;
-            this.sprintsNoneLabel.Text = "Aucun sprint";
-            // 
-            // BacklogList
-            // 
-            this.BacklogList.Controls.Add(this.roundButton1);
-            this.BacklogList.Controls.Add(this.backlogNoneLabel);
-            this.BacklogList.Location = new System.Drawing.Point(27, 180);
-            this.BacklogList.Margin = new System.Windows.Forms.Padding(4);
-            this.BacklogList.Name = "BacklogList";
-            this.BacklogList.Size = new System.Drawing.Size(238, 360);
-            this.BacklogList.TabIndex = 27;
-            // 
-            // roundButton1
-            // 
-            this.roundButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundButton1.FlatAppearance.BorderSize = 0;
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton1.ForeColor = System.Drawing.Color.White;
-            this.roundButton1.Location = new System.Drawing.Point(6, 54);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(229, 40);
-            this.roundButton1.TabIndex = 0;
-            this.roundButton1.Text = "exemple de user story";
-            this.roundButton1.UseVisualStyleBackColor = false;
-            // 
-            // backlogNoneLabel
-            // 
-            this.backlogNoneLabel.AutoSize = true;
-            this.backlogNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backlogNoneLabel.Location = new System.Drawing.Point(39, 15);
-            this.backlogNoneLabel.Name = "backlogNoneLabel";
-            this.backlogNoneLabel.Size = new System.Drawing.Size(155, 22);
-            this.backlogNoneLabel.TabIndex = 1;
-            this.backlogNoneLabel.Text = "Aucune user story";
-            // 
-            // roundButton2
-            // 
-            this.roundButton2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundButton2.FlatAppearance.BorderSize = 0;
-            this.roundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton2.ForeColor = System.Drawing.Color.White;
-            this.roundButton2.Location = new System.Drawing.Point(6, 54);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(229, 40);
-            this.roundButton2.TabIndex = 2;
-            this.roundButton2.Text = "exemple de sprint";
-            this.roundButton2.UseVisualStyleBackColor = false;
-            // 
-            // roundButton3
-            // 
-            this.roundButton3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundButton3.FlatAppearance.BorderSize = 0;
-            this.roundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton3.ForeColor = System.Drawing.Color.White;
-            this.roundButton3.Location = new System.Drawing.Point(6, 54);
-            this.roundButton3.Name = "roundButton3";
-            this.roundButton3.Size = new System.Drawing.Size(229, 40);
-            this.roundButton3.TabIndex = 3;
-            this.roundButton3.Text = "exemple membre";
-            this.roundButton3.UseVisualStyleBackColor = false;
             // 
             // ProjectForm
             // 
@@ -324,11 +334,8 @@
             this.ProjectPanel.ResumeLayout(false);
             this.ProjectPanel.PerformLayout();
             this.membersList.ResumeLayout(false);
-            this.membersList.PerformLayout();
-            this.listPanel2.ResumeLayout(false);
-            this.listPanel2.PerformLayout();
-            this.BacklogList.ResumeLayout(false);
-            this.BacklogList.PerformLayout();
+            this.sprintsList.ResumeLayout(false);
+            this.backlogList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -341,20 +348,20 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button archiveProjectButton;
         private System.Windows.Forms.ComboBox searchBarComboBox;
-        private System.Windows.Forms.Label sprintsList;
-        private System.Windows.Forms.Label MembersLabel;
-        private System.Windows.Forms.Label BacklogLabel;
+        private System.Windows.Forms.Label sprintsLabel;
+        private System.Windows.Forms.Label membersLabel;
+        private System.Windows.Forms.Label backlogLabel;
         private System.Windows.Forms.Label projectNameLabel;
-        private System.Windows.Forms.TextBox porjectDescription;
-        private View.ListPanel BacklogList;
-        private View.Components.Separator separator1;
+        private System.Windows.Forms.TextBox projectDescription;
+        private View.Components.Separator separator;
         private View.ListPanel membersList;
-        private View.ListPanel listPanel2;
+        private View.ListPanel sprintsList;
         private System.Windows.Forms.Label membersNoneLabel;
         private System.Windows.Forms.Label sprintsNoneLabel;
-        private View.RoundButton roundButton1;
         private System.Windows.Forms.Label backlogNoneLabel;
-        private View.RoundButton roundButton3;
-        private View.RoundButton roundButton2;
+        private View.RoundButton exempleMembre;
+        private View.RoundButton exempleSprint;
+        private View.ListPanel backlogList;
+        private View.RoundButton exempleUserStory;
     }
 }

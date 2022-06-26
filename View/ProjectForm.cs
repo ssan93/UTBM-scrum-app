@@ -1,4 +1,5 @@
 ﻿using pr74_scrum_app.Model;
+using pr74_scrum_app.View;
 using pr74_scrum_app.View.Components;
 using System;
 using System.Collections.Generic;
@@ -32,9 +33,8 @@ namespace pr74_scrum_app
             this.member = pc.FetchMember(this.projectId, this.userId);
             
             InitializeComponent();
-
             projectNameLabel.Text = this.project.Name;
-            porjectDescription.Text = this.project.Description;
+            projectDescription.Text = this.project.Description;
             archiveProjectButton.Visible = false;
             addToBacklogButton.Visible = false;
             addToMembersButton.Visible = false;
@@ -51,8 +51,70 @@ namespace pr74_scrum_app
             navBar = new NavBar(member.User);
             Controls.Add(sideBar);
             Controls.Add(navBar);
+            generateButtonsForLists();
         }
 
+        private void generateButtonsForLists()
+        {
+            ClearLists();
+            // generate user stories
+            foreach (UserStory us in project.Backlog.UserStories) {
+                RoundButton rb = generateRoundButton();
+                rb.Text = us.Name;
+                rb.Name = "" + us.Id;
+                rb.Click += new EventHandler(this.UserStory_Click);
+                this.backlogList.Add(rb);
+            }
+            // generate sprints
+            foreach (Sprint sp in project.Sprints)
+            {
+                RoundButton rb = generateRoundButton();
+                rb.Text = sp.Name;
+                rb.Name = "" + sp.Id;
+                rb.Click += new EventHandler(this.Sprint_Click);
+                this.sprintsList.Add(rb);
+            }
+            // generate members
+            foreach (Member m in project.Members)
+            {
+                if(m.Id != member.Id)
+                {
+                    RoundButton rb = generateRoundButton();
+                    rb.Text = m.User.FirstName + " "+ m.User.LastName;
+                    rb.Name = ""+m.Id;
+                    rb.Click += new EventHandler(this.Member_Click);
+                    this.membersList.Add(rb);
+                }
+            }
+            checkNone();
+        }
+        private void checkNone()
+        {
+            backlogList.Visible = backlogList.Count() > 0;
+            sprintsList.Visible = sprintsList.Count() > 0;
+            membersList.Visible = membersList.Count() > 0;
+        }
+        private void ClearLists()
+        {
+            membersList.Clear();
+            sprintsList.Clear();
+            backlogList.Clear();
+        }
+
+        private RoundButton generateRoundButton()
+        {
+            RoundButton roundButton = new RoundButton();
+            roundButton.BackColor = System.Drawing.Color.MediumSlateBlue;
+            roundButton.FlatAppearance.BorderSize = 0;
+            roundButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            roundButton.ForeColor = System.Drawing.Color.White;
+            roundButton.Location = new System.Drawing.Point(6, 20);
+            roundButton.Size = new System.Drawing.Size(229, 40);
+            roundButton.TabIndex = 0;
+            roundButton.UseVisualStyleBackColor = false;
+
+            return roundButton;
+        }
         private void addToMembersButton_Click(object sender, EventArgs e)
         {
             AddNewMemberForm form = new AddNewMemberForm(this.projectId);
@@ -80,6 +142,39 @@ namespace pr74_scrum_app
         private void projectNameLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UserStory_Click(object sender, EventArgs e)
+        {
+            RoundButton rb = sender as RoundButton;
+            int id = int.Parse(rb.Name);
+            UserStoryForm usf = new UserStoryForm(getUserStoryFromList(id), member);
+            this.Hide();
+            usf.ShowDialog();
+            this.Show();  
+        }
+        private UserStory getUserStoryFromList(int id)
+        {
+            foreach(UserStory us in project.Backlog.UserStories) if(us.Id == id) return us;
+            return null;
+        }
+        private void Sprint_Click(object sender, EventArgs e)
+        {
+            RoundButton rb = sender as RoundButton;
+            int id = int.Parse(rb.Name);
+            SprintForm sf = new SprintForm(member.Id, id);
+            this.Hide();
+            sf.ShowDialog();
+            this.Show();
+        }
+        private void Member_Click(object sender, EventArgs e)
+        {
+            RoundButton rb = sender as RoundButton;
+            int id = int.Parse(rb.Name);
+            //MemberForm mf = new MemberForm(getUserStoryFromList(id), member);
+            //this.Hide();
+            //mf.ShowDialog();
+            //this.Show();
         }
     }
 }
