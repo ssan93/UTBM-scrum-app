@@ -17,6 +17,25 @@ namespace pr74_scrum_app.Controller
         public UserController(): base() 
         {
         }
+        public User FetchUserById(int userId)
+        {
+            User user = null;
+            string sql = $"select * from users where id={userId}";
+            MySqlDataReader dr = Database.ExecutQuery(sql);
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    user = new User((int)dr["id"]);
+                    user.Email = (string)dr["email"];
+                    user.FirstName = (string)dr["firstname"];
+                    user.LastName = (string)dr["lastname"];
+                }
+            }
+            dr.Close();
+
+            return user;
+        }
    
         //methode to sign in into the application
         public bool UserLogin(string pass, string email)
@@ -272,6 +291,26 @@ namespace pr74_scrum_app.Controller
                 while (data.Read())
                 {
                     member = new Member((int)data["id"],(string)data["role"],user);
+                }
+            }
+            data.Close();
+            return member;
+        }
+        public Member GetMemberById(int membeId)
+        {
+            
+            Member member = null;
+            string sqlm = $"select u.id as user_id, firstname, lastname, email, role, m.id as member_id  from  member m, users u where u.id= m.user_id and m.id={membeId} ";
+            MySqlDataReader data = Database.ExecutQuery(sqlm);
+            if (data != null && data.HasRows)
+            {
+                while (data.Read())
+                {
+                    User user = new User((int)data["user_id"]);
+                    user.FirstName = (string)data["firstname"]; 
+                    user.LastName = (string)data["lastname"]; 
+                    user.Email = (string)data["email"];
+                    member = new Member(membeId, (string)data["role"], user);
                 }
             }
             data.Close();

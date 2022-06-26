@@ -291,7 +291,7 @@ namespace pr74_scrum_app
         {
             UserController userController = new UserController();
             this.Hide();
-            SprintForm sprintform = new SprintForm(userController.GetMember(this.user).Id, sprints[i].Id, this.user.Id);
+            SprintForm sprintform = new SprintForm(userController.GetMember(this.user).Id, sprints[i].Id);
             sprintform.ShowDialog();
             this.Show();
             this.Refresh_content();
@@ -373,7 +373,8 @@ namespace pr74_scrum_app
         {
             UserController userController = new UserController();
             searchproject = userController.SearchProject(this.user.Id);
-            foreach(var item in searchproject)
+            ResearchProjectcomboBox.Items.Clear();
+            foreach (var item in searchproject)
             {
                 ResearchProjectcomboBox.Items.Add(item.Name);
             }

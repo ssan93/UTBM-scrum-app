@@ -15,10 +15,11 @@ namespace pr74_scrum_app.View
         ListPanel listSource;
         Member member;
         
-        public SprintForm(int memberId, int sprintId, int userId)
+        public SprintForm(int memberId, int sprintId)
         {
             InitializeComponent();
             SprintController sprintController = new SprintController();
+            UserController uc = new UserController();
             sprint = sprintController.FetchSprintById(sprintId);
             if(sprint == null)
             {
@@ -26,14 +27,12 @@ namespace pr74_scrum_app.View
             }
             projectNameLabel.Text = sprint.Name;
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
-            member = new Member(memberId); 
-            member.User = new User(userId);
+            member = uc.GetMemberById(memberId);
 
             NavBar navBar = new NavBar(member.User);
             SideBar sideBar = new SideBar(member.User);
             Controls.Add(navBar);
             Controls.Add(sideBar);
-
         }
         private void GenerateUserStoryPanels(List<UserStory> userStories)
         {
