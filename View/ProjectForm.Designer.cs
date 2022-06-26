@@ -30,32 +30,38 @@
         {
             this.addToSprintsButton = new System.Windows.Forms.Button();
             this.addToBacklogButton = new System.Windows.Forms.Button();
-            this.MembersDataGridView = new System.Windows.Forms.DataGridView();
             this.ProjectPanel = new System.Windows.Forms.Panel();
-            this.descriptionLabel = new System.Windows.Forms.Label();
             this.porjectDescription = new System.Windows.Forms.TextBox();
             this.projectNameLabel = new System.Windows.Forms.Label();
-            this.SprintsLabel = new System.Windows.Forms.Label();
+            this.sprintsList = new System.Windows.Forms.Label();
             this.MembersLabel = new System.Windows.Forms.Label();
             this.BacklogLabel = new System.Windows.Forms.Label();
             this.searchBarComboBox = new System.Windows.Forms.ComboBox();
             this.addToMembersButton = new System.Windows.Forms.Button();
-            this.SprintsDataGridView = new System.Windows.Forms.DataGridView();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.archiveProjectButton = new System.Windows.Forms.Button();
-            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
-            this.listPanel1 = new pr74_scrum_app.View.ListPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).BeginInit();
+            this.separator1 = new pr74_scrum_app.View.Components.Separator();
+            this.membersList = new pr74_scrum_app.View.ListPanel();
+            this.membersNoneLabel = new System.Windows.Forms.Label();
+            this.listPanel2 = new pr74_scrum_app.View.ListPanel();
+            this.sprintsNoneLabel = new System.Windows.Forms.Label();
+            this.BacklogList = new pr74_scrum_app.View.ListPanel();
+            this.roundButton1 = new pr74_scrum_app.View.RoundButton();
+            this.backlogNoneLabel = new System.Windows.Forms.Label();
+            this.roundButton2 = new pr74_scrum_app.View.RoundButton();
+            this.roundButton3 = new pr74_scrum_app.View.RoundButton();
             this.ProjectPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SprintsDataGridView)).BeginInit();
+            this.membersList.SuspendLayout();
+            this.listPanel2.SuspendLayout();
+            this.BacklogList.SuspendLayout();
             this.SuspendLayout();
             // 
             // addToSprintsButton
             // 
-            this.addToSprintsButton.Location = new System.Drawing.Point(288, 130);
-            this.addToSprintsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addToSprintsButton.Location = new System.Drawing.Point(557, 148);
+            this.addToSprintsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addToSprintsButton.Name = "addToSprintsButton";
-            this.addToSprintsButton.Size = new System.Drawing.Size(58, 22);
+            this.addToSprintsButton.Size = new System.Drawing.Size(77, 27);
             this.addToSprintsButton.TabIndex = 15;
             this.addToSprintsButton.Text = "+ Ajouter";
             this.addToSprintsButton.UseVisualStyleBackColor = true;
@@ -63,108 +69,89 @@
             // 
             // addToBacklogButton
             // 
-            this.addToBacklogButton.Location = new System.Drawing.Point(110, 130);
-            this.addToBacklogButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addToBacklogButton.Location = new System.Drawing.Point(188, 146);
+            this.addToBacklogButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addToBacklogButton.Name = "addToBacklogButton";
-            this.addToBacklogButton.Size = new System.Drawing.Size(58, 22);
+            this.addToBacklogButton.Size = new System.Drawing.Size(77, 27);
             this.addToBacklogButton.TabIndex = 12;
             this.addToBacklogButton.Text = "+ Ajouter";
             this.addToBacklogButton.UseVisualStyleBackColor = true;
             this.addToBacklogButton.Click += new System.EventHandler(this.addToBacklogButton_Click);
             // 
-            // MembersDataGridView
-            // 
-            this.MembersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MembersDataGridView.Location = new System.Drawing.Point(370, 155);
-            this.MembersDataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.MembersDataGridView.Name = "MembersDataGridView";
-            this.MembersDataGridView.RowHeadersWidth = 82;
-            this.MembersDataGridView.RowTemplate.Height = 33;
-            this.MembersDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.MembersDataGridView.Size = new System.Drawing.Size(150, 214);
-            this.MembersDataGridView.TabIndex = 11;
-            // 
             // ProjectPanel
             // 
-            this.ProjectPanel.Controls.Add(this.listPanel1);
-            this.ProjectPanel.Controls.Add(this.descriptionLabel);
+            this.ProjectPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ProjectPanel.Controls.Add(this.separator1);
+            this.ProjectPanel.Controls.Add(this.membersList);
+            this.ProjectPanel.Controls.Add(this.listPanel2);
+            this.ProjectPanel.Controls.Add(this.BacklogList);
             this.ProjectPanel.Controls.Add(this.porjectDescription);
             this.ProjectPanel.Controls.Add(this.projectNameLabel);
-            this.ProjectPanel.Controls.Add(this.SprintsLabel);
+            this.ProjectPanel.Controls.Add(this.sprintsList);
             this.ProjectPanel.Controls.Add(this.MembersLabel);
             this.ProjectPanel.Controls.Add(this.BacklogLabel);
             this.ProjectPanel.Controls.Add(this.searchBarComboBox);
             this.ProjectPanel.Controls.Add(this.addToMembersButton);
             this.ProjectPanel.Controls.Add(this.addToSprintsButton);
             this.ProjectPanel.Controls.Add(this.addToBacklogButton);
-            this.ProjectPanel.Controls.Add(this.MembersDataGridView);
-            this.ProjectPanel.Controls.Add(this.SprintsDataGridView);
             this.ProjectPanel.Controls.Add(this.searchTextBox);
             this.ProjectPanel.Controls.Add(this.archiveProjectButton);
-            this.ProjectPanel.Location = new System.Drawing.Point(126, 48);
-            this.ProjectPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectPanel.Location = new System.Drawing.Point(299, 152);
+            this.ProjectPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectPanel.Name = "ProjectPanel";
-            this.ProjectPanel.Size = new System.Drawing.Size(538, 349);
+            this.ProjectPanel.Size = new System.Drawing.Size(1037, 558);
             this.ProjectPanel.TabIndex = 16;
-            // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(27, 49);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(66, 13);
-            this.descriptionLabel.TabIndex = 26;
-            this.descriptionLabel.Text = "Description :";
             // 
             // porjectDescription
             // 
+            this.porjectDescription.BackColor = System.Drawing.Color.White;
             this.porjectDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.porjectDescription.Location = new System.Drawing.Point(23, 67);
+            this.porjectDescription.Location = new System.Drawing.Point(29, 58);
+            this.porjectDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.porjectDescription.Multiline = true;
             this.porjectDescription.Name = "porjectDescription";
             this.porjectDescription.ReadOnly = true;
             this.porjectDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.porjectDescription.Size = new System.Drawing.Size(509, 51);
+            this.porjectDescription.Size = new System.Drawing.Size(625, 60);
             this.porjectDescription.TabIndex = 25;
             // 
             // projectNameLabel
             // 
-            this.projectNameLabel.AutoSize = true;
-            this.projectNameLabel.Location = new System.Drawing.Point(20, 14);
-            this.projectNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.projectNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectNameLabel.Location = new System.Drawing.Point(24, 17);
             this.projectNameLabel.Name = "projectNameLabel";
-            this.projectNameLabel.Size = new System.Drawing.Size(73, 13);
+            this.projectNameLabel.Size = new System.Drawing.Size(241, 29);
             this.projectNameLabel.TabIndex = 24;
             this.projectNameLabel.Text = "Nom du projet";
             this.projectNameLabel.Click += new System.EventHandler(this.projectNameLabel_Click);
             // 
-            // SprintsLabel
+            // sprintsList
             // 
-            this.SprintsLabel.AutoSize = true;
-            this.SprintsLabel.Location = new System.Drawing.Point(198, 133);
-            this.SprintsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.SprintsLabel.Name = "SprintsLabel";
-            this.SprintsLabel.Size = new System.Drawing.Size(39, 13);
-            this.SprintsLabel.TabIndex = 23;
-            this.SprintsLabel.Text = "Sprints";
+            this.sprintsList.AutoSize = true;
+            this.sprintsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sprintsList.Location = new System.Drawing.Point(399, 153);
+            this.sprintsList.Name = "sprintsList";
+            this.sprintsList.Size = new System.Drawing.Size(80, 25);
+            this.sprintsList.TabIndex = 23;
+            this.sprintsList.Text = "Sprints";
             // 
             // MembersLabel
             // 
             this.MembersLabel.AutoSize = true;
-            this.MembersLabel.Location = new System.Drawing.Point(372, 133);
-            this.MembersLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MembersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MembersLabel.Location = new System.Drawing.Point(768, 153);
             this.MembersLabel.Name = "MembersLabel";
-            this.MembersLabel.Size = new System.Drawing.Size(50, 13);
+            this.MembersLabel.Size = new System.Drawing.Size(101, 25);
             this.MembersLabel.TabIndex = 22;
             this.MembersLabel.Text = "Membres";
             // 
             // BacklogLabel
             // 
             this.BacklogLabel.AutoSize = true;
-            this.BacklogLabel.Location = new System.Drawing.Point(20, 133);
-            this.BacklogLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BacklogLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BacklogLabel.Location = new System.Drawing.Point(28, 151);
             this.BacklogLabel.Name = "BacklogLabel";
-            this.BacklogLabel.Size = new System.Drawing.Size(46, 13);
+            this.BacklogLabel.Size = new System.Drawing.Size(89, 25);
             this.BacklogLabel.TabIndex = 21;
             this.BacklogLabel.Text = "Backlog";
             // 
@@ -175,82 +162,173 @@
             "Backlog",
             "Sprints",
             "Membres"});
-            this.searchBarComboBox.Location = new System.Drawing.Point(350, 10);
-            this.searchBarComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchBarComboBox.Location = new System.Drawing.Point(763, 24);
+            this.searchBarComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchBarComboBox.Name = "searchBarComboBox";
-            this.searchBarComboBox.Size = new System.Drawing.Size(62, 21);
+            this.searchBarComboBox.Size = new System.Drawing.Size(81, 24);
             this.searchBarComboBox.TabIndex = 20;
             // 
             // addToMembersButton
             // 
-            this.addToMembersButton.Location = new System.Drawing.Point(462, 130);
-            this.addToMembersButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addToMembersButton.Location = new System.Drawing.Point(927, 146);
+            this.addToMembersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addToMembersButton.Name = "addToMembersButton";
-            this.addToMembersButton.Size = new System.Drawing.Size(58, 22);
+            this.addToMembersButton.Size = new System.Drawing.Size(77, 27);
             this.addToMembersButton.TabIndex = 16;
             this.addToMembersButton.Text = "+ Ajouter";
             this.addToMembersButton.UseVisualStyleBackColor = true;
             this.addToMembersButton.Click += new System.EventHandler(this.addToMembersButton_Click);
             // 
-            // SprintsDataGridView
-            // 
-            this.SprintsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SprintsDataGridView.Location = new System.Drawing.Point(196, 155);
-            this.SprintsDataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.SprintsDataGridView.Name = "SprintsDataGridView";
-            this.SprintsDataGridView.RowHeadersWidth = 82;
-            this.SprintsDataGridView.RowTemplate.Height = 33;
-            this.SprintsDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.SprintsDataGridView.Size = new System.Drawing.Size(150, 214);
-            this.SprintsDataGridView.TabIndex = 10;
-            // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(413, 10);
-            this.searchTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchTextBox.Location = new System.Drawing.Point(847, 24);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(119, 20);
+            this.searchTextBox.Size = new System.Drawing.Size(157, 22);
             this.searchTextBox.TabIndex = 7;
             // 
             // archiveProjectButton
             // 
-            this.archiveProjectButton.Location = new System.Drawing.Point(280, 9);
-            this.archiveProjectButton.Margin = new System.Windows.Forms.Padding(2);
+            this.archiveProjectButton.BackColor = System.Drawing.Color.Gray;
+            this.archiveProjectButton.ForeColor = System.Drawing.Color.White;
+            this.archiveProjectButton.Location = new System.Drawing.Point(271, 20);
+            this.archiveProjectButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.archiveProjectButton.Name = "archiveProjectButton";
-            this.archiveProjectButton.Size = new System.Drawing.Size(66, 24);
+            this.archiveProjectButton.Size = new System.Drawing.Size(88, 30);
             this.archiveProjectButton.TabIndex = 8;
             this.archiveProjectButton.Text = "Archiver";
-            this.archiveProjectButton.UseVisualStyleBackColor = true;
+            this.archiveProjectButton.UseVisualStyleBackColor = false;
             this.archiveProjectButton.Click += new System.EventHandler(this.archiveProjectButton_Click);
             // 
-            // mySqlDataAdapter1
+            // separator1
             // 
-            this.mySqlDataAdapter1.DeleteCommand = null;
-            this.mySqlDataAdapter1.InsertCommand = null;
-            this.mySqlDataAdapter1.SelectCommand = null;
-            this.mySqlDataAdapter1.UpdateCommand = null;
+            this.separator1.BackColor = System.Drawing.Color.White;
+            this.separator1.isVertical = false;
+            this.separator1.Location = new System.Drawing.Point(27, 125);
+            this.separator1.Name = "separator1";
+            this.separator1.Size = new System.Drawing.Size(977, 23);
+            this.separator1.TabIndex = 17;
+            this.separator1.Text = "separator1";
+            this.separator1.Thickness = 1;
             // 
-            // listPanel1
+            // membersList
             // 
-            this.listPanel1.Location = new System.Drawing.Point(23, 157);
-            this.listPanel1.Name = "listPanel1";
-            this.listPanel1.Size = new System.Drawing.Size(145, 186);
-            this.listPanel1.TabIndex = 27;
+            this.membersList.Controls.Add(this.roundButton3);
+            this.membersList.Controls.Add(this.membersNoneLabel);
+            this.membersList.Location = new System.Drawing.Point(766, 180);
+            this.membersList.Margin = new System.Windows.Forms.Padding(4);
+            this.membersList.Name = "membersList";
+            this.membersList.Size = new System.Drawing.Size(238, 360);
+            this.membersList.TabIndex = 28;
+            // 
+            // membersNoneLabel
+            // 
+            this.membersNoneLabel.AutoSize = true;
+            this.membersNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membersNoneLabel.Location = new System.Drawing.Point(49, 15);
+            this.membersNoneLabel.Name = "membersNoneLabel";
+            this.membersNoneLabel.Size = new System.Drawing.Size(130, 22);
+            this.membersNoneLabel.TabIndex = 3;
+            this.membersNoneLabel.Text = "Aucun membre";
+            // 
+            // listPanel2
+            // 
+            this.listPanel2.Controls.Add(this.roundButton2);
+            this.listPanel2.Controls.Add(this.sprintsNoneLabel);
+            this.listPanel2.Location = new System.Drawing.Point(396, 180);
+            this.listPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.listPanel2.Name = "listPanel2";
+            this.listPanel2.Size = new System.Drawing.Size(238, 360);
+            this.listPanel2.TabIndex = 28;
+            // 
+            // sprintsNoneLabel
+            // 
+            this.sprintsNoneLabel.AutoSize = true;
+            this.sprintsNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sprintsNoneLabel.Location = new System.Drawing.Point(65, 15);
+            this.sprintsNoneLabel.Name = "sprintsNoneLabel";
+            this.sprintsNoneLabel.Size = new System.Drawing.Size(110, 22);
+            this.sprintsNoneLabel.TabIndex = 2;
+            this.sprintsNoneLabel.Text = "Aucun sprint";
+            // 
+            // BacklogList
+            // 
+            this.BacklogList.Controls.Add(this.roundButton1);
+            this.BacklogList.Controls.Add(this.backlogNoneLabel);
+            this.BacklogList.Location = new System.Drawing.Point(27, 180);
+            this.BacklogList.Margin = new System.Windows.Forms.Padding(4);
+            this.BacklogList.Name = "BacklogList";
+            this.BacklogList.Size = new System.Drawing.Size(238, 360);
+            this.BacklogList.TabIndex = 27;
+            // 
+            // roundButton1
+            // 
+            this.roundButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundButton1.FlatAppearance.BorderSize = 0;
+            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundButton1.ForeColor = System.Drawing.Color.White;
+            this.roundButton1.Location = new System.Drawing.Point(6, 54);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(229, 40);
+            this.roundButton1.TabIndex = 0;
+            this.roundButton1.Text = "exemple de user story";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            // 
+            // backlogNoneLabel
+            // 
+            this.backlogNoneLabel.AutoSize = true;
+            this.backlogNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backlogNoneLabel.Location = new System.Drawing.Point(39, 15);
+            this.backlogNoneLabel.Name = "backlogNoneLabel";
+            this.backlogNoneLabel.Size = new System.Drawing.Size(155, 22);
+            this.backlogNoneLabel.TabIndex = 1;
+            this.backlogNoneLabel.Text = "Aucune user story";
+            // 
+            // roundButton2
+            // 
+            this.roundButton2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundButton2.FlatAppearance.BorderSize = 0;
+            this.roundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundButton2.ForeColor = System.Drawing.Color.White;
+            this.roundButton2.Location = new System.Drawing.Point(6, 54);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(229, 40);
+            this.roundButton2.TabIndex = 2;
+            this.roundButton2.Text = "exemple de sprint";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            // 
+            // roundButton3
+            // 
+            this.roundButton3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundButton3.FlatAppearance.BorderSize = 0;
+            this.roundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundButton3.ForeColor = System.Drawing.Color.White;
+            this.roundButton3.Location = new System.Drawing.Point(6, 54);
+            this.roundButton3.Name = "roundButton3";
+            this.roundButton3.Size = new System.Drawing.Size(229, 40);
+            this.roundButton3.TabIndex = 3;
+            this.roundButton3.Text = "exemple membre";
+            this.roundButton3.UseVisualStyleBackColor = false;
             // 
             // ProjectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 403);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.ProjectPanel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ProjectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectViewForm";
-            ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).EndInit();
             this.ProjectPanel.ResumeLayout(false);
             this.ProjectPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SprintsDataGridView)).EndInit();
+            this.membersList.ResumeLayout(false);
+            this.membersList.PerformLayout();
+            this.listPanel2.ResumeLayout(false);
+            this.listPanel2.PerformLayout();
+            this.BacklogList.ResumeLayout(false);
+            this.BacklogList.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -258,20 +336,25 @@
         #endregion
         private System.Windows.Forms.Button addToSprintsButton;
         private System.Windows.Forms.Button addToBacklogButton;
-        private System.Windows.Forms.DataGridView MembersDataGridView;
         private System.Windows.Forms.Panel ProjectPanel;
         private System.Windows.Forms.Button addToMembersButton;
-        private System.Windows.Forms.DataGridView SprintsDataGridView;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button archiveProjectButton;
-        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
         private System.Windows.Forms.ComboBox searchBarComboBox;
-        private System.Windows.Forms.Label SprintsLabel;
+        private System.Windows.Forms.Label sprintsList;
         private System.Windows.Forms.Label MembersLabel;
         private System.Windows.Forms.Label BacklogLabel;
         private System.Windows.Forms.Label projectNameLabel;
         private System.Windows.Forms.TextBox porjectDescription;
-        private System.Windows.Forms.Label descriptionLabel;
-        private View.ListPanel listPanel1;
+        private View.ListPanel BacklogList;
+        private View.Components.Separator separator1;
+        private View.ListPanel membersList;
+        private View.ListPanel listPanel2;
+        private System.Windows.Forms.Label membersNoneLabel;
+        private System.Windows.Forms.Label sprintsNoneLabel;
+        private View.RoundButton roundButton1;
+        private System.Windows.Forms.Label backlogNoneLabel;
+        private View.RoundButton roundButton3;
+        private View.RoundButton roundButton2;
     }
 }

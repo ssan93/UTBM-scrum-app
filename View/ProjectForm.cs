@@ -1,4 +1,5 @@
 ﻿using pr74_scrum_app.Model;
+using pr74_scrum_app.View.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,8 @@ namespace pr74_scrum_app
         private int userId;
         private Project project;
         private Member member;
+        SideBar sideBar;
+        NavBar navBar;
 
         public ProjectForm(int currentProjectId, int currentUserId)
         {
@@ -44,6 +47,10 @@ namespace pr74_scrum_app
                 addToMembersButton.Visible = true;
                 addToSprintsButton.Visible = true;
             }
+            sideBar = new SideBar(member.User);
+            navBar = new NavBar(member.User);
+            Controls.Add(sideBar);
+            Controls.Add(navBar);
         }
 
         private void addToMembersButton_Click(object sender, EventArgs e)
