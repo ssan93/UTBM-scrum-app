@@ -197,7 +197,7 @@ namespace pr74_scrum_app.Controller
                 $" m.id as id," +
                 $" u.email as email" +
                 $" from Member m, users u" +
-                $" where Project_Id={projectId} and m.user_id=user_id";
+                $" where Project_Id={projectId} and m.user_id=u.id";
 
             MySqlDataReader dataRequest = Database.ExecutQuery(sql); // pour chaque membre, retourner le nom, le role, l'id du membre (pas du user)
             if (dataRequest.HasRows)
