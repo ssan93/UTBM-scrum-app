@@ -32,13 +32,18 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SprintForm));
             this.todoLabel = new System.Windows.Forms.Label();
             this.todoTitlePanel = new System.Windows.Forms.Panel();
+            this.todoBadge = new pr74_scrum_app.View.RoundButton();
             this.inProgressTitlePanel = new System.Windows.Forms.Panel();
+            this.inProgressBadge = new pr74_scrum_app.View.RoundButton();
             this.InProgressLabel = new System.Windows.Forms.Label();
             this.inReviewTitlePanel = new System.Windows.Forms.Panel();
+            this.inReviewBadge = new pr74_scrum_app.View.RoundButton();
             this.InReviewLabel = new System.Windows.Forms.Label();
             this.doneTitlePanel = new System.Windows.Forms.Panel();
+            this.doneBadge = new pr74_scrum_app.View.RoundButton();
             this.doneLabel = new System.Windows.Forms.Label();
             this.searchBar = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
@@ -52,10 +57,6 @@
             this.cancelSearchButton = new pr74_scrum_app.View.RoundButton();
             this.searchBarBackground = new pr74_scrum_app.View.RoundButton();
             this.separator = new pr74_scrum_app.View.Components.Separator();
-            this.doneBadge = new pr74_scrum_app.View.RoundButton();
-            this.inReviewBadge = new pr74_scrum_app.View.RoundButton();
-            this.inProgressBadge = new pr74_scrum_app.View.RoundButton();
-            this.todoBadge = new pr74_scrum_app.View.RoundButton();
             this.todoList = new pr74_scrum_app.View.ListPanel();
             this.UserStoryExemple = new System.Windows.Forms.Panel();
             this.PriorityBadgeExemple = new pr74_scrum_app.View.RoundButton();
@@ -75,9 +76,10 @@
             // 
             this.todoLabel.AutoSize = true;
             this.todoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.todoLabel.Location = new System.Drawing.Point(45, 14);
+            this.todoLabel.Location = new System.Drawing.Point(34, 11);
+            this.todoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.todoLabel.Name = "todoLabel";
-            this.todoLabel.Size = new System.Drawing.Size(110, 29);
+            this.todoLabel.Size = new System.Drawing.Size(90, 24);
             this.todoLabel.TabIndex = 16;
             this.todoLabel.Text = "A FAIRE";
             // 
@@ -86,28 +88,63 @@
             this.todoTitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.todoTitlePanel.Controls.Add(this.todoBadge);
             this.todoTitlePanel.Controls.Add(this.todoLabel);
-            this.todoTitlePanel.Location = new System.Drawing.Point(298, 202);
+            this.todoTitlePanel.Location = new System.Drawing.Point(224, 164);
+            this.todoTitlePanel.Margin = new System.Windows.Forms.Padding(2);
             this.todoTitlePanel.Name = "todoTitlePanel";
-            this.todoTitlePanel.Size = new System.Drawing.Size(250, 54);
+            this.todoTitlePanel.Size = new System.Drawing.Size(188, 44);
             this.todoTitlePanel.TabIndex = 17;
+            // 
+            // todoBadge
+            // 
+            this.todoBadge.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.todoBadge.Enabled = false;
+            this.todoBadge.FlatAppearance.BorderSize = 0;
+            this.todoBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.todoBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.todoBadge.ForeColor = System.Drawing.Color.White;
+            this.todoBadge.Location = new System.Drawing.Point(123, 10);
+            this.todoBadge.Margin = new System.Windows.Forms.Padding(2);
+            this.todoBadge.Name = "todoBadge";
+            this.todoBadge.Size = new System.Drawing.Size(31, 25);
+            this.todoBadge.TabIndex = 2;
+            this.todoBadge.Text = "1";
+            this.todoBadge.UseVisualStyleBackColor = false;
             // 
             // inProgressTitlePanel
             // 
             this.inProgressTitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.inProgressTitlePanel.Controls.Add(this.inProgressBadge);
             this.inProgressTitlePanel.Controls.Add(this.InProgressLabel);
-            this.inProgressTitlePanel.Location = new System.Drawing.Point(560, 202);
+            this.inProgressTitlePanel.Location = new System.Drawing.Point(420, 164);
+            this.inProgressTitlePanel.Margin = new System.Windows.Forms.Padding(2);
             this.inProgressTitlePanel.Name = "inProgressTitlePanel";
-            this.inProgressTitlePanel.Size = new System.Drawing.Size(250, 54);
+            this.inProgressTitlePanel.Size = new System.Drawing.Size(188, 44);
             this.inProgressTitlePanel.TabIndex = 18;
+            // 
+            // inProgressBadge
+            // 
+            this.inProgressBadge.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.inProgressBadge.Enabled = false;
+            this.inProgressBadge.FlatAppearance.BorderSize = 0;
+            this.inProgressBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inProgressBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inProgressBadge.ForeColor = System.Drawing.Color.White;
+            this.inProgressBadge.Location = new System.Drawing.Point(131, 8);
+            this.inProgressBadge.Margin = new System.Windows.Forms.Padding(2);
+            this.inProgressBadge.Name = "inProgressBadge";
+            this.inProgressBadge.Size = new System.Drawing.Size(31, 25);
+            this.inProgressBadge.TabIndex = 18;
+            this.inProgressBadge.Text = "0";
+            this.inProgressBadge.UseVisualStyleBackColor = false;
             // 
             // InProgressLabel
             // 
             this.InProgressLabel.AutoSize = true;
             this.InProgressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InProgressLabel.Location = new System.Drawing.Point(22, 12);
+            this.InProgressLabel.Location = new System.Drawing.Point(16, 10);
+            this.InProgressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.InProgressLabel.Name = "InProgressLabel";
-            this.InProgressLabel.Size = new System.Drawing.Size(147, 29);
+            this.InProgressLabel.Size = new System.Drawing.Size(116, 24);
             this.InProgressLabel.TabIndex = 16;
             this.InProgressLabel.Text = "EN COURS";
             // 
@@ -116,18 +153,36 @@
             this.inReviewTitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.inReviewTitlePanel.Controls.Add(this.inReviewBadge);
             this.inReviewTitlePanel.Controls.Add(this.InReviewLabel);
-            this.inReviewTitlePanel.Location = new System.Drawing.Point(822, 202);
+            this.inReviewTitlePanel.Location = new System.Drawing.Point(616, 164);
+            this.inReviewTitlePanel.Margin = new System.Windows.Forms.Padding(2);
             this.inReviewTitlePanel.Name = "inReviewTitlePanel";
-            this.inReviewTitlePanel.Size = new System.Drawing.Size(250, 54);
+            this.inReviewTitlePanel.Size = new System.Drawing.Size(188, 44);
             this.inReviewTitlePanel.TabIndex = 19;
+            // 
+            // inReviewBadge
+            // 
+            this.inReviewBadge.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.inReviewBadge.Enabled = false;
+            this.inReviewBadge.FlatAppearance.BorderSize = 0;
+            this.inReviewBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inReviewBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inReviewBadge.ForeColor = System.Drawing.Color.White;
+            this.inReviewBadge.Location = new System.Drawing.Point(148, 8);
+            this.inReviewBadge.Margin = new System.Windows.Forms.Padding(2);
+            this.inReviewBadge.Name = "inReviewBadge";
+            this.inReviewBadge.Size = new System.Drawing.Size(31, 25);
+            this.inReviewBadge.TabIndex = 19;
+            this.inReviewBadge.Text = "0";
+            this.inReviewBadge.UseVisualStyleBackColor = false;
             // 
             // InReviewLabel
             // 
             this.InReviewLabel.AutoSize = true;
             this.InReviewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.InReviewLabel.Location = new System.Drawing.Point(15, 12);
+            this.InReviewLabel.Location = new System.Drawing.Point(11, 10);
+            this.InReviewLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.InReviewLabel.Name = "InReviewLabel";
-            this.InReviewLabel.Size = new System.Drawing.Size(177, 29);
+            this.InReviewLabel.Size = new System.Drawing.Size(141, 24);
             this.InReviewLabel.TabIndex = 16;
             this.InReviewLabel.Text = "EN REVISION";
             // 
@@ -136,18 +191,36 @@
             this.doneTitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.doneTitlePanel.Controls.Add(this.doneBadge);
             this.doneTitlePanel.Controls.Add(this.doneLabel);
-            this.doneTitlePanel.Location = new System.Drawing.Point(1082, 202);
+            this.doneTitlePanel.Location = new System.Drawing.Point(812, 164);
+            this.doneTitlePanel.Margin = new System.Windows.Forms.Padding(2);
             this.doneTitlePanel.Name = "doneTitlePanel";
-            this.doneTitlePanel.Size = new System.Drawing.Size(250, 54);
+            this.doneTitlePanel.Size = new System.Drawing.Size(188, 44);
             this.doneTitlePanel.TabIndex = 19;
+            // 
+            // doneBadge
+            // 
+            this.doneBadge.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.doneBadge.Enabled = false;
+            this.doneBadge.FlatAppearance.BorderSize = 0;
+            this.doneBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doneBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doneBadge.ForeColor = System.Drawing.Color.White;
+            this.doneBadge.Location = new System.Drawing.Point(129, 8);
+            this.doneBadge.Margin = new System.Windows.Forms.Padding(2);
+            this.doneBadge.Name = "doneBadge";
+            this.doneBadge.Size = new System.Drawing.Size(31, 25);
+            this.doneBadge.TabIndex = 20;
+            this.doneBadge.Text = "0";
+            this.doneBadge.UseVisualStyleBackColor = false;
             // 
             // doneLabel
             // 
             this.doneLabel.AutoSize = true;
             this.doneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.doneLabel.Location = new System.Drawing.Point(20, 12);
+            this.doneLabel.Location = new System.Drawing.Point(15, 10);
+            this.doneLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.doneLabel.Name = "doneLabel";
-            this.doneLabel.Size = new System.Drawing.Size(146, 29);
+            this.doneLabel.Size = new System.Drawing.Size(116, 24);
             this.doneLabel.TabIndex = 16;
             this.doneLabel.Text = "TERMINEE";
             // 
@@ -155,9 +228,10 @@
             // 
             this.searchBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.searchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchBar.Location = new System.Drawing.Point(683, 134);
+            this.searchBar.Location = new System.Drawing.Point(512, 109);
+            this.searchBar.Margin = new System.Windows.Forms.Padding(2);
             this.searchBar.Name = "searchBar";
-            this.searchBar.Size = new System.Drawing.Size(244, 22);
+            this.searchBar.Size = new System.Drawing.Size(184, 20);
             this.searchBar.TabIndex = 21;
             // 
             // searchButton
@@ -167,9 +241,10 @@
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.Color.White;
-            this.searchButton.Location = new System.Drawing.Point(564, 130);
+            this.searchButton.Location = new System.Drawing.Point(423, 106);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(98, 28);
+            this.searchButton.Size = new System.Drawing.Size(74, 23);
             this.searchButton.TabIndex = 22;
             this.searchButton.Text = "Rechercher";
             this.searchButton.UseVisualStyleBackColor = false;
@@ -180,9 +255,10 @@
             this.MyTaskCheckBox.AutoSize = true;
             this.MyTaskCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.MyTaskCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyTaskCheckBox.Location = new System.Drawing.Point(938, 134);
+            this.MyTaskCheckBox.Location = new System.Drawing.Point(704, 109);
+            this.MyTaskCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.MyTaskCheckBox.Name = "MyTaskCheckBox";
-            this.MyTaskCheckBox.Size = new System.Drawing.Size(118, 24);
+            this.MyTaskCheckBox.Size = new System.Drawing.Size(99, 21);
             this.MyTaskCheckBox.TabIndex = 25;
             this.MyTaskCheckBox.Text = "Mes tâches";
             this.MyTaskCheckBox.UseVisualStyleBackColor = false;
@@ -192,9 +268,10 @@
             this.priorityLabel.AutoSize = true;
             this.priorityLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.priorityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priorityLabel.Location = new System.Drawing.Point(1073, 136);
+            this.priorityLabel.Location = new System.Drawing.Point(805, 110);
+            this.priorityLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.priorityLabel.Name = "priorityLabel";
-            this.priorityLabel.Size = new System.Drawing.Size(89, 20);
+            this.priorityLabel.Size = new System.Drawing.Size(76, 17);
             this.priorityLabel.TabIndex = 27;
             this.priorityLabel.Text = "Priorité : ";
             // 
@@ -203,9 +280,10 @@
             this.allPriorityRadioButton.AutoSize = true;
             this.allPriorityRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.allPriorityRadioButton.Checked = true;
-            this.allPriorityRadioButton.Location = new System.Drawing.Point(1167, 126);
+            this.allPriorityRadioButton.Location = new System.Drawing.Point(875, 102);
+            this.allPriorityRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.allPriorityRadioButton.Name = "allPriorityRadioButton";
-            this.allPriorityRadioButton.Size = new System.Drawing.Size(70, 20);
+            this.allPriorityRadioButton.Size = new System.Drawing.Size(58, 17);
             this.allPriorityRadioButton.TabIndex = 28;
             this.allPriorityRadioButton.TabStop = true;
             this.allPriorityRadioButton.Text = "Toutes";
@@ -215,9 +293,10 @@
             // 
             this.highPriorityRadioButton.AutoSize = true;
             this.highPriorityRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.highPriorityRadioButton.Location = new System.Drawing.Point(1167, 147);
+            this.highPriorityRadioButton.Location = new System.Drawing.Point(875, 119);
+            this.highPriorityRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.highPriorityRadioButton.Name = "highPriorityRadioButton";
-            this.highPriorityRadioButton.Size = new System.Drawing.Size(56, 20);
+            this.highPriorityRadioButton.Size = new System.Drawing.Size(48, 17);
             this.highPriorityRadioButton.TabIndex = 29;
             this.highPriorityRadioButton.Text = "Haut";
             this.highPriorityRadioButton.UseVisualStyleBackColor = false;
@@ -226,9 +305,10 @@
             // 
             this.mediumPriorityRadioButton.AutoSize = true;
             this.mediumPriorityRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.mediumPriorityRadioButton.Location = new System.Drawing.Point(1242, 126);
+            this.mediumPriorityRadioButton.Location = new System.Drawing.Point(932, 102);
+            this.mediumPriorityRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.mediumPriorityRadioButton.Name = "mediumPriorityRadioButton";
-            this.mediumPriorityRadioButton.Size = new System.Drawing.Size(69, 20);
+            this.mediumPriorityRadioButton.Size = new System.Drawing.Size(57, 17);
             this.mediumPriorityRadioButton.TabIndex = 30;
             this.mediumPriorityRadioButton.Text = "Moyen";
             this.mediumPriorityRadioButton.UseVisualStyleBackColor = false;
@@ -237,9 +317,10 @@
             // 
             this.lowPriorityRadioButton.AutoSize = true;
             this.lowPriorityRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.lowPriorityRadioButton.Location = new System.Drawing.Point(1243, 148);
+            this.lowPriorityRadioButton.Location = new System.Drawing.Point(932, 120);
+            this.lowPriorityRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.lowPriorityRadioButton.Name = "lowPriorityRadioButton";
-            this.lowPriorityRadioButton.Size = new System.Drawing.Size(52, 20);
+            this.lowPriorityRadioButton.Size = new System.Drawing.Size(43, 17);
             this.lowPriorityRadioButton.TabIndex = 31;
             this.lowPriorityRadioButton.Text = "Bas";
             this.lowPriorityRadioButton.UseVisualStyleBackColor = false;
@@ -248,9 +329,10 @@
             // 
             this.projectNameLabel.BackColor = System.Drawing.Color.White;
             this.projectNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectNameLabel.Location = new System.Drawing.Point(298, 135);
+            this.projectNameLabel.Location = new System.Drawing.Point(224, 110);
+            this.projectNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.projectNameLabel.Name = "projectNameLabel";
-            this.projectNameLabel.Size = new System.Drawing.Size(194, 42);
+            this.projectNameLabel.Size = new System.Drawing.Size(146, 34);
             this.projectNameLabel.TabIndex = 32;
             this.projectNameLabel.Text = "SprintName :";
             // 
@@ -261,9 +343,10 @@
             this.cancelSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelSearchButton.ForeColor = System.Drawing.Color.White;
-            this.cancelSearchButton.Location = new System.Drawing.Point(496, 129);
+            this.cancelSearchButton.Location = new System.Drawing.Point(372, 105);
+            this.cancelSearchButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelSearchButton.Name = "cancelSearchButton";
-            this.cancelSearchButton.Size = new System.Drawing.Size(36, 33);
+            this.cancelSearchButton.Size = new System.Drawing.Size(27, 27);
             this.cancelSearchButton.TabIndex = 24;
             this.cancelSearchButton.Text = "X";
             this.cancelSearchButton.UseVisualStyleBackColor = false;
@@ -277,81 +360,23 @@
             this.searchBarBackground.FlatAppearance.BorderSize = 0;
             this.searchBarBackground.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchBarBackground.ForeColor = System.Drawing.Color.White;
-            this.searchBarBackground.Location = new System.Drawing.Point(536, 116);
+            this.searchBarBackground.Location = new System.Drawing.Point(402, 94);
+            this.searchBarBackground.Margin = new System.Windows.Forms.Padding(2);
             this.searchBarBackground.Name = "searchBarBackground";
-            this.searchBarBackground.Size = new System.Drawing.Size(796, 54);
+            this.searchBarBackground.Size = new System.Drawing.Size(597, 44);
             this.searchBarBackground.TabIndex = 23;
             this.searchBarBackground.UseVisualStyleBackColor = false;
             // 
             // separator
             // 
             this.separator.isVertical = false;
-            this.separator.Location = new System.Drawing.Point(298, 173);
+            this.separator.Location = new System.Drawing.Point(224, 141);
+            this.separator.Margin = new System.Windows.Forms.Padding(2);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(1103, 23);
+            this.separator.Size = new System.Drawing.Size(827, 19);
             this.separator.TabIndex = 20;
             this.separator.Text = "separator1";
             this.separator.Thickness = 1;
-            // 
-            // doneBadge
-            // 
-            this.doneBadge.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.doneBadge.Enabled = false;
-            this.doneBadge.FlatAppearance.BorderSize = 0;
-            this.doneBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.doneBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doneBadge.ForeColor = System.Drawing.Color.White;
-            this.doneBadge.Location = new System.Drawing.Point(172, 10);
-            this.doneBadge.Name = "doneBadge";
-            this.doneBadge.Size = new System.Drawing.Size(41, 31);
-            this.doneBadge.TabIndex = 20;
-            this.doneBadge.Text = "0";
-            this.doneBadge.UseVisualStyleBackColor = false;
-            // 
-            // inReviewBadge
-            // 
-            this.inReviewBadge.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.inReviewBadge.Enabled = false;
-            this.inReviewBadge.FlatAppearance.BorderSize = 0;
-            this.inReviewBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inReviewBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inReviewBadge.ForeColor = System.Drawing.Color.White;
-            this.inReviewBadge.Location = new System.Drawing.Point(198, 10);
-            this.inReviewBadge.Name = "inReviewBadge";
-            this.inReviewBadge.Size = new System.Drawing.Size(41, 31);
-            this.inReviewBadge.TabIndex = 19;
-            this.inReviewBadge.Text = "0";
-            this.inReviewBadge.UseVisualStyleBackColor = false;
-            // 
-            // inProgressBadge
-            // 
-            this.inProgressBadge.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.inProgressBadge.Enabled = false;
-            this.inProgressBadge.FlatAppearance.BorderSize = 0;
-            this.inProgressBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inProgressBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inProgressBadge.ForeColor = System.Drawing.Color.White;
-            this.inProgressBadge.Location = new System.Drawing.Point(175, 10);
-            this.inProgressBadge.Name = "inProgressBadge";
-            this.inProgressBadge.Size = new System.Drawing.Size(41, 31);
-            this.inProgressBadge.TabIndex = 18;
-            this.inProgressBadge.Text = "0";
-            this.inProgressBadge.UseVisualStyleBackColor = false;
-            // 
-            // todoBadge
-            // 
-            this.todoBadge.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.todoBadge.Enabled = false;
-            this.todoBadge.FlatAppearance.BorderSize = 0;
-            this.todoBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.todoBadge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.todoBadge.ForeColor = System.Drawing.Color.White;
-            this.todoBadge.Location = new System.Drawing.Point(164, 12);
-            this.todoBadge.Name = "todoBadge";
-            this.todoBadge.Size = new System.Drawing.Size(41, 31);
-            this.todoBadge.TabIndex = 2;
-            this.todoBadge.Text = "1";
-            this.todoBadge.UseVisualStyleBackColor = false;
             // 
             // todoList
             // 
@@ -361,11 +386,11 @@
             this.todoList.Controls.Add(this.UserStoryExemple);
             this.todoList.Cursor = System.Windows.Forms.Cursors.Default;
             this.todoList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.todoList.Location = new System.Drawing.Point(298, 254);
-            this.todoList.Margin = new System.Windows.Forms.Padding(25);
+            this.todoList.Location = new System.Drawing.Point(224, 206);
+            this.todoList.Margin = new System.Windows.Forms.Padding(19, 20, 19, 20);
             this.todoList.Name = "todoList";
-            this.todoList.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
-            this.todoList.Size = new System.Drawing.Size(250, 453);
+            this.todoList.Padding = new System.Windows.Forms.Padding(0, 41, 0, 0);
+            this.todoList.Size = new System.Drawing.Size(188, 368);
             this.todoList.TabIndex = 4;
             this.todoList.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragDrop);
             this.todoList.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragEnter);
@@ -376,9 +401,10 @@
             this.UserStoryExemple.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.UserStoryExemple.Controls.Add(this.PriorityBadgeExemple);
             this.UserStoryExemple.Controls.Add(this.linkLabelExemple);
-            this.UserStoryExemple.Location = new System.Drawing.Point(7, 17);
+            this.UserStoryExemple.Location = new System.Drawing.Point(5, 14);
+            this.UserStoryExemple.Margin = new System.Windows.Forms.Padding(2);
             this.UserStoryExemple.Name = "UserStoryExemple";
-            this.UserStoryExemple.Size = new System.Drawing.Size(236, 76);
+            this.UserStoryExemple.Size = new System.Drawing.Size(178, 62);
             this.UserStoryExemple.TabIndex = 16;
             // 
             // PriorityBadgeExemple
@@ -388,9 +414,10 @@
             this.PriorityBadgeExemple.FlatAppearance.BorderSize = 0;
             this.PriorityBadgeExemple.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PriorityBadgeExemple.ForeColor = System.Drawing.Color.White;
-            this.PriorityBadgeExemple.Location = new System.Drawing.Point(3, 3);
+            this.PriorityBadgeExemple.Location = new System.Drawing.Point(2, 2);
+            this.PriorityBadgeExemple.Margin = new System.Windows.Forms.Padding(2);
             this.PriorityBadgeExemple.Name = "PriorityBadgeExemple";
-            this.PriorityBadgeExemple.Size = new System.Drawing.Size(22, 21);
+            this.PriorityBadgeExemple.Size = new System.Drawing.Size(16, 17);
             this.PriorityBadgeExemple.TabIndex = 1;
             this.PriorityBadgeExemple.UseVisualStyleBackColor = false;
             // 
@@ -398,9 +425,10 @@
             // 
             this.linkLabelExemple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelExemple.LinkColor = System.Drawing.Color.Black;
-            this.linkLabelExemple.Location = new System.Drawing.Point(31, 3);
+            this.linkLabelExemple.Location = new System.Drawing.Point(23, 2);
+            this.linkLabelExemple.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelExemple.Name = "linkLabelExemple";
-            this.linkLabelExemple.Size = new System.Drawing.Size(182, 45);
+            this.linkLabelExemple.Size = new System.Drawing.Size(136, 37);
             this.linkLabelExemple.TabIndex = 0;
             this.linkLabelExemple.TabStop = true;
             this.linkLabelExemple.Text = "voila commennt ça marche le multiline ooo";
@@ -412,9 +440,10 @@
             this.doneList.AutoScroll = true;
             this.doneList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.doneList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doneList.Location = new System.Drawing.Point(1082, 254);
+            this.doneList.Location = new System.Drawing.Point(812, 206);
+            this.doneList.Margin = new System.Windows.Forms.Padding(2);
             this.doneList.Name = "doneList";
-            this.doneList.Size = new System.Drawing.Size(250, 453);
+            this.doneList.Size = new System.Drawing.Size(188, 368);
             this.doneList.TabIndex = 15;
             this.doneList.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragDrop);
             this.doneList.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragEnter);
@@ -425,9 +454,10 @@
             this.inReviewList.AutoScroll = true;
             this.inReviewList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.inReviewList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inReviewList.Location = new System.Drawing.Point(822, 254);
+            this.inReviewList.Location = new System.Drawing.Point(616, 206);
+            this.inReviewList.Margin = new System.Windows.Forms.Padding(2);
             this.inReviewList.Name = "inReviewList";
-            this.inReviewList.Size = new System.Drawing.Size(250, 453);
+            this.inReviewList.Size = new System.Drawing.Size(188, 368);
             this.inReviewList.TabIndex = 14;
             this.inReviewList.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragDrop);
             this.inReviewList.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragEnter);
@@ -438,19 +468,20 @@
             this.inProgressList.AutoScroll = true;
             this.inProgressList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.inProgressList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inProgressList.Location = new System.Drawing.Point(560, 254);
+            this.inProgressList.Location = new System.Drawing.Point(420, 206);
+            this.inProgressList.Margin = new System.Windows.Forms.Padding(2);
             this.inProgressList.Name = "inProgressList";
-            this.inProgressList.Size = new System.Drawing.Size(250, 453);
+            this.inProgressList.Size = new System.Drawing.Size(188, 368);
             this.inProgressList.TabIndex = 13;
             this.inProgressList.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragDrop);
             this.inProgressList.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListPanel_DragEnter);
             // 
             // SprintForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1011, 586);
             this.Controls.Add(this.projectNameLabel);
             this.Controls.Add(this.lowPriorityRadioButton);
             this.Controls.Add(this.mediumPriorityRadioButton);
@@ -471,7 +502,10 @@
             this.Controls.Add(this.doneList);
             this.Controls.Add(this.inReviewList);
             this.Controls.Add(this.inProgressList);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SprintForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sprint View";
             this.todoTitlePanel.ResumeLayout(false);
             this.todoTitlePanel.PerformLayout();

@@ -16,25 +16,30 @@ namespace pr74_scrum_app.View
     {
         UserStory userStory;
         Member member;
-        int sprintId = 1;
-        int projectId= 1;
+        int sprintId;
+        int projectId;
         string assignees = "";
         int changeAssignee = 4;
         public UserStoryForm()
         {
             InitializeComponent();
         }
-        public UserStoryForm(int userStoryId, int memberId)
+     
+        public UserStoryForm(UserStory us, Member m)
         {
             InitializeComponent();
             UserStoryController controller = new UserStoryController();
-            member = controller.fetchMemberByProjectIdAndMemberId(projectId,memberId);
+            this.member = m;
+            this.userStory = us;
+            List<int> sprintProjectId = controller.fetchSprintIdProjectIdByUserStoryId(userStory.Id);
+            this.sprintId = sprintProjectId[0];
+            this.projectId = sprintProjectId[1];
             if (member == null)
             {
                 MessageBox.Show("404 : Le membre n'a pas été trouvé", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Hide();
             }
-            userStory = controller.FetchUserStoriesById(userStoryId);
+            userStory = controller.FetchUserStoriesById(userStory.Id);
             if (userStory == null)
             {
                 MessageBox.Show("404 :  La user story n'a pas été trouvé", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -207,7 +212,7 @@ namespace pr74_scrum_app.View
             Comment newComment = new Comment(0, textBox1.Text, member);
             controller.PersistComment(newComment, userStory.Id);
             this.Hide();
-            UserStoryForm mp = new UserStoryForm(1, 1);
+            UserStoryForm mp = new UserStoryForm(userStory, member);
             mp.ShowDialog();
         }
     }
