@@ -93,7 +93,7 @@ namespace pr74_scrum_app.Controller
                         string sql = $"insert into users(lastname,firstname,email,password) values('{lastname}','{firstname}','{email}','{EncryptPass(pass)}')";
                         MySqlDataReader resp = Database.ExecutQuery(sql);
                         resp.Close();
-                        MessageBox.Show("Vontre compte est crée. Connectez-vous.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Votre compte est crée. Connectez-vous.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return true;
                     }
                 }
@@ -105,7 +105,7 @@ namespace pr74_scrum_app.Controller
             }
             else
             {
-                MessageBox.Show("Vous devez completer tous les chmaps", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vous devez completer tous les champs", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

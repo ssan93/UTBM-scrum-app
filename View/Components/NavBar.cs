@@ -83,7 +83,7 @@ namespace pr74_scrum_app.View.Components
 
             PictureBox PictureProfilBox = new PictureBox();
             PictureProfilBox.BackColor = System.Drawing.Color.Transparent;
-            PictureProfilBox.Load("../../Ressources/logoScrum.ico");
+            PictureProfilBox.Load("../../Ressources/imgProfil.ico");
             PictureProfilBox.Location = new System.Drawing.Point(980, 25);
             PictureProfilBox.Name = "PictureProfilBox";
             PictureProfilBox.TabIndex = 8;
