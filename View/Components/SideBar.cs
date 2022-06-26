@@ -24,7 +24,7 @@ namespace pr74_scrum_app.View.Components
 
             //Add Separator
             Separator sep = new Separator();
-            sep.Size = new Size(160, 20);
+            sep.Size = new Size(180, 20);
             sep.Left = 0;
             sep.Top = pinnedProjects.Count() * 30 + 100;
             Controls.Add(sep);
@@ -39,7 +39,7 @@ namespace pr74_scrum_app.View.Components
             Controls.Add(project);
 
             //Add other projects list
-            GenerateProjectList(myProjects,myProjects.Count() * 30 + 140, "../../Ressources/proj.ico");
+            GenerateProjectList(myProjects, pinnedProjects.Count() * 30 + 140, "../../Ressources/proj.ico");
         }
         private void InitializeComponent()
         {  
@@ -51,19 +51,19 @@ namespace pr74_scrum_app.View.Components
             // 
             BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             Controls.Add(this.SideBarLabel);
-            Location = new System.Drawing.Point(0, 90);
+            Location = new System.Drawing.Point(0, 70);
             Margin = new Padding(3, 2, 3, 2);
             Name = "sideBarPanel";
-            Size = new System.Drawing.Size(160, 635);
+            Size = new System.Drawing.Size(180, 635);
             TabIndex = 25;
             // 
             // SideBarLabel
             // 
             SideBarLabel.AutoSize = true;
             SideBarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            SideBarLabel.Location = new System.Drawing.Point(7, 55);
+            SideBarLabel.Location = new System.Drawing.Point(7, 45);
             SideBarLabel.Name = "SideBarLabel";
-            SideBarLabel.Size = new System.Drawing.Size(160, 24);
+            SideBarLabel.Size = new System.Drawing.Size(180, 24);
             SideBarLabel.TabIndex = 26;
             SideBarLabel.Text = "Projets épinglés";
 

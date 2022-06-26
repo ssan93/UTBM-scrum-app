@@ -32,7 +32,7 @@ namespace pr74_scrum_app.View.Components
             // NavBarPictureBox
             // 
             NavBarPictureBox.BackColor = System.Drawing.Color.Transparent;
-            NavBarPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("NavBarPictureBox.Image"))); ;
+            NavBarPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("../../Ressources/logoScrum.ico")));
             NavBarPictureBox.Location = new System.Drawing.Point(21, 4);
             NavBarPictureBox.Margin = new Padding(4);
             NavBarPictureBox.Name = "NavBarPictureBox";
