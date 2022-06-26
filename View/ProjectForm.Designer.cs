@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectForm));
             this.addToSprintsButton = new System.Windows.Forms.Button();
             this.addToBacklogButton = new System.Windows.Forms.Button();
             this.ProjectPanel = new System.Windows.Forms.Panel();
+            this.membersIcon = new System.Windows.Forms.PictureBox();
+            this.sprintsIcon = new System.Windows.Forms.PictureBox();
+            this.backlogIcon = new System.Windows.Forms.PictureBox();
             this.separator = new pr74_scrum_app.View.Components.Separator();
             this.membersList = new pr74_scrum_app.View.ListPanel();
             this.exempleMembre = new pr74_scrum_app.View.RoundButton();
@@ -51,23 +53,14 @@
             this.sprintsNoneLabel = new System.Windows.Forms.Label();
             this.membersNoneLabel = new System.Windows.Forms.Label();
             this.archiveProjectButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.backlogIcon = new System.Windows.Forms.PictureBox();
-            this.sprintsIcon = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.membersIcon = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.returnButton = new System.Windows.Forms.Button();
             this.ProjectPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.membersIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sprintsIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backlogIcon)).BeginInit();
             this.membersList.SuspendLayout();
             this.sprintsList.SuspendLayout();
             this.backlogList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backlogIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sprintsIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membersIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // addToSprintsButton
@@ -122,6 +115,30 @@
             this.ProjectPanel.Size = new System.Drawing.Size(1037, 558);
             this.ProjectPanel.TabIndex = 16;
             // 
+            // membersIcon
+            // 
+            this.membersIcon.Location = new System.Drawing.Point(749, 155);
+            this.membersIcon.Name = "membersIcon";
+            this.membersIcon.Size = new System.Drawing.Size(20, 21);
+            this.membersIcon.TabIndex = 31;
+            this.membersIcon.TabStop = false;
+            // 
+            // sprintsIcon
+            // 
+            this.sprintsIcon.Location = new System.Drawing.Point(396, 155);
+            this.sprintsIcon.Name = "sprintsIcon";
+            this.sprintsIcon.Size = new System.Drawing.Size(20, 21);
+            this.sprintsIcon.TabIndex = 29;
+            this.sprintsIcon.TabStop = false;
+            // 
+            // backlogIcon
+            // 
+            this.backlogIcon.Location = new System.Drawing.Point(57, 152);
+            this.backlogIcon.Name = "backlogIcon";
+            this.backlogIcon.Size = new System.Drawing.Size(20, 21);
+            this.backlogIcon.TabIndex = 2;
+            this.backlogIcon.TabStop = false;
+            // 
             // separator
             // 
             this.separator.BackColor = System.Drawing.Color.White;
@@ -136,7 +153,6 @@
             // membersList
             // 
             this.membersList.AutoScroll = true;
-            this.membersList.Controls.Add(this.pictureBox4);
             this.membersList.Controls.Add(this.exempleMembre);
             this.membersList.ElementsHigh = 40;
             this.membersList.Location = new System.Drawing.Point(747, 180);
@@ -162,7 +178,6 @@
             // sprintsList
             // 
             this.sprintsList.AutoScroll = true;
-            this.sprintsList.Controls.Add(this.pictureBox2);
             this.sprintsList.Controls.Add(this.exempleSprint);
             this.sprintsList.ElementsHigh = 40;
             this.sprintsList.Location = new System.Drawing.Point(396, 180);
@@ -188,7 +203,6 @@
             // backlogList
             // 
             this.backlogList.AutoScroll = true;
-            this.backlogList.Controls.Add(this.pictureBox1);
             this.backlogList.Controls.Add(this.exempleUserStory);
             this.backlogList.ElementsHigh = 40;
             this.backlogList.Location = new System.Drawing.Point(57, 180);
@@ -340,58 +354,6 @@
             this.archiveProjectButton.UseVisualStyleBackColor = false;
             this.archiveProjectButton.Click += new System.EventHandler(this.archiveProjectButton_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 30);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // backlogIcon
-            // 
-            this.backlogIcon.Location = new System.Drawing.Point(57, 152);
-            this.backlogIcon.Name = "backlogIcon";
-            this.backlogIcon.Size = new System.Drawing.Size(20, 21);
-            this.backlogIcon.TabIndex = 2;
-            this.backlogIcon.TabStop = false;
-            // 
-            // sprintsIcon
-            // 
-            this.sprintsIcon.Location = new System.Drawing.Point(396, 155);
-            this.sprintsIcon.Name = "sprintsIcon";
-            this.sprintsIcon.Size = new System.Drawing.Size(20, 21);
-            this.sprintsIcon.TabIndex = 29;
-            this.sprintsIcon.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(18, 30);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 21);
-            this.pictureBox4.TabIndex = 30;
-            this.pictureBox4.TabStop = false;
-            // 
-            // membersIcon
-            // 
-            this.membersIcon.Location = new System.Drawing.Point(749, 155);
-            this.membersIcon.Name = "membersIcon";
-            this.membersIcon.Size = new System.Drawing.Size(20, 21);
-            this.membersIcon.TabIndex = 31;
-            this.membersIcon.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(22, 30);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 21);
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
-            // 
             // returnButton
             // 
             this.returnButton.Location = new System.Drawing.Point(301, 124);
@@ -416,15 +378,12 @@
             this.Text = "ProjectViewForm";
             this.ProjectPanel.ResumeLayout(false);
             this.ProjectPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.membersIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sprintsIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backlogIcon)).EndInit();
             this.membersList.ResumeLayout(false);
             this.sprintsList.ResumeLayout(false);
             this.backlogList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backlogIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sprintsIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membersIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,9 +414,6 @@
         private System.Windows.Forms.PictureBox membersIcon;
         private System.Windows.Forms.PictureBox sprintsIcon;
         private System.Windows.Forms.PictureBox backlogIcon;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button returnButton;
     }
 }

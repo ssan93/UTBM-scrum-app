@@ -16,13 +16,14 @@ namespace pr74_scrum_app.View.ProjectViewSubForms
         Controller.ProjectController pc = new Controller.ProjectController();
         private Member member;
         private int projectId;
-        public DisplayMemberInfo(int memberId, int projectId)
+        public DisplayMemberInfo(int userId, int projectId)
         {   
 
-            Member m = pc.FetchMember(memberId, projectId);
+            Member m = pc.FetchMember(projectId, userId);
+            InitializeComponent();
             if (m == null)
             {
-                InitializeComponent();
+                
                 errorLabel.Visible = true;
                 removeButton.Visible = false;
                 emailInsertion.Visible = false;
@@ -33,12 +34,9 @@ namespace pr74_scrum_app.View.ProjectViewSubForms
                 firstnameLabel.Visible = false;
                 lastnameLabel.Visible = false;
                 roleLabel.Visible = false;
-            }
-            else {
+            } else {
                 this.member = m;
-                 
                 this.projectId = projectId;
-                InitializeComponent();
                 errorLabel.Visible = false;
                 firstnameInsertion.Text = this.member.User.FirstName;
                 lastnameInsertion.Text = this.member.User.LastName;
@@ -68,7 +66,8 @@ namespace pr74_scrum_app.View.ProjectViewSubForms
         private void button1_Click(object sender, EventArgs e)
         {
             RemoveMemberFromProjectConfirmationPopUp form = new RemoveMemberFromProjectConfirmationPopUp(this.member, this.projectId);
-            form.Show();
+            form.ShowDialog();
+            this.Close();
         }
     }
 }

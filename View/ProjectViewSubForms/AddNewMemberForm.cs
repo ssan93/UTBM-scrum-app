@@ -41,7 +41,6 @@ namespace pr74_scrum_app
                 {
                     erreurLabel.Visible = false;
                     int userId = pc.FetchUserIdByEmail(memberEmail);
-                    // TODO: add condition to already existing members
                     
                     if (userId > -1)
                     {

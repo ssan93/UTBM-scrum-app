@@ -49,6 +49,7 @@ namespace pr74_scrum_app
                 addToSprintsButton.Visible = true;
             }
             sideBar = new SideBar(member.User);
+            sideBar.CurrentProjectId = project.Id;
             navBar = new NavBar(member.User);
             Controls.Add(sideBar);
             Controls.Add(navBar);
@@ -89,8 +90,8 @@ namespace pr74_scrum_app
                 if(m.Id != member.Id)
                 {
                     RoundButton rb = generateRoundButton();
-                    rb.Text = m.User.FirstName + " "+ m.User.LastName;
-                    rb.Name = ""+m.Id;
+                    rb.Text = m.User.FirstName[0] + "."+ m.User.LastName + " - "+m.getFullRole();
+                    rb.Name = ""+m.User.Id;
                     rb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
                     rb.ForeColor = System.Drawing.Color.Black;
                     rb.Click += new EventHandler(this.Member_Click);
@@ -118,6 +119,7 @@ namespace pr74_scrum_app
             Controls.Remove(sideBar);
             Controls.Remove(navBar);
             sideBar = new SideBar(member.User);
+            sideBar.CurrentProjectId = project.Id;
             navBar = new NavBar(member.User);
             Controls.Add(sideBar);
             Controls.Add(navBar);
@@ -195,16 +197,15 @@ namespace pr74_scrum_app
         {
             RoundButton rb = sender as RoundButton;
             int id = int.Parse(rb.Name);
-            DisplayMemberInfo mf = new DisplayMemberInfo(member.Id, project.Id);
-            this.Hide();
+            DisplayMemberInfo mf = new DisplayMemberInfo(id, project.Id);
             mf.ShowDialog();
             refreshForm();
             this.Show();
         }
-
         private void returnButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }
