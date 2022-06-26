@@ -9,7 +9,7 @@ namespace pr74_scrum_app.Controller
 {
     class Controller
     {
-        private Database db;
+        private Database database;
         protected readonly string COMMENTS_TABLE = "userstorycomment";
         protected readonly string ASSIGNEES_TABLE = "userstorymember";
         protected readonly string SPRINTS_TABLE = "sprint";
@@ -18,12 +18,12 @@ namespace pr74_scrum_app.Controller
 
         public Controller()
         {
-            db = new Database();
+            database = new Database();
         }
         public int GenerateNewId(string tableName)
         {
             int id = -1;
-            MySqlDataReader dr = db.ExecutQuery($"select id from {tableName} order by id DESC limit 1");
+            MySqlDataReader dr = database.ExecutQuery($"select id from {tableName} order by id DESC limit 1");
             if (dr.HasRows)
             {
                 while (dr.Read())
@@ -38,6 +38,6 @@ namespace pr74_scrum_app.Controller
 
             return id;
         }
-        public Database Database { get { return db; } }
+        public Database Database { get { return database; } }
     }
 }
