@@ -12,6 +12,7 @@ namespace pr74_scrum_app.View.Components
         private Label SideBarLabel;
         public Dictionary<int, string> pinnedProjects;
         public Dictionary<int, string> myProjects;
+        private int currentProjectId; 
 
         public SideBar(User user)
         {
@@ -71,6 +72,7 @@ namespace pr74_scrum_app.View.Components
             //this.sideBarPanel.PerformLayout();
 
         }
+        public int CurrentProjectId { get { return currentProjectId; } set { currentProjectId = value; } }
         public void RefreshProjects()
         {
             SidebarController controller = new SidebarController();
@@ -109,12 +111,14 @@ namespace pr74_scrum_app.View.Components
         }
         private void GoToProject(object sender, EventArgs e, int projectID)
         {
-            Parent.Hide();
-            Console.WriteLine(projectID.ToString());
-            // TODO: switch to project View when compoleted
-            HomeForm home = new HomeForm();
-            home.ShowDialog();
-            Parent.Show();
+            if(projectID != currentProjectId)
+            {
+                Parent.Hide();
+                currentProjectId = projectID;
+                ProjectForm home = new ProjectForm(projectID, user.Id);
+                home.ShowDialog();
+                Parent.Show();
+            }
         }
     }
 }
