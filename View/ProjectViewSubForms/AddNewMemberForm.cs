@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pr74_scrum_app.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,14 +41,24 @@ namespace pr74_scrum_app
                 {
                     erreurLabel.Visible = false;
                     int userId = pc.FetchUserIdByEmail(memberEmail);
-
+                    // TODO: add condition to already existing members
+                    
                     if (userId > -1)
                     {
-                        // add data to DB
-                        pc.PersistMember(this.projectId, memberEmail, memberRole); // TODO ??? insert real project ID
+                        Member member = pc.FetchMember(this.projectId, userId);
+                        if (member == null)
+                        {
+                            // add data to DB
+                            pc.PersistMember(this.projectId, memberEmail, memberRole); // TODO ??? insert real project ID
 
-                        // close form
-                        this.Close();
+                            // close form
+                            this.Close();
+                        }
+                        else
+                        {
+                            erreurLabel.Text = "Cet utilisateur est déjà lié au projet.";
+                            erreurLabel.Visible = true;
+                        }
                     }
                     else
                     {
