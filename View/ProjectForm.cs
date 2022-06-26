@@ -1,6 +1,7 @@
 ﻿using pr74_scrum_app.Model;
 using pr74_scrum_app.View;
 using pr74_scrum_app.View.Components;
+using pr74_scrum_app.View.ProjectViewSubForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,10 +54,15 @@ namespace pr74_scrum_app
             Controls.Add(navBar);
             generateButtonsForLists();
         }
+        private void fetchData()
+        {
+            this.project = pc.FetchProjectById(this.projectId);
+            this.member = pc.FetchMember(this.projectId, this.userId);
+        }
 
         private void generateButtonsForLists()
         {
-            ClearLists();
+            clearLists();
             // generate user stories
             foreach (UserStory us in project.Backlog.UserStories) {
                 RoundButton rb = generateRoundButton();
@@ -94,11 +100,23 @@ namespace pr74_scrum_app
             sprintsList.Visible = sprintsList.Count() > 0;
             membersList.Visible = membersList.Count() > 0;
         }
-        private void ClearLists()
+        private void clearLists()
         {
             membersList.Clear();
             sprintsList.Clear();
             backlogList.Clear();
+        }
+        private void refreshForm()
+        {
+            fetchData();
+            generateButtonsForLists();
+            Controls.Remove(sideBar);
+            Controls.Remove(navBar);
+            sideBar = new SideBar(member.User);
+            navBar = new NavBar(member.User);
+            Controls.Add(sideBar);
+            Controls.Add(navBar);
+
         }
 
         private RoundButton generateRoundButton()
@@ -119,29 +137,28 @@ namespace pr74_scrum_app
         {
             AddNewMemberForm form = new AddNewMemberForm(this.projectId);
             form.ShowDialog();
+            refreshForm();
         }
 
         private void addToSprintsButton_Click(object sender, EventArgs e)
         {
             AddNewSprintForm form = new AddNewSprintForm(this.projectId);
-            form.Show();
+            form.ShowDialog();
+            refreshForm();
         }
 
         private void addToBacklogButton_Click(object sender, EventArgs e)
         {
             AddFeatureToBacklogForm form = new AddFeatureToBacklogForm(this.projectId);
-            form.Show();
+            form.ShowDialog();
+            refreshForm();
         }
 
         private void archiveProjectButton_Click(object sender, EventArgs e)
         {
             ArchiveProjectConfirmationForm form = new ArchiveProjectConfirmationForm(this.projectId);
-            form.Show();
-        }
-
-        private void projectNameLabel_Click(object sender, EventArgs e)
-        {
-
+            form.ShowDialog();
+            refreshForm();
         }
 
         private void UserStory_Click(object sender, EventArgs e)
@@ -151,6 +168,7 @@ namespace pr74_scrum_app
             UserStoryForm usf = new UserStoryForm(getUserStoryFromList(id), member);
             this.Hide();
             usf.ShowDialog();
+            refreshForm();
             this.Show();  
         }
         private UserStory getUserStoryFromList(int id)
@@ -165,16 +183,18 @@ namespace pr74_scrum_app
             SprintForm sf = new SprintForm(member.Id, id);
             this.Hide();
             sf.ShowDialog();
+            refreshForm();
             this.Show();
         }
         private void Member_Click(object sender, EventArgs e)
         {
             RoundButton rb = sender as RoundButton;
             int id = int.Parse(rb.Name);
-            //MemberForm mf = new MemberForm(getUserStoryFromList(id), member);
-            //this.Hide();
-            //mf.ShowDialog();
-            //this.Show();
+            DisplayMemberInfo mf = new DisplayMemberInfo(member.Id, project.Id);
+            this.Hide();
+            mf.ShowDialog();
+            refreshForm();
+            this.Show();
         }
     }
 }

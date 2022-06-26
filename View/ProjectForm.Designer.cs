@@ -213,7 +213,6 @@
             this.projectNameLabel.Size = new System.Drawing.Size(241, 29);
             this.projectNameLabel.TabIndex = 24;
             this.projectNameLabel.Text = "Nom du projet";
-            this.projectNameLabel.Click += new System.EventHandler(this.projectNameLabel_Click);
             // 
             // sprintsLabel
             // 
