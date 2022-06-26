@@ -54,7 +54,7 @@ namespace pr74_scrum_app.View.Components
             Location = new System.Drawing.Point(0, 90);
             Margin = new Padding(3, 2, 3, 2);
             Name = "sideBarPanel";
-            Size = new System.Drawing.Size(204, 635);
+            Size = new System.Drawing.Size(160, 635);
             TabIndex = 25;
             // 
             // SideBarLabel
