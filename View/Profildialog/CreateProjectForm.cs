@@ -27,7 +27,6 @@ namespace pr74_scrum_app
         {
             this.profilForm = profilForm;
         }
-
         private void CreateValidedButton_Click(object sender, EventArgs e)
         {
             if (DescriptionTextBox.Text.Length<250 && NameProjetText.Text.Length < 30)
@@ -43,13 +42,14 @@ namespace pr74_scrum_app
                     usercontroller.CreateProjet(NameProjetText.Text,DescriptionTextBox.Text,this.user.Id);
                     ErrorLabel.Visible = false;
 
-                    this.profilForm.SetVarShow_Form(false);
-                    this.profilForm.Close();
-                    ProfilForm pro = new ProfilForm(user)
-                    {
-                        StartPosition = FormStartPosition.CenterScreen
-                    };
-                    pro.Show();
+                    //this.profilForm.SetVarShow_Form(false);
+                    //this.profilForm.Close();
+                    
+                    //ProfilForm pro = new ProfilForm(user)
+                    //{
+                    //    StartPosition = FormStartPosition.CenterScreen
+                    //};
+                    //pro.Show();
                     this.Close();
                 }
             }

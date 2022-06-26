@@ -177,7 +177,7 @@ namespace pr74_scrum_app.Controller
             int idpro = 0;
             try
             {
-                string insertProjet = $"insert into project(name,description,archived,pinned,created_dt) values('{name}','{description}',{0},{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
+                string insertProjet = $"insert into project(name,description,archived,created_dt) values('{name}','{description}',{0},CURRENT_DATE) ; SELECT LAST_INSERT_ID() as id";
                 data = Database.ExecutQuery(insertProjet);
                 if(data!=null && data.HasRows)
                 {

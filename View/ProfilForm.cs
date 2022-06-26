@@ -21,6 +21,7 @@ namespace pr74_scrum_app
         List<Project> projects;
         List<Sprint> sprints;
         List<UserStory> tasks;
+        SideBar sideBar;
         List<Project> searchproject;
 
         public ProfilForm(User User)
@@ -82,15 +83,25 @@ namespace pr74_scrum_app
 
             LoadData(); //Option d'affichage de projet
             AddDataIntocombox(); //option de recherche 
-            SideBar sideBar = new SideBar(User);
-            Controls.Add(sideBar);
+            this.sideBar = new SideBar(User);
+            Controls.Add(this.sideBar);
         }
+
+        public void RefreshForm()
+        {
+            List<Control> cc = new List<Control>();
+            foreach (Control c in this.Controls) cc.Add(c);
+            this.Controls.Clear();
+            foreach (Control c in cc) this.Controls.Add(c);
+        }
+
 
         private void Refresh_content()
         {
             LoadData(); //Option d'affichage de projet
             AddDataIntocombox(); //option de recherche 
-            SideBar sideBar = new SideBar(this.user);
+            Controls.Remove(this.sideBar);
+            this.sideBar = new SideBar(this.user);
             Controls.Add(sideBar);
         }
 
@@ -167,8 +178,12 @@ namespace pr74_scrum_app
 
         private void CreateProjetButton_Click(object sender, EventArgs e)
         {
-            CreatePojetForm create = new CreatePojetForm(user,this);
-            create.Show();
+            CreatePojetForm create = new CreatePojetForm(user);
+            create.ShowDialog();
+            Refresh_content();
+            RefreshForm();
+            this.Show();
+
         }
 
         public void LoadData()

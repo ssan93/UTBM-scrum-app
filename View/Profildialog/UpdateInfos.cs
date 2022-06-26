@@ -14,7 +14,7 @@ namespace pr74_scrum_app
             firstnameText.Text = user.FirstName;
             lastnameText.Text = user.LastName;
             emailText.Text = user.Email;
-            passwordText.Text = usercontroller.DecryptPass(user.Password);
+            passwordText.Text = "12345678";
             this.user = user;
         }
 
