@@ -280,7 +280,7 @@ namespace pr74_scrum_app
 
         private void UnPinPictureBox_Click(object sender, EventArgs e)
         {
-            PinAction(); //idem
+            PinAction(); //idem idem
         }
     }
 }
