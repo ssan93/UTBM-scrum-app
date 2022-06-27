@@ -148,13 +148,15 @@ namespace pr74_scrum_app.View.Components
                     if (result == DialogResult.Yes)
                     {
                         this.Hide();
-                        foreach (Form oForm in Application.OpenForms)
+                        FormCollection forms = Application.OpenForms;
+                        foreach (Form oForm in forms)
                         {
                             if (oForm is HomeForm)
                             {
                                 oForm.Show();
                                 break;
                             }
+                            else oForm.Close();
                         }
                     }
                 }

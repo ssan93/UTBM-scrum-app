@@ -46,15 +46,15 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.commentsPanel = new System.Windows.Forms.Panel();
             this.customInstaller1 = new MySql.Data.MySqlClient.CustomInstaller();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.roundButton10 = new pr74_scrum_app.View.RoundButton();
+            this.commentButton = new pr74_scrum_app.View.RoundButton();
             this.roundButton5 = new pr74_scrum_app.View.RoundButton();
             this.separator1 = new pr74_scrum_app.View.Components.Separator();
             this.roundButton4 = new pr74_scrum_app.View.RoundButton();
             this.roundButton3 = new pr74_scrum_app.View.RoundButton();
-            this.roundButton1 = new pr74_scrum_app.View.RoundButton();
+            this.saveButton = new pr74_scrum_app.View.RoundButton();
             this.roundButton6 = new pr74_scrum_app.View.RoundButton();
             this.roundButton9 = new pr74_scrum_app.View.RoundButton();
             this.roundButton7 = new pr74_scrum_app.View.RoundButton();
@@ -125,7 +125,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(132, 158);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +137,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(132, 90);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -149,7 +149,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(132, 223);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,7 +161,7 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(132, 287);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(29, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -173,7 +173,7 @@
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Location = new System.Drawing.Point(171, 294);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(208, 15);
             this.textBox3.TabIndex = 23;
@@ -186,7 +186,7 @@
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Location = new System.Drawing.Point(180, 364);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(196, 80);
@@ -199,7 +199,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(132, 385);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(29, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -214,7 +214,7 @@
             "test",
             "test2"});
             this.listBox1.Location = new System.Drawing.Point(383, 158);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox1.Size = new System.Drawing.Size(207, 68);
@@ -233,7 +233,7 @@
             "Moyenne",
             "Basse"});
             this.comboBox1.Location = new System.Drawing.Point(180, 225);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(195, 24);
             this.comboBox1.TabIndex = 28;
@@ -249,14 +249,14 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Commentaires";
             // 
-            // panel1
+            // commentsPanel
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(536, 71);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(449, 279);
-            this.panel1.TabIndex = 31;
+            this.commentsPanel.AutoScroll = true;
+            this.commentsPanel.Location = new System.Drawing.Point(536, 71);
+            this.commentsPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.commentsPanel.Name = "commentsPanel";
+            this.commentsPanel.Size = new System.Drawing.Size(449, 279);
+            this.commentsPanel.TabIndex = 31;
             // 
             // textBox1
             // 
@@ -264,7 +264,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.textBox1.Location = new System.Drawing.Point(556, 385);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(332, 80);
@@ -273,20 +273,20 @@
             this.textBox1.Text = "Commenter ici";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
-            // roundButton10
+            // commentButton
             // 
-            this.roundButton10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(128)))));
-            this.roundButton10.FlatAppearance.BorderSize = 0;
-            this.roundButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton10.ForeColor = System.Drawing.Color.White;
-            this.roundButton10.Location = new System.Drawing.Point(533, 479);
-            this.roundButton10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.roundButton10.Name = "roundButton10";
-            this.roundButton10.Size = new System.Drawing.Size(373, 43);
-            this.roundButton10.TabIndex = 35;
-            this.roundButton10.Text = "COMMENTER";
-            this.roundButton10.UseVisualStyleBackColor = false;
-            this.roundButton10.Click += new System.EventHandler(this.roundButton10_Click);
+            this.commentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(128)))));
+            this.commentButton.FlatAppearance.BorderSize = 0;
+            this.commentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.commentButton.ForeColor = System.Drawing.Color.White;
+            this.commentButton.Location = new System.Drawing.Point(533, 479);
+            this.commentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.commentButton.Name = "commentButton";
+            this.commentButton.Size = new System.Drawing.Size(373, 43);
+            this.commentButton.TabIndex = 35;
+            this.commentButton.Text = "COMMENTER";
+            this.commentButton.UseVisualStyleBackColor = false;
+            this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
             // 
             // roundButton5
             // 
@@ -345,20 +345,20 @@
             this.roundButton3.Click += new System.EventHandler(this.roundButton3_Click);
             this.roundButton3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.roundButton3_MouseMove);
             // 
-            // roundButton1
+            // saveButton
             // 
-            this.roundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(128)))));
-            this.roundButton1.FlatAppearance.BorderSize = 0;
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton1.ForeColor = System.Drawing.Color.White;
-            this.roundButton1.Location = new System.Drawing.Point(104, 475);
-            this.roundButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(291, 43);
-            this.roundButton1.TabIndex = 0;
-            this.roundButton1.Text = "SAUVEGARDER";
-            this.roundButton1.UseVisualStyleBackColor = false;
-            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(128)))));
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.ForeColor = System.Drawing.Color.White;
+            this.saveButton.Location = new System.Drawing.Point(104, 475);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(291, 43);
+            this.saveButton.TabIndex = 0;
+            this.saveButton.Text = "SAUVEGARDER";
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.roundButton1_Click);
             // 
             // roundButton6
             // 
@@ -474,10 +474,10 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.roundButton10);
+            this.Controls.Add(this.commentButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.roundButton5);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.commentsPanel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.separator1);
             this.Controls.Add(this.comboBox1);
@@ -495,7 +495,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.roundButton3);
-            this.Controls.Add(this.roundButton1);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.roundButton6);
             this.Controls.Add(this.roundButton9);
             this.Controls.Add(this.roundButton7);
@@ -518,7 +518,7 @@
 
         #endregion
 
-        private RoundButton roundButton1;
+        private RoundButton saveButton;
         private RoundButton roundButton3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -542,11 +542,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private Components.Separator separator1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel commentsPanel;
         private MySql.Data.MySqlClient.CustomInstaller customInstaller1;
         private System.Windows.Forms.TextBox textBox1;
         private RoundButton roundButton5;
-        private RoundButton roundButton10;
+        private RoundButton commentButton;
         private RoundButton roundButton11;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox2;
