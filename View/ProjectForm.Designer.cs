@@ -49,9 +49,7 @@
             this.sprintsLabel = new System.Windows.Forms.Label();
             this.membersLabel = new System.Windows.Forms.Label();
             this.backlogLabel = new System.Windows.Forms.Label();
-            this.searchBarComboBox = new System.Windows.Forms.ComboBox();
             this.addToMembersButton = new System.Windows.Forms.Button();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.backlogNoneLabel = new System.Windows.Forms.Label();
             this.sprintsNoneLabel = new System.Windows.Forms.Label();
             this.membersNoneLabel = new System.Windows.Forms.Label();
@@ -70,10 +68,10 @@
             // 
             // addToSprintsButton
             // 
-            this.addToSprintsButton.Location = new System.Drawing.Point(557, 148);
-            this.addToSprintsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addToSprintsButton.Location = new System.Drawing.Point(836, 231);
+            this.addToSprintsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addToSprintsButton.Name = "addToSprintsButton";
-            this.addToSprintsButton.Size = new System.Drawing.Size(77, 27);
+            this.addToSprintsButton.Size = new System.Drawing.Size(116, 42);
             this.addToSprintsButton.TabIndex = 15;
             this.addToSprintsButton.Text = "+ Ajouter";
             this.addToSprintsButton.UseVisualStyleBackColor = true;
@@ -81,10 +79,10 @@
             // 
             // addToBacklogButton
             // 
-            this.addToBacklogButton.Location = new System.Drawing.Point(218, 146);
-            this.addToBacklogButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addToBacklogButton.Location = new System.Drawing.Point(327, 228);
+            this.addToBacklogButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addToBacklogButton.Name = "addToBacklogButton";
-            this.addToBacklogButton.Size = new System.Drawing.Size(77, 27);
+            this.addToBacklogButton.Size = new System.Drawing.Size(116, 42);
             this.addToBacklogButton.TabIndex = 12;
             this.addToBacklogButton.Text = "+ Ajouter";
             this.addToBacklogButton.UseVisualStyleBackColor = true;
@@ -107,27 +105,26 @@
             this.ProjectPanel.Controls.Add(this.sprintsLabel);
             this.ProjectPanel.Controls.Add(this.membersLabel);
             this.ProjectPanel.Controls.Add(this.backlogLabel);
-            this.ProjectPanel.Controls.Add(this.searchBarComboBox);
             this.ProjectPanel.Controls.Add(this.addToMembersButton);
             this.ProjectPanel.Controls.Add(this.addToSprintsButton);
             this.ProjectPanel.Controls.Add(this.addToBacklogButton);
-            this.ProjectPanel.Controls.Add(this.searchTextBox);
             this.ProjectPanel.Controls.Add(this.backlogNoneLabel);
             this.ProjectPanel.Controls.Add(this.sprintsNoneLabel);
             this.ProjectPanel.Controls.Add(this.membersNoneLabel);
             this.ProjectPanel.Controls.Add(this.archiveProjectButton);
-            this.ProjectPanel.Location = new System.Drawing.Point(299, 152);
-            this.ProjectPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ProjectPanel.Location = new System.Drawing.Point(448, 238);
+            this.ProjectPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ProjectPanel.Name = "ProjectPanel";
-            this.ProjectPanel.Size = new System.Drawing.Size(1037, 558);
+            this.ProjectPanel.Size = new System.Drawing.Size(1556, 872);
             this.ProjectPanel.TabIndex = 16;
             // 
             // UnPinpictureBox
             // 
             this.UnPinpictureBox.Image = ((System.Drawing.Image)(resources.GetObject("UnPinpictureBox.Image")));
-            this.UnPinpictureBox.Location = new System.Drawing.Point(466, 16);
+            this.UnPinpictureBox.Location = new System.Drawing.Point(699, 25);
+            this.UnPinpictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UnPinpictureBox.Name = "UnPinpictureBox";
-            this.UnPinpictureBox.Size = new System.Drawing.Size(33, 34);
+            this.UnPinpictureBox.Size = new System.Drawing.Size(50, 53);
             this.UnPinpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UnPinpictureBox.TabIndex = 33;
             this.UnPinpictureBox.TabStop = false;
@@ -137,9 +134,10 @@
             // PinPictureBox
             // 
             this.PinPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("PinPictureBox.Image")));
-            this.PinPictureBox.Location = new System.Drawing.Point(465, 17);
+            this.PinPictureBox.Location = new System.Drawing.Point(698, 27);
+            this.PinPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PinPictureBox.Name = "PinPictureBox";
-            this.PinPictureBox.Size = new System.Drawing.Size(34, 34);
+            this.PinPictureBox.Size = new System.Drawing.Size(51, 53);
             this.PinPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PinPictureBox.TabIndex = 33;
             this.PinPictureBox.TabStop = false;
@@ -148,25 +146,28 @@
             // 
             // membersIcon
             // 
-            this.membersIcon.Location = new System.Drawing.Point(749, 155);
+            this.membersIcon.Location = new System.Drawing.Point(1124, 242);
+            this.membersIcon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.membersIcon.Name = "membersIcon";
-            this.membersIcon.Size = new System.Drawing.Size(20, 21);
+            this.membersIcon.Size = new System.Drawing.Size(30, 33);
             this.membersIcon.TabIndex = 31;
             this.membersIcon.TabStop = false;
             // 
             // sprintsIcon
             // 
-            this.sprintsIcon.Location = new System.Drawing.Point(396, 155);
+            this.sprintsIcon.Location = new System.Drawing.Point(594, 242);
+            this.sprintsIcon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sprintsIcon.Name = "sprintsIcon";
-            this.sprintsIcon.Size = new System.Drawing.Size(20, 21);
+            this.sprintsIcon.Size = new System.Drawing.Size(30, 33);
             this.sprintsIcon.TabIndex = 29;
             this.sprintsIcon.TabStop = false;
             // 
             // backlogIcon
             // 
-            this.backlogIcon.Location = new System.Drawing.Point(57, 152);
+            this.backlogIcon.Location = new System.Drawing.Point(86, 238);
+            this.backlogIcon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backlogIcon.Name = "backlogIcon";
-            this.backlogIcon.Size = new System.Drawing.Size(20, 21);
+            this.backlogIcon.Size = new System.Drawing.Size(30, 33);
             this.backlogIcon.TabIndex = 2;
             this.backlogIcon.TabStop = false;
             // 
@@ -174,9 +175,10 @@
             // 
             this.separator.BackColor = System.Drawing.Color.White;
             this.separator.isVertical = false;
-            this.separator.Location = new System.Drawing.Point(27, 125);
+            this.separator.Location = new System.Drawing.Point(40, 195);
+            this.separator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(977, 23);
+            this.separator.Size = new System.Drawing.Size(1466, 36);
             this.separator.TabIndex = 17;
             this.separator.Text = "separator";
             this.separator.Thickness = 1;
@@ -186,10 +188,10 @@
             this.membersList.AutoScroll = true;
             this.membersList.Controls.Add(this.exempleMembre);
             this.membersList.ElementsHigh = 40;
-            this.membersList.Location = new System.Drawing.Point(747, 180);
-            this.membersList.Margin = new System.Windows.Forms.Padding(4);
+            this.membersList.Location = new System.Drawing.Point(1120, 281);
+            this.membersList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.membersList.Name = "membersList";
-            this.membersList.Size = new System.Drawing.Size(238, 360);
+            this.membersList.Size = new System.Drawing.Size(357, 562);
             this.membersList.SpaceBetweenElements = 20;
             this.membersList.TabIndex = 28;
             // 
@@ -199,9 +201,10 @@
             this.exempleMembre.FlatAppearance.BorderSize = 0;
             this.exempleMembre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exempleMembre.ForeColor = System.Drawing.Color.Black;
-            this.exempleMembre.Location = new System.Drawing.Point(6, 20);
+            this.exempleMembre.Location = new System.Drawing.Point(9, 31);
+            this.exempleMembre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exempleMembre.Name = "exempleMembre";
-            this.exempleMembre.Size = new System.Drawing.Size(229, 40);
+            this.exempleMembre.Size = new System.Drawing.Size(344, 62);
             this.exempleMembre.TabIndex = 3;
             this.exempleMembre.Text = "exemple membre";
             this.exempleMembre.UseVisualStyleBackColor = false;
@@ -211,10 +214,10 @@
             this.sprintsList.AutoScroll = true;
             this.sprintsList.Controls.Add(this.exempleSprint);
             this.sprintsList.ElementsHigh = 40;
-            this.sprintsList.Location = new System.Drawing.Point(396, 180);
-            this.sprintsList.Margin = new System.Windows.Forms.Padding(4);
+            this.sprintsList.Location = new System.Drawing.Point(594, 281);
+            this.sprintsList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.sprintsList.Name = "sprintsList";
-            this.sprintsList.Size = new System.Drawing.Size(238, 360);
+            this.sprintsList.Size = new System.Drawing.Size(357, 562);
             this.sprintsList.SpaceBetweenElements = 20;
             this.sprintsList.TabIndex = 28;
             // 
@@ -224,9 +227,10 @@
             this.exempleSprint.FlatAppearance.BorderSize = 0;
             this.exempleSprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exempleSprint.ForeColor = System.Drawing.Color.White;
-            this.exempleSprint.Location = new System.Drawing.Point(6, 20);
+            this.exempleSprint.Location = new System.Drawing.Point(9, 31);
+            this.exempleSprint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exempleSprint.Name = "exempleSprint";
-            this.exempleSprint.Size = new System.Drawing.Size(229, 40);
+            this.exempleSprint.Size = new System.Drawing.Size(344, 62);
             this.exempleSprint.TabIndex = 2;
             this.exempleSprint.Text = "exemple de sprint";
             this.exempleSprint.UseVisualStyleBackColor = false;
@@ -236,10 +240,10 @@
             this.backlogList.AutoScroll = true;
             this.backlogList.Controls.Add(this.exempleUserStory);
             this.backlogList.ElementsHigh = 40;
-            this.backlogList.Location = new System.Drawing.Point(57, 180);
-            this.backlogList.Margin = new System.Windows.Forms.Padding(4);
+            this.backlogList.Location = new System.Drawing.Point(86, 281);
+            this.backlogList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.backlogList.Name = "backlogList";
-            this.backlogList.Size = new System.Drawing.Size(238, 360);
+            this.backlogList.Size = new System.Drawing.Size(357, 562);
             this.backlogList.SpaceBetweenElements = 20;
             this.backlogList.TabIndex = 27;
             // 
@@ -249,9 +253,10 @@
             this.exempleUserStory.FlatAppearance.BorderSize = 0;
             this.exempleUserStory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exempleUserStory.ForeColor = System.Drawing.Color.Black;
-            this.exempleUserStory.Location = new System.Drawing.Point(6, 20);
+            this.exempleUserStory.Location = new System.Drawing.Point(9, 31);
+            this.exempleUserStory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exempleUserStory.Name = "exempleUserStory";
-            this.exempleUserStory.Size = new System.Drawing.Size(229, 40);
+            this.exempleUserStory.Size = new System.Drawing.Size(344, 62);
             this.exempleUserStory.TabIndex = 0;
             this.exempleUserStory.Text = "exemple de user story";
             this.exempleUserStory.UseVisualStyleBackColor = false;
@@ -261,20 +266,21 @@
             // 
             this.projectDescription.BackColor = System.Drawing.Color.White;
             this.projectDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.projectDescription.Location = new System.Drawing.Point(29, 58);
-            this.projectDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.projectDescription.Location = new System.Drawing.Point(44, 91);
+            this.projectDescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.projectDescription.Multiline = true;
             this.projectDescription.Name = "projectDescription";
             this.projectDescription.ReadOnly = true;
-            this.projectDescription.Size = new System.Drawing.Size(625, 60);
+            this.projectDescription.Size = new System.Drawing.Size(938, 94);
             this.projectDescription.TabIndex = 25;
             // 
             // projectNameLabel
             // 
             this.projectNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectNameLabel.Location = new System.Drawing.Point(24, 17);
+            this.projectNameLabel.Location = new System.Drawing.Point(36, 27);
+            this.projectNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectNameLabel.Name = "projectNameLabel";
-            this.projectNameLabel.Size = new System.Drawing.Size(241, 29);
+            this.projectNameLabel.Size = new System.Drawing.Size(362, 45);
             this.projectNameLabel.TabIndex = 24;
             this.projectNameLabel.Text = "Nom du projet";
             // 
@@ -282,9 +288,10 @@
             // 
             this.sprintsLabel.AutoSize = true;
             this.sprintsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sprintsLabel.Location = new System.Drawing.Point(420, 153);
+            this.sprintsLabel.Location = new System.Drawing.Point(630, 239);
+            this.sprintsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sprintsLabel.Name = "sprintsLabel";
-            this.sprintsLabel.Size = new System.Drawing.Size(80, 25);
+            this.sprintsLabel.Size = new System.Drawing.Size(124, 37);
             this.sprintsLabel.TabIndex = 23;
             this.sprintsLabel.Text = "Sprints";
             // 
@@ -292,9 +299,10 @@
             // 
             this.membersLabel.AutoSize = true;
             this.membersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.membersLabel.Location = new System.Drawing.Point(766, 153);
+            this.membersLabel.Location = new System.Drawing.Point(1149, 239);
+            this.membersLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.membersLabel.Name = "membersLabel";
-            this.membersLabel.Size = new System.Drawing.Size(101, 25);
+            this.membersLabel.Size = new System.Drawing.Size(156, 37);
             this.membersLabel.TabIndex = 22;
             this.membersLabel.Text = "Membres";
             // 
@@ -302,53 +310,32 @@
             // 
             this.backlogLabel.AutoSize = true;
             this.backlogLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backlogLabel.Location = new System.Drawing.Point(76, 151);
+            this.backlogLabel.Location = new System.Drawing.Point(114, 236);
+            this.backlogLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.backlogLabel.Name = "backlogLabel";
-            this.backlogLabel.Size = new System.Drawing.Size(89, 25);
+            this.backlogLabel.Size = new System.Drawing.Size(138, 37);
             this.backlogLabel.TabIndex = 21;
             this.backlogLabel.Text = "Backlog";
             // 
-            // searchBarComboBox
-            // 
-            this.searchBarComboBox.Enabled = false;
-            this.searchBarComboBox.FormattingEnabled = true;
-            this.searchBarComboBox.Items.AddRange(new object[] {
-            "Backlog",
-            "Sprints",
-            "Membres"});
-            this.searchBarComboBox.Location = new System.Drawing.Point(763, 24);
-            this.searchBarComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchBarComboBox.Name = "searchBarComboBox";
-            this.searchBarComboBox.Size = new System.Drawing.Size(81, 24);
-            this.searchBarComboBox.TabIndex = 20;
-            // 
             // addToMembersButton
             // 
-            this.addToMembersButton.Location = new System.Drawing.Point(908, 146);
-            this.addToMembersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addToMembersButton.Location = new System.Drawing.Point(1362, 228);
+            this.addToMembersButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addToMembersButton.Name = "addToMembersButton";
-            this.addToMembersButton.Size = new System.Drawing.Size(77, 27);
+            this.addToMembersButton.Size = new System.Drawing.Size(116, 42);
             this.addToMembersButton.TabIndex = 16;
             this.addToMembersButton.Text = "+ Ajouter";
             this.addToMembersButton.UseVisualStyleBackColor = true;
             this.addToMembersButton.Click += new System.EventHandler(this.addToMembersButton_Click);
             // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Enabled = false;
-            this.searchTextBox.Location = new System.Drawing.Point(847, 24);
-            this.searchTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(157, 22);
-            this.searchTextBox.TabIndex = 7;
-            // 
             // backlogNoneLabel
             // 
             this.backlogNoneLabel.AutoSize = true;
             this.backlogNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backlogNoneLabel.Location = new System.Drawing.Point(65, 207);
+            this.backlogNoneLabel.Location = new System.Drawing.Point(98, 323);
+            this.backlogNoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.backlogNoneLabel.Name = "backlogNoneLabel";
-            this.backlogNoneLabel.Size = new System.Drawing.Size(163, 24);
+            this.backlogNoneLabel.Size = new System.Drawing.Size(250, 33);
             this.backlogNoneLabel.TabIndex = 1;
             this.backlogNoneLabel.Text = "Aucune user story";
             // 
@@ -356,9 +343,10 @@
             // 
             this.sprintsNoneLabel.AutoSize = true;
             this.sprintsNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sprintsNoneLabel.Location = new System.Drawing.Point(461, 207);
+            this.sprintsNoneLabel.Location = new System.Drawing.Point(692, 323);
+            this.sprintsNoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sprintsNoneLabel.Name = "sprintsNoneLabel";
-            this.sprintsNoneLabel.Size = new System.Drawing.Size(116, 24);
+            this.sprintsNoneLabel.Size = new System.Drawing.Size(177, 33);
             this.sprintsNoneLabel.TabIndex = 2;
             this.sprintsNoneLabel.Text = "Aucun sprint";
             // 
@@ -366,9 +354,10 @@
             // 
             this.membersNoneLabel.AutoSize = true;
             this.membersNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.membersNoneLabel.Location = new System.Drawing.Point(829, 207);
+            this.membersNoneLabel.Location = new System.Drawing.Point(1244, 323);
+            this.membersNoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.membersNoneLabel.Name = "membersNoneLabel";
-            this.membersNoneLabel.Size = new System.Drawing.Size(142, 24);
+            this.membersNoneLabel.Size = new System.Drawing.Size(213, 33);
             this.membersNoneLabel.TabIndex = 3;
             this.membersNoneLabel.Text = "Aucun membre";
             // 
@@ -376,10 +365,10 @@
             // 
             this.archiveProjectButton.BackColor = System.Drawing.Color.Gray;
             this.archiveProjectButton.ForeColor = System.Drawing.Color.White;
-            this.archiveProjectButton.Location = new System.Drawing.Point(271, 20);
-            this.archiveProjectButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.archiveProjectButton.Location = new System.Drawing.Point(406, 31);
+            this.archiveProjectButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.archiveProjectButton.Name = "archiveProjectButton";
-            this.archiveProjectButton.Size = new System.Drawing.Size(88, 30);
+            this.archiveProjectButton.Size = new System.Drawing.Size(132, 47);
             this.archiveProjectButton.TabIndex = 8;
             this.archiveProjectButton.Text = "Archiver";
             this.archiveProjectButton.UseVisualStyleBackColor = false;
@@ -387,9 +376,10 @@
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(301, 124);
+            this.returnButton.Location = new System.Drawing.Point(452, 194);
+            this.returnButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(75, 23);
+            this.returnButton.Size = new System.Drawing.Size(112, 36);
             this.returnButton.TabIndex = 32;
             this.returnButton.Text = "< Retour";
             this.returnButton.UseVisualStyleBackColor = true;
@@ -397,13 +387,13 @@
             // 
             // ProjectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(2022, 1127);
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.ProjectPanel);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "ProjectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -428,9 +418,7 @@
         private System.Windows.Forms.Button addToBacklogButton;
         private System.Windows.Forms.Panel ProjectPanel;
         private System.Windows.Forms.Button addToMembersButton;
-        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button archiveProjectButton;
-        private System.Windows.Forms.ComboBox searchBarComboBox;
         private System.Windows.Forms.Label sprintsLabel;
         private System.Windows.Forms.Label membersLabel;
         private System.Windows.Forms.Label backlogLabel;
