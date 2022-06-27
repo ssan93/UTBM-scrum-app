@@ -281,12 +281,12 @@ namespace pr74_scrum_app.Controller
         }
 
         //status project pinned or not 1=pinned else not pinned
-        public int IsprojectPinned(int userid)
+        public int IsprojectPinned(int userid, int projectId)
         {
             MySqlDataReader data;
             int pin = 0;
             string sqlpin = "select pinned from member " +
-                $"where member.user_id={userid}";
+                $"where member.user_id={userid} and Project_id= {projectId}";
             data = Database.ExecutQuery(sqlpin);
             if (data != null)
             {
@@ -301,8 +301,7 @@ namespace pr74_scrum_app.Controller
         //methode to pin a project 
         public bool PinAproject(int userid ,int projectId)
         {
-            MySqlDataReader data, na, nna;
-            bool addpin = false;
+            MySqlDataReader data;
             string sqlpin = "select count(*) from project inner join member on member.project_id=project.id " +
                 $"where member.user_id={userid} and project.archived={0} and member.pinned={1} group by project.name";
             data = Database.ExecutQuery(sqlpin);
@@ -310,30 +309,24 @@ namespace pr74_scrum_app.Controller
             {
                 if (data.Read())
                 {
-                    if (data.GetInt32(0) > 5) //if the the number of pinned project in superrior to 5 send false 
-                    {
-                        addpin = false;
-                        data.Close();
-                    }
-                    else //update
+                    if (data.GetInt32(0) >= 5) //if the the number of pinned project in superrior to 5 send false 
                     {
                         data.Close();
-                        string stringupdate = $"Update member set pinned={1} where user_id={userid} and project_id={projectId}";
-                        na = Database.ExecutQuery(stringupdate);
-                        na.Close();
+                        return false;
                     }
                 }
-                data.Close();
             }
-            else
+            data.Close();
+
+            string stringupdate = $"Update member set pinned={1} where user_id={userid} and project_id={projectId}";
+            data = Database.ExecutQuery(stringupdate);
+            if (data.RecordsAffected < 0)
             {
                 data.Close();
-                addpin = true;
-                string stringupdate = $"Update member set pinned={1} where user_id={userid} and project_id={projectId}";
-                nna = Database.ExecutQuery(stringupdate);
-                nna.Close();
+                return false;
             }
-            return addpin;
+            data.Close();
+            return true;
         }
 
         //méthode to unpin project

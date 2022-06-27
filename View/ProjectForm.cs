@@ -60,14 +60,16 @@ namespace pr74_scrum_app
 
         private void showPinstatus()
         {
-            this.pinStatus = pc.IsprojectPinned(this.userId);
+            this.pinStatus = pc.IsprojectPinned(this.userId, project.Id);
             if (this.pinStatus == 1)
             {
                 PinPictureBox.Visible = true;
+                UnPinpictureBox.Visible = false;
             }
             else
             {
                 UnPinpictureBox.Visible = true;
+                PinPictureBox.Visible = false;
             }
         }
 
@@ -233,45 +235,28 @@ namespace pr74_scrum_app
 
         private void PinAction()
         {
+            this.pinStatus = pc.IsprojectPinned(this.userId, this.project.Id);
             if (this.pinStatus == 0) //if the project is not pinned
             {
                 MessageBoxButtons conf = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show("Voulez-vous épingler ce projet ?", "", conf);
                 if (result == DialogResult.Yes)
                 {
-                    if (pc.PinAproject(this.userId, this.projectId)) //if the number of pin is <5
-                    {
-                        //the project was pin ->refresh the form and side
-                        refreshForm();
-                        showPinstatus();
-                        Controls.Remove(this.sideBar);
-                        this.sideBar = new SideBar(member.User);
-                        Controls.Add(sideBar);
-                        UnPinpictureBox.Visible = false;
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vous pouvez pin maximun 5 projets", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    if (!pc.PinAproject(this.userId, this.projectId)) MessageBox.Show("Vous pouvez pin maximun 5 projets", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 MessageBoxButtons conf = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show("Voulez-vous d'épingler  ce projet ?", "", conf);
-                if (result == DialogResult.Yes)
-                {
-                    pc.UnPinAproject(this.userId, this.projectId);
-                    //refresh the form and sidebar
-                    refreshForm();
-                    showPinstatus();
-                    Controls.Remove(this.sideBar);
-                    this.sideBar = new SideBar(member.User);
-                    Controls.Add(sideBar);
-                    PinPictureBox.Visible = false;
-                }
+                DialogResult result = MessageBox.Show("Voulez-vous désépingler  ce projet ?", "", conf);
+                if (result == DialogResult.Yes) pc.UnPinAproject(this.userId, this.projectId);
             }
+
+            refreshForm();
+            showPinstatus();
+            Controls.Remove(this.sideBar);
+            this.sideBar = new SideBar(member.User);
+            Controls.Add(sideBar);
         }
         private void PinPictureBox_Click(object sender, EventArgs e)
         {
