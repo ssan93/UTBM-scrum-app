@@ -43,5 +43,15 @@ namespace pr74_scrum_app
         {
 
         }
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Voulez vous vraiment quitter ?", "Fermer l'application", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes) Environment.Exit(0);
+                else e.Cancel = true;
+            }
+            else e.Cancel = true;
+        }
     }
 }

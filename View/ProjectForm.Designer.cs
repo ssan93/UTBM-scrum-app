@@ -404,9 +404,11 @@
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.ProjectPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "ProjectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectViewForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Project_FormClosing);
             this.ProjectPanel.ResumeLayout(false);
             this.ProjectPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UnPinpictureBox)).EndInit();
