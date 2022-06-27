@@ -273,12 +273,6 @@ namespace pr74_scrum_app
                 }
             }
         }
-
-        private void Pinlabel_Click(object sender, EventArgs e)
-        {
-            PinAction();
-        }
-
         private void PinPictureBox_Click(object sender, EventArgs e)
         {
             PinAction();
