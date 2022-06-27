@@ -123,7 +123,7 @@ namespace pr74_scrum_app.View
         {
             UserStoryController controller = new UserStoryController();
             controller.PersistUserStoryWithSprintId(userStory, sprintId, projectId);
-            Hide();
+            Close();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,6 +156,14 @@ namespace pr74_scrum_app.View
             int index = comboBox1.SelectedIndex;
             setPriorityImage(index);
             userStory.Priority = index + 1;
+        }
+
+        private void RefreshComments()
+        {
+            UserStoryController uc = new UserStoryController();
+            userStory = uc.FetchUserStoriesById(userStory.Id);
+            commentsPanel.Controls.Clear();
+            generateCommentList(userStory.Comments);
         }
 
         private void generateCommentList(List<Comment> comments)
@@ -198,22 +206,20 @@ namespace pr74_scrum_app.View
 
 
                 //Add controls to form
-                panel1.Controls.Add(text);
-                panel1.Controls.Add(roundButton);
-                panel1.Controls.Add(name);
-                panel1.Controls.Add(date);
+                commentsPanel.Controls.Add(text);
+                commentsPanel.Controls.Add(roundButton);
+                commentsPanel.Controls.Add(name);
+                commentsPanel.Controls.Add(date);
             }
 
         }
 
-        private void roundButton10_Click(object sender, EventArgs e)
+        private void commentButton_Click(object sender, EventArgs e)
         {
             UserStoryController controller = new UserStoryController();
             Comment newComment = new Comment(0, textBox1.Text, member);
             controller.PersistComment(newComment, userStory.Id);
-            this.Hide();
-            UserStoryForm mp = new UserStoryForm(userStory, member);
-            mp.ShowDialog();
+            RefreshComments();
         }
 
         private void textBox1_Click(object sender, EventArgs e)

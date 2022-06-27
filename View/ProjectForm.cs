@@ -52,8 +52,8 @@ namespace pr74_scrum_app
             sideBar = new SideBar(member.User);
             sideBar.CurrentProjectId = project.Id;
             navBar = new NavBar(member.User);
-            Controls.Add(sideBar);
             Controls.Add(navBar);
+            Controls.Add(sideBar);
             generateButtonsForLists();
         }
         private void fetchData()
@@ -122,8 +122,9 @@ namespace pr74_scrum_app
             sideBar = new SideBar(member.User);
             sideBar.CurrentProjectId = project.Id;
             navBar = new NavBar(member.User);
-            Controls.Add(sideBar);
             Controls.Add(navBar);
+            Controls.Add(sideBar);
+
 
         }
 

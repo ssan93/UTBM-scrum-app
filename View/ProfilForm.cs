@@ -162,14 +162,16 @@ namespace pr74_scrum_app
                     DialogResult result = MessageBox.Show("Voulez-vous vraiment vous déconnecter ?", "Déconnection", conf);
                     if (result == DialogResult.Yes)
                     {
-                        this.Close();
-                        foreach (Form oForm in Application.OpenForms)
+                        this.Hide();
+                        FormCollection forms = Application.OpenForms;
+                        foreach (Form oForm in forms)
                         {
                             if (oForm is HomeForm)
                             {
                                 oForm.Show();
                                 break;
                             }
+                            else oForm.Close();
                         }
                     }
                 }
