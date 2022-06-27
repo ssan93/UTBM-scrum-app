@@ -275,12 +275,12 @@ namespace pr74_scrum_app
         }
         private void PinPictureBox_Click(object sender, EventArgs e)
         {
-            PinAction();
+            PinAction(); ///show foem depeding on pin statut
         }
 
         private void UnPinPictureBox_Click(object sender, EventArgs e)
         {
-            PinAction();
+            PinAction(); //idem
         }
     }
 }
