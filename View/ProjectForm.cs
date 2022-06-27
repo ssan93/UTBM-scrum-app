@@ -24,6 +24,7 @@ namespace pr74_scrum_app
         private Project project;
         private Member member;
         SideBar sideBar;
+        bool retour; 
         NavBar navBar;
 
         public ProjectForm(int currentProjectId, int currentUserId)
@@ -204,8 +205,21 @@ namespace pr74_scrum_app
         }
         private void returnButton_Click(object sender, EventArgs e)
         {
+            retour = true;
             this.Close();
         }
-
+        private void Project_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!retour)
+            {
+                if (e.CloseReason == CloseReason.UserClosing)
+                {
+                    DialogResult result = MessageBox.Show("Voulez vous vraiment quitter ?", "Fermer l'application", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes) Environment.Exit(0);
+                    else e.Cancel = true;
+                }
+                else e.Cancel = true;
+            }
+        }
     }
 }

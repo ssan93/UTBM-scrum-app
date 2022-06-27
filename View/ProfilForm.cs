@@ -121,20 +121,20 @@ namespace pr74_scrum_app
         }
 
         //when bouton close form is click this show the home form
-        private void ProfilViewForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (ShowHome_Form())
-            {
-                foreach (Form oForm in Application.OpenForms)
-                {
-                    if (oForm is HomeForm)
-                    {
-                        oForm.Show();
-                        break;
-                    }
-                }
-            }
-        }
+        //private void ProfilViewForm_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    if (ShowHome_Form())
+        //    {
+        //        foreach (Form oForm in Application.OpenForms)
+        //        {
+        //            if (oForm is HomeForm)
+        //            {
+        //                oForm.Show();
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
 
         private void ProfilListBox_MouseHover(object sender, EventArgs e)
         {
@@ -418,6 +418,16 @@ namespace pr74_scrum_app
                 RefreshForm();
                 this.Show();
             }
+        }
+        private void Profil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Voulez vous vraiment quitter ?", "Fermer l'application", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes) Environment.Exit(0);
+                else e.Cancel = true;
+            }
+            else e.Cancel = true;
         }
 
     }

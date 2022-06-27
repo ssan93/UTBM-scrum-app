@@ -871,7 +871,9 @@ namespace pr74_scrum_app
             this.Name = "ProfilForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ScrumApp";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfilViewForm_FormClosed);
+
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Profil_FormClosing);
+            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfilViewForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.PictureProfilBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox2)).EndInit();
