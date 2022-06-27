@@ -194,6 +194,7 @@ namespace pr74_scrum_app.Controller
                 }
                 else
                 {
+                    data.Close();
                     MessageBox.Show("Votre projet n'a pas été crée correctement !");
                 }
             }
@@ -314,31 +315,6 @@ namespace pr74_scrum_app.Controller
             }
             data.Close();
             return member;
-        }
-        //methode to pin a project 
-        public bool PinAnproject(int idproject, int userid)
-        {
-            MySqlDataReader data , na;
-            bool addpin = false;
-            string sqlpin = "select count(*) from project inner join member on member.Project_id=project.id " +
-                $"where member.user_id={userid} and project.archived={0}  and project.pinned={1} group by project.name";
-            data = Database.ExecutQuery(sqlpin);
-            if ( data!=null)
-            {
-                if (data.GetInt32(0)>5) //if the the number of pinned project in superior to 5 send false 
-                {
-                    addpin = false;
-                    data.Close();
-                }
-                else //update
-                {
-                    string stringupdate = $"Update project set pinned={1} where id={idproject}";
-                    na = Database.ExecutQuery(stringupdate);
-                    na.Close();
-                }
-                data.Close();
-            }
-            return addpin;
         }
     }
 }
