@@ -104,9 +104,9 @@ namespace pr74_scrum_app
             this.CreateProjetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.CreateProjetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateProjetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateProjetButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.CreateProjetButton.Location = new System.Drawing.Point(1422, 172);
-            this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.CreateProjetButton.ForeColor = System.Drawing.Color.White;
+            this.CreateProjetButton.Location = new System.Drawing.Point(948, 110);
+            this.CreateProjetButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjetButton.Name = "CreateProjetButton";
             this.CreateProjetButton.Size = new System.Drawing.Size(322, 53);
             this.CreateProjetButton.TabIndex = 19;
@@ -246,8 +246,8 @@ namespace pr74_scrum_app
             // 
             this.ProjectPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox1.Image")));
-            this.ProjectPictureBox1.Location = new System.Drawing.Point(560, 322);
-            this.ProjectPictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ProjectPictureBox1.Location = new System.Drawing.Point(373, 206);
+            this.ProjectPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectPictureBox1.Name = "ProjectPictureBox1";
             this.ProjectPictureBox1.Size = new System.Drawing.Size(124, 97);
             this.ProjectPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -260,8 +260,8 @@ namespace pr74_scrum_app
             // 
             this.ProjectPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox2.Image")));
-            this.ProjectPictureBox2.Location = new System.Drawing.Point(962, 322);
-            this.ProjectPictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ProjectPictureBox2.Location = new System.Drawing.Point(641, 206);
+            this.ProjectPictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectPictureBox2.Name = "ProjectPictureBox2";
             this.ProjectPictureBox2.Size = new System.Drawing.Size(124, 97);
             this.ProjectPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -274,8 +274,8 @@ namespace pr74_scrum_app
             // 
             this.ProjectPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox3.Image")));
-            this.ProjectPictureBox3.Location = new System.Drawing.Point(1370, 322);
-            this.ProjectPictureBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ProjectPictureBox3.Location = new System.Drawing.Point(913, 206);
+            this.ProjectPictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectPictureBox3.Name = "ProjectPictureBox3";
             this.ProjectPictureBox3.Size = new System.Drawing.Size(124, 97);
             this.ProjectPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -289,8 +289,8 @@ namespace pr74_scrum_app
             // 
             this.ProjectPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ProjectPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("ProjectPictureBox4.Image")));
-            this.ProjectPictureBox4.Location = new System.Drawing.Point(1752, 317);
-            this.ProjectPictureBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ProjectPictureBox4.Location = new System.Drawing.Point(1168, 203);
+            this.ProjectPictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectPictureBox4.Name = "ProjectPictureBox4";
             this.ProjectPictureBox4.Size = new System.Drawing.Size(124, 97);
             this.ProjectPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -556,8 +556,8 @@ namespace pr74_scrum_app
             this.ResearchProjectcomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ResearchProjectcomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResearchProjectcomboBox.FormattingEnabled = true;
-            this.ResearchProjectcomboBox.Location = new System.Drawing.Point(964, 178);
-            this.ResearchProjectcomboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ResearchProjectcomboBox.Location = new System.Drawing.Point(643, 114);
+            this.ResearchProjectcomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ResearchProjectcomboBox.Name = "ResearchProjectcomboBox";
             this.ResearchProjectcomboBox.Size = new System.Drawing.Size(324, 37);
             this.ResearchProjectcomboBox.TabIndex = 74;
@@ -596,10 +596,10 @@ namespace pr74_scrum_app
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(32, 6);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox3.Location = new System.Drawing.Point(21, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(252, 131);
+            this.pictureBox3.Size = new System.Drawing.Size(168, 84);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
@@ -879,7 +879,9 @@ namespace pr74_scrum_app
             this.Name = "ProfilForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ScrumApp";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfilViewForm_FormClosed);
+
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Profil_FormClosing);
+            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfilViewForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.PictureProfilBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectPictureBox2)).EndInit();

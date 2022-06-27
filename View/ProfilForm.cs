@@ -121,20 +121,20 @@ namespace pr74_scrum_app
         }
 
         //when bouton close form is click this show the home form
-        private void ProfilViewForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (ShowHome_Form())
-            {
-                foreach (Form oForm in Application.OpenForms)
-                {
-                    if (oForm is HomeForm)
-                    {
-                        oForm.Show();
-                        break;
-                    }
-                }
-            }
-        }
+        //private void ProfilViewForm_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    if (ShowHome_Form())
+        //    {
+        //        foreach (Form oForm in Application.OpenForms)
+        //        {
+        //            if (oForm is HomeForm)
+        //            {
+        //                oForm.Show();
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
 
         private void ProfilListBox_MouseHover(object sender, EventArgs e)
         {
@@ -162,14 +162,16 @@ namespace pr74_scrum_app
                     DialogResult result = MessageBox.Show("Voulez-vous vraiment vous déconnecter ?", "Déconnection", conf);
                     if (result == DialogResult.Yes)
                     {
-                        this.Close();
-                        foreach (Form oForm in Application.OpenForms)
+                        this.Hide();
+                        FormCollection forms = Application.OpenForms;
+                        foreach (Form oForm in forms)
                         {
                             if (oForm is HomeForm)
                             {
                                 oForm.Show();
                                 break;
                             }
+                            else oForm.Close();
                         }
                     }
                 }
@@ -205,6 +207,7 @@ namespace pr74_scrum_app
             else
             {
                 int i = 0;
+                NoProjectLabel.Visible = false;
                 foreach (var item in projects)
                 {
                     Label label = projectLabels[i];
@@ -230,6 +233,7 @@ namespace pr74_scrum_app
             else
             {
                 int j = 0;
+                NoSprintLabel.Visible = false;
                 foreach (var item in sprints)
                 {
                     Label label = Sprintlabels[j];
@@ -250,11 +254,12 @@ namespace pr74_scrum_app
                     TaskPictureBoxs[i].Visible = false;
                     tasklabels[i].Visible = false;
                 }
-                NoTaskLabel.Visible = true; ;
+                NoTaskLabel.Visible = true; 
             }
             else
             {
                 int k = 0;
+                NoTaskLabel.Visible = false;
                 foreach (var item in tasks)
                 {
                     Label label = tasklabels[k];
@@ -418,6 +423,16 @@ namespace pr74_scrum_app
                 RefreshForm();
                 this.Show();
             }
+        }
+        private void Profil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Voulez vous vraiment quitter ?", "Fermer l'application", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes) Environment.Exit(0);
+                else e.Cancel = true;
+            }
+            else e.Cancel = true;
         }
 
     }
