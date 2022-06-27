@@ -205,6 +205,7 @@ namespace pr74_scrum_app
             else
             {
                 int i = 0;
+                NoProjectLabel.Visible = false;
                 foreach (var item in projects)
                 {
                     Label label = projectLabels[i];
@@ -230,6 +231,7 @@ namespace pr74_scrum_app
             else
             {
                 int j = 0;
+                NoSprintLabel.Visible = false;
                 foreach (var item in sprints)
                 {
                     Label label = Sprintlabels[j];
@@ -250,11 +252,12 @@ namespace pr74_scrum_app
                     TaskPictureBoxs[i].Visible = false;
                     tasklabels[i].Visible = false;
                 }
-                NoTaskLabel.Visible = true; ;
+                NoTaskLabel.Visible = true; 
             }
             else
             {
                 int k = 0;
+                NoTaskLabel.Visible = false;
                 foreach (var item in tasks)
                 {
                     Label label = tasklabels[k];

@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectForm));
             this.addToSprintsButton = new System.Windows.Forms.Button();
             this.addToBacklogButton = new System.Windows.Forms.Button();
             this.ProjectPanel = new System.Windows.Forms.Panel();
+            this.UnPinpictureBox = new System.Windows.Forms.PictureBox();
+            this.PinPictureBox = new System.Windows.Forms.PictureBox();
             this.membersIcon = new System.Windows.Forms.PictureBox();
             this.sprintsIcon = new System.Windows.Forms.PictureBox();
             this.backlogIcon = new System.Windows.Forms.PictureBox();
@@ -55,6 +58,8 @@
             this.archiveProjectButton = new System.Windows.Forms.Button();
             this.returnButton = new System.Windows.Forms.Button();
             this.ProjectPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UnPinpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PinPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membersIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprintsIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backlogIcon)).BeginInit();
@@ -88,6 +93,8 @@
             // ProjectPanel
             // 
             this.ProjectPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ProjectPanel.Controls.Add(this.UnPinpictureBox);
+            this.ProjectPanel.Controls.Add(this.PinPictureBox);
             this.ProjectPanel.Controls.Add(this.membersIcon);
             this.ProjectPanel.Controls.Add(this.sprintsIcon);
             this.ProjectPanel.Controls.Add(this.backlogIcon);
@@ -114,6 +121,30 @@
             this.ProjectPanel.Name = "ProjectPanel";
             this.ProjectPanel.Size = new System.Drawing.Size(1037, 558);
             this.ProjectPanel.TabIndex = 16;
+            // 
+            // UnPinpictureBox
+            // 
+            this.UnPinpictureBox.Image = ((System.Drawing.Image)(resources.GetObject("UnPinpictureBox.Image")));
+            this.UnPinpictureBox.Location = new System.Drawing.Point(466, 16);
+            this.UnPinpictureBox.Name = "UnPinpictureBox";
+            this.UnPinpictureBox.Size = new System.Drawing.Size(33, 34);
+            this.UnPinpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UnPinpictureBox.TabIndex = 33;
+            this.UnPinpictureBox.TabStop = false;
+            this.UnPinpictureBox.Visible = false;
+            this.UnPinpictureBox.Click += new System.EventHandler(this.UnPinPictureBox_Click);
+            // 
+            // PinPictureBox
+            // 
+            this.PinPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("PinPictureBox.Image")));
+            this.PinPictureBox.Location = new System.Drawing.Point(465, 17);
+            this.PinPictureBox.Name = "PinPictureBox";
+            this.PinPictureBox.Size = new System.Drawing.Size(34, 34);
+            this.PinPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PinPictureBox.TabIndex = 33;
+            this.PinPictureBox.TabStop = false;
+            this.PinPictureBox.Visible = false;
+            this.PinPictureBox.Click += new System.EventHandler(this.PinPictureBox_Click);
             // 
             // membersIcon
             // 
@@ -317,7 +348,7 @@
             this.backlogNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backlogNoneLabel.Location = new System.Drawing.Point(65, 207);
             this.backlogNoneLabel.Name = "backlogNoneLabel";
-            this.backlogNoneLabel.Size = new System.Drawing.Size(155, 22);
+            this.backlogNoneLabel.Size = new System.Drawing.Size(163, 24);
             this.backlogNoneLabel.TabIndex = 1;
             this.backlogNoneLabel.Text = "Aucune user story";
             // 
@@ -327,7 +358,7 @@
             this.sprintsNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sprintsNoneLabel.Location = new System.Drawing.Point(461, 207);
             this.sprintsNoneLabel.Name = "sprintsNoneLabel";
-            this.sprintsNoneLabel.Size = new System.Drawing.Size(110, 22);
+            this.sprintsNoneLabel.Size = new System.Drawing.Size(116, 24);
             this.sprintsNoneLabel.TabIndex = 2;
             this.sprintsNoneLabel.Text = "Aucun sprint";
             // 
@@ -337,7 +368,7 @@
             this.membersNoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.membersNoneLabel.Location = new System.Drawing.Point(829, 207);
             this.membersNoneLabel.Name = "membersNoneLabel";
-            this.membersNoneLabel.Size = new System.Drawing.Size(130, 22);
+            this.membersNoneLabel.Size = new System.Drawing.Size(142, 24);
             this.membersNoneLabel.TabIndex = 3;
             this.membersNoneLabel.Text = "Aucun membre";
             // 
@@ -378,6 +409,8 @@
             this.Text = "ProjectViewForm";
             this.ProjectPanel.ResumeLayout(false);
             this.ProjectPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UnPinpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PinPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membersIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprintsIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backlogIcon)).EndInit();
@@ -415,5 +448,7 @@
         private System.Windows.Forms.PictureBox sprintsIcon;
         private System.Windows.Forms.PictureBox backlogIcon;
         private System.Windows.Forms.Button returnButton;
+        private System.Windows.Forms.PictureBox PinPictureBox;
+        private System.Windows.Forms.PictureBox UnPinpictureBox;
     }
 }
