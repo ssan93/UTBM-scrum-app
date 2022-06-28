@@ -3,13 +3,13 @@ PR74 SCRUM PROJECT
 
 ## CONFIGURATION
 - System d'exploitation windows 
-- Serveur de Base de donnée mysql à créé au préalable grace au script database.sql et data-mocks.sql
+- Serveur de Base de donnée mysql à créer au préalable grace au script database.sql et data-mocks.sql
 
 ## LANCEMENT 
 ------------------
 Dans le repertoire bin/Debug lancer le fichier pr74_scrum_app.exe
 
-## DEVELOPPEUR
+## DEVELOPPEURS
 ------------------
  - Steven SAN 
  - Wilfrid BEAUNES
