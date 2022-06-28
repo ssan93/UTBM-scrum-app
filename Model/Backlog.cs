@@ -28,11 +28,11 @@ namespace pr74_scrum_app.Model
             foreach (UserStory us in UserStories)
             {
                 bool selectable = false;
-                if (query.Length > 0 && us.Name.Contains(query)) selectable = true;
+                if (query.Length > 0 && (us.Name.ToUpper()).Contains(query.ToUpper())) selectable = true;
                 foreach (Member assignee in us.Assignees)
                 {
                     string fullname = assignee.User.FirstName + " " + assignee.User.LastName;
-                    if (query.Length > 0 && fullname.Contains(query)) selectable = true;
+                    if (query.Length > 0 && (fullname.ToUpper()).Contains(query.ToUpper())) selectable = true;
                 }
                 if (selectable) selected.Add(us);
             }
