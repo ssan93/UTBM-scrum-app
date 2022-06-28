@@ -32,7 +32,7 @@ namespace pr74_scrum_app.View.Components
 
             //Add Title
             Label project = new Label();
-            project.Text = "Autre projets";
+            project.Text = "Autres projets";
             project.Left = 5;
             project.Font = SideBarLabel.Font;
             project.Size = new Size(160, 20);
