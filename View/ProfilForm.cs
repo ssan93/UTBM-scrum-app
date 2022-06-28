@@ -196,7 +196,7 @@ namespace pr74_scrum_app
             tasks = userController.ReloadTask(this.user.Id);
             if(!projects.Any()) //hide all projet composent and show no projet
             {
-                for(int i = 1; i < 4; i++)
+                for(int i = 0; i < 3; i++)
                 {
                     roudboutonProjects[i].Visible = false;
                     ProjectPictureBoxs[i].Visible = false;
@@ -222,7 +222,7 @@ namespace pr74_scrum_app
             }
             if (!sprints.Any())
             {
-                for (int i = 1; i < 4; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     roudboutonSprints[i].Visible = false;
                     SprintPictureBoxs[i].Visible = false;
@@ -248,7 +248,7 @@ namespace pr74_scrum_app
             }
             if (!tasks.Any())
             {
-                for (int i = 1; i < 4; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     Tasksroudboutons[i].Visible = false;
                     TaskPictureBoxs[i].Visible = false;
